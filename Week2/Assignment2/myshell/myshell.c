@@ -1,17 +1,58 @@
 /* Based on the CS:APP shellex.c baseline.
- * make -> ./myshell. Assignment2 lives in Week2/Assignment2/myshell.
+ * make -> ./myshell. Assignment2 extends the separate Assignment1 shell.
  * myps/mytop, event_wait/event_notify and the week3 server stay external
  * programs; do not add their implementation as shell builtins.
  */
 #include "myshell.h"
+#include <sys/select.h>
+
+/* Read one byte at a time so a foreground child can read subsequent input. */
+static int read_command(char *cmdline)
+{
+    size_t length = 0;
+    int too_long = 0;
+    for (;;) {
+        reap_children();
+        fd_set input;
+        FD_ZERO(&input);
+        FD_SET(STDIN_FILENO, &input);
+        int ready = pselect(STDIN_FILENO + 1, &input, NULL, NULL, NULL,
+                            &wait_signal_mask);
+        if (ready < 0) {
+            if (errno == EINTR)
+                continue;
+            perror("myshell: pselect");
+            return -1;
+        }
+        char ch;
+        ssize_t count = read(STDIN_FILENO, &ch, 1);
+        if (count < 0) {
+            if (errno == EINTR || errno == EAGAIN)
+                continue;
+            perror("myshell: read");
+            return -1;
+        }
+        if (count == 0 || ch == '\n') {
+            cmdline[length] = '\0';
+            if (too_long) {
+                fprintf(stderr, "myshell: input too long\n");
+                cmdline[0] = '\0';
+            }
+            return count == 0 && !length && !too_long ? 0 : 1;
+        }
+        if (length < MAXLINE - 1)
+            cmdline[length++] = ch;
+        else
+            too_long = 1;
+    }
+}
 
 int main(void)
 {
     char cmdline[MAXLINE];
     int interactive = isatty(STDIN_FILENO);
+    int result = 0;
 
-    /* Avoid prefetching input that a foreground child may need to read. */
-    setvbuf(stdin, NULL, _IONBF, 0);
     init_signals();
     while (1) {
         reap_children();
@@ -19,29 +60,15 @@ int main(void)
             printf("myshell> ");
             fflush(stdout);
         }
-        if (fgets(cmdline, sizeof(cmdline), stdin) == NULL) {
-            if (feof(stdin))
-                break;
-            if (errno == EINTR) {
-                clearerr(stdin);
-                continue;
-            }
-            perror("fgets");
-            return 1;
-        }
-        if (strlen(cmdline) == MAXLINE - 1 && cmdline[MAXLINE - 2] != '\n') {
-            int c = getchar();
-            if (c != '\n' && c != EOF) {
-                while ((c = getchar()) != '\n' && c != EOF)
-                    ;
-                fprintf(stderr, "myshell: input too long\n");
-                continue;
-            }
+        int input = read_command(cmdline);
+        if (input <= 0) {
+            result = input < 0;
+            break;
         }
         eval(cmdline);
     }
     cleanup_jobs();
-    return 0;
+    return result;
 }
 
 void eval(char *cmdline)

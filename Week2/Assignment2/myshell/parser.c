@@ -15,9 +15,14 @@ int parseline(char *buf, struct command_line *line)
         fprintf(stderr, "myshell: quoting is not supported by this starter\n");
         return -1;
     }
-    if (strchr(buf, '&')) {
-        fprintf(stderr, "myshell: background execution belongs to Assignment2\n");
-        return -1;
+    char *ampersand = strchr(buf, '&');
+    if (ampersand) {
+        if (ampersand[1 + strspn(ampersand + 1, " \t\r\n")] != '\0') {
+            fprintf(stderr, "myshell: '&' is only allowed at the end\n");
+            return -1;
+        }
+        *ampersand = '\0';
+        line->background = 1;
     }
     char *parts[2] = {buf, NULL};
     char *separator = strchr(buf, '|');
@@ -48,5 +53,9 @@ int parseline(char *buf, struct command_line *line)
         }
     }
     line->count = line->commands[0].argc ? count : 0;
+    if (line->background && !line->count) {
+        fprintf(stderr, "myshell: missing background command\n");
+        return -1;
+    }
     return 0;
 }

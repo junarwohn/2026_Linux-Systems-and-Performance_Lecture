@@ -2,37 +2,82 @@
 
 void execute(const struct command_line *line, const char *original)
 {
+    (void)original;
     if (line->background) {
-        /* TODO week2: register all child PIDs, then return to the prompt.
-         * Coordinate SIGCHLD blocking/registration and child mask restoration.
-         * Copy original text: parsed argv expires at the next input.
-         */
-        fprintf(stderr, "TODO week2: background execution\n");
+        fprintf(stderr, "myshell: background execution belongs to Assignment2\n");
         return;
     }
     if (line->count == 1) {
-        /* TODO week1: fork; child execvp; parent wait_foreground.
-         * On exec failure: perror and _exit(nonzero) in the CHILD only.
-         */
-        fprintf(stderr, "TODO week1: fork / execvp / waitpid\n");
+        /* Flush shell output before the child starts writing to stdout. */
+        fflush(NULL);
+        pid_t pid = fork();
+        if (pid < 0) {
+            perror("myshell: fork");
+            return;
+        }
+        if (pid == 0) {
+            execvp(line->commands[0].argv[0], line->commands[0].argv);
+            perror(line->commands[0].argv[0]);
+            _exit(127);
+        }
+        struct job job = { .count = 1, .pids = {pid} };
+        wait_foreground(&job);
     } else {
-        /* TODO week1: pipe; fork two children; connect stdout/stdin with dup2.
-         * Close unused FDs everywhere. Launch BOTH children before waiting.
-         * Handle partial failures, such as a failed second fork.
-         */
-        fprintf(stderr, "TODO week1: two-command pipeline\n");
+        int fds[2];
+        if (pipe(fds) < 0) {
+            perror("myshell: pipe");
+            return;
+        }
+        struct job job = {0};
+        fflush(NULL);
+        for (int i = 0; i < 2; ++i) {
+            pid_t pid = fork();
+            if (pid < 0) {
+                perror("myshell: fork");
+                close(fds[0]);
+                close(fds[1]);
+                /* Abort a partially launched pipeline, even if it never writes. */
+                if (job.count && kill(job.pids[0], SIGKILL) < 0 && errno != ESRCH)
+                    perror("myshell: kill");
+                wait_foreground(&job);
+                return;
+            }
+            if (pid == 0) {
+                int source = i == 0 ? fds[1] : fds[0];
+                int target = i == 0 ? STDOUT_FILENO : STDIN_FILENO;
+                close(i == 0 ? fds[0] : fds[1]);
+                if (dup2(source, target) < 0) {
+                    perror("myshell: dup2");
+                    _exit(1);
+                }
+                if (source != target)
+                    close(source);
+                execvp(line->commands[i].argv[0], line->commands[i].argv);
+                perror(line->commands[i].argv[0]);
+                _exit(127);
+            }
+            job.pids[job.count++] = pid;
+        }
+        /* Launch both children and release the parent's pipe ends before waiting. */
+        close(fds[0]);
+        close(fds[1]);
+        wait_foreground(&job);
     }
-    /* week2: share the launch path for foreground and background commands;
-     * only waiting policy differs. Restore child signal behavior before exec.
-     */
-    (void)original;
 }
 
 void wait_foreground(struct job *job)
 {
-    /* TODO week1: waitpid for every child in this job; handle errors/EINTR.
-     * TODO week2: coordinate with reap_children to avoid lost/double waits.
-     * Also reap background jobs during a foreground wait.
-     */
-    (void)job;
+    for (int i = 0; i < job->count; ++i) {
+        if (job->reaped[i])
+            continue;
+        pid_t result;
+        do {
+            result = waitpid(job->pids[i], &job->status[i], 0);
+        } while (result < 0 && errno == EINTR);
+        if (result < 0) {
+            perror("myshell: waitpid");
+            continue;
+        }
+        job->reaped[i] = 1;
+    }
 }
