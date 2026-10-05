@@ -108,7 +108,7 @@ int main(int argc, char **argv) {
 
             struct timeval zero = {0, 0};
             /* TODO 1-2: Choose the call and its nfds argument. */
-            n = ____TODO1____(____TODO2____, (fd_set *)bits, NULL, NULL, &zero); /* KEY_SELECT */
+            n = select(maxfd + 1, (fd_set *)bits, NULL, NULL, &zero); /* KEY_SELECT */
             check(n, "select");
             for (int i = 0; i < count; ++i) {
                 matched += bit_test(bits, fds[i]);
@@ -117,7 +117,7 @@ int main(int argc, char **argv) {
             user_scanned += count;
         } else if (!strcmp(argv[1], "poll")) {
             /* TODO 3-4: Choose the call and its pollfd array argument. */
-            n = ____TODO3____(____TODO4____, (nfds_t)count, 0); /* KEY_POLL */
+            n = poll(pollfds, (nfds_t)count, 0); /* KEY_POLL */
             check(n, "poll");
             for (int i = 0; i < count; ++i) {
                 matched += (pollfds[i].revents & POLLIN) != 0;
@@ -127,7 +127,7 @@ int main(int argc, char **argv) {
         } else {
             struct epoll_event ready[3];
             /* TODO 5-6: Choose the call and its epoll instance argument. */
-            n = ____TODO5____(____TODO6____, ready, 3, 0); /* KEY_EPOLL */
+            n = epoll_wait(epfd, ready, 3, 0); /* KEY_EPOLL */
             check(n, "epoll_wait");
             for (int i = 0; i < n; ++i) {
                 matched += (ready[i].events & EPOLLIN) != 0;
