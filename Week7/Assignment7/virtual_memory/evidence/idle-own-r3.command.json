@@ -1,0 +1,15 @@
+{
+  "command": [
+    "./vasdump",
+    "-v",
+    "--delay",
+    "0.1",
+    "--",
+    "./idle_student"
+  ],
+  "environment": {},
+  "pid": 113,
+  "returncode": 0,
+  "elapsed_s": 0.16399479700339725,
+  "kernel": "7.2.11-arch1-1"
+}

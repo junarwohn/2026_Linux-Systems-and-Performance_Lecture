@@ -1,0 +1,10 @@
+total 8
+drwxr-xr-x 1 nobody nobody  55512 Nov  2 21:35 bin
+drwxr-xr-x 1 nobody nobody  20340 Nov  2 21:35 include
+drwxr-xr-x 1 nobody nobody 190040 Nov  2 21:35 lib
+drwxr-xr-x 1 nobody nobody     44 Aug 15 20:14 lib32
+lrwxrwxrwx 1 nobody nobody      3 Oct 13  2025 lib64 -> lib
+drwxr-xr-x 1 nobody nobody     72 Aug 15 19:51 local
+lrwxrwxrwx 1 nobody nobody      3 Oct 13  2025 sbin -> bin
+drwxr-xr-x 1 nobody nobody   3890 Oct 29 21:01 share
+drwxr-xr-x 1 nobody nobody     10 Aug 15 20:29 src

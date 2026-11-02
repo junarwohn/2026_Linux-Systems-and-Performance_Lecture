@@ -1,0 +1,20 @@
+{
+  "command": [
+    "strace",
+    "-f",
+    "-e",
+    "trace=brk,mmap,munmap,mremap,madvise",
+    "-o",
+    "/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/evidence/case1.strace",
+    "./case1",
+    "--interval-ms",
+    "50",
+    "--ticks",
+    "12"
+  ],
+  "environment": {},
+  "pid": 373,
+  "returncode": 1,
+  "elapsed_s": 0.003677590000734199,
+  "kernel": "7.2.11-arch1-1"
+}

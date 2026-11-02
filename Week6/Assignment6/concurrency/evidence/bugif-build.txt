@@ -1,0 +1,8 @@
+prediction: Build if-instead-of-while counterexample
+command: ['make', 'bugif']
+env: {}
+kernel: posix.uname_result(sysname='Linux', nodename='17Z90S', release='7.2.11-arch1-1', version='#1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000', machine='x86_64')
+pid: 122
+cc -O2 -g -Wall -Wextra -std=gnu11 -fno-omit-frame-pointer -pthread -rdynamic -DBUG_IF -o bin/bqtest_bugif src/bqtest.c src/bq.c
+elapsed_s: 0.264535
+returncode: 0

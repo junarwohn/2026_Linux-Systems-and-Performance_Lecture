@@ -97,9 +97,19 @@ void bq_destroy(bq_t *q)
  */
 int bq_put(bq_t *q, bq_item_t item)
 {
-    (void)q;
-    (void)item;
-    return BQ_CLOSED;               /* replace this stub */
+    pthread_mutex_lock(&q->lock);
+    BQ_WHILE (q->count == q->cap && !q->closed) {
+        q->n_put_waits++;
+        pthread_cond_wait(&q->not_full, &q->lock);
+    }
+    if (q->closed) {
+        pthread_mutex_unlock(&q->lock);
+        return BQ_CLOSED;
+    }
+    push_item(q, item);
+    wake(q, &q->not_empty);
+    pthread_mutex_unlock(&q->lock);
+    return BQ_OK;
 }
 
 /*
@@ -112,9 +122,19 @@ int bq_put(bq_t *q, bq_item_t item)
  */
 int bq_get(bq_t *q, bq_item_t *out)
 {
-    (void)q;
-    (void)out;
-    return BQ_CLOSED;               /* replace this stub */
+    pthread_mutex_lock(&q->lock);
+    BQ_WHILE (q->count == 0 && !q->closed) {
+        q->n_get_waits++;
+        pthread_cond_wait(&q->not_empty, &q->lock);
+    }
+    if (q->count == 0 && q->closed) {
+        pthread_mutex_unlock(&q->lock);
+        return BQ_CLOSED;
+    }
+    *out = pop_item(q);
+    wake(q, &q->not_full);
+    pthread_mutex_unlock(&q->lock);
+    return BQ_OK;
 }
 
 /*
@@ -129,10 +149,24 @@ int bq_get(bq_t *q, bq_item_t *out)
  */
 int bq_timed_get(bq_t *q, bq_item_t *out, int timeout_ms)
 {
-    (void)q;
-    (void)out;
-    (void)timeout_ms;
-    return BQ_TIMEOUT;              /* replace this stub */
+    struct timespec deadline = deadline_after_ms(timeout_ms);
+    int expired = timeout_ms == 0;
+    pthread_mutex_lock(&q->lock);
+    BQ_WHILE (q->count == 0 && !q->closed && !expired) {
+        q->n_get_waits++;
+        int rc = pthread_cond_timedwait(&q->not_empty, &q->lock, &deadline);
+        expired = rc == ETIMEDOUT;
+    }
+    int status;
+    if (q->count > 0) {
+        *out = pop_item(q);
+        wake(q, &q->not_full);
+        status = BQ_OK;
+    } else {
+        status = q->closed ? BQ_CLOSED : BQ_TIMEOUT;
+    }
+    pthread_mutex_unlock(&q->lock);
+    return status;
 }
 
 /*
@@ -143,5 +177,11 @@ int bq_timed_get(bq_t *q, bq_item_t *out, int timeout_ms)
  */
 void bq_close(bq_t *q)
 {
-    (void)q;                        /* replace this stub */
+    pthread_mutex_lock(&q->lock);
+    if (!q->closed) {
+        q->closed = 1;
+        pthread_cond_broadcast(&q->not_empty);
+        pthread_cond_broadcast(&q->not_full);
+    }
+    pthread_mutex_unlock(&q->lock);
 }

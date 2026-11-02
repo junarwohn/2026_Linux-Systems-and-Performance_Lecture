@@ -1,0 +1,15 @@
+prediction: No lockcheck warnings; TSan may flag read-read order in case 3
+command: ['bash', 'tools/l3_run.sh', '1', '-d', '3']
+env: {}
+kernel: posix.uname_result(sysname='Linux', nodename='17Z90S', release='7.2.11-arch1-1', version='#1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000', machine='x86_64')
+pid: 372
+$ LD_PRELOAD=./bin/lockcheck.so ./bin/devsvc -c 1 -d 3
+$ ./bin/devsvc_tsan -c 1 -d 3
+== case 1: lockcheck
+result: PASS
+lockcheck: summary W1=0 W2=0 W3=0 W4=0
+== case 1: ThreadSanitizer
+result: PASS
+Saved: logs/l3-1-lockcheck.txt logs/l3-1-tsan.txt
+elapsed_s: 6.129672
+returncode: 0

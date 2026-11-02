@@ -1,0 +1,3 @@
+initialized_global=0x56118c87c07c second_global=0x56118c87c078 readonly=0x56118c87a0e0
+bss_first=0x56118c87c0c0 bss_last=0x56118d07c0bf local=0x7ffd827b2aac dynamic=0x5611990c4010
+PID=90 READY phase=layout

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "./case2"
+  ],
+  "environment": {
+    "LD_PRELOAD": "./libmtrace_lite.so",
+    "MTRACE_OUT": "/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/evidence/case2-remedy-r2.trace",
+    "GLIBC_TUNABLES": "glibc.malloc.mmap_threshold=1024:glibc.malloc.mmap_max=65536"
+  },
+  "pid": 235,
+  "kernel": "7.2.11-arch1-1",
+  "prediction": "case1: growing live bytes; case2: freed bytes with retained RSS; case3: virtual thread stacks dwarf resident pages",
+  "returncode": 0,
+  "elapsed_s": 15.021019015002821
+}

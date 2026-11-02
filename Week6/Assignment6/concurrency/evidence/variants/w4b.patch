@@ -1,0 +1,10 @@
+--- src/config.c
++++ w4b.c
+@@ -91,7 +91,6 @@
+     }
+     pthread_mutex_unlock(&cfg_lock);
+     /* Do not hold a lock needed by registered readers during a grace period. */
+-    synchronize_rcu();
+     config_free(old);
+ }
+ 

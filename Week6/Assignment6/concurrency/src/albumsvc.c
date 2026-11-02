@@ -113,11 +113,11 @@ static void record_save(uint64_t start_ns, uint64_t end_ns)
  */
 int worker_handoff_send(album_update_t *u)
 {
-    static atomic_int warned;
-    if (!atomic_exchange(&warned, 1))
-        fprintf(stderr, "TODO(L2-3) worker_handoff_send is not implemented\n");
+    bq_item_t item = { .kind = MSG_UPDATE, .ptr = u };
+    if (bq_put(&ui_inbox, item) == BQ_OK)
+        return 0;
     update_free(u);
-    return -1;                      /* replace this stub */
+    return -1;
 }
 
 void *worker_main(void *arg)
@@ -171,9 +171,18 @@ void saver_save_locked(void)
  */
 void saver_save_snapshot(void)
 {
-    static int warned;
-    if (!warned++)
-        fprintf(stderr, "TODO(L2-2) saver_save_snapshot is not implemented\n");
+    pthread_mutex_lock(&album_lock);
+    uint64_t locked = now_ns();
+    album_t *s = album_snapshot(&album);
+    uint64_t copied = now_ns();
+    pthread_mutex_unlock(&album_lock);
+    record_hold(locked, copied);
+    if (s) {
+        uint64_t start = now_ns();
+        album_save(s, save_path, cfg.compress_us, cfg.disk_ms);
+        record_save(start, now_ns());
+        album_snapshot_free(s);
+    }
 }
 
 /*
@@ -183,7 +192,15 @@ void saver_save_snapshot(void)
  */
 void saver_handoff_loop(void)
 {
-    fprintf(stderr, "TODO(L2-5) saver_handoff_loop is not implemented\n");
+    bq_item_t item;
+    while (bq_get(&saver_inbox, &item) == BQ_OK) {
+        album_t *s = item.ptr;
+        uint64_t start = now_ns();
+        album_save(s, save_path, cfg.compress_us, cfg.disk_ms);
+        record_save(start, now_ns());
+        album_snapshot_free(s);
+        atomic_store(&save_in_flight, 0);
+    }
 }
 
 void *saver_main(void *arg)
@@ -225,9 +242,15 @@ void *saver_main(void *arg)
  */
 void ui_handoff_apply(void)
 {
-    static int warned;
-    if (!warned++)
-        fprintf(stderr, "TODO(L2-4) ui_handoff_apply is not implemented\n");
+    for (int i = 0; i < cfg.apply_budget; i++) {
+        bq_item_t item;
+        if (bq_timed_get(&ui_inbox, &item, 0) != BQ_OK)
+            break;
+        album_update_t *u = item.ptr;
+        album_apply(&album, u);
+        update_free(u);
+        atomic_fetch_add(&st.updates_applied, 1);
+    }
 }
 
 /*
@@ -241,11 +264,19 @@ void ui_handoff_apply(void)
  */
 void ui_handoff_request_save(uint64_t now, uint64_t *next_save)
 {
-    static int warned;
-    (void)now;
-    (void)next_save;
-    if (!warned++)
-        fprintf(stderr, "TODO(L2-5) ui_handoff_request_save is not implemented\n");
+    if (now < *next_save || atomic_load(&save_in_flight))
+        return;
+    *next_save = now + (uint64_t)cfg.save_ms * 1000000ull;
+    album_t *s = album_snapshot(&album);
+    if (!s)
+        return;
+    bq_item_t item = { .kind = MSG_SNAPSHOT, .ptr = s };
+    /* One producer and one in-flight save guarantee an empty inbox here. */
+    atomic_store(&save_in_flight, 1);
+    if (bq_put(&saver_inbox, item) != BQ_OK) {
+        album_snapshot_free(s);
+        atomic_store(&save_in_flight, 0);
+    }
 }
 
 /*

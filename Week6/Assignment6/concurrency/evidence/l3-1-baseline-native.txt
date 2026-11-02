@@ -1,0 +1,42 @@
+prediction: Original source deadlocks; lockcheck exposes the circular acquisition order
+command: ['env', 'LD_PRELOAD=./bin/lockcheck.so', './evidence/baseline/devsvc', '-c', '1', '-d', '1']
+env: {}
+kernel: posix.uname_result(sysname='Linux', nodename='17Z90S', release='7.2.11-arch1-1', version='#1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000', machine='x86_64')
+pid: 15
+lockcheck: loaded
+devsvc case 1 (sink): threads=4 seconds=1
+lockcheck: W1 possible circular locking (tid 18)
+  now:     taking sinks+0x240 at sink_total+0x2c (devsvc)
+           while holding sinks+0xc0 (taken at sink_total+0x2c (devsvc))
+  earlier: sinks+0xc0 taken at sink_move+0x3c (devsvc)
+           while holding sinks+0x240 (taken at sink_move+0x34 (devsvc)) by tid 16
+lockcheck: W1 possible circular locking (tid 18)
+  now:     taking sinks+0x240 at sink_move+0x3c (devsvc)
+           while holding sinks+0x3c0 (taken at sink_move+0x34 (devsvc))
+  earlier: sinks+0x3c0 taken at sink_total+0x2c (devsvc)
+           while holding sinks+0x240 (taken at sink_total+0x2c (devsvc)) by tid 18
+HANG: worker 0 finished no request for 3.0 s
+  worker 0 (tid 16): sink_total, 0 requests
+  worker 1 (tid 17): sink_total, 0 requests
+  worker 2 (tid 18): sink_move(15, 3), 2 requests
+  worker 3 (tid 19): sink_total, 0 requests
+result: HANG
+lockcheck: W2 sinks+0x140 is still held at exit by tid 16 (thread still running), taken at sink_total+0x2c (devsvc)
+lockcheck: W2 sinks+0x100 is still held at exit by tid 16 (thread still running), taken at sink_total+0x2c (devsvc)
+lockcheck: W2 sinks+0x300 is still held at exit by tid 16 (thread still running), taken at sink_total+0x2c (devsvc)
+lockcheck: W2 sinks+0x340 is still held at exit by tid 16 (thread still running), taken at sink_total+0x2c (devsvc)
+lockcheck: W2 sinks+0x40 is still held at exit by tid 16 (thread still running), taken at sink_total+0x2c (devsvc)
+lockcheck: W2 sinks is still held at exit by tid 16 (thread still running), taken at sink_total+0x2c (devsvc)
+lockcheck: W2 sinks+0x240 is still held at exit by tid 16 (thread still running), taken at sink_total+0x2c (devsvc)
+lockcheck: W2 sinks+0x200 is still held at exit by tid 16 (thread still running), taken at sink_total+0x2c (devsvc)
+lockcheck: W2 sinks+0x180 is still held at exit by tid 16 (thread still running), taken at sink_total+0x2c (devsvc)
+lockcheck: W2 sinks+0x1c0 is still held at exit by tid 16 (thread still running), taken at sink_total+0x2c (devsvc)
+lockcheck: W2 sinks+0x2c0 is still held at exit by tid 16 (thread still running), taken at sink_total+0x2c (devsvc)
+lockcheck: W2 sinks+0x280 is still held at exit by tid 16 (thread still running), taken at sink_total+0x2c (devsvc)
+lockcheck: W2 sinks+0x380 is still held at exit by tid 16 (thread still running), taken at sink_total+0x2c (devsvc)
+lockcheck: W2 sinks+0xc0 is still held at exit by tid 16 (thread still running), taken at sink_total+0x2c (devsvc)
+lockcheck: W2 sinks+0x80 is still held at exit by tid 16 (thread still running), taken at sink_total+0x2c (devsvc)
+lockcheck: W2 sinks+0x3c0 is still held at exit by tid 18 (thread still running), taken at sink_move+0x34 (devsvc)
+lockcheck: summary W1=8 W2=16 W3=0 W4=0
+elapsed_s: 3.069958
+returncode: 3

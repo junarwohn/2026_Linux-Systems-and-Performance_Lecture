@@ -1,0 +1,5 @@
+PID=123 READY phase=baseline
+PID=123 READY phase=A
+PID=123 READY phase=B
+PID=123 READY phase=C
+PID=123 READY phase=D

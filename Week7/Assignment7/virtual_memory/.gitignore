@@ -1,0 +1,13 @@
+/checkpoint_workload
+/elf_workload
+/elf_workload_nopie
+/observation_workload
+/known_count
+/edge_cases
+/idle_student
+/thread_student
+/accounting_test
+/case1_remedy
+/vasdump
+/level3/cases/case[1-5]
+__pycache__/

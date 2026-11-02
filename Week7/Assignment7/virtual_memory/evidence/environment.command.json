@@ -1,0 +1,12 @@
+{
+  "command": [
+    "bash",
+    "-c",
+    "uname -a; getconf GNU_LIBC_VERSION; getconf PAGESIZE; gcc --version; ulimit -s; env | sort; command -v strace perf bpftrace"
+  ],
+  "environment": {},
+  "pid": 15,
+  "returncode": 0,
+  "elapsed_s": 0.007949400998768397,
+  "kernel": "7.2.11-arch1-1"
+}

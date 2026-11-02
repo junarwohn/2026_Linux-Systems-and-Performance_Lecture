@@ -1,0 +1,218 @@
+devsvc case 4 (config): threads=4 seconds=3
+==================
+WARNING: ThreadSanitizer: data race (pid=1661)
+  Write of size 8 at 0x720c00000020 by thread T2:
+    #0 free <null> (libtsan.so.2+0x948ac) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_free /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:37 (w4b_tsan+0x4c3e) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #2 config_update /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:94 (w4b_tsan+0x4c3e)
+    #3 req_config src/devsvc.c:276 (w4b_tsan+0x2a2a) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #4 worker_main src/devsvc.c:309 (w4b_tsan+0x25b4) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #5 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Previous read of size 4 at 0x720c00000020 by thread T3:
+    #0 config_ok /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:43 (w4b_tsan+0x4af5) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #1 output_render /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:77 (w4b_tsan+0x4af5)
+    #2 req_config src/devsvc.c:280 (w4b_tsan+0x2a6b) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #3 worker_main src/devsvc.c:309 (w4b_tsan+0x25b4) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Thread T2 (tid=1664, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (w4b_tsan+0x3660) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+
+  Thread T3 (tid=1665, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (w4b_tsan+0x3660) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+
+SUMMARY: ThreadSanitizer: data race /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:37 in config_free
+==================
+==================
+WARNING: ThreadSanitizer: data race (pid=1661)
+  Write of size 8 at 0x720c00000000 by thread T2:
+    #0 free <null> (libtsan.so.2+0x948ac) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_free /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:37 (w4b_tsan+0x4c3e) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #2 config_update /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:94 (w4b_tsan+0x4c3e)
+    #3 req_config src/devsvc.c:276 (w4b_tsan+0x2a2a) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #4 worker_main src/devsvc.c:309 (w4b_tsan+0x25b4) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #5 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Previous read of size 4 at 0x720c00000000 by thread T1:
+    #0 config_ok /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:43 (w4b_tsan+0x4ad1) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #1 output_render /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:77 (w4b_tsan+0x4ad1)
+    #2 req_config src/devsvc.c:280 (w4b_tsan+0x2a6b) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #3 worker_main src/devsvc.c:309 (w4b_tsan+0x25b4) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Thread T2 (tid=1664, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (w4b_tsan+0x3660) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+
+  Thread T1 (tid=1663, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (w4b_tsan+0x3660) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+
+SUMMARY: ThreadSanitizer: data race /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:37 in config_free
+==================
+==================
+WARNING: ThreadSanitizer: data race (pid=1661)
+  Read of size 4 at 0x720c00006020 by thread T3:
+    #0 config_ok /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:43 (w4b_tsan+0x4af5) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #1 output_render /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:77 (w4b_tsan+0x4af5)
+    #2 req_config src/devsvc.c:280 (w4b_tsan+0x2a6b) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #3 worker_main src/devsvc.c:309 (w4b_tsan+0x25b4) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Previous write of size 8 at 0x720c00006020 by thread T4 (mutexes: write M0):
+    #0 malloc <null> (libtsan.so.2+0x95039) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_alloc /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:24 (w4b_tsan+0x48f2) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #2 config_update /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:85 (w4b_tsan+0x4bd1) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #3 req_config src/devsvc.c:276 (w4b_tsan+0x2a2a) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #4 worker_main src/devsvc.c:309 (w4b_tsan+0x25b4) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #5 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 (0x5622187a4bc0) created at:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_update /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:83 (w4b_tsan+0x4ba7) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #2 req_config src/devsvc.c:276 (w4b_tsan+0x2a2a) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #3 worker_main src/devsvc.c:309 (w4b_tsan+0x25b4) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Thread T3 (tid=1665, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (w4b_tsan+0x3660) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+
+  Thread T4 (tid=1666, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (w4b_tsan+0x3660) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+
+SUMMARY: ThreadSanitizer: data race /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:43 in config_ok
+==================
+==================
+WARNING: ThreadSanitizer: data race (pid=1661)
+  Read of size 4 at 0x720c00003010 by thread T4:
+    #0 config_ok /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:43 (w4b_tsan+0x4af5) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #1 output_render /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:77 (w4b_tsan+0x4af5)
+    #2 req_config src/devsvc.c:280 (w4b_tsan+0x2a6b) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #3 worker_main src/devsvc.c:309 (w4b_tsan+0x25b4) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Previous write of size 4 at 0x720c00003010 by thread T3 (mutexes: write M0):
+    #0 config_alloc /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:29 (w4b_tsan+0x4930) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #1 config_update /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:85 (w4b_tsan+0x4bd1) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #2 req_config src/devsvc.c:276 (w4b_tsan+0x2a2a) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #3 worker_main src/devsvc.c:309 (w4b_tsan+0x25b4) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Location is heap block of size 36 at 0x720c00003000 allocated by thread T3:
+    #0 malloc <null> (libtsan.so.2+0x95039) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_alloc /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:24 (w4b_tsan+0x48f2) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #2 config_update /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:85 (w4b_tsan+0x4bd1) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #3 req_config src/devsvc.c:276 (w4b_tsan+0x2a2a) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #4 worker_main src/devsvc.c:309 (w4b_tsan+0x25b4) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #5 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 (0x5622187a4bc0) created at:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_update /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:83 (w4b_tsan+0x4ba7) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #2 req_config src/devsvc.c:276 (w4b_tsan+0x2a2a) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #3 worker_main src/devsvc.c:309 (w4b_tsan+0x25b4) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Thread T4 (tid=1666, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (w4b_tsan+0x3660) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+
+  Thread T3 (tid=1665, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (w4b_tsan+0x3660) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+
+SUMMARY: ThreadSanitizer: data race /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:43 in config_ok
+==================
+check failed: output_render(9) read an inconsistent or freed config
+==================
+WARNING: ThreadSanitizer: data race (pid=1661)
+  Read of size 4 at 0x720c00003000 by thread T4:
+    #0 config_ok /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:43 (w4b_tsan+0x4ad1) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #1 output_render /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:77 (w4b_tsan+0x4ad1)
+    #2 req_config src/devsvc.c:280 (w4b_tsan+0x2a6b) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #3 worker_main src/devsvc.c:309 (w4b_tsan+0x25b4) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Previous write of size 8 at 0x720c00003000 by thread T1 (mutexes: write M0):
+    #0 malloc <null> (libtsan.so.2+0x95039) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_alloc /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:24 (w4b_tsan+0x48f2) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #2 config_update /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:85 (w4b_tsan+0x4bd1) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #3 req_config src/devsvc.c:276 (w4b_tsan+0x2a2a) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #4 worker_main src/devsvc.c:309 (w4b_tsan+0x25b4) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #5 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Location is heap block of size 36 at 0x720c00003000 allocated by thread T1:
+    #0 malloc <null> (libtsan.so.2+0x95039) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_alloc /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:24 (w4b_tsan+0x48f2) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #2 config_update /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:85 (w4b_tsan+0x4bd1) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #3 req_config src/devsvc.c:276 (w4b_tsan+0x2a2a) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #4 worker_main src/devsvc.c:309 (w4b_tsan+0x25b4) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #5 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 (0x5622187a4bc0) created at:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_update /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:83 (w4b_tsan+0x4ba7) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #2 req_config src/devsvc.c:276 (w4b_tsan+0x2a2a) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #3 worker_main src/devsvc.c:309 (w4b_tsan+0x25b4) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Thread T4 (tid=1666, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (w4b_tsan+0x3660) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+
+  Thread T1 (tid=1663, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (w4b_tsan+0x3660) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+
+SUMMARY: ThreadSanitizer: data race /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:43 in config_ok
+==================
+==================
+WARNING: ThreadSanitizer: data race (pid=1661)
+  Read of size 4 at 0x720c00003000 by thread T2:
+    #0 config_ok /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:43 (w4b_tsan+0x4ad1) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #1 output_render /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:77 (w4b_tsan+0x4ad1)
+    #2 req_config src/devsvc.c:280 (w4b_tsan+0x2a6b) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #3 worker_main src/devsvc.c:309 (w4b_tsan+0x25b4) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Previous write of size 4 at 0x720c00003000 by thread T1 (mutexes: write M0):
+    #0 config_alloc /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:27 (w4b_tsan+0x4902) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #1 config_update /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:85 (w4b_tsan+0x4bd1) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #2 req_config src/devsvc.c:276 (w4b_tsan+0x2a2a) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #3 worker_main src/devsvc.c:309 (w4b_tsan+0x25b4) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Location is heap block of size 36 at 0x720c00003000 allocated by thread T1:
+    #0 malloc <null> (libtsan.so.2+0x95039) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_alloc /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:24 (w4b_tsan+0x48f2) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #2 config_update /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:85 (w4b_tsan+0x4bd1) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #3 req_config src/devsvc.c:276 (w4b_tsan+0x2a2a) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #4 worker_main src/devsvc.c:309 (w4b_tsan+0x25b4) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #5 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 (0x5622187a4bc0) created at:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_update /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:83 (w4b_tsan+0x4ba7) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #2 req_config src/devsvc.c:276 (w4b_tsan+0x2a2a) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #3 worker_main src/devsvc.c:309 (w4b_tsan+0x25b4) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Thread T2 (tid=1664, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (w4b_tsan+0x3660) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+
+  Thread T1 (tid=1663, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (w4b_tsan+0x3660) (BuildId: 7060ab8b7cd95e6c7920c5bd89261015b6a5b0fd)
+
+SUMMARY: ThreadSanitizer: data race /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b.c:43 in config_ok
+==================
+ops=1982578 ops_per_sec=660577 parallel=86%
+check: 1981595 frames, 5 with a bad config, config version 988 applied to every output
+result: FAIL
+ThreadSanitizer: reported 6 warnings

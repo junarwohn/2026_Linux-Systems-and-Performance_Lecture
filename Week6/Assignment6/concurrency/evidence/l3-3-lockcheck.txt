@@ -1,0 +1,6 @@
+lockcheck: loaded
+devsvc case 3 (catalog): threads=4 seconds=3
+ops=2003757 ops_per_sec=666048 parallel=54%
+check: no app holds a disabled permission (checked in every catalog_perm_users and at the end)
+result: PASS
+lockcheck: summary W1=0 W2=0 W3=0 W4=0

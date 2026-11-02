@@ -1,0 +1,1 @@
+bpftrace: UNAVAILABLE: executable not installed in this execution environment

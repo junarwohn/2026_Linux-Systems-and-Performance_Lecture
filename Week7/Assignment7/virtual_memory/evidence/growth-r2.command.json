@@ -1,0 +1,19 @@
+{
+  "command": [
+    "./vasdump",
+    "-v",
+    "--delay",
+    "0.2",
+    "--diff",
+    "5",
+    "--",
+    "./observation_workload",
+    "growth",
+    "12"
+  ],
+  "environment": {},
+  "pid": 13,
+  "returncode": 0,
+  "elapsed_s": 5.275863985996693,
+  "kernel": "7.2.11-arch1-1"
+}

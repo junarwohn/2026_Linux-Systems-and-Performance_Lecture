@@ -1,0 +1,8 @@
+{
+  "GLIBC_TUNABLES": null,
+  "MALLOC_ARENA_MAX": null,
+  "MALLOC_MMAP_THRESHOLD_": null,
+  "MALLOC_TRIM_THRESHOLD_": null,
+  "LD_PRELOAD": null,
+  "MTRACE_OUT": null
+}

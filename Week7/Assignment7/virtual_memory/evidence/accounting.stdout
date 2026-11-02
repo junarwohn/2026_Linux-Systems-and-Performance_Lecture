@@ -1,0 +1,7 @@
+PID=143 READY phase=baseline
+PID=143 READY phase=malloc17
+PID=143 READY phase=realloc113
+PID=143 READY phase=failed_realloc
+PID=143 READY phase=zero_block
+PID=143 READY phase=zero_realloc
+PID=143 READY phase=released

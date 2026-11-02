@@ -1,0 +1,4 @@
+devsvc case 3 (catalog): threads=4 seconds=2
+ops=1493599 ops_per_sec=744669 parallel=52%
+check: no app holds a disabled permission (checked in every catalog_perm_users and at the end)
+result: PASS

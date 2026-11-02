@@ -1,0 +1,50 @@
+pid=131 stage=before_pairs
+range permissions offset device inode category Size_kB Rss_kB Pss_kB pathname
+55e7f95a7000-55e7f95a8000 r--p 00000000 00:1d 389851 executable 4 4 4 /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/thread_student
+55e7f95a8000-55e7f95a9000 r-xp 00001000 00:1d 389851 executable 4 4 4 /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/thread_student
+55e7f95a9000-55e7f95aa000 r--p 00002000 00:1d 389851 executable 4 4 4 /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/thread_student
+55e7f95aa000-55e7f95ab000 r--p 00002000 00:1d 389851 executable 4 4 4 /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/thread_student
+55e7f95ab000-55e7f95ac000 rw-p 00003000 00:1d 389851 executable 4 4 4 /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/thread_student
+55e7fe525000-55e7fe546000 rw-p 00000000 00:00 0 heap 132 4 4 [heap]
+7fc8281fb000-7fc82aa00000 rw-p 00000000 00:00 0 anonymous 40980 40 40 
+7fc82aa00000-7fc82aa24000 r--p 00000000 00:1d 654482 shared-library 144 144 1 /usr/lib/libc.so.6
+7fc82aa24000-7fc82ab9f000 r-xp 00024000 00:1d 654482 shared-library 1516 1132 10 /usr/lib/libc.so.6
+7fc82ab9f000-7fc82ac15000 r--p 0019f000 00:1d 654482 shared-library 472 148 1 /usr/lib/libc.so.6
+7fc82ac15000-7fc82ac19000 r--p 00214000 00:1d 654482 shared-library 16 16 16 /usr/lib/libc.so.6
+7fc82ac19000-7fc82ac1b000 rw-p 00218000 00:1d 654482 shared-library 8 8 8 /usr/lib/libc.so.6
+7fc82ac1b000-7fc82ac23000 rw-p 00000000 00:00 0 anonymous 32 20 20 
+7fc82ae00000-7fc82ae01000 r--p 00000000 00:1d 389852 shared-library 4 4 4 /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/libmtrace_lite.so
+7fc82ae01000-7fc82ae03000 r-xp 00001000 00:1d 389852 shared-library 8 8 8 /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/libmtrace_lite.so
+7fc82ae03000-7fc82ae04000 r--p 00003000 00:1d 389852 shared-library 4 4 4 /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/libmtrace_lite.so
+7fc82ae04000-7fc82ae05000 r--p 00003000 00:1d 389852 shared-library 4 4 4 /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/libmtrace_lite.so
+7fc82ae05000-7fc82ae06000 rw-p 00004000 00:1d 389852 shared-library 4 4 4 /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/libmtrace_lite.so
+7fc82ae06000-7fc82b306000 rw-p 00000000 00:00 0 anonymous 5120 2056 2056 
+7fc82b4d9000-7fc82b4de000 rw-p 00000000 00:00 0 anonymous 20 16 16 
+7fc82b4de000-7fc82b504000 r--p 00000000 00:1d 966808 shared-library 152 144 6 /etc/ld.so.cache
+7fc82b504000-7fc82b508000 r--p 00000000 00:00 0 special 16 0 0 [vvar]
+7fc82b508000-7fc82b50a000 r--p 00000000 00:00 0 special 8 0 0 [vvar_vclock]
+7fc82b50a000-7fc82b50c000 r-xp 00000000 00:00 0 special 8 8 0 [vdso]
+7fc82b50c000-7fc82b50d000 r--p 00000000 00:1d 654473 shared-library 4 4 0 /usr/lib/ld-linux-x86-64.so.2
+7fc82b50d000-7fc82b53a000 r-xp 00001000 00:1d 654473 shared-library 180 180 1 /usr/lib/ld-linux-x86-64.so.2
+7fc82b53a000-7fc82b549000 r--p 0002e000 00:1d 654473 shared-library 60 60 0 /usr/lib/ld-linux-x86-64.so.2
+7fc82b549000-7fc82b54b000 r--p 0003d000 00:1d 654473 shared-library 8 8 8 /usr/lib/ld-linux-x86-64.so.2
+7fc82b54b000-7fc82b54c000 rw-p 0003f000 00:1d 654473 shared-library 4 4 4 /usr/lib/ld-linux-x86-64.so.2
+7fc82b54c000-7fc82b54d000 rw-p 00000000 00:00 0 anonymous 4 4 4 
+7ffec5673000-7ffec5694000 rw-p 00000000 00:00 0 stack 132 16 16 [stack]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0 special 4 0 0 [vsyscall]
+category Size_kB Rss_kB Pss_kB Shared_Clean_kB Shared_Dirty_kB Private_Clean_kB Private_Dirty_kB Anonymous_kB
+executable 20 20 20 0 0 0 20 8
+heap 132 4 4 0 0 0 4 4
+stack 132 16 16 0 0 0 16 16
+shared-library 2588 1872 79 1812 0 0 60 44
+other-file 0 0 0 0 0 0 0 0
+anonymous 46156 2136 2136 0 0 0 2136 2136
+special 36 8 0 8 0 0 0 0
+permissions Size_kB Rss_kB Pss_kB Shared_Clean_kB Shared_Dirty_kB Private_Clean_kB Private_Dirty_kB Anonymous_kB
+--xp 4 0 0 0 0 0 0 0
+r--p 904 548 56 500 0 0 48 32
+r-xp 1716 1332 23 1320 0 0 12 0
+rw-p 46440 2176 2176 0 0 0 2176 2176
+scope Size_kB Rss_kB Pss_kB Shared_Clean_kB Shared_Dirty_kB Private_Clean_kB Private_Dirty_kB Anonymous_kB
+TOTAL 49064 4056 2255 1820 0 0 2236 2208
+snapshot complete=yes units=kB note=proc_smaps_is_not_an_atomic_process_freeze

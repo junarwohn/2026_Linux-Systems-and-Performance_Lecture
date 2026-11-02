@@ -1,0 +1,7 @@
+devsvc case 4 (config): threads=4 seconds=3
+HANG: worker 0 finished no request for 3.0 s
+  worker 0 (tid 1480): config_update, 11805 requests
+  worker 1 (tid 1481): config_update, 15520 requests
+  worker 2 (tid 1482): config_update, 11223 requests
+  worker 3 (tid 1483): config_update, 12371 requests
+result: HANG

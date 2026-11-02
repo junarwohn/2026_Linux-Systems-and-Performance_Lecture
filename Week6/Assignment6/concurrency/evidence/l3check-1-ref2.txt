@@ -1,0 +1,4 @@
+devsvc case 1 (sink): threads=4 seconds=2
+ops=1682803 ops_per_sec=838494 parallel=34%
+check: sessions 1600 of 1600, sink_total checked by every worker every 256 requests
+result: PASS

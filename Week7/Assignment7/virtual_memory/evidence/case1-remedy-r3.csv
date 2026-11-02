@@ -1,0 +1,14 @@
+run_id,sample,elapsed_s,phase,VmSize_kB,VmRSS_kB,snapshot,live_bytes,live_blocks
+case1-remedy-r3,0,0.006059,baseline,16276,1980,1,0,0
+case1-remedy-r3,1,1.005915,running,16276,1988,2,0,0
+case1-remedy-r3,2,2.005877,running,17300,3016,3,0,0
+case1-remedy-r3,3,3.005601,running,17300,3016,4,0,0
+case1-remedy-r3,4,4.005651,running,17300,3016,5,0,0
+case1-remedy-r3,5,5.005959,running,17300,3016,6,0,0
+case1-remedy-r3,6,6.005991,running,17300,3016,7,0,0
+case1-remedy-r3,7,7.005987,running,17300,3016,8,0,0
+case1-remedy-r3,8,8.005667,running,17300,3016,9,0,0
+case1-remedy-r3,9,9.006045,running,17300,3016,10,0,0
+case1-remedy-r3,10,10.006260,running,17300,3016,11,0,0
+case1-remedy-r3,11,11.005760,running,17300,3016,12,0,0
+case1-remedy-r3,12,12.005768,running,17300,3016,13,0,0

@@ -1,0 +1,13 @@
+prediction: All five criteria pass under two-CPU affinity
+command: ['bash', 'tools/l3_check.sh', '2']
+env: {}
+kernel: posix.uname_result(sysname='Linux', nodename='17Z90S', release='7.2.11-arch1-1', version='#1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000', machine='x86_64')
+pid: 564
+lockcheck  PASS  W1=0 W2=0 W3=0 W4=0, result: PASS
+TSan       PASS  0 report(s), result: PASS
+stress     PASS  5 of 5 runs PASS (-t 2 4 4 4 8)
+parallel   PASS  98% 99% 99% (at least 3%)
+speed      PASS  812410 ops/s, reference 818455 (0.99, at least 0.70)
+case 2: PASS   (logs: logs/l3check-2-*.txt)
+elapsed_s: 22.433842
+returncode: 0

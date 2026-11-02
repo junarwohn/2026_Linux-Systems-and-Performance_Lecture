@@ -1,0 +1,25 @@
+55921e186000-55921e187000 r--p 00000000 00:1d 389751                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/observation_workload
+55921e187000-55921e188000 r-xp 00001000 00:1d 389751                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/observation_workload
+55921e188000-55921e189000 r--p 00002000 00:1d 389751                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/observation_workload
+55921e189000-55921e18a000 r--p 00002000 00:1d 389751                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/observation_workload
+55921e18a000-55921e18b000 rw-p 00003000 00:1d 389751                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/observation_workload
+559231420000-559231442000 rw-p 00000000 00:00 0                          [heap]
+7f3a6ae00000-7f3a6ae24000 r--p 00000000 00:1d 654482                     /usr/lib/libc.so.6
+7f3a6ae24000-7f3a6af9f000 r-xp 00024000 00:1d 654482                     /usr/lib/libc.so.6
+7f3a6af9f000-7f3a6b015000 r--p 0019f000 00:1d 654482                     /usr/lib/libc.so.6
+7f3a6b015000-7f3a6b019000 r--p 00214000 00:1d 654482                     /usr/lib/libc.so.6
+7f3a6b019000-7f3a6b01b000 rw-p 00218000 00:1d 654482                     /usr/lib/libc.so.6
+7f3a6b01b000-7f3a6b023000 rw-p 00000000 00:00 0 
+7f3a6b075000-7f3a6b07a000 rw-p 00000000 00:00 0 
+7f3a6b07a000-7f3a6b0a0000 r--p 00000000 00:1d 966808                     /etc/ld.so.cache
+7f3a6b0a0000-7f3a6b0a4000 r--p 00000000 00:00 0                          [vvar]
+7f3a6b0a4000-7f3a6b0a6000 r--p 00000000 00:00 0                          [vvar_vclock]
+7f3a6b0a6000-7f3a6b0a8000 r-xp 00000000 00:00 0                          [vdso]
+7f3a6b0a8000-7f3a6b0a9000 r--p 00000000 00:1d 654473                     /usr/lib/ld-linux-x86-64.so.2
+7f3a6b0a9000-7f3a6b0d6000 r-xp 00001000 00:1d 654473                     /usr/lib/ld-linux-x86-64.so.2
+7f3a6b0d6000-7f3a6b0e5000 r--p 0002e000 00:1d 654473                     /usr/lib/ld-linux-x86-64.so.2
+7f3a6b0e5000-7f3a6b0e7000 r--p 0003d000 00:1d 654473                     /usr/lib/ld-linux-x86-64.so.2
+7f3a6b0e7000-7f3a6b0e8000 rw-p 0003f000 00:1d 654473                     /usr/lib/ld-linux-x86-64.so.2
+7f3a6b0e8000-7f3a6b0e9000 rw-p 00000000 00:00 0 
+7fff99164000-7fff991a9000 rw-p 00000000 00:00 0                          [stack]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "./case1_remedy"
+  ],
+  "environment": {
+    "LD_PRELOAD": "./libmtrace_lite.so",
+    "MTRACE_OUT": "/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/evidence/case1-remedy-r3.trace"
+  },
+  "pid": 13,
+  "kernel": "7.2.11-arch1-1",
+  "prediction": "case1: growing live bytes; case2: freed bytes with retained RSS; case3: virtual thread stacks dwarf resident pages",
+  "returncode": 0,
+  "elapsed_s": 13.007069396000588
+}

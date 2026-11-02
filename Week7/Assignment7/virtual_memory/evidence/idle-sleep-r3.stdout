@@ -1,0 +1,58 @@
+pid=112
+range permissions offset device inode category Size_kB Rss_kB Pss_kB pathname
+5633cdc29000-5633cdc2b000 r--p 00000000 00:1d 668770 executable 8 8 8 /usr/bin/sleep
+5633cdc2b000-5633cdc31000 r-xp 00002000 00:1d 668770 executable 24 24 24 /usr/bin/sleep
+5633cdc31000-5633cdc33000 r--p 00008000 00:1d 668770 executable 8 8 8 /usr/bin/sleep
+5633cdc33000-5633cdc34000 r--p 0000a000 00:1d 668770 executable 4 4 4 /usr/bin/sleep
+5633cdc34000-5633cdc35000 rw-p 0000b000 00:1d 668770 executable 4 4 4 /usr/bin/sleep
+5633d0653000-5633d0674000 rw-p 00000000 00:00 0 heap 132 16 16 [heap]
+7fdac5c00000-7fdac6039000 r--p 00000000 00:1d 927269 other-file 4324 64 2 /usr/lib/locale/locale-archive
+7fdac6200000-7fdac6224000 r--p 00000000 00:1d 654482 shared-library 144 144 1 /usr/lib/libc.so.6
+7fdac6224000-7fdac639f000 r-xp 00024000 00:1d 654482 shared-library 1516 1068 9 /usr/lib/libc.so.6
+7fdac639f000-7fdac6415000 r--p 0019f000 00:1d 654482 shared-library 472 216 1 /usr/lib/libc.so.6
+7fdac6415000-7fdac6419000 r--p 00214000 00:1d 654482 shared-library 16 16 16 /usr/lib/libc.so.6
+7fdac6419000-7fdac641b000 rw-p 00218000 00:1d 654482 shared-library 8 8 8 /usr/lib/libc.so.6
+7fdac641b000-7fdac6423000 rw-p 00000000 00:00 0 anonymous 32 20 20 
+7fdac642c000-7fdac6487000 r--p 00000000 00:1d 654521 other-file 364 128 30 /usr/lib/locale/C.utf8/LC_CTYPE
+7fdac6487000-7fdac6488000 r--p 00000000 00:1d 654527 other-file 4 4 1 /usr/lib/locale/C.utf8/LC_NUMERIC
+7fdac6488000-7fdac6489000 r--p 00000000 00:1d 654530 other-file 4 4 1 /usr/lib/locale/C.utf8/LC_TIME
+7fdac6489000-7fdac648a000 r--p 00000000 00:1d 654520 other-file 4 4 1 /usr/lib/locale/C.utf8/LC_COLLATE
+7fdac648a000-7fdac648b000 r--p 00000000 00:1d 654525 other-file 4 4 1 /usr/lib/locale/C.utf8/LC_MONETARY
+7fdac648b000-7fdac648c000 r--p 00000000 00:1d 654524 other-file 4 4 1 /usr/lib/locale/C.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+7fdac648c000-7fdac648d000 r--p 00000000 00:1d 654528 other-file 4 4 1 /usr/lib/locale/C.utf8/LC_PAPER
+7fdac648d000-7fdac648e000 r--p 00000000 00:1d 654526 other-file 4 4 1 /usr/lib/locale/C.utf8/LC_NAME
+7fdac648e000-7fdac648f000 r--p 00000000 00:1d 654519 other-file 4 4 1 /usr/lib/locale/C.utf8/LC_ADDRESS
+7fdac648f000-7fdac6490000 r--p 00000000 00:1d 654529 other-file 4 4 1 /usr/lib/locale/C.utf8/LC_TELEPHONE
+7fdac6490000-7fdac6491000 r--p 00000000 00:1d 654523 other-file 4 4 1 /usr/lib/locale/C.utf8/LC_MEASUREMENT
+7fdac6491000-7fdac6498000 r--s 00000000 00:1d 858064 other-file 28 28 0 /usr/lib/gconv/gconv-modules.cache
+7fdac6498000-7fdac6499000 r--p 00000000 00:1d 654522 other-file 4 4 1 /usr/lib/locale/C.utf8/LC_IDENTIFICATION
+7fdac6499000-7fdac649e000 rw-p 00000000 00:00 0 anonymous 20 12 12 
+7fdac649e000-7fdac64c4000 r--p 00000000 00:1d 966808 shared-library 152 144 6 /etc/ld.so.cache
+7fdac64c4000-7fdac64c8000 r--p 00000000 00:00 0 special 16 0 0 [vvar]
+7fdac64c8000-7fdac64ca000 r--p 00000000 00:00 0 special 8 0 0 [vvar_vclock]
+7fdac64ca000-7fdac64cc000 r-xp 00000000 00:00 0 special 8 8 0 [vdso]
+7fdac64cc000-7fdac64cd000 r--p 00000000 00:1d 654473 shared-library 4 4 0 /usr/lib/ld-linux-x86-64.so.2
+7fdac64cd000-7fdac64fa000 r-xp 00001000 00:1d 654473 shared-library 180 180 1 /usr/lib/ld-linux-x86-64.so.2
+7fdac64fa000-7fdac6509000 r--p 0002e000 00:1d 654473 shared-library 60 60 0 /usr/lib/ld-linux-x86-64.so.2
+7fdac6509000-7fdac650b000 r--p 0003d000 00:1d 654473 shared-library 8 8 8 /usr/lib/ld-linux-x86-64.so.2
+7fdac650b000-7fdac650c000 rw-p 0003f000 00:1d 654473 shared-library 4 4 4 /usr/lib/ld-linux-x86-64.so.2
+7fdac650c000-7fdac650d000 rw-p 00000000 00:00 0 anonymous 4 4 4 
+7fff826f0000-7fff82711000 rw-p 00000000 00:00 0 stack 132 16 16 [stack]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0 special 4 0 0 [vsyscall]
+category Size_kB Rss_kB Pss_kB Shared_Clean_kB Shared_Dirty_kB Private_Clean_kB Private_Dirty_kB Anonymous_kB
+executable 48 48 48 0 0 40 8 8
+heap 132 16 16 0 0 0 16 16
+stack 132 16 16 0 0 0 16 16
+shared-library 2564 1852 54 1816 0 0 36 36
+other-file 4760 264 43 256 0 8 0 0
+anonymous 56 36 36 0 0 0 36 36
+special 36 8 0 8 0 0 0 0
+permissions Size_kB Rss_kB Pss_kB Shared_Clean_kB Shared_Dirty_kB Private_Clean_kB Private_Dirty_kB Anonymous_kB
+--xp 4 0 0 0 0 0 0 0
+r--p 5632 848 95 796 0 24 28 28
+r--s 28 28 0 28 0 0 0 0
+r-xp 1728 1280 34 1256 0 24 0 0
+rw-p 336 84 84 0 0 0 84 84
+scope Size_kB Rss_kB Pss_kB Shared_Clean_kB Shared_Dirty_kB Private_Clean_kB Private_Dirty_kB Anonymous_kB
+TOTAL 7728 2240 213 2080 0 48 112 112
+snapshot complete=yes units=kB note=proc_smaps_is_not_an_atomic_process_freeze

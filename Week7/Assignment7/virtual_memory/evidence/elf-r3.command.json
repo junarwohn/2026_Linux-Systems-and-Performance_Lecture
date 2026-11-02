@@ -1,0 +1,13 @@
+{
+  "command": [
+    "stdbuf",
+    "-o0",
+    "./elf_workload"
+  ],
+  "environment": {},
+  "pid": 122,
+  "kernel": "7.2.11-arch1-1",
+  "prediction": "Touched small blocks grow heap; large block adds an anonymous VMA; live requests shrink before heap capacity does",
+  "returncode": 0,
+  "elapsed_s": 0.00748418800503714
+}

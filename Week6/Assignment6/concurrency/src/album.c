@@ -119,12 +119,27 @@ long album_save(const album_t *a, const char *path, int compress_us, int disk_ms
  */
 album_t *album_snapshot(const album_t *a)
 {
-    (void)a;
-    return NULL;                    /* replace this stub */
+    album_t *s = malloc(sizeof *s);
+    if (!s)
+        return NULL;
+    *s = *a;
+    for (int i = 0; i < ALBUM_ITEMS; i++)
+        s->items[i].title = NULL;
+    for (int i = 0; i < ALBUM_ITEMS; i++) {
+        s->items[i].title = strdup(a->items[i].title);
+        if (!s->items[i].title) {
+            album_snapshot_free(s);
+            return NULL;
+        }
+    }
+    return s;
 }
 
 /* TODO(L2-1): free everything album_snapshot allocated. NULL is allowed. */
 void album_snapshot_free(album_t *s)
 {
-    (void)s;                        /* replace this stub */
+    if (s) {
+        album_free(s);
+        free(s);
+    }
 }

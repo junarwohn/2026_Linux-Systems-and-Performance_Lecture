@@ -1,0 +1,4 @@
+PID=304 READY phase=baseline
+PID=304 READY phase=before_release
+PID=304 READY phase=after_release
+PID=304 READY phase=done

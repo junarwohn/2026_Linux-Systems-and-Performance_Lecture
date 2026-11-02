@@ -43,9 +43,11 @@ int sink_move(int from, int to)
 {
     struct sink *a = &sinks[from], *b = &sinks[to];
     int moved = 0;
+    struct sink *first = from < to ? a : b;
+    struct sink *second = from < to ? b : a;
 
-    pthread_mutex_lock(&a->lock);
-    pthread_mutex_lock(&b->lock);
+    pthread_mutex_lock(&first->lock);
+    pthread_mutex_lock(&second->lock);
     if (a->sessions > 0) {
         a->sessions--;
         b->sessions++;
@@ -53,8 +55,8 @@ int sink_move(int from, int to)
         moved = 1;
     }
     svc_work(WORK_SINK);
-    pthread_mutex_unlock(&b->lock);
-    pthread_mutex_unlock(&a->lock);
+    pthread_mutex_unlock(&second->lock);
+    pthread_mutex_unlock(&first->lock);
     return moved;
 }
 

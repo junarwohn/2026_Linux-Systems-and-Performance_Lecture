@@ -1,0 +1,6 @@
+bqtest: producers=4 consumers=4 items/producer=20000 capacity=4 wake=signal work_us=0
+pid=94
+received=80000 lost=0 duplicate=0 garbage=0 order_violation=0 early_closed=0
+put_waits=31254 get_waits=14195 elapsed_ms=337.4 items_per_s=237114
+completion_inversions=4122 (information only: processing completion order, not dequeue order)
+PASS

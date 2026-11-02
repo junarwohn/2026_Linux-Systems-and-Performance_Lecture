@@ -1,0 +1,16 @@
+lockcheck: loaded
+devsvc case 4 (config): threads=4 seconds=1
+lockcheck: W1 possible circular locking (tid 80)
+  now:     taking outputs at config_update+0x98 (devsvc)
+           while holding cfg_lock (taken at config_update+0x19 (devsvc))
+  earlier: cfg_lock taken at output_render+0x35 (devsvc)
+           while holding outputs (taken at output_render+0x29 (devsvc)) by tid 82
+HANG: worker 0 finished no request for 3.0 s
+  worker 0 (tid 79): output_render(10), 242 requests
+  worker 1 (tid 80): config_update, 227 requests
+  worker 2 (tid 81): output_render(10), 233 requests
+  worker 3 (tid 82): output_render(10), 295 requests
+result: HANG
+lockcheck: W2 cfg_lock is still held at exit by tid 80 (thread still running), taken at config_update+0x19 (devsvc)
+lockcheck: W2 outputs+0x280 is still held at exit by tid 79 (thread still running), taken at output_render+0x29 (devsvc)
+lockcheck: summary W1=11 W2=2 W3=0 W4=0

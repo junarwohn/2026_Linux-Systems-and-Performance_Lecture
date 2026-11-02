@@ -1,0 +1,11 @@
+make -C level3/cases all
+make[1]: Entering directory '/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/level3/cases'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/level3/cases'
+chmod +x case1 case2 case3 case4 case5
+timeout 20 env LD_PRELOAD=./libmtrace_lite.so ./edge_cases
+EDGE_OK: semantics checked; inspect statistics separately
+timeout 30 env LD_PRELOAD=./libmtrace_lite.so ./known_count
+PID=21 READY phase=before_pairs
+PID=21 READY phase=after_pairs
+EXPECTED workload_malloc=400000 workload_free=400000; runtime overhead is separate

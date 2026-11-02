@@ -1,5 +1,10 @@
 # Assignment 7 materials
 
+완성된 구현과 실측 분석은 [report.md](report.md), 재현 명령·출력 명세·환경은
+[SUBMISSION.md](SUBMISSION.md)에 있다. 아래는 제공된 패키지 안내다.
+현재 구현은 skeleton 출력을 제거했다. 이 저장소의 실제 case 소스 경로는
+`level3/cases/`이며 Makefile과 root launcher를 해당 경로에 맞췄다.
+
 Build `vasdump` and complete `libmtrace_lite.so`, then use both to diagnose the
 three required cases. The assignment document defines required experiments,
 analysis questions, and grading.

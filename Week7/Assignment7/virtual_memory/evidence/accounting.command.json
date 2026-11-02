@@ -1,0 +1,14 @@
+{
+  "command": [
+    "./accounting_test"
+  ],
+  "environment": {
+    "LD_PRELOAD": "./libmtrace_lite.so",
+    "MTRACE_OUT": "/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/evidence/accounting.trace"
+  },
+  "pid": 143,
+  "kernel": "7.2.11-arch1-1",
+  "prediction": "Touched small blocks grow heap; large block adds an anonymous VMA; live requests shrink before heap capacity does",
+  "returncode": 0,
+  "elapsed_s": 0.07530239600600908
+}

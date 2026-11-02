@@ -1,0 +1,5 @@
+devsvc case 4 (config): threads=2 seconds=2
+check failed: output_render(4) read an inconsistent or freed config
+ops=3673184 ops_per_sec=1830839 parallel=96%
+check: 3671331 frames, 1260 with a bad config, config version 1856 applied to every output
+result: FAIL

@@ -1,0 +1,40 @@
+prediction: Queued writers can make read/read inverse orders unsafe
+command: ['bash', 'tools/l3_run.sh', '3', '-d', '3']
+env: {'DEVSVC_RWLOCK': 'writer', 'TAG': '3-writer'}
+kernel: posix.uname_result(sysname='Linux', nodename='17Z90S', release='7.2.11-arch1-1', version='#1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000', machine='x86_64')
+pid: 1796
+$ LD_PRELOAD=./bin/lockcheck.so ./bin/devsvc -c 3 -d 3
+$ ./bin/devsvc_tsan -c 3 -d 3
+== case 3: lockcheck
+lockcheck: W1 possible circular locking (tid 1802)
+  now:     taking apps_lock (read) at catalog_perm_users+0x24 (devsvc)
+           while holding perms_lock (read) (taken at catalog_perm_users+0x18 (devsvc))
+  earlier: perms_lock (read) taken at catalog_can_launch+0x25 (devsvc)
+           while holding apps_lock (read) (taken at catalog_can_launch+0x19 (devsvc)) by tid 1802
+lockcheck: W1 possible circular locking (tid 1802)
+  now:     taking perms_lock (read) at catalog_grant+0x2b (devsvc)
+           while holding apps_lock (write) (taken at catalog_grant+0x1f (devsvc))
+  earlier: apps_lock (read) taken at catalog_perm_users+0x24 (devsvc)
+           while holding perms_lock (read) (taken at catalog_perm_users+0x18 (devsvc)) by tid 1802
+lockcheck: W1 possible circular locking (tid 1803)
+  now:     taking perms_lock (write) at catalog_set_perm+0x25 (devsvc)
+           while holding apps_lock (read) (taken at catalog_set_perm+0x19 (devsvc))
+  earlier: apps_lock (read) taken at catalog_perm_users+0x24 (devsvc)
+           while holding perms_lock (read) (taken at catalog_perm_users+0x18 (devsvc)) by tid 1802
+HANG: worker 0 finished no request for 3.0 s
+  worker 0 (tid 1802): catalog_perm_users(4), 1141 requests
+  worker 1 (tid 1803): catalog_set_perm(3, 1), 1147 requests
+  worker 2 (tid 1804): catalog_can_launch(2, 7), 1045 requests
+  worker 3 (tid 1805): catalog_grant(0, 3), 1255 requests
+result: HANG
+lockcheck: W2 apps_lock (read) is still held at exit by 1 reader(s), last taken at catalog_set_perm+0x19 (devsvc)
+lockcheck: W2 perms_lock (read) is still held at exit by 1 reader(s), last taken at catalog_perm_users+0x18 (devsvc)
+lockcheck: summary W1=3 W2=2 W3=0 W4=0
+== case 3: ThreadSanitizer
+WARNING: ThreadSanitizer: lock-order-inversion (potential deadlock) (pid=1807)
+SUMMARY: ThreadSanitizer: lock-order-inversion (potential deadlock) src/catalog.c:49 in catalog_can_launch
+HANG: worker 0 finished no request for 3.0 s
+result: HANG
+Saved: logs/l3-3-writer-lockcheck.txt logs/l3-3-writer-tsan.txt
+elapsed_s: 7.125718
+returncode: 0

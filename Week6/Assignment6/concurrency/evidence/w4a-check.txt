@@ -1,0 +1,13 @@
+prediction: Grace period waits for a worker blocked on cfg_lock
+command: ['bash', 'tools/l3_check.sh', '4']
+env: {'DEVSVC': '/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4a', 'DEVSVC_TSAN': '/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4a_tsan', 'TAG': 'w4a'}
+kernel: posix.uname_result(sysname='Linux', nodename='17Z90S', release='7.2.11-arch1-1', version='#1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000', machine='x86_64')
+pid: 1460
+lockcheck  FAIL  W1=0 W2=1 W3=29990 W4=0, result: HANG
+TSan       FAIL  0 report(s), result: HANG
+stress     FAIL  0 of 5 runs PASS (-t 2 4 4 4 8)
+parallel   FAIL  ?% ?% ?% (at least 3%)
+speed      FAIL  0 ops/s, reference 1769793 (0.00, at least 0.70)
+case 4: FAIL   (logs: logs/l3check-w4a-*.txt)
+elapsed_s: 29.333872
+returncode: 1

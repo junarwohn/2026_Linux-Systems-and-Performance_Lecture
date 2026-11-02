@@ -1,0 +1,4 @@
+devsvc case 2 (bus): threads=4 seconds=2
+ops=1603461 ops_per_sec=795827 parallel=99%
+check: 1603464 events, every persistent subscriber called 1603464 to 1603464 times (must be 1603464)
+result: PASS

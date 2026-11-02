@@ -1,0 +1,15 @@
+{
+  "command": [
+    "ls",
+    "-l",
+    "/usr"
+  ],
+  "environment": {
+    "LD_PRELOAD": "./libmtrace_lite.so",
+    "MTRACE_OUT": "/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/evidence/ls-r1.trace"
+  },
+  "pid": 75,
+  "returncode": 0,
+  "elapsed_s": 0.003706299001350999,
+  "kernel": "7.2.11-arch1-1"
+}

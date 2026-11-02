@@ -1,0 +1,16 @@
+case1-r1 14 samples
+case2-r1 15 samples
+case2-remedy-r1 15 samples
+case3-r1 38 samples
+case3-remedy-r1 38 samples
+case1-r2 14 samples
+case2-r2 15 samples
+case2-remedy-r2 15 samples
+case3-r2 38 samples
+case3-remedy-r2 38 samples
+case1-r3 14 samples
+case2-r3 15 samples
+case2-remedy-r3 15 samples
+case3-r3 38 samples
+case3-remedy-r3 38 samples
+ALL REQUIRED MEASUREMENTS FINISHED

@@ -1,0 +1,7 @@
+lockcheck: loaded
+devsvc case 4 (config): threads=4 seconds=3
+check failed: output_render(1) read an inconsistent or freed config
+ops=4900132 ops_per_sec=1628680 parallel=94%
+check: 4897711 frames, 690 with a bad config, config version 2426 applied to every output
+result: FAIL
+lockcheck: summary W1=0 W2=0 W3=0 W4=0

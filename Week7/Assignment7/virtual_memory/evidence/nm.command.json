@@ -1,0 +1,12 @@
+{
+  "command": [
+    "nm",
+    "-n",
+    "./elf_workload"
+  ],
+  "environment": {},
+  "pid": 150,
+  "returncode": 0,
+  "elapsed_s": 0.03478173600160517,
+  "kernel": "7.2.11-arch1-1"
+}

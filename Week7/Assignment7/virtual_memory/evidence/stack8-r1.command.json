@@ -1,0 +1,13 @@
+{
+  "command": [
+    "./observation_workload",
+    "stack",
+    "8"
+  ],
+  "environment": {},
+  "pid": 56,
+  "kernel": "7.2.11-arch1-1",
+  "prediction": "Touched small blocks grow heap; large block adds an anonymous VMA; live requests shrink before heap capacity does",
+  "returncode": 0,
+  "elapsed_s": 0.007196865000878461
+}

@@ -1,0 +1,17 @@
+prediction: Snapshot shortens lock ownership; handoff pays bounded application work; CPU contention can preempt a lock holder
+command: ['./bin/albumsvc', '-m', 'lock', '-d', '10', '-o', '/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/l2-lock-r2.csv']
+env: {}
+kernel: posix.uname_result(sysname='Linux', nodename='17Z90S', release='7.2.11-arch1-1', version='#1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000', machine='x86_64')
+pid: 290
+albumsvc: mode=lock seconds=10 disk_ms=20 compress_us=3000 save_ms=240 saver_cpu=-1
+pid=290
+TIDS ui=291 saver=292 scan-0=293 scan-1=294
+frames=577 miss=24 skipped=24
+frame_late     n=577 p50=2067 p99=25069 max=25211 (us)
+ui_lock        n=577 p50=0 p99=22991 max=23157 (us)
+saver_hold     n=42 p50=23159 p99=23257 max=23257 (us)
+save           n=42 p50=23159 p99=23257 max=23257 (us)
+saver_cpu_ms=130.2
+updates_sent=5981 updates_applied=5981
+elapsed_s: 10.333697
+returncode: 0

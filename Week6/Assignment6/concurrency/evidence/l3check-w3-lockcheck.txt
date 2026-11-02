@@ -1,0 +1,16 @@
+lockcheck: loaded
+devsvc case 3 (catalog): threads=4 seconds=3
+lockcheck: W1 possible circular locking (tid 1283)
+  now:     taking apps_lock (read) at catalog_set_perm+0x23 (w3)
+           while holding perms_lock (write) (taken at catalog_set_perm+0x17 (w3))
+  earlier: perms_lock (read) taken at catalog_grant+0x21 (w3)
+           while holding apps_lock (write) (taken at catalog_grant+0x15 (w3)) by tid 1282
+HANG: worker 0 finished no request for 3.0 s
+  worker 0 (tid 1282): catalog_can_launch(3, 4), 54 requests
+  worker 1 (tid 1283): catalog_set_perm(1, 0), 27 requests
+  worker 2 (tid 1284): catalog_grant(0, 2), 26 requests
+  worker 3 (tid 1285): catalog_perm_users(6), 39 requests
+result: HANG
+lockcheck: W2 perms_lock (write) is still held at exit by tid 1283 (thread still running), taken at catalog_set_perm+0x17 (w3)
+lockcheck: W2 apps_lock (write) is still held at exit by tid 1284 (thread still running), taken at catalog_grant+0x15 (w3)
+lockcheck: summary W1=1 W2=2 W3=0 W4=0

@@ -1,0 +1,93 @@
+prediction: TSan detects lock-order inversions except the same-lock recursive acquire in case 2
+command: ['./evidence/baseline/devsvc_tsan', '-c', '1', '-d', '1']
+env: {}
+kernel: posix.uname_result(sysname='Linux', nodename='17Z90S', release='7.2.11-arch1-1', version='#1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000', machine='x86_64')
+pid: 20
+devsvc case 1 (sink): threads=4 seconds=1
+==================
+WARNING: ThreadSanitizer: lock-order-inversion (potential deadlock) (pid=20)
+  Cycle in lock order graph: M0 (0x55bee82cc6c0) => M1 (0x55bee82cc540) => M0
+
+  Mutex M1 acquired here while holding mutex M0 in thread T1:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 sink_move src/sink.c:48 (devsvc_tsan+0x40c3) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_sink src/devsvc.c:141 (devsvc_tsan+0x2e0b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+    Hint: use TSAN_OPTIONS=second_deadlock_stack=1 to get more informative warning message
+
+  Mutex M0 acquired here while holding mutex M1 in thread T1:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 sink_total src/sink.c:29 (devsvc_tsan+0x4019) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_sink src/devsvc.c:145 (devsvc_tsan+0x2e3e) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Thread T1 (tid=22, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3620) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+
+SUMMARY: ThreadSanitizer: lock-order-inversion (potential deadlock) src/sink.c:48 in sink_move
+==================
+==================
+WARNING: ThreadSanitizer: lock-order-inversion (potential deadlock) (pid=20)
+  Cycle in lock order graph: M0 (0x55bee82cc480) => M1 (0x55bee82cc6c0) => M0
+
+  Mutex M1 acquired here while holding mutex M0 in thread T1:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 sink_total src/sink.c:29 (devsvc_tsan+0x4019) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_sink src/devsvc.c:145 (devsvc_tsan+0x2e3e) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+    Hint: use TSAN_OPTIONS=second_deadlock_stack=1 to get more informative warning message
+
+  Mutex M0 acquired here while holding mutex M1 in thread T1:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 sink_move src/sink.c:48 (devsvc_tsan+0x40c3) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_sink src/devsvc.c:141 (devsvc_tsan+0x2e0b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Thread T1 (tid=22, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3620) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+
+SUMMARY: ThreadSanitizer: lock-order-inversion (potential deadlock) src/sink.c:29 in sink_total
+==================
+==================
+WARNING: ThreadSanitizer: lock-order-inversion (potential deadlock) (pid=20)
+  Cycle in lock order graph: M0 (0x55bee82cc540) => M1 (0x55bee82cc800) => M0
+
+  Mutex M1 acquired here while holding mutex M0 in thread T1:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 sink_total src/sink.c:29 (devsvc_tsan+0x4019) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_sink src/devsvc.c:145 (devsvc_tsan+0x2e3e) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+    Hint: use TSAN_OPTIONS=second_deadlock_stack=1 to get more informative warning message
+
+  Mutex M0 acquired here while holding mutex M1 in thread T1:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 sink_move src/sink.c:48 (devsvc_tsan+0x40c3) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_sink src/devsvc.c:141 (devsvc_tsan+0x2e0b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Thread T1 (tid=22, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3620) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+
+SUMMARY: ThreadSanitizer: lock-order-inversion (potential deadlock) src/sink.c:29 in sink_total
+==================
+HANG: worker 0 finished no request for 3.0 s
+  worker 0 (tid 22): sink_move(14, 3), 3 requests
+  worker 1 (tid 23): sink_total, 0 requests
+  worker 2 (tid 24): sink_move(4, 11), 0 requests
+  worker 3 (tid 25): sink_move(6, 14), 0 requests
+result: HANG
+ThreadSanitizer: reported 3 warnings
+elapsed_s: 4.072972
+returncode: 66

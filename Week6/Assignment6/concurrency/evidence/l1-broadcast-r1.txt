@@ -1,0 +1,13 @@
+prediction: Broadcast wakes extra threads; predicates must be rechecked
+command: ['./bin/bqtest', '-p', '4', '-c', '4', '-n', '50000', '-q', '4', '-b']
+env: {}
+kernel: posix.uname_result(sysname='Linux', nodename='17Z90S', release='7.2.11-arch1-1', version='#1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000', machine='x86_64')
+pid: 154
+bqtest: producers=4 consumers=4 items/producer=50000 capacity=4 wake=broadcast work_us=0
+pid=154
+received=200000 lost=0 duplicate=0 garbage=0 order_violation=0 early_closed=0
+put_waits=55891 get_waits=52600 elapsed_ms=442.0 items_per_s=452514
+completion_inversions=6997 (information only: processing completion order, not dequeue order)
+PASS
+elapsed_s: 0.465245
+returncode: 0

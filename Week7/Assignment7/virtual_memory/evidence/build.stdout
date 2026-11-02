@@ -1,0 +1,9 @@
+make -C level3/cases all
+cc -D_GNU_SOURCE -O1 -g -std=c11 -Wall -Wextra -Wpedantic -fno-builtin -fno-omit-frame-pointer workloads/idle_student.c -o idle_student
+cc -D_GNU_SOURCE -O1 -g -std=c11 -Wall -Wextra -Wpedantic -fno-builtin -fno-omit-frame-pointer workloads/thread_student.c -pthread -o thread_student
+cc -D_GNU_SOURCE -O1 -g -std=c11 -Wall -Wextra -Wpedantic -fno-builtin -fno-omit-frame-pointer tests/accounting.c -o accounting_test
+make[1]: Entering directory '/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/level3/cases'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/level3/cases'
+cc -D_GNU_SOURCE -O1 -g -std=c11 -Wall -Wextra -Wpedantic -fno-builtin -fno-omit-frame-pointer -fPIC -shared level2/support.c level2/mtrace_student.c -ldl -pthread -o libmtrace_lite.so
+chmod +x case1 case2 case3 case4 case5

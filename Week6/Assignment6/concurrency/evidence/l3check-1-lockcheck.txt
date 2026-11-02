@@ -1,0 +1,6 @@
+lockcheck: loaded
+devsvc case 1 (sink): threads=4 seconds=3
+ops=2300357 ops_per_sec=764351 parallel=34%
+check: sessions 1600 of 1600, sink_total checked by every worker every 256 requests
+result: PASS
+lockcheck: summary W1=0 W2=0 W3=0 W4=0

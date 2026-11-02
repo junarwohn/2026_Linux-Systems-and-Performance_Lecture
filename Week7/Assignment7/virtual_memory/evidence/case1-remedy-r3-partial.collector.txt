@@ -1,0 +1,3 @@
+Collector failure: VmSize field disappeared immediately before process exit became observable through poll().
+The partial run is retained, excluded from report statistics, and repeated as a fresh case1-remedy-r3 process.
+The collector now waits up to one second for a real exit before accepting disappearing /proc fields.

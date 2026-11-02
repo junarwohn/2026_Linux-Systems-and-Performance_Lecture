@@ -1,0 +1,11 @@
+lockcheck: loaded
+devsvc case 2 (bus): threads=4 seconds=1
+lockcheck: W1 possible deadlock: tid 41 takes bus_lock at bus_unsubscribe+0x18 (devsvc) while it holds it
+HANG: worker 0 finished no request for 3.0 s
+  worker 0 (tid 41): bus_publish(0), 0 requests
+  worker 1 (tid 42): bus_publish(0), 0 requests
+  worker 2 (tid 43): bus_publish(0), 0 requests
+  worker 3 (tid 44): bus_publish(0), 0 requests
+result: HANG
+lockcheck: W2 bus_lock is still held at exit by tid 41 (thread still running), taken at bus_publish+0x1b (devsvc)
+lockcheck: summary W1=1 W2=1 W3=0 W4=0

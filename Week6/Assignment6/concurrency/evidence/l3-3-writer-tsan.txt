@@ -1,0 +1,46 @@
+devsvc case 3 (catalog): threads=4 seconds=3 rwlock=writer-preferring
+==================
+WARNING: ThreadSanitizer: lock-order-inversion (potential deadlock) (pid=1807)
+  Cycle in lock order graph: M0 (0x560b1e414b40) => M1 (0x560b1e414b00) => M0
+
+  Mutex M1 acquired here while holding mutex M0 in thread T1:
+    #0 pthread_rwlock_rdlock <null> (libtsan.so.2+0x5e341) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 catalog_can_launch src/catalog.c:49 (devsvc_tsan+0x4536) (BuildId: afc7f4f9b4cc6de5d75e1f1810014b7189bd3cc9)
+    #2 req_catalog src/devsvc.c:233 (devsvc_tsan+0x2c2e) (BuildId: afc7f4f9b4cc6de5d75e1f1810014b7189bd3cc9)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x25b4) (BuildId: afc7f4f9b4cc6de5d75e1f1810014b7189bd3cc9)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 previously acquired by the same thread here:
+    #0 pthread_rwlock_rdlock <null> (libtsan.so.2+0x5e341) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 catalog_can_launch src/catalog.c:48 (devsvc_tsan+0x452a) (BuildId: afc7f4f9b4cc6de5d75e1f1810014b7189bd3cc9)
+    #2 req_catalog src/devsvc.c:233 (devsvc_tsan+0x2c2e) (BuildId: afc7f4f9b4cc6de5d75e1f1810014b7189bd3cc9)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x25b4) (BuildId: afc7f4f9b4cc6de5d75e1f1810014b7189bd3cc9)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 acquired here while holding mutex M1 in thread T1:
+    #0 pthread_rwlock_rdlock <null> (libtsan.so.2+0x5e341) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 catalog_perm_users src/catalog.c:61 (devsvc_tsan+0x45d4) (BuildId: afc7f4f9b4cc6de5d75e1f1810014b7189bd3cc9)
+    #2 req_catalog src/devsvc.c:237 (devsvc_tsan+0x2c89) (BuildId: afc7f4f9b4cc6de5d75e1f1810014b7189bd3cc9)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x25b4) (BuildId: afc7f4f9b4cc6de5d75e1f1810014b7189bd3cc9)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M1 previously acquired by the same thread here:
+    #0 pthread_rwlock_rdlock <null> (libtsan.so.2+0x5e341) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 catalog_perm_users src/catalog.c:60 (devsvc_tsan+0x45c8) (BuildId: afc7f4f9b4cc6de5d75e1f1810014b7189bd3cc9)
+    #2 req_catalog src/devsvc.c:237 (devsvc_tsan+0x2c89) (BuildId: afc7f4f9b4cc6de5d75e1f1810014b7189bd3cc9)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x25b4) (BuildId: afc7f4f9b4cc6de5d75e1f1810014b7189bd3cc9)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Thread T1 (tid=1809, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3660) (BuildId: afc7f4f9b4cc6de5d75e1f1810014b7189bd3cc9)
+
+SUMMARY: ThreadSanitizer: lock-order-inversion (potential deadlock) src/catalog.c:49 in catalog_can_launch
+==================
+HANG: worker 0 finished no request for 3.0 s
+  worker 0 (tid 1809): catalog_can_launch(3, 5), 23 requests
+  worker 1 (tid 1810): catalog_set_perm(2, 0), 80 requests
+  worker 2 (tid 1811): catalog_revoke(3, 7), 23 requests
+  worker 3 (tid 1812): catalog_perm_users(4), 32 requests
+result: HANG
+ThreadSanitizer: reported 1 warnings

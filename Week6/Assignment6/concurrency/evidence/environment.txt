@@ -1,0 +1,19 @@
+prediction: Record actual environment, including unavailable tools
+command: ['bash', '-c', 'uname -a; getconf GNU_LIBC_VERSION; getconf PAGESIZE; gcc --version; nproc; taskset -pc $$; command -v bpftrace perf strace; ulimit -s']
+env: {}
+kernel: posix.uname_result(sysname='Linux', nodename='17Z90S', release='7.2.11-arch1-1', version='#1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000', machine='x86_64')
+pid: 15
+Linux 17Z90S 7.2.11-arch1-1 #1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000 x86_64 GNU/Linux
+glibc 2.44
+4096
+gcc (GCC) 16.2.1 20260810
+Copyright (C) 2026 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+2
+pid 15's current affinity list: 0,1
+/usr/bin/strace
+8192
+elapsed_s: 0.008346
+returncode: 0

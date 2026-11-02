@@ -1,0 +1,68 @@
+[
+  {
+    "stage": "layout",
+    "trace": {},
+    "categories": {
+      "executable": {
+        "Size": 20,
+        "Rss": 20,
+        "Pss": 20,
+        "Shared_Clean": 0,
+        "Shared_Dirty": 0,
+        "Private_Clean": 12,
+        "Private_Dirty": 8,
+        "Anonymous": 8
+      },
+      "anonymous": {
+        "Size": 8248,
+        "Rss": 40,
+        "Pss": 40,
+        "Shared_Clean": 0,
+        "Shared_Dirty": 0,
+        "Private_Clean": 0,
+        "Private_Dirty": 40,
+        "Anonymous": 40
+      },
+      "heap": {
+        "Size": 132,
+        "Rss": 8,
+        "Pss": 8,
+        "Shared_Clean": 0,
+        "Shared_Dirty": 0,
+        "Private_Clean": 0,
+        "Private_Dirty": 8,
+        "Anonymous": 8
+      },
+      "shared-library": {
+        "Size": 2584,
+        "Rss": 1812,
+        "Pss": 74,
+        "Shared_Clean": 1756,
+        "Shared_Dirty": 0,
+        "Private_Clean": 12,
+        "Private_Dirty": 44,
+        "Anonymous": 44
+      },
+      "special": {
+        "Size": 36,
+        "Rss": 8,
+        "Pss": 0,
+        "Shared_Clean": 8,
+        "Shared_Dirty": 0,
+        "Private_Clean": 0,
+        "Private_Dirty": 0,
+        "Anonymous": 0
+      },
+      "stack": {
+        "Size": 132,
+        "Rss": 16,
+        "Pss": 16,
+        "Shared_Clean": 0,
+        "Shared_Dirty": 0,
+        "Private_Clean": 0,
+        "Private_Dirty": 16,
+        "Anonymous": 16
+      }
+    }
+  }
+]

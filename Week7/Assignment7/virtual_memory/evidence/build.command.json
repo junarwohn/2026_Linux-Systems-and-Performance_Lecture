@@ -1,0 +1,11 @@
+{
+  "command": [
+    "make",
+    "-j4"
+  ],
+  "environment": {},
+  "pid": 22,
+  "returncode": 0,
+  "elapsed_s": 0.16421199899923522,
+  "kernel": "7.2.11-arch1-1"
+}

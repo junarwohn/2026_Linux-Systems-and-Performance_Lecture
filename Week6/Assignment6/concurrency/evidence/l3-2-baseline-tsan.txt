@@ -1,0 +1,14 @@
+prediction: TSan detects lock-order inversions except the same-lock recursive acquire in case 2
+command: ['./evidence/baseline/devsvc_tsan', '-c', '2', '-d', '1']
+env: {}
+kernel: posix.uname_result(sysname='Linux', nodename='17Z90S', release='7.2.11-arch1-1', version='#1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000', machine='x86_64')
+pid: 31
+devsvc case 2 (bus): threads=4 seconds=1
+HANG: worker 0 finished no request for 3.0 s
+  worker 0 (tid 33): bus_publish(0), 0 requests
+  worker 1 (tid 34): bus_publish(0), 0 requests
+  worker 2 (tid 35): bus_publish(0), 0 requests
+  worker 3 (tid 36): bus_publish(0), 0 requests
+result: HANG
+elapsed_s: 4.072018
+returncode: 3

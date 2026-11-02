@@ -1,0 +1,7 @@
+devsvc case 2 (bus): threads=4 seconds=1
+HANG: worker 0 finished no request for 3.0 s
+  worker 0 (tid 48): bus_publish(0), 0 requests
+  worker 1 (tid 49): bus_publish(0), 0 requests
+  worker 2 (tid 50): bus_publish(0), 0 requests
+  worker 3 (tid 51): bus_publish(0), 0 requests
+result: HANG

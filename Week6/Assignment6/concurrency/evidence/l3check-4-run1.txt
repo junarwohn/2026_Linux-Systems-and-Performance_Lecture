@@ -1,0 +1,4 @@
+devsvc case 4 (config): threads=2 seconds=2
+ops=2958638 ops_per_sec=1470181 parallel=94%
+check: 2957130 frames, 0 with a bad config, config version 1511 applied to every output
+result: PASS

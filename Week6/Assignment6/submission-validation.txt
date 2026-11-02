@@ -1,0 +1,302 @@
+$ ['sha256sum', '-c', 'SUBMISSION_MANIFEST.sha256']
+.gitignore: OK
+Makefile: OK
+README.md: OK
+SUBMISSION.md: OK
+analysis/measure.py: OK
+analysis/report.py: OK
+analysis/trace.sh: OK
+evidence/baseline/bus.c: OK
+evidence/baseline/catalog.c: OK
+evidence/baseline/config.c: OK
+evidence/baseline/sink.c: OK
+evidence/bpftrace-availability.txt: OK
+evidence/bugif-build.txt: OK
+evidence/environment.txt: OK
+evidence/l1-bqtest-close.txt: OK
+evidence/l1-bqtest-stress-b.txt: OK
+evidence/l1-bqtest-stress.txt: OK
+evidence/l1-bqtest-timeout.txt: OK
+evidence/l1-bqtest_tsan-close.txt: OK
+evidence/l1-bqtest_tsan-stress-b.txt: OK
+evidence/l1-bqtest_tsan-stress.txt: OK
+evidence/l1-bqtest_tsan-timeout.txt: OK
+evidence/l1-broadcast-r1.txt: OK
+evidence/l1-broadcast-r2.txt: OK
+evidence/l1-broadcast-r3.txt: OK
+evidence/l1-bugif.txt: OK
+evidence/l1-check.txt: OK
+evidence/l1-q1-r1.txt: OK
+evidence/l1-q1-r2.txt: OK
+evidence/l1-q1-r3.txt: OK
+evidence/l1-q4-r1.txt: OK
+evidence/l1-q4-r2.txt: OK
+evidence/l1-q4-r3.txt: OK
+evidence/l1-q64-r1.txt: OK
+evidence/l1-q64-r2.txt: OK
+evidence/l1-q64-r3.txt: OK
+evidence/l1-signal-r1.txt: OK
+evidence/l1-signal-r2.txt: OK
+evidence/l1-signal-r3.txt: OK
+evidence/l1-work-r1.txt: OK
+evidence/l1-work-r2.txt: OK
+evidence/l1-work-r3.txt: OK
+evidence/l2-handoff-r1.csv: OK
+evidence/l2-handoff-r1.txt: OK
+evidence/l2-handoff-r2.csv: OK
+evidence/l2-handoff-r2.txt: OK
+evidence/l2-handoff-r3.csv: OK
+evidence/l2-handoff-r3.txt: OK
+evidence/l2-handoff.strace: OK
+evidence/l2-lock-D5-r1.csv: OK
+evidence/l2-lock-D5-r1.txt: OK
+evidence/l2-lock-D5-r2.csv: OK
+evidence/l2-lock-D5-r2.txt: OK
+evidence/l2-lock-D5-r3.csv: OK
+evidence/l2-lock-D5-r3.txt: OK
+evidence/l2-lock-burn-r1.csv: OK
+evidence/l2-lock-burn-r1.txt: OK
+evidence/l2-lock-burn-r2.csv: OK
+evidence/l2-lock-burn-r2.txt: OK
+evidence/l2-lock-burn-r3.csv: OK
+evidence/l2-lock-burn-r3.txt: OK
+evidence/l2-lock-cpu-r1.csv: OK
+evidence/l2-lock-cpu-r1.txt: OK
+evidence/l2-lock-cpu-r2.csv: OK
+evidence/l2-lock-cpu-r2.txt: OK
+evidence/l2-lock-cpu-r3.csv: OK
+evidence/l2-lock-cpu-r3.txt: OK
+evidence/l2-lock-r1.csv: OK
+evidence/l2-lock-r1.txt: OK
+evidence/l2-lock-r2.csv: OK
+evidence/l2-lock-r2.txt: OK
+evidence/l2-lock-r3.csv: OK
+evidence/l2-lock-r3.txt: OK
+evidence/l2-lock.strace: OK
+evidence/l2-snapshot-burn-r1.csv: OK
+evidence/l2-snapshot-burn-r1.txt: OK
+evidence/l2-snapshot-burn-r2.csv: OK
+evidence/l2-snapshot-burn-r2.txt: OK
+evidence/l2-snapshot-burn-r3.csv: OK
+evidence/l2-snapshot-burn-r3.txt: OK
+evidence/l2-snapshot-r1.csv: OK
+evidence/l2-snapshot-r1.txt: OK
+evidence/l2-snapshot-r2.csv: OK
+evidence/l2-snapshot-r2.txt: OK
+evidence/l2-snapshot-r3.csv: OK
+evidence/l2-snapshot-r3.txt: OK
+evidence/l2-snapshot.strace: OK
+evidence/l3-1-after.txt: OK
+evidence/l3-1-baseline-native.txt: OK
+evidence/l3-1-baseline-tsan.txt: OK
+evidence/l3-1-before-lockcheck.txt: OK
+evidence/l3-1-before-tsan.txt: OK
+evidence/l3-1-lockcheck.txt: OK
+evidence/l3-1-tsan.txt: OK
+evidence/l3-2-after.txt: OK
+evidence/l3-2-baseline-native.txt: OK
+evidence/l3-2-baseline-tsan.txt: OK
+evidence/l3-2-before-lockcheck.txt: OK
+evidence/l3-2-before-tsan.txt: OK
+evidence/l3-2-lockcheck.txt: OK
+evidence/l3-2-tsan.txt: OK
+evidence/l3-3-after.txt: OK
+evidence/l3-3-baseline-native.txt: OK
+evidence/l3-3-baseline-tsan.txt: OK
+evidence/l3-3-before-lockcheck.txt: OK
+evidence/l3-3-before-tsan.txt: OK
+evidence/l3-3-lockcheck.txt: OK
+evidence/l3-3-tsan.txt: OK
+evidence/l3-3-writer-lockcheck.txt: OK
+evidence/l3-3-writer-tsan.txt: OK
+evidence/l3-4-after.txt: OK
+evidence/l3-4-baseline-native.txt: OK
+evidence/l3-4-baseline-tsan.txt: OK
+evidence/l3-4-before-lockcheck.txt: OK
+evidence/l3-4-before-tsan.txt: OK
+evidence/l3-4-lockcheck.txt: OK
+evidence/l3-4-tsan.txt: OK
+evidence/l3-writer.txt: OK
+evidence/l3check-1-lockcheck.txt: OK
+evidence/l3check-1-ref2.txt: OK
+evidence/l3check-1-ref3.txt: OK
+evidence/l3check-1-ref4.txt: OK
+evidence/l3check-1-run1.txt: OK
+evidence/l3check-1-run2.txt: OK
+evidence/l3check-1-run3.txt: OK
+evidence/l3check-1-run4.txt: OK
+evidence/l3check-1-run5.txt: OK
+evidence/l3check-1-tsan.txt: OK
+evidence/l3check-1-verdict.txt: OK
+evidence/l3check-1.txt: OK
+evidence/l3check-2-lockcheck.txt: OK
+evidence/l3check-2-ref2.txt: OK
+evidence/l3check-2-ref3.txt: OK
+evidence/l3check-2-ref4.txt: OK
+evidence/l3check-2-run1.txt: OK
+evidence/l3check-2-run2.txt: OK
+evidence/l3check-2-run3.txt: OK
+evidence/l3check-2-run4.txt: OK
+evidence/l3check-2-run5.txt: OK
+evidence/l3check-2-tsan.txt: OK
+evidence/l3check-2-verdict.txt: OK
+evidence/l3check-2.txt: OK
+evidence/l3check-3-lockcheck.txt: OK
+evidence/l3check-3-ref2.txt: OK
+evidence/l3check-3-ref3.txt: OK
+evidence/l3check-3-ref4.txt: OK
+evidence/l3check-3-run1.txt: OK
+evidence/l3check-3-run2.txt: OK
+evidence/l3check-3-run3.txt: OK
+evidence/l3check-3-run4.txt: OK
+evidence/l3check-3-run5.txt: OK
+evidence/l3check-3-tsan.txt: OK
+evidence/l3check-3-verdict.txt: OK
+evidence/l3check-3.txt: OK
+evidence/l3check-4-lockcheck.txt: OK
+evidence/l3check-4-ref2.txt: OK
+evidence/l3check-4-ref3.txt: OK
+evidence/l3check-4-ref4.txt: OK
+evidence/l3check-4-run1.txt: OK
+evidence/l3check-4-run2.txt: OK
+evidence/l3check-4-run3.txt: OK
+evidence/l3check-4-run4.txt: OK
+evidence/l3check-4-run5.txt: OK
+evidence/l3check-4-tsan.txt: OK
+evidence/l3check-4-verdict.txt: OK
+evidence/l3check-4.txt: OK
+evidence/l3check-w2-lockcheck.txt: OK
+evidence/l3check-w2-ref2.txt: OK
+evidence/l3check-w2-ref3.txt: OK
+evidence/l3check-w2-ref4.txt: OK
+evidence/l3check-w2-run1.txt: OK
+evidence/l3check-w2-run2.txt: OK
+evidence/l3check-w2-run3.txt: OK
+evidence/l3check-w2-run4.txt: OK
+evidence/l3check-w2-run5.txt: OK
+evidence/l3check-w2-tsan.txt: OK
+evidence/l3check-w3-lockcheck.txt: OK
+evidence/l3check-w3-ref2.txt: OK
+evidence/l3check-w3-ref3.txt: OK
+evidence/l3check-w3-ref4.txt: OK
+evidence/l3check-w3-run1.txt: OK
+evidence/l3check-w3-run2.txt: OK
+evidence/l3check-w3-run3.txt: OK
+evidence/l3check-w3-run4.txt: OK
+evidence/l3check-w3-run5.txt: OK
+evidence/l3check-w3-tsan.txt: OK
+evidence/l3check-w4a-lockcheck.txt: OK
+evidence/l3check-w4a-ref2.txt: OK
+evidence/l3check-w4a-ref3.txt: OK
+evidence/l3check-w4a-ref4.txt: OK
+evidence/l3check-w4a-run1.txt: OK
+evidence/l3check-w4a-run2.txt: OK
+evidence/l3check-w4a-run3.txt: OK
+evidence/l3check-w4a-run4.txt: OK
+evidence/l3check-w4a-run5.txt: OK
+evidence/l3check-w4a-tsan.txt: OK
+evidence/l3check-w4b-lockcheck.txt: OK
+evidence/l3check-w4b-ref2.txt: OK
+evidence/l3check-w4b-ref3.txt: OK
+evidence/l3check-w4b-ref4.txt: OK
+evidence/l3check-w4b-run1.txt: OK
+evidence/l3check-w4b-run2.txt: OK
+evidence/l3check-w4b-run3.txt: OK
+evidence/l3check-w4b-run4.txt: OK
+evidence/l3check-w4b-run5.txt: OK
+evidence/l3check-w4b-tsan.txt: OK
+evidence/measurement-progress.txt: OK
+evidence/perf-availability.txt: OK
+evidence/validation.txt: OK
+evidence/variants/w2.c: OK
+evidence/variants/w2.patch: OK
+evidence/variants/w3.c: OK
+evidence/variants/w3.patch: OK
+evidence/variants/w4a.c: OK
+evidence/variants/w4a.patch: OK
+evidence/variants/w4b.c: OK
+evidence/variants/w4b.patch: OK
+evidence/w2-build-tsan.txt: OK
+evidence/w2-build.txt: OK
+evidence/w2-check.txt: OK
+evidence/w3-build-tsan.txt: OK
+evidence/w3-build.txt: OK
+evidence/w3-check.txt: OK
+evidence/w4a-build-tsan.txt: OK
+evidence/w4a-build.txt: OK
+evidence/w4a-check.txt: OK
+evidence/w4b-build-tsan.txt: OK
+evidence/w4b-build.txt: OK
+evidence/w4b-check.txt: OK
+lib/libbq_ref.a: OK
+lib/libdevsvc_ref.a: OK
+report.md: OK
+src/album.c: OK
+src/album.h: OK
+src/albumsvc.c: OK
+src/bq.c: OK
+src/bq.h: OK
+src/bqtest.c: OK
+src/bus.c: OK
+src/catalog.c: OK
+src/common.h: OK
+src/config.c: OK
+src/devsvc.c: OK
+src/devsvc.h: OK
+src/rcu.c: OK
+src/rcu.h: OK
+src/sink.c: OK
+tools/burn.sh: OK
+tools/futex.bt: OK
+tools/l1_check.sh: OK
+tools/l2_run.sh: OK
+tools/l3_check.sh: OK
+tools/l3_run.sh: OK
+tools/lockcheck.c: OK
+tools/lockwait.bt: OK
+tools/perf_sched.sh: OK
+
+returncode=0
+$ ['make', '-j4']
+mkdir -p bin logs
+cc -O2 -g -Wall -Wextra -std=gnu11 -fno-omit-frame-pointer -pthread -rdynamic -o bin/bqtest src/bqtest.c src/bq.c
+cc -O1 -g -std=gnu11 -fsanitize=thread -pthread -o bin/bqtest_tsan src/bqtest.c src/bq.c
+cc -O2 -g -Wall -Wextra -std=gnu11 -fno-omit-frame-pointer -pthread -rdynamic -o bin/albumsvc src/albumsvc.c src/album.c src/bq.c
+cc -O2 -g -Wall -Wextra -std=gnu11 -fno-omit-frame-pointer -pthread -rdynamic -o bin/devsvc src/devsvc.c src/rcu.c src/sink.c src/bus.c src/catalog.c src/config.c
+cc -O1 -g -std=gnu11 -fsanitize=thread -pthread -o bin/devsvc_tsan src/devsvc.c src/rcu.c src/sink.c src/bus.c src/catalog.c src/config.c
+cc -O2 -g -Wall -Wextra -std=gnu11 -fno-omit-frame-pointer -pthread -o bin/devsvc_ref src/devsvc.c src/rcu.c lib/libdevsvc_ref.a
+cc -O2 -g -Wall -Wextra -std=gnu11 -fno-omit-frame-pointer -pthread -fPIC -shared -o bin/lockcheck.so tools/lockcheck.c -ldl
+
+returncode=0
+$ ['./bin/bqtest', 'close']
+close tests (wake mode: signal)
+  consumers_wake         ok   every thread entered the queue wait path before close
+  consumers_wake         ok   every waiter returned BQ_CLOSED
+  consumers_wake         ok   every waiter returned within 200 ms of bq_close
+  producers_wake         ok   every thread entered the queue wait path before close
+  producers_wake         ok   every waiter returned BQ_CLOSED
+  producers_wake         ok   every waiter returned within 200 ms of bq_close
+  producers_wake         ok   the item put before close is still there
+  producers_wake         ok   no blocked producer enqueued after close
+  drain                  ok   3 items come out in order after close
+  drain                  ok   then bq_get returns BQ_CLOSED
+  drain                  ok   and bq_timed_get returns BQ_CLOSED
+  put_after_close        ok   bq_put returns BQ_CLOSED
+  put_after_close        ok   and nothing was enqueued
+  close_twice            ok   second bq_close changes nothing
+PASS
+
+returncode=0
+$ ['./bin/bqtest', 'timeout']
+timeout tests (CLOCK_MONOTONIC)
+  timeout_50ms           ok   empty queue, 50 ms: BQ_TIMEOUT after 50..150 ms (got 50.1 ms)
+  timeout_0              ok   timeout 0: BQ_TIMEOUT without blocking (got 0.0 ms)
+  item_arrives           ok   item put after 20 ms: BQ_OK well before 200 ms (got 20.2 ms)
+  deadline_fixed         ok   wakeups every 10 ms, no item: BQ_TIMEOUT at 300..450 ms (got 300.1 ms)
+  close_arrives          ok   closed after 20 ms: BQ_CLOSED well before 200 ms (got 20.2 ms)
+  item_and_closed        ok   an available item wins over closed
+  get_wakes_producer     ok   producer entered the full-queue wait path
+  get_wakes_producer     ok   bq_timed_get took an item and the blocked producer returned (0.0 ms)
+PASS
+
+returncode=0

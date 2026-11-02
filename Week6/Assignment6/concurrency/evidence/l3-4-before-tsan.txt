@@ -1,0 +1,340 @@
+devsvc case 4 (config): threads=4 seconds=1
+==================
+WARNING: ThreadSanitizer: lock-order-inversion (potential deadlock) (pid=84)
+  Cycle in lock order graph: M0 (0x560e6e340bc0) => M1 (0x560e6e340b80) => M0
+
+  Mutex M1 acquired here while holding mutex M0 in thread T1:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 output_render src/config.c:70 (devsvc_tsan+0x49b9) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:280 (devsvc_tsan+0x2a2b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 previously acquired by the same thread here:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 output_render src/config.c:69 (devsvc_tsan+0x49ad) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:280 (devsvc_tsan+0x2a2b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 acquired here while holding mutex M1 in thread T2:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_update src/config.c:91 (devsvc_tsan+0x4bbb) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:276 (devsvc_tsan+0x29ea) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M1 previously acquired by the same thread here:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_update src/config.c:85 (devsvc_tsan+0x4b5b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:276 (devsvc_tsan+0x29ea) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Thread T1 (tid=86, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3620) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+
+  Thread T2 (tid=87, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3620) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+
+SUMMARY: ThreadSanitizer: lock-order-inversion (potential deadlock) src/config.c:70 in output_render
+==================
+==================
+WARNING: ThreadSanitizer: lock-order-inversion (potential deadlock) (pid=84)
+  Cycle in lock order graph: M0 (0x560e6e340c00) => M1 (0x560e6e340b80) => M0
+
+  Mutex M1 acquired here while holding mutex M0 in thread T1:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 output_render src/config.c:70 (devsvc_tsan+0x49b9) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:280 (devsvc_tsan+0x2a2b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 previously acquired by the same thread here:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 output_render src/config.c:69 (devsvc_tsan+0x49ad) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:280 (devsvc_tsan+0x2a2b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 acquired here while holding mutex M1 in thread T2:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_update src/config.c:91 (devsvc_tsan+0x4bbb) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:276 (devsvc_tsan+0x29ea) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M1 previously acquired by the same thread here:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_update src/config.c:85 (devsvc_tsan+0x4b5b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:276 (devsvc_tsan+0x29ea) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Thread T1 (tid=86, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3620) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+
+  Thread T2 (tid=87, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3620) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+
+SUMMARY: ThreadSanitizer: lock-order-inversion (potential deadlock) src/config.c:70 in output_render
+==================
+==================
+WARNING: ThreadSanitizer: lock-order-inversion (potential deadlock) (pid=84)
+  Cycle in lock order graph: M0 (0x560e6e340c40) => M1 (0x560e6e340b80) => M0
+
+  Mutex M1 acquired here while holding mutex M0 in thread T1:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 output_render src/config.c:70 (devsvc_tsan+0x49b9) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:280 (devsvc_tsan+0x2a2b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 previously acquired by the same thread here:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 output_render src/config.c:69 (devsvc_tsan+0x49ad) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:280 (devsvc_tsan+0x2a2b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 acquired here while holding mutex M1 in thread T2:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_update src/config.c:91 (devsvc_tsan+0x4bbb) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:276 (devsvc_tsan+0x29ea) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M1 previously acquired by the same thread here:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_update src/config.c:85 (devsvc_tsan+0x4b5b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:276 (devsvc_tsan+0x29ea) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Thread T1 (tid=86, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3620) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+
+  Thread T2 (tid=87, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3620) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+
+SUMMARY: ThreadSanitizer: lock-order-inversion (potential deadlock) src/config.c:70 in output_render
+==================
+==================
+WARNING: ThreadSanitizer: lock-order-inversion (potential deadlock) (pid=84)
+  Cycle in lock order graph: M0 (0x560e6e340c80) => M1 (0x560e6e340b80) => M0
+
+  Mutex M1 acquired here while holding mutex M0 in thread T1:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 output_render src/config.c:70 (devsvc_tsan+0x49b9) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:280 (devsvc_tsan+0x2a2b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 previously acquired by the same thread here:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 output_render src/config.c:69 (devsvc_tsan+0x49ad) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:280 (devsvc_tsan+0x2a2b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 acquired here while holding mutex M1 in thread T2:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_update src/config.c:91 (devsvc_tsan+0x4bbb) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:276 (devsvc_tsan+0x29ea) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M1 previously acquired by the same thread here:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_update src/config.c:85 (devsvc_tsan+0x4b5b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:276 (devsvc_tsan+0x29ea) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Thread T1 (tid=86, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3620) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+
+  Thread T2 (tid=87, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3620) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+
+SUMMARY: ThreadSanitizer: lock-order-inversion (potential deadlock) src/config.c:70 in output_render
+==================
+==================
+WARNING: ThreadSanitizer: lock-order-inversion (potential deadlock) (pid=84)
+  Cycle in lock order graph: M0 (0x560e6e340cc0) => M1 (0x560e6e340b80) => M0
+
+  Mutex M1 acquired here while holding mutex M0 in thread T2:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 output_render src/config.c:70 (devsvc_tsan+0x49b9) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:280 (devsvc_tsan+0x2a2b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 previously acquired by the same thread here:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 output_render src/config.c:69 (devsvc_tsan+0x49ad) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:280 (devsvc_tsan+0x2a2b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 acquired here while holding mutex M1 in thread T2:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_update src/config.c:91 (devsvc_tsan+0x4bbb) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:276 (devsvc_tsan+0x29ea) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M1 previously acquired by the same thread here:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_update src/config.c:85 (devsvc_tsan+0x4b5b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:276 (devsvc_tsan+0x29ea) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Thread T2 (tid=87, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3620) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+
+SUMMARY: ThreadSanitizer: lock-order-inversion (potential deadlock) src/config.c:70 in output_render
+==================
+==================
+WARNING: ThreadSanitizer: lock-order-inversion (potential deadlock) (pid=84)
+  Cycle in lock order graph: M0 (0x560e6e340d00) => M1 (0x560e6e340b80) => M0
+
+  Mutex M1 acquired here while holding mutex M0 in thread T1:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 output_render src/config.c:70 (devsvc_tsan+0x49b9) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:280 (devsvc_tsan+0x2a2b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 previously acquired by the same thread here:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 output_render src/config.c:69 (devsvc_tsan+0x49ad) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:280 (devsvc_tsan+0x2a2b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 acquired here while holding mutex M1 in thread T2:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_update src/config.c:91 (devsvc_tsan+0x4bbb) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:276 (devsvc_tsan+0x29ea) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M1 previously acquired by the same thread here:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_update src/config.c:85 (devsvc_tsan+0x4b5b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:276 (devsvc_tsan+0x29ea) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Thread T1 (tid=86, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3620) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+
+  Thread T2 (tid=87, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3620) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+
+SUMMARY: ThreadSanitizer: lock-order-inversion (potential deadlock) src/config.c:70 in output_render
+==================
+==================
+WARNING: ThreadSanitizer: lock-order-inversion (potential deadlock) (pid=84)
+  Cycle in lock order graph: M0 (0x560e6e340d40) => M1 (0x560e6e340b80) => M0
+
+  Mutex M1 acquired here while holding mutex M0 in thread T1:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 output_render src/config.c:70 (devsvc_tsan+0x49b9) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:280 (devsvc_tsan+0x2a2b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 previously acquired by the same thread here:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 output_render src/config.c:69 (devsvc_tsan+0x49ad) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:280 (devsvc_tsan+0x2a2b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 acquired here while holding mutex M1 in thread T2:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_update src/config.c:91 (devsvc_tsan+0x4bbb) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:276 (devsvc_tsan+0x29ea) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M1 previously acquired by the same thread here:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_update src/config.c:85 (devsvc_tsan+0x4b5b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:276 (devsvc_tsan+0x29ea) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Thread T1 (tid=86, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3620) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+
+  Thread T2 (tid=87, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3620) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+
+SUMMARY: ThreadSanitizer: lock-order-inversion (potential deadlock) src/config.c:70 in output_render
+==================
+==================
+WARNING: ThreadSanitizer: lock-order-inversion (potential deadlock) (pid=84)
+  Cycle in lock order graph: M0 (0x560e6e340d80) => M1 (0x560e6e340b80) => M0
+
+  Mutex M1 acquired here while holding mutex M0 in thread T1:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 output_render src/config.c:70 (devsvc_tsan+0x49b9) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:280 (devsvc_tsan+0x2a2b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 previously acquired by the same thread here:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 output_render src/config.c:69 (devsvc_tsan+0x49ad) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:280 (devsvc_tsan+0x2a2b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 acquired here while holding mutex M1 in thread T2:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_update src/config.c:91 (devsvc_tsan+0x4bbb) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:276 (devsvc_tsan+0x29ea) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M1 previously acquired by the same thread here:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 config_update src/config.c:85 (devsvc_tsan+0x4b5b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_config src/devsvc.c:276 (devsvc_tsan+0x29ea) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Thread T1 (tid=86, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3620) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+
+  Thread T2 (tid=87, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3620) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+
+SUMMARY: ThreadSanitizer: lock-order-inversion (potential deadlock) src/config.c:70 in output_render
+==================
+HANG: worker 0 finished no request for 3.0 s
+  worker 0 (tid 86): output_render(11), 334 requests
+  worker 1 (tid 87): config_update, 227 requests
+  worker 2 (tid 88): output_render(8), 211 requests
+  worker 3 (tid 89): output_render(7), 230 requests
+result: HANG
+ThreadSanitizer: reported 8 warnings

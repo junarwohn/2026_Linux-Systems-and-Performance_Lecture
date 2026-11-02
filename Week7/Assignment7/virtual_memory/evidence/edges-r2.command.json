@@ -1,0 +1,13 @@
+{
+  "command": [
+    "./edge_cases"
+  ],
+  "environment": {
+    "LD_PRELOAD": "./libmtrace_lite.so",
+    "MTRACE_OUT": "/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/evidence/edges-r2.trace"
+  },
+  "pid": 105,
+  "returncode": 0,
+  "elapsed_s": 0.003894882000167854,
+  "kernel": "7.2.11-arch1-1"
+}

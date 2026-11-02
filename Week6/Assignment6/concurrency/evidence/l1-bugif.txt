@@ -1,0 +1,10 @@
+prediction: A woken waiter can lose the predicate before reacquiring the mutex
+command: ['./bin/bqtest_bugif', '-p', '2', '-c', '2', '-n', '20000', '-q', '4', '-T', '10']
+env: {}
+kernel: posix.uname_result(sysname='Linux', nodename='17Z90S', release='7.2.11-arch1-1', version='#1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000', machine='x86_64')
+pid: 244
+bqtest: producers=2 consumers=2 items/producer=20000 capacity=4 wake=signal work_us=0
+pid=244
+FAIL: the test did not finish in time (hang?). Attach gdb or read /proc/<pid>/task/*/wchan to see who waits.
+elapsed_s: 10.029771
+returncode: 2

@@ -1,0 +1,3 @@
+PASS: TABLE_CAP=8; 1001 simultaneous workload allocations; 993 untracked due to capacity; complete=no; no accounting underflow
+Build: cc -D_GNU_SOURCE -DTABLE_CAP=8 -O1 -g -std=c11 -fno-builtin -fPIC -shared level2/support.c level2/mtrace_student.c -ldl -pthread -o /tmp/libmtrace_small.so
+Run: LD_PRELOAD=/tmp/libmtrace_small.so MTRACE_OUT=evidence/exhaustion.trace ./checkpoint_workload (Enter x 5)

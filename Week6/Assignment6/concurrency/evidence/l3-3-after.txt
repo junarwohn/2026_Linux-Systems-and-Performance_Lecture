@@ -1,0 +1,17 @@
+prediction: No lockcheck warnings; TSan may flag read-read order in case 3
+command: ['bash', 'tools/l3_run.sh', '3', '-d', '3']
+env: {}
+kernel: posix.uname_result(sysname='Linux', nodename='17Z90S', release='7.2.11-arch1-1', version='#1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000', machine='x86_64')
+pid: 718
+$ LD_PRELOAD=./bin/lockcheck.so ./bin/devsvc -c 3 -d 3
+$ ./bin/devsvc_tsan -c 3 -d 3
+== case 3: lockcheck
+result: PASS
+lockcheck: summary W1=0 W2=0 W3=0 W4=0
+== case 3: ThreadSanitizer
+WARNING: ThreadSanitizer: lock-order-inversion (potential deadlock) (pid=729)
+SUMMARY: ThreadSanitizer: lock-order-inversion (potential deadlock) src/catalog.c:49 in catalog_can_launch
+result: PASS
+Saved: logs/l3-3-lockcheck.txt logs/l3-3-tsan.txt
+elapsed_s: 6.128987
+returncode: 0

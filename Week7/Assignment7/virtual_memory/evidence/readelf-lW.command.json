@@ -1,0 +1,12 @@
+{
+  "command": [
+    "readelf",
+    "-lW",
+    "./elf_workload"
+  ],
+  "environment": {},
+  "pid": 148,
+  "returncode": 0,
+  "elapsed_s": 0.0076739520009141415,
+  "kernel": "7.2.11-arch1-1"
+}

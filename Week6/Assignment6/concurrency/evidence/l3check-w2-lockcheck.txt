@@ -1,0 +1,10 @@
+lockcheck: loaded
+devsvc case 2 (bus): threads=4 seconds=3
+ops=1960324 ops_per_sec=650612 parallel=0%
+check failed: persistent subscriber 4 was called 1960327 times for 1960328 events
+check failed: persistent subscriber 5 was called 1960327 times for 1960328 events
+check failed: persistent subscriber 6 was called 1960327 times for 1960328 events
+check failed: persistent subscriber 7 was called 1960327 times for 1960328 events
+check: 1960328 events, every persistent subscriber called 1960327 to 1960328 times (must be 1960328)
+result: FAIL
+lockcheck: summary W1=0 W2=0 W3=0 W4=0

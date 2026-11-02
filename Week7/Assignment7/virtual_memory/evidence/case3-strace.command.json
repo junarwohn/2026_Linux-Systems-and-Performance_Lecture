@@ -1,0 +1,20 @@
+{
+  "command": [
+    "strace",
+    "-f",
+    "-e",
+    "trace=brk,mmap,munmap,mremap,madvise",
+    "-o",
+    "/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/evidence/case3.strace",
+    "/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/case3",
+    "--interval-ms",
+    "50",
+    "--ticks",
+    "12"
+  ],
+  "environment": {},
+  "pid": 101497,
+  "returncode": 0,
+  "tool_elapsed_s": 1.759787,
+  "note": "Approved execution outside ptrace-restricted sandbox; separate diagnostic run, no timing claim"
+}

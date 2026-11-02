@@ -1,0 +1,16 @@
+{
+  "command": [
+    "./vasdump",
+    "-v",
+    "--delay",
+    "0.1",
+    "--",
+    "sleep",
+    "1000"
+  ],
+  "environment": {},
+  "pid": 111,
+  "returncode": 0,
+  "elapsed_s": 0.16393144200264942,
+  "kernel": "7.2.11-arch1-1"
+}

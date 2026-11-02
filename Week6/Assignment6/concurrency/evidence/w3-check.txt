@@ -1,0 +1,13 @@
+prediction: Read/write edges can deadlock
+command: ['bash', 'tools/l3_check.sh', '3']
+env: {'DEVSVC': '/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w3', 'DEVSVC_TSAN': '/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w3_tsan', 'TAG': 'w3'}
+kernel: posix.uname_result(sysname='Linux', nodename='17Z90S', release='7.2.11-arch1-1', version='#1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000', machine='x86_64')
+pid: 1277
+lockcheck  FAIL  W1=1 W2=2 W3=0 W4=0, result: HANG
+TSan       FAIL  0 report(s), result: HANG
+stress     FAIL  0 of 5 runs PASS (-t 2 4 4 4 8)
+parallel   FAIL  ?% ?% ?% (at least 3%)
+speed      FAIL  0 ops/s, reference 828499 (0.00, at least 0.70)
+case 3: FAIL   (logs: logs/l3check-w3-*.txt)
+elapsed_s: 28.375222
+returncode: 1

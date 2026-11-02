@@ -1,0 +1,84 @@
+devsvc case 1 (sink): threads=4 seconds=1
+==================
+WARNING: ThreadSanitizer: lock-order-inversion (potential deadlock) (pid=27)
+  Cycle in lock order graph: M0 (0x5649ff87d6c0) => M1 (0x5649ff87d540) => M0
+
+  Mutex M1 acquired here while holding mutex M0 in thread T1:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 sink_move src/sink.c:48 (devsvc_tsan+0x40c3) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_sink src/devsvc.c:141 (devsvc_tsan+0x2e0b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 previously acquired by the same thread here:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 sink_move src/sink.c:47 (devsvc_tsan+0x40b1) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_sink src/devsvc.c:141 (devsvc_tsan+0x2e0b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 acquired here while holding mutex M1 in thread T1:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 sink_total src/sink.c:29 (devsvc_tsan+0x4019) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_sink src/devsvc.c:145 (devsvc_tsan+0x2e3e) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M1 previously acquired by the same thread here:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 sink_total src/sink.c:29 (devsvc_tsan+0x4019) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_sink src/devsvc.c:145 (devsvc_tsan+0x2e3e) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Thread T1 (tid=29, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3620) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+
+SUMMARY: ThreadSanitizer: lock-order-inversion (potential deadlock) src/sink.c:48 in sink_move
+==================
+==================
+WARNING: ThreadSanitizer: lock-order-inversion (potential deadlock) (pid=27)
+  Cycle in lock order graph: M0 (0x5649ff87d480) => M1 (0x5649ff87d6c0) => M0
+
+  Mutex M1 acquired here while holding mutex M0 in thread T1:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 sink_total src/sink.c:29 (devsvc_tsan+0x4019) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_sink src/devsvc.c:145 (devsvc_tsan+0x2e3e) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 previously acquired by the same thread here:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 sink_total src/sink.c:29 (devsvc_tsan+0x4019) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_sink src/devsvc.c:145 (devsvc_tsan+0x2e3e) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M0 acquired here while holding mutex M1 in thread T1:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 sink_move src/sink.c:48 (devsvc_tsan+0x40c3) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_sink src/devsvc.c:141 (devsvc_tsan+0x2e0b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Mutex M1 previously acquired by the same thread here:
+    #0 pthread_mutex_lock <null> (libtsan.so.2+0x60bb1) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 sink_move src/sink.c:47 (devsvc_tsan+0x40b1) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #2 req_sink src/devsvc.c:141 (devsvc_tsan+0x2e0b) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #3 worker_main src/devsvc.c:309 (devsvc_tsan+0x2574) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+    #4 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Thread T1 (tid=29, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/devsvc.c:375 (devsvc_tsan+0x3620) (BuildId: b887e6951b1b580f76abca3f973e57569a734759)
+
+SUMMARY: ThreadSanitizer: lock-order-inversion (potential deadlock) src/sink.c:29 in sink_total
+==================
+HANG: worker 0 finished no request for 3.0 s
+  worker 0 (tid 29): sink_move(9, 0), 2 requests
+  worker 1 (tid 30): sink_total, 0 requests
+  worker 2 (tid 31): sink_move(4, 11), 0 requests
+  worker 3 (tid 32): sink_move(6, 14), 0 requests
+result: HANG
+ThreadSanitizer: reported 2 warnings

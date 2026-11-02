@@ -1,4 +1,8 @@
-# Assignment 6 skeleton
+# Assignment 6
+
+구현·검증 결과는 [report.md](report.md), 실행 환경과 재현 방법은
+[SUBMISSION.md](SUBMISSION.md)에 있다. 아래 내용은 제공된 starter 안내다.
+현재 src의 필수 구현은 완료했으며, 아래의 stub 설명은 원본 상태를 설명한다.
 
 Read this together with the assignment document distributed alongside this archive. Everything builds and runs as it is. The Level 1 and 2 TODO functions are stubs, so their tests fail until you implement them. The Level 3 case files are working code that can deadlock: that is the starting point.
 

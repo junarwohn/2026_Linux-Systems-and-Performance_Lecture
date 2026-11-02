@@ -1,0 +1,6 @@
+lockcheck: loaded
+devsvc case 4 (config): threads=4 seconds=3
+ops=4025117 ops_per_sec=1337888 parallel=93%
+check: 4023156 frames, 0 with a bad config, config version 1966 applied to every output
+result: PASS
+lockcheck: summary W1=0 W2=0 W3=0 W4=0

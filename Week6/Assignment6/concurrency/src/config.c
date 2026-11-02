@@ -67,8 +67,7 @@ int output_render(int out)
     struct output *o = &outputs[out];
 
     pthread_mutex_lock(&o->lock);
-    pthread_mutex_lock(&cfg_lock);      /* held until the frame is drawn: c stays valid */
-    const struct config *c = cfg;
+    const struct config *c = rcu_dereference(cfg);
     int ok = config_ok(c);
     o->frames++;
     o->shown = c->version;
@@ -76,23 +75,24 @@ int output_render(int out)
 
     svc_work(WORK_FRAME);               /* draws the frame with c */
     ok = ok && config_ok(c);
-    pthread_mutex_unlock(&cfg_lock);
     return ok;
 }
 
 void config_update(void)
 {
     pthread_mutex_lock(&cfg_lock);
-    struct config *old = cfg;
+    struct config *old = rcu_dereference(cfg);
     struct config *c = config_alloc(old->version + 1);
-    cfg = c;
-    config_free(old);
+    rcu_assign_pointer(cfg, c);
     for (int i = 0; i < NOUTPUTS; i++) {        /* apply it to every output */
         pthread_mutex_lock(&outputs[i].lock);
         outputs[i].applied = c->version;
         pthread_mutex_unlock(&outputs[i].lock);
     }
     pthread_mutex_unlock(&cfg_lock);
+    /* Do not hold a lock needed by registered readers during a grace period. */
+    synchronize_rcu();
+    config_free(old);
 }
 
 unsigned config_version(void)

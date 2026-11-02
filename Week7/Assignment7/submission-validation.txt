@@ -1,0 +1,837 @@
+$ ['sha256sum', '-c', 'SUBMISSION_MANIFEST.sha256']
+.gitignore: OK
+BUILD_MANIFEST.json: OK
+Makefile: OK
+README.md: OK
+SUBMISSION.md: OK
+analysis/case1-remedy.patch: OK
+analysis/measure.py: OK
+analysis/report.py: OK
+case1: OK
+case2: OK
+case3: OK
+case4: OK
+case5: OK
+evidence/accounting-baseline.maps: OK
+evidence/accounting-baseline.smaps: OK
+evidence/accounting-baseline.vasdump: OK
+evidence/accounting-failed_realloc.maps: OK
+evidence/accounting-failed_realloc.smaps: OK
+evidence/accounting-failed_realloc.vasdump: OK
+evidence/accounting-malloc17.maps: OK
+evidence/accounting-malloc17.smaps: OK
+evidence/accounting-malloc17.vasdump: OK
+evidence/accounting-realloc113.maps: OK
+evidence/accounting-realloc113.smaps: OK
+evidence/accounting-realloc113.vasdump: OK
+evidence/accounting-released.maps: OK
+evidence/accounting-released.smaps: OK
+evidence/accounting-released.vasdump: OK
+evidence/accounting-zero_block.maps: OK
+evidence/accounting-zero_block.smaps: OK
+evidence/accounting-zero_block.vasdump: OK
+evidence/accounting-zero_realloc.maps: OK
+evidence/accounting-zero_realloc.smaps: OK
+evidence/accounting-zero_realloc.vasdump: OK
+evidence/accounting.command.json: OK
+evidence/accounting.measurements.json: OK
+evidence/accounting.stderr: OK
+evidence/accounting.stdout: OK
+evidence/accounting.trace: OK
+evidence/allocator-environment.json: OK
+evidence/build.command.json: OK
+evidence/build.stderr: OK
+evidence/build.stdout: OK
+evidence/case1-r1-baseline.maps: OK
+evidence/case1-r1-baseline.smaps: OK
+evidence/case1-r1-baseline.vasdump: OK
+evidence/case1-r1-running.maps: OK
+evidence/case1-r1-running.smaps: OK
+evidence/case1-r1-running.vasdump: OK
+evidence/case1-r1.command.json: OK
+evidence/case1-r1.csv: OK
+evidence/case1-r1.stderr: OK
+evidence/case1-r1.stdout: OK
+evidence/case1-r1.trace: OK
+evidence/case1-r2-baseline.maps: OK
+evidence/case1-r2-baseline.smaps: OK
+evidence/case1-r2-baseline.vasdump: OK
+evidence/case1-r2-running.maps: OK
+evidence/case1-r2-running.smaps: OK
+evidence/case1-r2-running.vasdump: OK
+evidence/case1-r2.command.json: OK
+evidence/case1-r2.csv: OK
+evidence/case1-r2.stderr: OK
+evidence/case1-r2.stdout: OK
+evidence/case1-r2.trace: OK
+evidence/case1-r3-baseline.maps: OK
+evidence/case1-r3-baseline.smaps: OK
+evidence/case1-r3-baseline.vasdump: OK
+evidence/case1-r3-running.maps: OK
+evidence/case1-r3-running.smaps: OK
+evidence/case1-r3-running.vasdump: OK
+evidence/case1-r3.command.json: OK
+evidence/case1-r3.csv: OK
+evidence/case1-r3.stderr: OK
+evidence/case1-r3.stdout: OK
+evidence/case1-r3.trace: OK
+evidence/case1-remedy-r1-baseline.maps: OK
+evidence/case1-remedy-r1-baseline.smaps: OK
+evidence/case1-remedy-r1-baseline.vasdump: OK
+evidence/case1-remedy-r1-running.maps: OK
+evidence/case1-remedy-r1-running.smaps: OK
+evidence/case1-remedy-r1-running.vasdump: OK
+evidence/case1-remedy-r1.command.json: OK
+evidence/case1-remedy-r1.csv: OK
+evidence/case1-remedy-r1.stderr: OK
+evidence/case1-remedy-r1.stdout: OK
+evidence/case1-remedy-r1.trace: OK
+evidence/case1-remedy-r2-baseline.maps: OK
+evidence/case1-remedy-r2-baseline.smaps: OK
+evidence/case1-remedy-r2-baseline.vasdump: OK
+evidence/case1-remedy-r2-running.maps: OK
+evidence/case1-remedy-r2-running.smaps: OK
+evidence/case1-remedy-r2-running.vasdump: OK
+evidence/case1-remedy-r2.command.json: OK
+evidence/case1-remedy-r2.csv: OK
+evidence/case1-remedy-r2.stderr: OK
+evidence/case1-remedy-r2.stdout: OK
+evidence/case1-remedy-r2.trace: OK
+evidence/case1-remedy-r3-baseline.maps: OK
+evidence/case1-remedy-r3-baseline.smaps: OK
+evidence/case1-remedy-r3-baseline.vasdump: OK
+evidence/case1-remedy-r3-partial.collector.txt: OK
+evidence/case1-remedy-r3-partial.command.json: OK
+evidence/case1-remedy-r3-partial.csv: OK
+evidence/case1-remedy-r3-partial.stderr: OK
+evidence/case1-remedy-r3-partial.stdout: OK
+evidence/case1-remedy-r3-partial.trace: OK
+evidence/case1-remedy-r3-running.maps: OK
+evidence/case1-remedy-r3-running.smaps: OK
+evidence/case1-remedy-r3-running.vasdump: OK
+evidence/case1-remedy-r3.command.json: OK
+evidence/case1-remedy-r3.csv: OK
+evidence/case1-remedy-r3.stderr: OK
+evidence/case1-remedy-r3.stdout: OK
+evidence/case1-remedy-r3.trace: OK
+evidence/case1-strace-sandbox.command.json: OK
+evidence/case1-strace.command.json: OK
+evidence/case1-strace.stderr: OK
+evidence/case1-strace.stdout: OK
+evidence/case1.strace: OK
+evidence/case2-r1-after_release.maps: OK
+evidence/case2-r1-after_release.smaps: OK
+evidence/case2-r1-after_release.vasdump: OK
+evidence/case2-r1-baseline.maps: OK
+evidence/case2-r1-baseline.smaps: OK
+evidence/case2-r1-baseline.vasdump: OK
+evidence/case2-r1-before_release.maps: OK
+evidence/case2-r1-before_release.smaps: OK
+evidence/case2-r1-before_release.vasdump: OK
+evidence/case2-r1.command.json: OK
+evidence/case2-r1.csv: OK
+evidence/case2-r1.stderr: OK
+evidence/case2-r1.stdout: OK
+evidence/case2-r1.trace: OK
+evidence/case2-r2-after_release.maps: OK
+evidence/case2-r2-after_release.smaps: OK
+evidence/case2-r2-after_release.vasdump: OK
+evidence/case2-r2-baseline.maps: OK
+evidence/case2-r2-baseline.smaps: OK
+evidence/case2-r2-baseline.vasdump: OK
+evidence/case2-r2-before_release.maps: OK
+evidence/case2-r2-before_release.smaps: OK
+evidence/case2-r2-before_release.vasdump: OK
+evidence/case2-r2.command.json: OK
+evidence/case2-r2.csv: OK
+evidence/case2-r2.stderr: OK
+evidence/case2-r2.stdout: OK
+evidence/case2-r2.trace: OK
+evidence/case2-r3-after_release.maps: OK
+evidence/case2-r3-after_release.smaps: OK
+evidence/case2-r3-after_release.vasdump: OK
+evidence/case2-r3-baseline.maps: OK
+evidence/case2-r3-baseline.smaps: OK
+evidence/case2-r3-baseline.vasdump: OK
+evidence/case2-r3-before_release.maps: OK
+evidence/case2-r3-before_release.smaps: OK
+evidence/case2-r3-before_release.vasdump: OK
+evidence/case2-r3.command.json: OK
+evidence/case2-r3.csv: OK
+evidence/case2-r3.stderr: OK
+evidence/case2-r3.stdout: OK
+evidence/case2-r3.trace: OK
+evidence/case2-remedy-r1-after_release.maps: OK
+evidence/case2-remedy-r1-after_release.smaps: OK
+evidence/case2-remedy-r1-after_release.vasdump: OK
+evidence/case2-remedy-r1-baseline.maps: OK
+evidence/case2-remedy-r1-baseline.smaps: OK
+evidence/case2-remedy-r1-baseline.vasdump: OK
+evidence/case2-remedy-r1-before_release.maps: OK
+evidence/case2-remedy-r1-before_release.smaps: OK
+evidence/case2-remedy-r1-before_release.vasdump: OK
+evidence/case2-remedy-r1.command.json: OK
+evidence/case2-remedy-r1.csv: OK
+evidence/case2-remedy-r1.stderr: OK
+evidence/case2-remedy-r1.stdout: OK
+evidence/case2-remedy-r1.trace: OK
+evidence/case2-remedy-r2-after_release.maps: OK
+evidence/case2-remedy-r2-after_release.smaps: OK
+evidence/case2-remedy-r2-after_release.vasdump: OK
+evidence/case2-remedy-r2-baseline.maps: OK
+evidence/case2-remedy-r2-baseline.smaps: OK
+evidence/case2-remedy-r2-baseline.vasdump: OK
+evidence/case2-remedy-r2-before_release.maps: OK
+evidence/case2-remedy-r2-before_release.smaps: OK
+evidence/case2-remedy-r2-before_release.vasdump: OK
+evidence/case2-remedy-r2.command.json: OK
+evidence/case2-remedy-r2.csv: OK
+evidence/case2-remedy-r2.stderr: OK
+evidence/case2-remedy-r2.stdout: OK
+evidence/case2-remedy-r2.trace: OK
+evidence/case2-remedy-r3-after_release.maps: OK
+evidence/case2-remedy-r3-after_release.smaps: OK
+evidence/case2-remedy-r3-after_release.vasdump: OK
+evidence/case2-remedy-r3-baseline.maps: OK
+evidence/case2-remedy-r3-baseline.smaps: OK
+evidence/case2-remedy-r3-baseline.vasdump: OK
+evidence/case2-remedy-r3-before_release.maps: OK
+evidence/case2-remedy-r3-before_release.smaps: OK
+evidence/case2-remedy-r3-before_release.vasdump: OK
+evidence/case2-remedy-r3.command.json: OK
+evidence/case2-remedy-r3.csv: OK
+evidence/case2-remedy-r3.stderr: OK
+evidence/case2-remedy-r3.stdout: OK
+evidence/case2-remedy-r3.trace: OK
+evidence/case2-strace-sandbox.command.json: OK
+evidence/case2-strace.command.json: OK
+evidence/case2-strace.stderr: OK
+evidence/case2-strace.stdout: OK
+evidence/case2.strace: OK
+evidence/case3-r1-baseline.maps: OK
+evidence/case3-r1-baseline.smaps: OK
+evidence/case3-r1-baseline.vasdump: OK
+evidence/case3-r1-steady.maps: OK
+evidence/case3-r1-steady.smaps: OK
+evidence/case3-r1-steady.vasdump: OK
+evidence/case3-r1-thread_added.maps: OK
+evidence/case3-r1-thread_added.smaps: OK
+evidence/case3-r1-thread_added.vasdump: OK
+evidence/case3-r1.command.json: OK
+evidence/case3-r1.csv: OK
+evidence/case3-r1.stderr: OK
+evidence/case3-r1.stdout: OK
+evidence/case3-r1.trace: OK
+evidence/case3-r2-baseline.maps: OK
+evidence/case3-r2-baseline.smaps: OK
+evidence/case3-r2-baseline.vasdump: OK
+evidence/case3-r2-steady.maps: OK
+evidence/case3-r2-steady.smaps: OK
+evidence/case3-r2-steady.vasdump: OK
+evidence/case3-r2-thread_added.maps: OK
+evidence/case3-r2-thread_added.smaps: OK
+evidence/case3-r2-thread_added.vasdump: OK
+evidence/case3-r2.command.json: OK
+evidence/case3-r2.csv: OK
+evidence/case3-r2.stderr: OK
+evidence/case3-r2.stdout: OK
+evidence/case3-r2.trace: OK
+evidence/case3-r3-baseline.maps: OK
+evidence/case3-r3-baseline.smaps: OK
+evidence/case3-r3-baseline.vasdump: OK
+evidence/case3-r3-steady.maps: OK
+evidence/case3-r3-steady.smaps: OK
+evidence/case3-r3-steady.vasdump: OK
+evidence/case3-r3-thread_added.maps: OK
+evidence/case3-r3-thread_added.smaps: OK
+evidence/case3-r3-thread_added.vasdump: OK
+evidence/case3-r3.command.json: OK
+evidence/case3-r3.csv: OK
+evidence/case3-r3.stderr: OK
+evidence/case3-r3.stdout: OK
+evidence/case3-r3.trace: OK
+evidence/case3-remedy-r1-baseline.maps: OK
+evidence/case3-remedy-r1-baseline.smaps: OK
+evidence/case3-remedy-r1-baseline.vasdump: OK
+evidence/case3-remedy-r1-steady.maps: OK
+evidence/case3-remedy-r1-steady.smaps: OK
+evidence/case3-remedy-r1-steady.vasdump: OK
+evidence/case3-remedy-r1-thread_added.maps: OK
+evidence/case3-remedy-r1-thread_added.smaps: OK
+evidence/case3-remedy-r1-thread_added.vasdump: OK
+evidence/case3-remedy-r1.command.json: OK
+evidence/case3-remedy-r1.csv: OK
+evidence/case3-remedy-r1.stderr: OK
+evidence/case3-remedy-r1.stdout: OK
+evidence/case3-remedy-r1.trace: OK
+evidence/case3-remedy-r2-baseline.maps: OK
+evidence/case3-remedy-r2-baseline.smaps: OK
+evidence/case3-remedy-r2-baseline.vasdump: OK
+evidence/case3-remedy-r2-steady.maps: OK
+evidence/case3-remedy-r2-steady.smaps: OK
+evidence/case3-remedy-r2-steady.vasdump: OK
+evidence/case3-remedy-r2-thread_added.maps: OK
+evidence/case3-remedy-r2-thread_added.smaps: OK
+evidence/case3-remedy-r2-thread_added.vasdump: OK
+evidence/case3-remedy-r2.command.json: OK
+evidence/case3-remedy-r2.csv: OK
+evidence/case3-remedy-r2.stderr: OK
+evidence/case3-remedy-r2.stdout: OK
+evidence/case3-remedy-r2.trace: OK
+evidence/case3-remedy-r3-baseline.maps: OK
+evidence/case3-remedy-r3-baseline.smaps: OK
+evidence/case3-remedy-r3-baseline.vasdump: OK
+evidence/case3-remedy-r3-steady.maps: OK
+evidence/case3-remedy-r3-steady.smaps: OK
+evidence/case3-remedy-r3-steady.vasdump: OK
+evidence/case3-remedy-r3-thread_added.maps: OK
+evidence/case3-remedy-r3-thread_added.smaps: OK
+evidence/case3-remedy-r3-thread_added.vasdump: OK
+evidence/case3-remedy-r3.command.json: OK
+evidence/case3-remedy-r3.csv: OK
+evidence/case3-remedy-r3.stderr: OK
+evidence/case3-remedy-r3.stdout: OK
+evidence/case3-remedy-r3.trace: OK
+evidence/case3-strace-sandbox.command.json: OK
+evidence/case3-strace.command.json: OK
+evidence/case3-strace.stderr: OK
+evidence/case3-strace.stdout: OK
+evidence/case3.strace: OK
+evidence/connection-r1-A.maps: OK
+evidence/connection-r1-A.smaps: OK
+evidence/connection-r1-A.vasdump: OK
+evidence/connection-r1-B.maps: OK
+evidence/connection-r1-B.smaps: OK
+evidence/connection-r1-B.vasdump: OK
+evidence/connection-r1-C.maps: OK
+evidence/connection-r1-C.smaps: OK
+evidence/connection-r1-C.vasdump: OK
+evidence/connection-r1-D.maps: OK
+evidence/connection-r1-D.smaps: OK
+evidence/connection-r1-D.vasdump: OK
+evidence/connection-r1-baseline.maps: OK
+evidence/connection-r1-baseline.smaps: OK
+evidence/connection-r1-baseline.vasdump: OK
+evidence/connection-r1.command.json: OK
+evidence/connection-r1.measurements.json: OK
+evidence/connection-r1.stderr: OK
+evidence/connection-r1.stdout: OK
+evidence/connection-r1.trace: OK
+evidence/connection-r2-A.maps: OK
+evidence/connection-r2-A.smaps: OK
+evidence/connection-r2-A.vasdump: OK
+evidence/connection-r2-B.maps: OK
+evidence/connection-r2-B.smaps: OK
+evidence/connection-r2-B.vasdump: OK
+evidence/connection-r2-C.maps: OK
+evidence/connection-r2-C.smaps: OK
+evidence/connection-r2-C.vasdump: OK
+evidence/connection-r2-D.maps: OK
+evidence/connection-r2-D.smaps: OK
+evidence/connection-r2-D.vasdump: OK
+evidence/connection-r2-baseline.maps: OK
+evidence/connection-r2-baseline.smaps: OK
+evidence/connection-r2-baseline.vasdump: OK
+evidence/connection-r2.command.json: OK
+evidence/connection-r2.measurements.json: OK
+evidence/connection-r2.stderr: OK
+evidence/connection-r2.stdout: OK
+evidence/connection-r2.trace: OK
+evidence/connection-r3-A.maps: OK
+evidence/connection-r3-A.smaps: OK
+evidence/connection-r3-A.vasdump: OK
+evidence/connection-r3-B.maps: OK
+evidence/connection-r3-B.smaps: OK
+evidence/connection-r3-B.vasdump: OK
+evidence/connection-r3-C.maps: OK
+evidence/connection-r3-C.smaps: OK
+evidence/connection-r3-C.vasdump: OK
+evidence/connection-r3-D.maps: OK
+evidence/connection-r3-D.smaps: OK
+evidence/connection-r3-D.vasdump: OK
+evidence/connection-r3-baseline.maps: OK
+evidence/connection-r3-baseline.smaps: OK
+evidence/connection-r3-baseline.vasdump: OK
+evidence/connection-r3.command.json: OK
+evidence/connection-r3.measurements.json: OK
+evidence/connection-r3.stderr: OK
+evidence/connection-r3.stdout: OK
+evidence/connection-r3.trace: OK
+evidence/edges-r1.command.json: OK
+evidence/edges-r1.stderr: OK
+evidence/edges-r1.stdout: OK
+evidence/edges-r1.trace: OK
+evidence/edges-r2.command.json: OK
+evidence/edges-r2.stderr: OK
+evidence/edges-r2.stdout: OK
+evidence/edges-r2.trace: OK
+evidence/edges-r3.command.json: OK
+evidence/edges-r3.stderr: OK
+evidence/edges-r3.stdout: OK
+evidence/edges-r3.trace: OK
+evidence/elf-r1-layout.maps: OK
+evidence/elf-r1-layout.smaps: OK
+evidence/elf-r1-layout.vasdump: OK
+evidence/elf-r1.command.json: OK
+evidence/elf-r1.measurements.json: OK
+evidence/elf-r1.stderr: OK
+evidence/elf-r1.stdout: OK
+evidence/elf-r2-layout.maps: OK
+evidence/elf-r2-layout.smaps: OK
+evidence/elf-r2-layout.vasdump: OK
+evidence/elf-r2.command.json: OK
+evidence/elf-r2.measurements.json: OK
+evidence/elf-r2.stderr: OK
+evidence/elf-r2.stdout: OK
+evidence/elf-r3-layout.maps: OK
+evidence/elf-r3-layout.smaps: OK
+evidence/elf-r3-layout.vasdump: OK
+evidence/elf-r3.command.json: OK
+evidence/elf-r3.measurements.json: OK
+evidence/elf-r3.stderr: OK
+evidence/elf-r3.stdout: OK
+evidence/environment.command.json: OK
+evidence/environment.stderr: OK
+evidence/environment.stdout: OK
+evidence/exhaustion-test.txt: OK
+evidence/exhaustion.stdout: OK
+evidence/exhaustion.trace: OK
+evidence/growth-r2.command.json: OK
+evidence/growth-r2.stderr: OK
+evidence/growth-r2.stdout: OK
+evidence/growth-r3.command.json: OK
+evidence/growth-r3.stderr: OK
+evidence/growth-r3.stdout: OK
+evidence/growth.command.json: OK
+evidence/growth.stderr: OK
+evidence/growth.stdout: OK
+evidence/idle-own-r1.command.json: OK
+evidence/idle-own-r1.stderr: OK
+evidence/idle-own-r1.stdout: OK
+evidence/idle-own-r2.command.json: OK
+evidence/idle-own-r2.stderr: OK
+evidence/idle-own-r2.stdout: OK
+evidence/idle-own-r3.command.json: OK
+evidence/idle-own-r3.stderr: OK
+evidence/idle-own-r3.stdout: OK
+evidence/idle-sleep-r1.command.json: OK
+evidence/idle-sleep-r1.stderr: OK
+evidence/idle-sleep-r1.stdout: OK
+evidence/idle-sleep-r2.command.json: OK
+evidence/idle-sleep-r2.stderr: OK
+evidence/idle-sleep-r2.stdout: OK
+evidence/idle-sleep-r3.command.json: OK
+evidence/idle-sleep-r3.stderr: OK
+evidence/idle-sleep-r3.stdout: OK
+evidence/known-r1-after_pairs.maps: OK
+evidence/known-r1-after_pairs.smaps: OK
+evidence/known-r1-after_pairs.vasdump: OK
+evidence/known-r1-before_pairs.maps: OK
+evidence/known-r1-before_pairs.smaps: OK
+evidence/known-r1-before_pairs.vasdump: OK
+evidence/known-r1.command.json: OK
+evidence/known-r1.measurements.json: OK
+evidence/known-r1.stderr: OK
+evidence/known-r1.stdout: OK
+evidence/known-r1.trace: OK
+evidence/known-r2-after_pairs.maps: OK
+evidence/known-r2-after_pairs.smaps: OK
+evidence/known-r2-after_pairs.vasdump: OK
+evidence/known-r2-before_pairs.maps: OK
+evidence/known-r2-before_pairs.smaps: OK
+evidence/known-r2-before_pairs.vasdump: OK
+evidence/known-r2.command.json: OK
+evidence/known-r2.measurements.json: OK
+evidence/known-r2.stderr: OK
+evidence/known-r2.stdout: OK
+evidence/known-r2.trace: OK
+evidence/known-r3-after_pairs.maps: OK
+evidence/known-r3-after_pairs.smaps: OK
+evidence/known-r3-after_pairs.vasdump: OK
+evidence/known-r3-before_pairs.maps: OK
+evidence/known-r3-before_pairs.smaps: OK
+evidence/known-r3-before_pairs.vasdump: OK
+evidence/known-r3.command.json: OK
+evidence/known-r3.measurements.json: OK
+evidence/known-r3.stderr: OK
+evidence/known-r3.stdout: OK
+evidence/known-r3.trace: OK
+evidence/ls-r1.command.json: OK
+evidence/ls-r1.stderr: OK
+evidence/ls-r1.stdout: OK
+evidence/ls-r1.trace: OK
+evidence/ls-r2.command.json: OK
+evidence/ls-r2.stderr: OK
+evidence/ls-r2.stdout: OK
+evidence/ls-r2.trace: OK
+evidence/ls-r3.command.json: OK
+evidence/ls-r3.stderr: OK
+evidence/ls-r3.stdout: OK
+evidence/ls-r3.trace: OK
+evidence/measurement-progress.txt: OK
+evidence/nm.command.json: OK
+evidence/nm.stderr: OK
+evidence/nm.stdout: OK
+evidence/own-thread-r1-after_pairs.maps: OK
+evidence/own-thread-r1-after_pairs.smaps: OK
+evidence/own-thread-r1-after_pairs.vasdump: OK
+evidence/own-thread-r1-before_pairs.maps: OK
+evidence/own-thread-r1-before_pairs.smaps: OK
+evidence/own-thread-r1-before_pairs.vasdump: OK
+evidence/own-thread-r1.command.json: OK
+evidence/own-thread-r1.measurements.json: OK
+evidence/own-thread-r1.stderr: OK
+evidence/own-thread-r1.stdout: OK
+evidence/own-thread-r1.trace: OK
+evidence/own-thread-r2-after_pairs.maps: OK
+evidence/own-thread-r2-after_pairs.smaps: OK
+evidence/own-thread-r2-after_pairs.vasdump: OK
+evidence/own-thread-r2-before_pairs.maps: OK
+evidence/own-thread-r2-before_pairs.smaps: OK
+evidence/own-thread-r2-before_pairs.vasdump: OK
+evidence/own-thread-r2.command.json: OK
+evidence/own-thread-r2.measurements.json: OK
+evidence/own-thread-r2.stderr: OK
+evidence/own-thread-r2.stdout: OK
+evidence/own-thread-r2.trace: OK
+evidence/own-thread-r3-after_pairs.maps: OK
+evidence/own-thread-r3-after_pairs.smaps: OK
+evidence/own-thread-r3-after_pairs.vasdump: OK
+evidence/own-thread-r3-before_pairs.maps: OK
+evidence/own-thread-r3-before_pairs.smaps: OK
+evidence/own-thread-r3-before_pairs.vasdump: OK
+evidence/own-thread-r3.command.json: OK
+evidence/own-thread-r3.measurements.json: OK
+evidence/own-thread-r3.stderr: OK
+evidence/own-thread-r3.stdout: OK
+evidence/own-thread-r3.trace: OK
+evidence/python-r1.command.json: OK
+evidence/python-r1.stderr: OK
+evidence/python-r1.stdout: OK
+evidence/python-r1.trace: OK
+evidence/python-r2.command.json: OK
+evidence/python-r2.stderr: OK
+evidence/python-r2.stdout: OK
+evidence/python-r2.trace: OK
+evidence/python-r3.command.json: OK
+evidence/python-r3.stderr: OK
+evidence/python-r3.stdout: OK
+evidence/python-r3.trace: OK
+evidence/readelf-SW.command.json: OK
+evidence/readelf-SW.stderr: OK
+evidence/readelf-SW.stdout: OK
+evidence/readelf-hW.command.json: OK
+evidence/readelf-hW.stderr: OK
+evidence/readelf-hW.stdout: OK
+evidence/readelf-lW.command.json: OK
+evidence/readelf-lW.stderr: OK
+evidence/readelf-lW.stdout: OK
+evidence/smoke.stderr: OK
+evidence/smoke.stdout: OK
+evidence/stack64-r1-deepest.maps: OK
+evidence/stack64-r1-deepest.smaps: OK
+evidence/stack64-r1-deepest.vasdump: OK
+evidence/stack64-r1.command.json: OK
+evidence/stack64-r1.measurements.json: OK
+evidence/stack64-r1.stderr: OK
+evidence/stack64-r1.stdout: OK
+evidence/stack64-r2-deepest.maps: OK
+evidence/stack64-r2-deepest.smaps: OK
+evidence/stack64-r2-deepest.vasdump: OK
+evidence/stack64-r2.command.json: OK
+evidence/stack64-r2.measurements.json: OK
+evidence/stack64-r2.stderr: OK
+evidence/stack64-r2.stdout: OK
+evidence/stack64-r3-deepest.maps: OK
+evidence/stack64-r3-deepest.smaps: OK
+evidence/stack64-r3-deepest.vasdump: OK
+evidence/stack64-r3.command.json: OK
+evidence/stack64-r3.measurements.json: OK
+evidence/stack64-r3.stderr: OK
+evidence/stack64-r3.stdout: OK
+evidence/stack8-r1-deepest.maps: OK
+evidence/stack8-r1-deepest.smaps: OK
+evidence/stack8-r1-deepest.vasdump: OK
+evidence/stack8-r1.command.json: OK
+evidence/stack8-r1.measurements.json: OK
+evidence/stack8-r1.stderr: OK
+evidence/stack8-r1.stdout: OK
+evidence/stack8-r2-deepest.maps: OK
+evidence/stack8-r2-deepest.smaps: OK
+evidence/stack8-r2-deepest.vasdump: OK
+evidence/stack8-r2.command.json: OK
+evidence/stack8-r2.measurements.json: OK
+evidence/stack8-r2.stderr: OK
+evidence/stack8-r2.stdout: OK
+evidence/stack8-r3-deepest.maps: OK
+evidence/stack8-r3-deepest.smaps: OK
+evidence/stack8-r3-deepest.vasdump: OK
+evidence/stack8-r3.command.json: OK
+evidence/stack8-r3.measurements.json: OK
+evidence/stack8-r3.stderr: OK
+evidence/stack8-r3.stdout: OK
+evidence/stdout-comparison.txt: OK
+evidence/threads-r1-four_threads.maps: OK
+evidence/threads-r1-four_threads.smaps: OK
+evidence/threads-r1-four_threads.vasdump: OK
+evidence/threads-r1.command.json: OK
+evidence/threads-r1.measurements.json: OK
+evidence/threads-r1.stderr: OK
+evidence/threads-r1.stdout: OK
+evidence/threads-r2-four_threads.maps: OK
+evidence/threads-r2-four_threads.smaps: OK
+evidence/threads-r2-four_threads.vasdump: OK
+evidence/threads-r2.command.json: OK
+evidence/threads-r2.measurements.json: OK
+evidence/threads-r2.stderr: OK
+evidence/threads-r2.stdout: OK
+evidence/threads-r3-four_threads.maps: OK
+evidence/threads-r3-four_threads.smaps: OK
+evidence/threads-r3-four_threads.vasdump: OK
+evidence/threads-r3.command.json: OK
+evidence/threads-r3.measurements.json: OK
+evidence/threads-r3.stderr: OK
+evidence/threads-r3.stdout: OK
+evidence/validation.txt: OK
+evidence/vasdump-tests.txt: OK
+level1/vasdump.py: OK
+level2/README.md: OK
+level2/mtrace_student.c: OK
+level2/mtrace_student.h: OK
+level2/support.c: OK
+level3/cases/Makefile: OK
+level3/cases/README.md: OK
+level3/cases/case1.c: OK
+level3/cases/case2.c: OK
+level3/cases/case3.c: OK
+level3/cases/case4.c: OK
+level3/cases/case5.c: OK
+level3/cases/common.h: OK
+report.md: OK
+templates/measurements.csv: OK
+templates/report.md: OK
+tests/accounting.c: OK
+tests/edge_cases.c: OK
+tests/known_count.c: OK
+tests/test_vasdump.py: OK
+tools/sample_status.py: OK
+workloads/case1_remedy.c: OK
+workloads/checkpoint_workload.c: OK
+workloads/common.h: OK
+workloads/elf_workload.c: OK
+workloads/idle_student.c: OK
+workloads/observation_workload.c: OK
+workloads/thread_student.c: OK
+
+returncode=0
+$ ['make', '-j4']
+make -C level3/cases all
+cc -D_GNU_SOURCE -O1 -g -std=c11 -Wall -Wextra -Wpedantic -fno-builtin -fno-omit-frame-pointer workloads/checkpoint_workload.c -o checkpoint_workload
+cc -D_GNU_SOURCE -O1 -g -std=c11 -Wall -Wextra -Wpedantic -fno-builtin -fno-omit-frame-pointer -fPIE -pie workloads/elf_workload.c -o elf_workload
+cc -D_GNU_SOURCE -O1 -g -std=c11 -Wall -Wextra -Wpedantic -fno-builtin -fno-omit-frame-pointer -fno-optimize-sibling-calls workloads/observation_workload.c -pthread -o observation_workload
+make[1]: Entering directory '/tmp/week67-submission-n758z57m/week7/virtual_memory/level3/cases'
+cc -D_GNU_SOURCE -O1 -g -std=c11 -Wall -Wextra -Wpedantic -fno-builtin -fno-omit-frame-pointer  case1.c -pthread  -o case1
+cc -D_GNU_SOURCE -O1 -g -std=c11 -Wall -Wextra -Wpedantic -fno-builtin -fno-omit-frame-pointer tests/known_count.c -pthread -o known_count
+cc -D_GNU_SOURCE -O1 -g -std=c11 -Wall -Wextra -Wpedantic -fno-builtin -fno-omit-frame-pointer tests/edge_cases.c -o edge_cases
+cc -D_GNU_SOURCE -O1 -g -std=c11 -Wall -Wextra -Wpedantic -fno-builtin -fno-omit-frame-pointer workloads/idle_student.c -o idle_student
+cc -D_GNU_SOURCE -O1 -g -std=c11 -Wall -Wextra -Wpedantic -fno-builtin -fno-omit-frame-pointer  case2.c -pthread  -o case2
+cc -D_GNU_SOURCE -O1 -g -std=c11 -Wall -Wextra -Wpedantic -fno-builtin -fno-omit-frame-pointer workloads/thread_student.c -pthread -o thread_student
+cc -D_GNU_SOURCE -O1 -g -std=c11 -Wall -Wextra -Wpedantic -fno-builtin -fno-omit-frame-pointer tests/accounting.c -o accounting_test
+cc -D_GNU_SOURCE -O1 -g -std=c11 -Wall -Wextra -Wpedantic -fno-builtin -fno-omit-frame-pointer workloads/case1_remedy.c -pthread -o case1_remedy
+cc -D_GNU_SOURCE -O1 -g -std=c11 -Wall -Wextra -Wpedantic -fno-builtin -fno-omit-frame-pointer  case3.c -pthread  -o case3
+cc -D_GNU_SOURCE -O1 -g -std=c11 -Wall -Wextra -Wpedantic -fno-builtin -fno-omit-frame-pointer -fPIC -shared level2/support.c level2/mtrace_student.c -ldl -pthread -o libmtrace_lite.so
+cp level1/vasdump.py vasdump
+chmod +x vasdump
+cc -D_GNU_SOURCE -O1 -g -std=c11 -Wall -Wextra -Wpedantic -fno-builtin -fno-omit-frame-pointer  case4.c -pthread  -o case4
+cc -D_GNU_SOURCE -O1 -g -std=c11 -Wall -Wextra -Wpedantic -fno-builtin -fno-omit-frame-pointer  case5.c -pthread  -o case5
+make[1]: Leaving directory '/tmp/week67-submission-n758z57m/week7/virtual_memory/level3/cases'
+chmod +x case1 case2 case3 case4 case5
+
+returncode=0
+$ ['make', 'smoke']
+make -C level3/cases all
+make[1]: Entering directory '/tmp/week67-submission-n758z57m/week7/virtual_memory/level3/cases'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/tmp/week67-submission-n758z57m/week7/virtual_memory/level3/cases'
+chmod +x case1 case2 case3 case4 case5
+timeout 20 env LD_PRELOAD=./libmtrace_lite.so ./edge_cases
+EDGE_OK: semantics checked; inspect statistics separately
+timeout 30 env LD_PRELOAD=./libmtrace_lite.so ./known_count
+PID=174 READY phase=before_pairs
+PID=174 READY phase=after_pairs
+EXPECTED workload_malloc=400000 workload_free=400000; runtime overhead is separate
+snapshot=1 pid=171 reason=exit accounting=requested units=bytes complete=yes
+calls malloc=3 calloc=3 realloc=3 free=6
+live_blocks=1 live_bytes=4096 peak_live_bytes=4096
+metadata_capacity=262144 metadata_exhaustions=0 untracked_releases=0
+null_results malloc=0 calloc=1 realloc=2
+histogram requested_bytes successful_nonnull_requests
+0=3
+1=0
+2-3=0
+4-7=0
+8-15=0
+16-31=0
+32-63=0
+64-127=1
+128-255=1
+256-511=0
+512-1023=0
+1024-2047=0
+2048-4095=0
+4096-8191=1
+8192-16383=0
+16384-32767=0
+32768-65535=0
+65536-131071=0
+131072-262143=0
+262144-524287=0
+524288-1048575=0
+1048576-2097151=0
+2097152-4194303=0
+4194304-8388607=0
+8388608-16777215=0
+16777216-33554431=0
+33554432-67108863=0
+67108864-134217727=0
+134217728-268435455=0
+268435456-536870911=0
+536870912-1073741823=0
+1073741824-2147483647=0
+2147483648-4294967295=0
+4294967296-8589934591=0
+8589934592-17179869183=0
+17179869184-34359738367=0
+34359738368-68719476735=0
+68719476736-137438953471=0
+137438953472-274877906943=0
+274877906944-549755813887=0
+549755813888-1099511627775=0
+1099511627776-2199023255551=0
+2199023255552-4398046511103=0
+4398046511104-8796093022207=0
+8796093022208-17592186044415=0
+17592186044416-35184372088831=0
+35184372088832-70368744177663=0
+70368744177664-140737488355327=0
+140737488355328-281474976710655=0
+281474976710656-562949953421311=0
+562949953421312-1125899906842623=0
+1125899906842624-2251799813685247=0
+2251799813685248-4503599627370495=0
+4503599627370496-9007199254740991=0
+9007199254740992-18014398509481983=0
+18014398509481984-36028797018963967=0
+36028797018963968-72057594037927935=0
+72057594037927936-144115188075855871=0
+144115188075855872-288230376151711743=0
+288230376151711744-576460752303423487=0
+576460752303423488-1152921504606846975=0
+1152921504606846976-2305843009213693951=0
+2305843009213693952-4611686018427387903=0
+4611686018427387904-9223372036854775807=0
+9223372036854775808-18446744073709551615=0
+end snapshot=1
+snapshot=1 pid=174 reason=exit accounting=requested units=bytes complete=yes
+calls malloc=400000 calloc=4 realloc=0 free=400008
+live_blocks=4 live_bytes=1152 peak_live_bytes=1280
+metadata_capacity=262144 metadata_exhaustions=0 untracked_releases=0
+null_results malloc=0 calloc=0 realloc=0
+histogram requested_bytes successful_nonnull_requests
+0=0
+1=0
+2-3=0
+4-7=0
+8-15=0
+16-31=0
+32-63=400000
+64-127=0
+128-255=0
+256-511=4
+512-1023=0
+1024-2047=0
+2048-4095=0
+4096-8191=0
+8192-16383=0
+16384-32767=0
+32768-65535=0
+65536-131071=0
+131072-262143=0
+262144-524287=0
+524288-1048575=0
+1048576-2097151=0
+2097152-4194303=0
+4194304-8388607=0
+8388608-16777215=0
+16777216-33554431=0
+33554432-67108863=0
+67108864-134217727=0
+134217728-268435455=0
+268435456-536870911=0
+536870912-1073741823=0
+1073741824-2147483647=0
+2147483648-4294967295=0
+4294967296-8589934591=0
+8589934592-17179869183=0
+17179869184-34359738367=0
+34359738368-68719476735=0
+68719476736-137438953471=0
+137438953472-274877906943=0
+274877906944-549755813887=0
+549755813888-1099511627775=0
+1099511627776-2199023255551=0
+2199023255552-4398046511103=0
+4398046511104-8796093022207=0
+8796093022208-17592186044415=0
+17592186044416-35184372088831=0
+35184372088832-70368744177663=0
+70368744177664-140737488355327=0
+140737488355328-281474976710655=0
+281474976710656-562949953421311=0
+562949953421312-1125899906842623=0
+1125899906842624-2251799813685247=0
+2251799813685248-4503599627370495=0
+4503599627370496-9007199254740991=0
+9007199254740992-18014398509481983=0
+18014398509481984-36028797018963967=0
+36028797018963968-72057594037927935=0
+72057594037927936-144115188075855871=0
+144115188075855872-288230376151711743=0
+288230376151711744-576460752303423487=0
+576460752303423488-1152921504606846975=0
+1152921504606846976-2305843009213693951=0
+2305843009213693952-4611686018427387903=0
+4611686018427387904-9223372036854775807=0
+9223372036854775808-18446744073709551615=0
+end snapshot=1
+
+returncode=0
+$ ['python3', 'tests/test_vasdump.py']
+......
+----------------------------------------------------------------------
+Ran 6 tests in 1.472s
+
+OK
+
+returncode=0
+$ ['./vasdump', '--delay', '.05', '--', 'sleep', '10']
+pid=192
+category Size_kB Rss_kB Pss_kB Shared_Clean_kB Shared_Dirty_kB Private_Clean_kB Private_Dirty_kB Anonymous_kB
+executable 0 0 0 0 0 0 0 0
+heap 132 16 16 0 0 0 16 16
+stack 132 16 16 0 0 0 16 16
+shared-library 2564 1860 54 1824 0 0 36 36
+other-file 4808 312 110 264 0 40 8 8
+anonymous 56 36 36 0 0 0 36 36
+special 36 8 0 8 0 0 0 0
+permissions Size_kB Rss_kB Pss_kB Shared_Clean_kB Shared_Dirty_kB Private_Clean_kB Private_Dirty_kB Anonymous_kB
+--xp 4 0 0 0 0 0 0 0
+r--p 5632 856 114 812 0 16 28 28
+r--s 28 28 0 28 0 0 0 0
+r-xp 1728 1280 34 1256 0 24 0 0
+rw-p 336 84 84 0 0 0 84 84
+scope Size_kB Rss_kB Pss_kB Shared_Clean_kB Shared_Dirty_kB Private_Clean_kB Private_Dirty_kB Anonymous_kB
+TOTAL 7728 2248 232 2096 0 40 112 112
+snapshot complete=yes units=kB note=proc_smaps_is_not_an_atomic_process_freeze
+
+returncode=0

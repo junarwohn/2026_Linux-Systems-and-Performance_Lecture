@@ -1,0 +1,25 @@
+prediction: All normal and TSan close/timeout/stress checks pass
+command: ['bash', 'tools/l1_check.sh']
+env: {}
+kernel: posix.uname_result(sysname='Linux', nodename='17Z90S', release='7.2.11-arch1-1', version='#1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000', machine='x86_64')
+pid: 22
+$ ./bin/bqtest close
+  PASS
+$ ./bin/bqtest timeout
+  PASS
+$ ./bin/bqtest -p 4 -c 4 -n 20000 -q 4
+  PASS
+$ ./bin/bqtest -p 4 -c 4 -n 20000 -q 4 -b
+  PASS
+$ ./bin/bqtest_tsan close
+  PASS
+$ ./bin/bqtest_tsan timeout
+  PASS
+$ ./bin/bqtest_tsan -p 4 -c 4 -n 20000 -q 4
+  PASS
+$ ./bin/bqtest_tsan -p 4 -c 4 -n 20000 -q 4 -b
+  PASS
+
+l1_check: all PASS
+elapsed_s: 2.018659
+returncode: 0

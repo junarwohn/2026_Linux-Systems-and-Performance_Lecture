@@ -1,0 +1,6 @@
+lockcheck: loaded
+devsvc case 2 (bus): threads=4 seconds=3
+ops=2025338 ops_per_sec=673213 parallel=81%
+check: 2025342 events, every persistent subscriber called 2025342 to 2025342 times (must be 2025342)
+result: PASS
+lockcheck: summary W1=0 W2=0 W3=0 W4=0

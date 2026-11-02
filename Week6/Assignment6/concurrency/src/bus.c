@@ -62,10 +62,14 @@ int bus_unsubscribe(struct sub *s)
 
 void bus_publish(int ev)
 {
+    struct sub *snapshot[MAX_SUBS];
     pthread_mutex_lock(&bus_lock);
-    for (int i = 0; i < nsubs; i++)
-        subs[i]->cb(subs[i], ev);
+    int count = nsubs;
+    memcpy(snapshot, subs, (size_t)count * sizeof snapshot[0]);
     pthread_mutex_unlock(&bus_lock);
+    /* Subscriber lifetimes cover publication, as required by devsvc.h. */
+    for (int i = 0; i < count; i++)
+        snapshot[i]->cb(snapshot[i], ev);
 }
 
 /* ==== TODO(L3-2) end ==================================================== */

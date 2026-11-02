@@ -1,0 +1,13 @@
+prediction: Larger capacity reduces producer/consumer sleeps and generally increases throughput
+command: ['./bin/bqtest', '-p', '2', '-c', '2', '-n', '100000', '-q', '64']
+env: {}
+kernel: posix.uname_result(sysname='Linux', nodename='17Z90S', release='7.2.11-arch1-1', version='#1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000', machine='x86_64')
+pid: 216
+bqtest: producers=2 consumers=2 items/producer=100000 capacity=64 wake=signal work_us=0
+pid=216
+received=200000 lost=0 duplicate=0 garbage=0 order_violation=0 early_closed=0
+put_waits=12965 get_waits=1883 elapsed_ms=93.7 items_per_s=2133630
+completion_inversions=395 (information only: processing completion order, not dequeue order)
+PASS
+elapsed_s: 0.113936
+returncode: 0

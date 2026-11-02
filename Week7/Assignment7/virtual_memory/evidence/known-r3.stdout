@@ -1,0 +1,3 @@
+PID=125 READY phase=before_pairs
+PID=125 READY phase=after_pairs
+EXPECTED workload_malloc=400000 workload_free=400000; runtime overhead is separate

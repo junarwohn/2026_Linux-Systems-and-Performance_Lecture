@@ -1,0 +1,13 @@
+prediction: Use-after-free or inconsistent frames; TSan can detect races
+command: ['bash', 'tools/l3_check.sh', '4']
+env: {'DEVSVC': '/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b', 'DEVSVC_TSAN': '/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week6/Assignment6/concurrency/evidence/variants/w4b_tsan', 'TAG': 'w4b'}
+kernel: posix.uname_result(sysname='Linux', nodename='17Z90S', release='7.2.11-arch1-1', version='#1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000', machine='x86_64')
+pid: 1643
+lockcheck  FAIL  W1=0 W2=0 W3=0 W4=0, result: FAIL
+TSan       FAIL  6 report(s), result: FAIL
+stress     FAIL  0 of 5 runs PASS (-t 2 4 4 4 8)
+parallel   PASS  100% 100% 100% (at least 3%)
+speed      PASS  1782430 ops/s, reference 1673976 (1.06, at least 0.70)
+case 4: FAIL   (logs: logs/l3check-w4b-*.txt)
+elapsed_s: 22.394137
+returncode: 1

@@ -1,0 +1,32 @@
+557689a27000-557689a28000 r--p 00000000 00:1d 389755                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/level3/cases/case2
+557689a28000-557689a29000 r-xp 00001000 00:1d 389755                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/level3/cases/case2
+557689a29000-557689a2a000 r--p 00002000 00:1d 389755                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/level3/cases/case2
+557689a2a000-557689a2b000 r--p 00002000 00:1d 389755                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/level3/cases/case2
+557689a2b000-557689a2c000 rw-p 00003000 00:1d 389755                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/level3/cases/case2
+55768b448000-55768d484000 rw-p 00000000 00:00 0                          [heap]
+7fd9253ff000-7fd925c00000 rw-p 00000000 00:00 0 
+7fd925c00000-7fd925c24000 r--p 00000000 00:1d 654482                     /usr/lib/libc.so.6
+7fd925c24000-7fd925d9f000 r-xp 00024000 00:1d 654482                     /usr/lib/libc.so.6
+7fd925d9f000-7fd925e15000 r--p 0019f000 00:1d 654482                     /usr/lib/libc.so.6
+7fd925e15000-7fd925e19000 r--p 00214000 00:1d 654482                     /usr/lib/libc.so.6
+7fd925e19000-7fd925e1b000 rw-p 00218000 00:1d 654482                     /usr/lib/libc.so.6
+7fd925e1b000-7fd925e23000 rw-p 00000000 00:00 0 
+7fd926000000-7fd926001000 r--p 00000000 00:1d 389852                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/libmtrace_lite.so
+7fd926001000-7fd926003000 r-xp 00001000 00:1d 389852                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/libmtrace_lite.so
+7fd926003000-7fd926004000 r--p 00003000 00:1d 389852                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/libmtrace_lite.so
+7fd926004000-7fd926005000 r--p 00003000 00:1d 389852                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/libmtrace_lite.so
+7fd926005000-7fd926006000 rw-p 00004000 00:1d 389852                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/libmtrace_lite.so
+7fd926006000-7fd926506000 rw-p 00000000 00:00 0 
+7fd926593000-7fd926598000 rw-p 00000000 00:00 0 
+7fd926598000-7fd9265be000 r--p 00000000 00:1d 966808                     /etc/ld.so.cache
+7fd9265be000-7fd9265c2000 r--p 00000000 00:00 0                          [vvar]
+7fd9265c2000-7fd9265c4000 r--p 00000000 00:00 0                          [vvar_vclock]
+7fd9265c4000-7fd9265c6000 r-xp 00000000 00:00 0                          [vdso]
+7fd9265c6000-7fd9265c7000 r--p 00000000 00:1d 654473                     /usr/lib/ld-linux-x86-64.so.2
+7fd9265c7000-7fd9265f4000 r-xp 00001000 00:1d 654473                     /usr/lib/ld-linux-x86-64.so.2
+7fd9265f4000-7fd926603000 r--p 0002e000 00:1d 654473                     /usr/lib/ld-linux-x86-64.so.2
+7fd926603000-7fd926605000 r--p 0003d000 00:1d 654473                     /usr/lib/ld-linux-x86-64.so.2
+7fd926605000-7fd926606000 rw-p 0003f000 00:1d 654473                     /usr/lib/ld-linux-x86-64.so.2
+7fd926606000-7fd926607000 rw-p 00000000 00:00 0 
+7ffe1ccf4000-7ffe1cd15000 rw-p 00000000 00:00 0                          [stack]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]

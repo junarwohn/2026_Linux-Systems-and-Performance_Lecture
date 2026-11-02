@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python3",
+    "-c",
+    "print(sum(range(10**6)))"
+  ],
+  "environment": {
+    "LD_PRELOAD": "./libmtrace_lite.so",
+    "MTRACE_OUT": "/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/evidence/python-r1.trace"
+  },
+  "pid": 77,
+  "returncode": 0,
+  "elapsed_s": 0.03165645900298841,
+  "kernel": "7.2.11-arch1-1"
+}

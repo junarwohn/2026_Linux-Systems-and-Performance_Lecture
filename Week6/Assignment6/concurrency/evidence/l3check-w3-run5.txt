@@ -1,0 +1,11 @@
+devsvc case 3 (catalog): threads=8 seconds=2
+HANG: worker 0 finished no request for 3.0 s
+  worker 0 (tid 1401): catalog_grant(4, 7), 90 requests
+  worker 1 (tid 1402): catalog_grant(5, 7), 35 requests
+  worker 2 (tid 1403): catalog_revoke(3, 7), 23 requests
+  worker 3 (tid 1404): catalog_can_launch(2, 6), 1 requests
+  worker 4 (tid 1405): catalog_revoke(6, 3), 1 requests
+  worker 5 (tid 1406): catalog_grant(7, 0), 2 requests
+  worker 6 (tid 1407): catalog_revoke(4, 6), 16 requests
+  worker 7 (tid 1408): catalog_set_perm(5, 0), 15 requests
+result: HANG

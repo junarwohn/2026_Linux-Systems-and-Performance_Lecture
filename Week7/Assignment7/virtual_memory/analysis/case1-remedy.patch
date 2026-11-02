@@ -1,0 +1,18 @@
+--- provided case1.c
++++ workloads/case1_remedy.c
+@@ -1,5 +1,5 @@
+-/* Assignment 7: case 1. Build with the supplied Makefile. */
+-#include "common.h"
++/* Student comparison: release each buffer at the end of its useful lifetime. */
++#include "../level3/cases/common.h"
+ #include <malloc.h>
+ #include <pthread.h>
+ #include <stdatomic.h>
+@@ -50,6 +50,7 @@
+     void *p = alloc_bytes(1024 * 1024);
+     touch(p, 1024 * 1024);
+     sink = (uintptr_t)p;
++    free(p);
+     phase("running");
+     wait_ms(interval);
+   }

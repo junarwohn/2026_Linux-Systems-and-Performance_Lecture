@@ -1,0 +1,13 @@
+prediction: Completion can invert while dequeue order remains correct
+command: ['./bin/bqtest', '-p', '2', '-c', '2', '-n', '50000', '-q', '4', '-w', '20']
+env: {}
+kernel: posix.uname_result(sysname='Linux', nodename='17Z90S', release='7.2.11-arch1-1', version='#1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000', machine='x86_64')
+pid: 239
+bqtest: producers=2 consumers=2 items/producer=50000 capacity=4 wake=signal work_us=20
+pid=239
+received=100000 lost=0 duplicate=0 garbage=0 order_violation=0 early_closed=0
+put_waits=96394 get_waits=913 elapsed_ms=1250.8 items_per_s=79946
+completion_inversions=2019 (information only: processing completion order, not dequeue order)
+PASS
+elapsed_s: 1.266879
+returncode: 0

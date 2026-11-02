@@ -1,0 +1,12 @@
+/bin/
+/analysis/__pycache__/
+/evidence/baseline/devsvc
+/evidence/baseline/devsvc_tsan
+/evidence/variants/w2
+/evidence/variants/w2_tsan
+/evidence/variants/w3
+/evidence/variants/w3_tsan
+/evidence/variants/w4a
+/evidence/variants/w4a_tsan
+/evidence/variants/w4b
+/evidence/variants/w4b_tsan

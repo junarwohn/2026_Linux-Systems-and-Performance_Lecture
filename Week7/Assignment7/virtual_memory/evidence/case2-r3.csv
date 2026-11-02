@@ -1,0 +1,16 @@
+run_id,sample,elapsed_s,phase,VmSize_kB,VmRSS_kB,snapshot,live_bytes,live_blocks
+case2-r3,0,0.005465,baseline,16276,1964,1,0,0
+case2-r3,1,1.005802,baseline,19576,8524,2,3665920,880
+case2-r3,2,2.005907,before_release,49152,39024,3,33619968,8193
+case2-r3,3,3.005959,after_release,49152,39024,4,69632,2
+case2-r3,4,4.005990,after_release,49152,39024,5,69632,2
+case2-r3,5,5.005908,after_release,49152,39024,6,69632,2
+case2-r3,6,6.005979,after_release,49152,39024,7,69632,2
+case2-r3,7,7.006345,after_release,49152,39024,8,69632,2
+case2-r3,8,8.006056,after_release,49152,39024,9,69632,2
+case2-r3,9,9.006140,after_release,49152,39024,10,69632,2
+case2-r3,10,10.006097,after_release,49152,39024,11,69632,2
+case2-r3,11,11.006084,after_release,49152,39024,12,69632,2
+case2-r3,12,12.006084,after_release,49152,39024,13,69632,2
+case2-r3,13,13.005960,after_release,49152,39024,14,69632,2
+case2-r3,14,14.005974,after_release,49152,39024,15,69632,2

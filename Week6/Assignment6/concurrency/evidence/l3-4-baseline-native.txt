@@ -1,0 +1,25 @@
+prediction: Original source deadlocks; lockcheck exposes the circular acquisition order
+command: ['env', 'LD_PRELOAD=./bin/lockcheck.so', './evidence/baseline/devsvc', '-c', '4', '-d', '1']
+env: {}
+kernel: posix.uname_result(sysname='Linux', nodename='17Z90S', release='7.2.11-arch1-1', version='#1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000', machine='x86_64')
+pid: 48
+lockcheck: loaded
+devsvc case 4 (config): threads=4 seconds=1
+lockcheck: W1 possible circular locking (tid 50)
+  now:     taking outputs at config_update+0x98 (devsvc)
+           while holding cfg_lock (taken at config_update+0x19 (devsvc))
+  earlier: cfg_lock taken at output_render+0x35 (devsvc)
+           while holding outputs (taken at output_render+0x29 (devsvc)) by tid 50
+HANG: worker 0 finished no request for 3.0 s
+  worker 0 (tid 49): output_render(9), 155 requests
+  worker 1 (tid 50): config_update, 227 requests
+  worker 2 (tid 51): output_render(15), 288 requests
+  worker 3 (tid 52): output_render(5), 204 requests
+result: HANG
+lockcheck: W2 outputs+0x240 is still held at exit by tid 49 (thread still running), taken at output_render+0x29 (devsvc)
+lockcheck: W2 outputs+0x3c0 is still held at exit by tid 51 (thread still running), taken at output_render+0x29 (devsvc)
+lockcheck: W2 outputs+0x140 is still held at exit by tid 52 (thread still running), taken at output_render+0x29 (devsvc)
+lockcheck: W2 cfg_lock is still held at exit by tid 50 (thread still running), taken at config_update+0x19 (devsvc)
+lockcheck: summary W1=6 W2=4 W3=0 W4=0
+elapsed_s: 3.072772
+returncode: 3

@@ -1,0 +1,6 @@
+lockcheck  PASS  W1=0 W2=0 W3=0 W4=0, result: PASS
+TSan       PASS  0 report(s), result: PASS
+stress     PASS  5 of 5 runs PASS (-t 2 4 4 4 8)
+parallel   PASS  90% 89% 89% (at least 3%)
+speed      PASS  1092154 ops/s, reference 1110660 (0.98, at least 0.70)
+case 1: PASS   (logs: logs/l3check-1-*.txt)

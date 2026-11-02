@@ -1,0 +1,23 @@
+prediction: Original source deadlocks; lockcheck exposes the circular acquisition order
+command: ['env', 'LD_PRELOAD=./bin/lockcheck.so', './evidence/baseline/devsvc', '-c', '3', '-d', '1']
+env: {}
+kernel: posix.uname_result(sysname='Linux', nodename='17Z90S', release='7.2.11-arch1-1', version='#1 SMP PREEMPT_DYNAMIC Fri, 16 Oct 2026 00:28:58 +0000', machine='x86_64')
+pid: 37
+lockcheck: loaded
+devsvc case 3 (catalog): threads=4 seconds=1
+lockcheck: W1 possible circular locking (tid 39)
+  now:     taking apps_lock at catalog_perm_users+0x24 (devsvc)
+           while holding perms_lock (taken at catalog_perm_users+0x18 (devsvc))
+  earlier: perms_lock taken at catalog_can_launch+0x25 (devsvc)
+           while holding apps_lock (taken at catalog_can_launch+0x19 (devsvc)) by tid 38
+HANG: worker 0 finished no request for 3.0 s
+  worker 0 (tid 38): catalog_perm_users(7), 1 requests
+  worker 1 (tid 39): catalog_perm_users(0), 0 requests
+  worker 2 (tid 40): catalog_can_launch(4, 7), 0 requests
+  worker 3 (tid 41): catalog_can_launch(0, 4), 0 requests
+result: HANG
+lockcheck: W2 apps_lock is still held at exit by tid 40 (thread still running), taken at catalog_can_launch+0x19 (devsvc)
+lockcheck: W2 perms_lock is still held at exit by tid 39 (thread still running), taken at catalog_perm_users+0x18 (devsvc)
+lockcheck: summary W1=1 W2=2 W3=0 W4=0
+elapsed_s: 3.070533
+returncode: 3

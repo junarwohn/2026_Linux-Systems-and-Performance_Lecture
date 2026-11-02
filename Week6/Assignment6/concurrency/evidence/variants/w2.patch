@@ -1,0 +1,32 @@
+--- src/bus.c
++++ w2.c
+@@ -34,7 +34,11 @@
+ 
+ void bus_init(void)
+ {
+-    pthread_mutex_init(&bus_lock, NULL);
++    pthread_mutexattr_t attr;
++    pthread_mutexattr_init(&attr);
++    pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
++    pthread_mutex_init(&bus_lock, &attr);
++    pthread_mutexattr_destroy(&attr);
+     nsubs = 0;
+ }
+ 
+@@ -62,14 +66,10 @@
+ 
+ void bus_publish(int ev)
+ {
+-    struct sub *snapshot[MAX_SUBS];
+     pthread_mutex_lock(&bus_lock);
+-    int count = nsubs;
+-    memcpy(snapshot, subs, (size_t)count * sizeof snapshot[0]);
++    for (int i = 0; i < nsubs; i++)
++        subs[i]->cb(subs[i], ev);
+     pthread_mutex_unlock(&bus_lock);
+-    /* Subscriber lifetimes cover publication, as required by devsvc.h. */
+-    for (int i = 0; i < count; i++)
+-        snapshot[i]->cb(snapshot[i], ev);
+ }
+ 
+ /* ==== TODO(L3-2) end ==================================================== */

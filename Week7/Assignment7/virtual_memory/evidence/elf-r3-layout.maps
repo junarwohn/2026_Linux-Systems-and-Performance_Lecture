@@ -1,0 +1,32 @@
+5637fe8d7000-5637fe8d8000 r--p 00000000 00:1d 389748                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/elf_workload
+5637fe8d8000-5637fe8d9000 r-xp 00001000 00:1d 389748                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/elf_workload
+5637fe8d9000-5637fe8da000 r--p 00002000 00:1d 389748                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/elf_workload
+5637fe8da000-5637fe8db000 r--p 00002000 00:1d 389748                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/elf_workload
+5637fe8db000-5637fe8dc000 rw-p 00003000 00:1d 389748                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week7/Assignment7/virtual_memory/elf_workload
+5637fe8dc000-5637ff0dc000 rw-p 00000000 00:00 0 
+56380d0e3000-56380d104000 rw-p 00000000 00:00 0                          [heap]
+7f514e400000-7f514e424000 r--p 00000000 00:1d 654482                     /usr/lib/libc.so.6
+7f514e424000-7f514e59f000 r-xp 00024000 00:1d 654482                     /usr/lib/libc.so.6
+7f514e59f000-7f514e615000 r--p 0019f000 00:1d 654482                     /usr/lib/libc.so.6
+7f514e615000-7f514e619000 r--p 00214000 00:1d 654482                     /usr/lib/libc.so.6
+7f514e619000-7f514e61b000 rw-p 00218000 00:1d 654482                     /usr/lib/libc.so.6
+7f514e61b000-7f514e623000 rw-p 00000000 00:00 0 
+7f514e66a000-7f514e66d000 rw-p 00000000 00:00 0 
+7f514e66d000-7f514e66e000 r--p 00000000 00:1d 668799                     /usr/lib/coreutils/libstdbuf.so
+7f514e66e000-7f514e66f000 r-xp 00001000 00:1d 668799                     /usr/lib/coreutils/libstdbuf.so
+7f514e66f000-7f514e670000 r--p 00002000 00:1d 668799                     /usr/lib/coreutils/libstdbuf.so
+7f514e670000-7f514e671000 r--p 00002000 00:1d 668799                     /usr/lib/coreutils/libstdbuf.so
+7f514e671000-7f514e672000 rw-p 00003000 00:1d 668799                     /usr/lib/coreutils/libstdbuf.so
+7f514e672000-7f514e674000 rw-p 00000000 00:00 0 
+7f514e674000-7f514e69a000 r--p 00000000 00:1d 966808                     /etc/ld.so.cache
+7f514e69a000-7f514e69e000 r--p 00000000 00:00 0                          [vvar]
+7f514e69e000-7f514e6a0000 r--p 00000000 00:00 0                          [vvar_vclock]
+7f514e6a0000-7f514e6a2000 r-xp 00000000 00:00 0                          [vdso]
+7f514e6a2000-7f514e6a3000 r--p 00000000 00:1d 654473                     /usr/lib/ld-linux-x86-64.so.2
+7f514e6a3000-7f514e6d0000 r-xp 00001000 00:1d 654473                     /usr/lib/ld-linux-x86-64.so.2
+7f514e6d0000-7f514e6df000 r--p 0002e000 00:1d 654473                     /usr/lib/ld-linux-x86-64.so.2
+7f514e6df000-7f514e6e1000 r--p 0003d000 00:1d 654473                     /usr/lib/ld-linux-x86-64.so.2
+7f514e6e1000-7f514e6e2000 rw-p 0003f000 00:1d 654473                     /usr/lib/ld-linux-x86-64.so.2
+7f514e6e2000-7f514e6e3000 rw-p 00000000 00:00 0 
+7ffc15f31000-7ffc15f52000 rw-p 00000000 00:00 0                          [stack]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]

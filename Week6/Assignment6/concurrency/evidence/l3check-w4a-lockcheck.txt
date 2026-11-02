@@ -1,0 +1,12 @@
+lockcheck: loaded
+devsvc case 4 (config): threads=4 seconds=3
+lockcheck: W3 usleep() called at synchronize_rcu+0x8f (w4a) while holding:
+  cfg_lock (taken at config_update+0x16 (w4a))
+HANG: worker 0 finished no request for 3.0 s
+  worker 0 (tid 1465): config_update, 12895 requests
+  worker 1 (tid 1466): config_update, 13106 requests
+  worker 2 (tid 1467): config_update, 11223 requests
+  worker 3 (tid 1468): config_update, 13363 requests
+result: HANG
+lockcheck: W2 cfg_lock is still held at exit by tid 1465 (thread still running), taken at config_update+0x16 (w4a)
+lockcheck: summary W1=0 W2=1 W3=29990 W4=0

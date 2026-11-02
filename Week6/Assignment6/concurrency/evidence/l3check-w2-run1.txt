@@ -1,0 +1,8 @@
+devsvc case 2 (bus): threads=2 seconds=2
+ops=629225 ops_per_sec=313721 parallel=0%
+check failed: persistent subscriber 4 was called 629226 times for 629227 events
+check failed: persistent subscriber 5 was called 629226 times for 629227 events
+check failed: persistent subscriber 6 was called 629226 times for 629227 events
+check failed: persistent subscriber 7 was called 629226 times for 629227 events
+check: 629227 events, every persistent subscriber called 629226 to 629227 times (must be 629227)
+result: FAIL

@@ -1,0 +1,12 @@
+--- src/catalog.c
++++ w3.c
+@@ -92,8 +92,8 @@
+ int catalog_set_perm(int perm, int enabled)
+ {
+     int ok = 1;
++    pthread_rwlock_wrlock(&perms_lock);
+     pthread_rwlock_rdlock(&apps_lock);
+-    pthread_rwlock_wrlock(&perms_lock);
+     if (enabled) {
+         perms[perm].enabled = 1;
+     } else {
