@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+from pathlib import Path
+import re
+
+print("node zone free_pages min_pages low_pages high_pages")
+zones = {}
+for line in Path("/proc/zoneinfo").read_text().splitlines():
+    match = re.match(r"Node (\d+), zone\s+(\S+)", line)
+    if match:
+        zone = zones.setdefault(match.groups(), {})
+    tokens = line.split()
+    if tokens[:2] == ["pages", "free"]:
+        zone["free"] = tokens[2]
+    elif tokens and tokens[0] in ("min", "low", "high"):
+        zone[tokens[0]] = tokens[1]
+for (node, name), values in zones.items():
+    print(node, name, *(values.get(key, "NA") for key in ("free", "min", "low", "high")))
+for line in Path("/proc/meminfo").read_text().splitlines():
+    if line.startswith(("MemFree:", "MemAvailable:")):
+        name, value = line.split(":")
+        print(name + "_KiB", value.split()[0])

@@ -1,0 +1,1 @@
+t=5579.095994 registered metric=some stall_us=50000 window_us=2000000

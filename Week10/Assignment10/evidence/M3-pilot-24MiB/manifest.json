@@ -1,0 +1,33 @@
+{
+  "commands": [
+    [
+      "./scenario",
+      "M3",
+      "--bytes",
+      "32MiB",
+      "--base",
+      "8MiB",
+      "--cycles",
+      "5",
+      "--hold",
+      ".65",
+      "--period",
+      ".3",
+      "--seconds",
+      "7",
+      "--seed",
+      "42"
+    ]
+  ],
+  "start_s": 5815.69724369,
+  "limits": {
+    "max_mib": 80,
+    "high_mib": 24
+  },
+  "group": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p32940-i33900.service/lab10-M3-original",
+  "scope": "fresh systemd user service",
+  "page_B": 4096,
+  "launch_s": 5815.999319916,
+  "end_s": 5837.087155734,
+  "termination": "pilot watchdog timeout"
+}

@@ -1,0 +1,16 @@
+{
+  "output": "/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week10/Assignment10/evidence/M3-original/monitor",
+  "cgroup": [
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p34973-i15867.service/lab10-M3-original"
+  ],
+  "pid": [],
+  "seconds": null,
+  "fast": 1.0,
+  "slow": 10.0,
+  "only_explicit": false,
+  "start": 5875.793578769,
+  "clock": "CLOCK_MONOTONIC",
+  "diagnostic": true,
+  "end": 5883.195809597,
+  "termination": "signal"
+}

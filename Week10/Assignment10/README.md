@@ -46,7 +46,7 @@ SIGUSR1은 덤프 요청이며, 안전한 처리 시점에 출력합니다. SIGK
 ## earlyoom
 vendor/earlyoom은 공식 v1.9.0 원본이며 라이선스와 출처/해시를 포함합니다.
 ```sh
-python3 student_support/build_earlyoom.py --policy starter/lmk_policy.c --output build/earlyoom
+python3 student_support/build_earlyoom.py --policy src/lmk_policy.c --output build/earlyoom
 ./build/earlyoom/earlyoom -v
 ```
 기본 빌드는 원본 코드 경로와 별도의 --lab 경로를 만듭니다. 자동 설치/서비스 실행은 하지 않습니다.
@@ -54,7 +54,7 @@ python3 student_support/build_earlyoom.py --policy starter/lmk_policy.c --output
 등록부는 Linux /tmp의 보호된 파일로 생성합니다. Windows 마운트의 chmod 표시만으로 보호를 가정하지 않습니다.
 labrun.py의 registry-path.txt는 실행 중인 등록부 위치를 가리킵니다. registry.tsv는 제출용 복사본입니다.
 --lab 옵션은 도움말 오류에 나오는 제한된 옵션 집합입니다. 원본 CLI와 구분하십시오.
-정책 파일의 PSI/중요도 선택 부분은 학생 구현 과제이며 미완성 상태에서 명시적으로 실패합니다.
+원래 정책 골격은 starter/에, 구현과 실행 검증은 src/와 evidence/에 있습니다.
 
 ## 보드 실험
 관리자가 지정한 부모 cgroup, 보드용으로 빌드한 memhog/foreground/earlyoom 경로를 사용합니다.
@@ -64,3 +64,34 @@ board_run.py --help에서 실제 인자를 확인하십시오. --config 1~4, --s
 보드 swap이나 기존 memory manager를 자동으로 바꾸지 않습니다. safety cgroup이 먼저 OOM을 일으킬 수 있으며, system PSI나 earlyoom kill이 반드시 발생하는 것은 아닙니다.
 실제 보드에서 크기/증가율/시간/관리자 공존을 검증한 뒤 비교 조건을 고정하십시오.
 
+
+## 추가한 과제 도구
+
+`make clean && make`로 `memhog`, `psimon`, `scenario`, `scenario-fixed`, `foreground`, `alloctrace.so`를 빌드한다. memhog/psimon은 저장소의 Week 9 C 소스를 직접 재사용한다. 소스를 다른 곳에 둔 경우 `make WEEK9=/path/to/Assignment9`를 사용한다. `memmon`, `memdiag`, `oomparse`는 바로 실행하는 Python 3 프로그램이다.
+
+```bash
+./memmon /tmp/memmon-example --seconds 3
+./memdiag /tmp/memdiag-example --fast 1 --slow 10 --seconds 12
+./oomparse evidence/oom-C/kernel-oom.log --page-size 4096 --total-pages 14336 --run oom-C
+python3 student_support/build_earlyoom.py --policy src/lmk_policy.c --output build/earlyoom
+```
+
+`memmon`과 `memdiag`는 반복 가능한 `--cgroup`과 `--pid` 옵션을 지원한다. CSV는 누적 raw counter와 수집 cycle 시각, 단위 및 read status를 저장한다. 플롯의 공통 시각은 실험별 workload launch다. 초기 구간과 빠른 peak는 journal·`memory.peak`·0.18초 체크포인트로 보강했다. `alloctrace`는 glibc의 `realloc(p, 0)` 동작을 사용하며 idle 중 온 SIGUSR1은 다음 wrapper 진입까지 대기한다.
+
+## 재현과 보관 경로
+
+기존 증거를 보존하려면 빈 `evidence/`가 있는 저장소 복제본에서 재실행한다. 워크로드는 transient unit의 하위 cgroup만 사용한다.
+
+```bash
+systemd-run --user --wait --pipe -p WorkingDirectory="$PWD" \
+  -p MemoryMax=384M -p MemorySwapMax=0 -p RuntimeMaxSec=100 \
+  -p Delegate=memory -p DelegateSubgroup=observer python3 analysis/local_runs.py
+python3 analysis/collect_oom_journal.py
+python3 analysis/figures.py
+```
+
+`local_runs.py`에서 `--m3-only`, `--outside-case`, `--long original|fixed`로 하위 실험을 고를 수 있다. 5분 실험은 unit의 `RuntimeMaxSec=320`을 사용했다. 그래프 재생성에는 Matplotlib이 필요하다. kernel journal을 읽을 수 있는 같은 부팅 세션에서 `collect_oom_journal.py`를 사용한다. 로컬 결과와 미측정 항목은 [report.md](report.md)에 있다.
+
+제공 파일은 `student_support/`, `scenario_src/scenario.c`, `vendor/`다. 수정은 `src/`, `scenario-patches/`, `earlyoom-patches/`, `analysis/`에 있다. Upstream v1.9.0 full commit은 `202d4db0d308ca6478f68de68b46cae34896ddaf`이며 vendored 라이선스와 archive SHA-256을 보존했다. 개별 run의 사용자·그룹 한도 및 명령은 `evidence/<run>/manifest.json`에 있고, 예외적으로 보존한 초기 M3 pilot은 이름에 `pilot`을 포함한다.
+
+`earlyoom-patches/git/`는 upstream full commit에 적용할 `git format-patch` 시리즈다. 0001은 course scaffold, 0002는 진입점, 0003~0005는 정책 A/B/C를 담는다. 임시 upstream checkout에서 적용한 내용을 로컬 x86-64로 빌드했다. 보드 실행기는 `--memmon`으로 학생 collector를 함께 실행하며, 실제 포팅과 보드 계측은 수행 환경이 필요하다.

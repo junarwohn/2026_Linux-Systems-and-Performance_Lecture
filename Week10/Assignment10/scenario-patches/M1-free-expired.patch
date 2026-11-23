@@ -1,0 +1,10 @@
+--- a/scenario_src/scenario.c
++++ b/scenario_src/scenario.c
+@@ -15,6 +15,7 @@
+ }
+ 
+ __attribute__((noinline)) static void event_expire(size_t slot) {
++    free(entries[slot]);
+     entries[slot] = NULL;
+ }
+ 

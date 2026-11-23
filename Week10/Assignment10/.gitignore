@@ -1,0 +1,7 @@
+/scenario
+/scenario-fixed
+/foreground
+/memhog
+/psimon
+/build/
+__pycache__/

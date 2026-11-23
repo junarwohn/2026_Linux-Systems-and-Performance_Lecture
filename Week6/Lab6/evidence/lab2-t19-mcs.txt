@@ -1,0 +1,4 @@
+lockbench: mode=mcs threads=19 cpus=18 ops/thread=200000 cs_loops=200 work_loops=200
+stopped after 5 s: done=26020 of 3800000 ops
+elapsed_ms=5002 cpu_ms=86291 ns_per_op=192237
+sleeps=0 preempted=12858 handoff=100.0%

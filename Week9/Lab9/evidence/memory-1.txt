@@ -1,0 +1,5 @@
+mode=trigger path=/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.pressure
+TRIGGER
+monotonic=5501.551178
+some avg10=1.31 avg60=0.25 avg300=0.05 total=165726
+full avg10=1.31 avg60=0.25 avg300=0.05 total=165726

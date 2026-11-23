@@ -1,0 +1,6 @@
+COW parent=19332 address=0x7f58b9e00000 pages=4096 initial=7
+7f58b9e00000-7f58bae00000 rw-p 00000000 00:00 0 
+Inspect maps above; Enter to continue.
+7f58b9e00000-7f58bae00000 rw-p 00000000 00:00 0 
+child first-write minor=4096 major=0; rewrite minor=0 major=0 value=10
+parent value=7 (expected 7)

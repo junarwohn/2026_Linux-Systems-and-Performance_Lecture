@@ -1,0 +1,31 @@
+Running as unit: run-p32940-i33900.service
+reserve [0]
+oom-B [-9]
+oom-C [-9, -9, -9]
+M1-original-1 [0]
+M1-fixed-1 [0]
+M1-original-2 [0]
+M1-fixed-2 [0]
+M1-original-3 [0]
+M1-fixed-3 [0]
+M2-original [-9]
+M2-fixed [0]
+Traceback (most recent call last):
+  File "/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week10/Assignment10/analysis/local_runs.py", line 149, in <module>
+    main()
+    ~~~~^^
+  File "/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week10/Assignment10/analysis/local_runs.py", line 143, in main
+    experiment(parent,out,"M3-"+mode,[["./scenario","M3","--bytes","32MiB","--base","8MiB",
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               "--cycles","5","--hold",".65","--period",".3","--seconds","7","--seed","42"]],
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               {"max_mib":80,"high_mib":limit})
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week10/Assignment10/analysis/local_runs.py", line 77, in experiment
+    raise TimeoutError(name)
+TimeoutError: M3-original
+          Finished with result: exit-code
+Main processes terminated with: code=exited, status=1/FAILURE
+               Service runtime: 1min 108ms
+             CPU time consumed: 2.033s
+                   Memory peak: 78.8M (swap: 0B)

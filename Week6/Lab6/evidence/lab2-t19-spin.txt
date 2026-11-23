@@ -1,0 +1,3 @@
+lockbench: mode=spin threads=19 cpus=18 ops/thread=200000 cs_loops=200 work_loops=200
+elapsed_ms=2446 cpu_ms=37265 ns_per_op=644
+sleeps=0 preempted=4134 handoff=98.1%

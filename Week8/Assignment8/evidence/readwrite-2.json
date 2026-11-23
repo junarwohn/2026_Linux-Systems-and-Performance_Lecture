@@ -1,0 +1,155 @@
+[
+  {
+    "checkpoint": {
+      "stage": "mapped",
+      "pid": "24264",
+      "range": "7fd7b4a00000-7fd7b8a00000",
+      "bytes": "67108864",
+      "child": "0"
+    },
+    "observer": {
+      "pid": {
+        "pid": 24264,
+        "t_monotonic_s": 5363.419767783,
+        "minflt": 65,
+        "majflt": 0,
+        "start_ticks": 8882256,
+        "VmRSS_KiB": 1876,
+        "RssAnon_KiB": 100,
+        "RssFile_KiB": 1776,
+        "RssShmem_KiB": 0,
+        "VmPTE_KiB": 44,
+        "Pss_KiB": 129,
+        "Shared_Clean_KiB": 1764,
+        "Private_Dirty_KiB": 100,
+        "AnonHugePages_KiB": 0,
+        "range": {
+          "start": "0x7fd7b4a00000",
+          "end": "0x7fd7b8a00000",
+          "present": 0,
+          "swapped": 0,
+          "neither": 16384,
+          "exclusive_present": 0,
+          "PFNs": "N/A (PFN access unavailable)",
+          "distinct_frames": "N/A"
+        },
+        "elapsed_s": 1.4e-05,
+        "minflt_delta": "N/A",
+        "majflt_delta": "N/A"
+      }
+    }
+  },
+  {
+    "workload": "checksum=0"
+  },
+  {
+    "checkpoint": {
+      "stage": "read",
+      "pid": "24264",
+      "range": "7fd7b4a00000-7fd7b8a00000",
+      "bytes": "67108864",
+      "child": "0"
+    },
+    "observer": {
+      "pid": {
+        "pid": 24264,
+        "t_monotonic_s": 5363.49879032,
+        "minflt": 16449,
+        "majflt": 0,
+        "start_ticks": 8882256,
+        "VmRSS_KiB": 1876,
+        "RssAnon_KiB": 100,
+        "RssFile_KiB": 1776,
+        "RssShmem_KiB": 0,
+        "VmPTE_KiB": 172,
+        "Pss_KiB": 130,
+        "Shared_Clean_KiB": 1764,
+        "Private_Dirty_KiB": 100,
+        "AnonHugePages_KiB": 0,
+        "range": {
+          "start": "0x7fd7b4a00000",
+          "end": "0x7fd7b8a00000",
+          "present": 16384,
+          "swapped": 0,
+          "neither": 0,
+          "exclusive_present": 0,
+          "PFNs": "N/A (PFN access unavailable)",
+          "distinct_frames": "N/A"
+        },
+        "elapsed_s": 1.1e-05,
+        "minflt_delta": "N/A",
+        "majflt_delta": "N/A"
+      }
+    }
+  },
+  {
+    "checkpoint": {
+      "stage": "written",
+      "pid": "24264",
+      "range": "7fd7b4a00000-7fd7b8a00000",
+      "bytes": "67108864",
+      "child": "0"
+    },
+    "observer": {
+      "pid": {
+        "pid": 24264,
+        "t_monotonic_s": 5363.606044931,
+        "minflt": 32833,
+        "majflt": 0,
+        "start_ticks": 8882256,
+        "VmRSS_KiB": 67412,
+        "RssAnon_KiB": 65636,
+        "RssFile_KiB": 1776,
+        "RssShmem_KiB": 0,
+        "VmPTE_KiB": 172,
+        "Pss_KiB": 65666,
+        "Shared_Clean_KiB": 1764,
+        "Private_Dirty_KiB": 65636,
+        "AnonHugePages_KiB": 0,
+        "range": {
+          "start": "0x7fd7b4a00000",
+          "end": "0x7fd7b8a00000",
+          "present": 16384,
+          "swapped": 0,
+          "neither": 0,
+          "exclusive_present": 16384,
+          "PFNs": "N/A (PFN access unavailable)",
+          "distinct_frames": "N/A"
+        },
+        "elapsed_s": 3.2e-05,
+        "minflt_delta": "N/A",
+        "majflt_delta": "N/A"
+      }
+    }
+  },
+  {
+    "checkpoint": {
+      "stage": "unmapped",
+      "pid": "24264",
+      "range": "7fd7b4a00000-7fd7b8a00000",
+      "bytes": "67108864",
+      "child": "0"
+    },
+    "observer": {
+      "pid": {
+        "pid": 24264,
+        "t_monotonic_s": 5363.690163105,
+        "minflt": 32833,
+        "majflt": 0,
+        "start_ticks": 8882256,
+        "VmRSS_KiB": 1876,
+        "RssAnon_KiB": 100,
+        "RssFile_KiB": 1776,
+        "RssShmem_KiB": 0,
+        "VmPTE_KiB": 44,
+        "Pss_KiB": 130,
+        "Shared_Clean_KiB": 1764,
+        "Private_Dirty_KiB": 100,
+        "AnonHugePages_KiB": 0,
+        "elapsed_s": 1.1e-05,
+        "minflt_delta": "N/A",
+        "majflt_delta": "N/A"
+      }
+    }
+  }
+]

@@ -1,0 +1,7 @@
+mode=read path=/proc/pressure/memory
+monotonic=6139.669439
+some avg10=0.00 avg60=0.84 avg300=2.68 total=20822770
+full avg10=0.00 avg60=0.77 avg300=2.50 total=19471046
+monotonic=6140.669571
+some avg10=0.00 avg60=0.84 avg300=2.68 total=20822943
+full avg10=0.00 avg60=0.77 avg300=2.50 total=19471219

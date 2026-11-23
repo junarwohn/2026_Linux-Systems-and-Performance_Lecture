@@ -1,0 +1,29 @@
+MODE=buggy PAGE_SIZE=4096 batch_payload=8MiB
+
+STAGE 1 BASELINE PID=40759
+NEXT: process four batches and expire entries
+WAITING: inspect in terminal B, then press ENTER here.
+alloctrace reason=SIGUSR1 pid=40759 live_bytes=20480 live_objects=2 dropped=0 ungrouped_objects=0
+site=0x556ae53a74b4 module=/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week10/Lab10/lab10_a offset=0x14b4 bytes=16384 objects=1
+site=0x7f0395281098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+
+STAGE 2 AFTER_4_BATCHES PID=40759
+NEXT: process four more batches
+WAITING: inspect in terminal B, then press ENTER here.
+alloctrace reason=SIGUSR1 pid=40759 live_bytes=33574912 live_objects=2050 dropped=0 ungrouped_objects=0
+site=0x556ae53a74b4 module=/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week10/Lab10/lab10_a offset=0x14b4 bytes=33570816 objects=2049
+site=0x7f0395281098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+
+STAGE 3 AFTER_8_BATCHES PID=40759
+NEXT: process final four batches
+WAITING: inspect in terminal B, then press ENTER here.
+alloctrace reason=SIGUSR1 pid=40759 live_bytes=67129344 live_objects=4098 dropped=0 ungrouped_objects=0
+site=0x556ae53a74b4 module=/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week10/Lab10/lab10_a offset=0x14b4 bytes=67125248 objects=4097
+site=0x7f0395281098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+
+STAGE 4 AFTER_12_BATCHES PID=40759
+NEXT: exit
+WAITING: inspect in terminal B, then press ENTER here.
+alloctrace reason=exit pid=40759 live_bytes=100667392 live_objects=6145 dropped=0 ungrouped_objects=0
+site=0x556ae53a74b4 module=/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week10/Lab10/lab10_a offset=0x14b4 bytes=100663296 objects=6144
+site=0x7f0395281098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1

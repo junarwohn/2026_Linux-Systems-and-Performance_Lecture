@@ -1,0 +1,16 @@
+{
+  "output": "/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week10/Assignment10/evidence/oom-C/monitor",
+  "cgroup": [
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p32940-i33900.service/lab10-oom-C"
+  ],
+  "pid": [],
+  "seconds": null,
+  "fast": 0.2,
+  "slow": 1,
+  "only_explicit": false,
+  "start": 5780.99322993,
+  "clock": "CLOCK_MONOTONIC",
+  "diagnostic": false,
+  "end": 5782.096387551,
+  "termination": "signal"
+}

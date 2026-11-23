@@ -1,0 +1,15 @@
+
+STAGE BASELINE PID=19341 children=0
+SELF_MAPS_LINES=25
+Read slabinfo in terminal B with sudo (workload needs no sudo).
+Observe in terminal B, then press Enter.
+
+STAGE 64_CHILDREN_ALIVE PID=19341 children=64
+SELF_MAPS_LINES=25
+Read slabinfo in terminal B with sudo (workload needs no sudo).
+Observe in terminal B, then press Enter.
+
+STAGE CHILDREN_REAPED PID=19341 children=0
+SELF_MAPS_LINES=25
+Read slabinfo in terminal B with sudo (workload needs no sudo).
+Observe in terminal B, then press Enter.

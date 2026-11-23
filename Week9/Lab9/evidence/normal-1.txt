@@ -1,0 +1,1 @@
+mode=trigger path=/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/normal/memory.pressure

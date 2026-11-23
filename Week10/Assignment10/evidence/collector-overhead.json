@@ -1,0 +1,22 @@
+[
+  {
+    "slow_interval_s": 1,
+    "cpu_s": 0.813612,
+    "peak_rss_KiB": 16044,
+    "wall_s": 12.115655373000664,
+    "probe_n": 122,
+    "probe_p99_us": 91.416,
+    "cycle_mean_ms": 57.87592207693356,
+    "cycles": 13
+  },
+  {
+    "slow_interval_s": 10,
+    "cpu_s": 0.185825,
+    "peak_rss_KiB": 15668,
+    "wall_s": 12.072892635999779,
+    "probe_n": 121,
+    "probe_p99_us": 88.422,
+    "cycle_mean_ms": 8.556113384586821,
+    "cycles": 13
+  }
+]

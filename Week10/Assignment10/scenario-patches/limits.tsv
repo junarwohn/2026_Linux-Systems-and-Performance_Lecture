@@ -1,0 +1,3 @@
+scenario	setting	original_MiB	fixed_MiB	parent_MiB
+M2	memory.max	40	80	384
+M3	memory.high	38	64	384

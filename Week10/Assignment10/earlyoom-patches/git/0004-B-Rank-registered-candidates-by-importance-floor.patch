@@ -1,0 +1,59 @@
+From edadd2d7e23b4d558b01686df22cab494fbb5adc Mon Sep 17 00:00:00 2001
+From: Course work <course-work@example.invalid>
+Date: Tue, 24 Nov 2026 00:00:00 +0900
+Subject: [PATCH 4/5] B: Rank registered candidates by importance floor
+
+---
+ lmk_policy.c | 33 ++++++++++++++++++++-------------
+ 1 file changed, 20 insertions(+), 13 deletions(-)
+
+diff --git a/lmk_policy.c b/lmk_policy.c
+index 070f185..10d10d5 100644
+--- a/lmk_policy.c
++++ b/lmk_policy.c
+@@ -1,22 +1,29 @@
+ #include "lmk_policy.h"
+-#include <errno.h>
+ 
+ int lab_should_act(int amount_low, int psi_event)
+ {
+     return amount_low || psi_event;
+ }
+ 
+-int lab_choose(const lab_candidate *p, int n, int importance, int floor) {
+-    (void)floor;
+-    if (importance) {
+-        errno = ENOSYS;
+-        return -2;
++int lab_choose(const lab_candidate *candidates, int count, int importance, int floor)
++{
++    int selected = -1;
++    for (int i = 0; i < count; i++) {
++        const lab_candidate *candidate = &candidates[i];
++        if (candidate->adj == -1000 || (importance && candidate->adj < floor))
++            continue;
++        if (selected == -1) {
++            selected = i;
++            continue;
++        }
++        const lab_candidate *current = &candidates[selected];
++        int priority = importance ? candidate->adj : candidate->score;
++        int current_priority = importance ? current->adj : current->score;
++        if (priority > current_priority ||
++            (priority == current_priority &&
++             (candidate->rss_kib > current->rss_kib ||
++              (candidate->rss_kib == current->rss_kib && candidate->pid < current->pid))))
++            selected = i;
+     }
+-
+-    int best = -1;
+-    for (int i = 0; i < n; i++)
+-        if (p[i].adj != -1000 && (best < 0 || p[i].score > p[best].score ||
+-                                  (p[i].score == p[best].score && p[i].rss_kib > p[best].rss_kib)))
+-            best = i;
+-    return best;
++    return selected;
+ }
+-- 
+2.56.1
+

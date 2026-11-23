@@ -1,0 +1,3 @@
+cfgread: mode=rwlock readers=2 cpus=18 seconds=2 update_us=1000
+reads=37916700 ns_per_read=105.5 bad_reads=0
+updates=1866 update_us: p50=3 max=4421

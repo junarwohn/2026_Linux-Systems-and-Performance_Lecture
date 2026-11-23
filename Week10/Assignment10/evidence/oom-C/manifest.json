@@ -1,0 +1,47 @@
+{
+  "commands": [
+    [
+      "./memhog",
+      "anon",
+      "24MiB",
+      "--rate",
+      "48",
+      "--hold",
+      "8"
+    ],
+    [
+      "./memhog",
+      "anon",
+      "24MiB",
+      "--rate",
+      "48",
+      "--hold",
+      "8"
+    ],
+    [
+      "./memhog",
+      "anon",
+      "24MiB",
+      "--rate",
+      "48",
+      "--hold",
+      "8"
+    ]
+  ],
+  "start_s": 5780.935197149,
+  "limits": {
+    "max_mib": 56,
+    "group_kill": true
+  },
+  "group": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p32940-i33900.service/lab10-oom-C",
+  "scope": "fresh systemd user service",
+  "page_B": 4096,
+  "launch_s": 5781.236895213,
+  "returncodes": [
+    -9,
+    -9,
+    -9
+  ],
+  "end_s": 5782.145940039,
+  "termination": "memcg OOM"
+}

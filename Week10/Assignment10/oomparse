@@ -1,0 +1,144 @@
+#!/usr/bin/env python3
+"""Parse Linux OOM reports while retaining incomplete records and source lines."""
+import argparse
+import json
+from pathlib import Path
+import re
+
+REQUEST = re.compile(r"(\S+) invoked oom-killer:.*?gfp_mask=(\S+?)(?:,|\s).*?order=(-?\d+),\s*oom_score_adj=(-?\d+)")
+KILL = re.compile(r"Killed process\s+(\d+)\s+\((.*?)\)\s*(.*)")
+TASK = re.compile(r"\[\s*(\d+)\s*\]\s+((?:-?\d+\s+){7,10})(.+)$")
+
+
+def parse(text, page, budget):
+    report = None
+    in_memory = False
+
+    def start(line):
+        return {"first_line":line,"last_line":line,"request":None,"scope":None,"victim":None,
+                "mem_info":{},"zones":[],"tasks":[],"lines":{},
+                "additional_group_victims":[]}
+
+    def finish(row):
+        required = ("request", "scope", "victim", "tasks")
+        memory_present = row["mem_info"] or "memcg_usage_KiB" in row
+        row["status"] = "complete" if memory_present and all(row[key] for key in required) else "incomplete"
+        scope = row.get("scope") or {}
+        known = scope.get("constraint") in ("CONSTRAINT_NONE","CONSTRAINT_MEMCG")
+        row["total_pages"] = budget if known else None
+        for task in row["tasks"]:
+            eligible = None
+            if task["adj"] == -1000:
+                eligible = False
+            elif scope.get("constraint") == "CONSTRAINT_NONE":
+                eligible = True
+            elif scope.get("constraint") == "CONSTRAINT_MEMCG" and budget:
+                eligible = "assumed from task table; verify membership/eligibility"
+            task["eligible"] = eligible
+            if eligible and budget:
+                adjust = task["adj"] * (budget // 1000)
+                task["estimated_badness_pages"] = task["rss_pages"] + task["swap_pages"] + task["page_table_B"]//page + adjust
+        return row
+
+    for number, raw in enumerate(text.splitlines(), 1):
+        line = re.sub(r"^(?:<\d+>)?\[\s*\d+\.\d+\]\s*", "", raw)
+        line = re.sub(r"^\S+ kernel: ", "", line)
+        request = REQUEST.search(line)
+        scope = re.search(r"oom-kill:(.*)",line)
+        kill = KILL.search(line)
+        if request:
+            if report:
+                yield finish(report)
+            report = start(number)
+            task, gfp, order, adj = request.groups()
+            report["request"] = dict(task=task,gfp_mask=gfp,order=int(order),adj=int(adj))
+            report["lines"]["request"] = number
+            in_memory = False
+        if scope:
+            if report is None:
+                report = start(number)
+            elif report["scope"]:
+                yield finish(report)
+                report = start(number)
+            report["scope"] = dict(re.findall(r"(\w+)=([^,\s]+)",scope[1]))
+            report["lines"]["scope"] = number
+        group_kill = re.search(r"Tasks in (\S+) are going to be killed due to memory.oom.group set", line)
+        if group_kill and report and report["victim"]:
+            report["group_kill_cgroup"] = group_kill[1]
+            report["lines"]["group_kill"] = number
+        if kill:
+            if report is None:
+                report = start(number)
+            victim = dict(pid=int(kill[1]), name=kill[2])
+            victim.update({key.replace("-","_")+"_KiB": int(value)
+                           for key,value in re.findall(r"([\w-]+):(\d+)kB",kill[3])})
+            adj = re.search(r"oom_score_adj:\s*(-?\d+)", kill[3])
+            if adj:
+                victim["adj"] = int(adj[1])
+            if report["victim"] and report.get("group_kill_cgroup"):
+                report["additional_group_victims"].append(dict(line=number, **victim))
+            else:
+                if report["victim"]:
+                    yield finish(report)
+                    report = start(number)
+                report["victim"] = victim
+                report["lines"]["victim"] = number
+                scope_pid = (report.get("scope") or {}).get("pid")
+                if scope_pid and scope_pid != kill[1]:
+                    report["scope_victim_status"] = "ambiguous: PID mismatch"
+            report["last_line"] = number
+            in_memory = False
+            continue
+        if report is None:
+            continue
+        cap = re.search(r"memory: usage (\d+)kB, limit (\d+)kB", line)
+        if cap:
+            report["memcg_usage_KiB"], report["memcg_limit_KiB"] = map(int, cap.groups())
+        if "Mem-Info:" in line:
+            report["lines"]["mem_info"] = number
+            in_memory = True
+        if in_memory:
+            zone = re.search(r"Node (\d+) (\S+) free:(\d+)kB.*?min:(\d+)kB",line)
+            if zone:
+                report["zones"].append(dict(line=number,node=int(zone[1]),zone=zone[2],
+                                            free_KiB=int(zone[3]),min_KiB=int(zone[4])))
+            elif line.lstrip().startswith(("active_anon:", "inactive_anon:", "isolated_anon:",
+                                           "active_file:", "inactive_file:", "isolated_file:",
+                                           "unevictable:", "dirty:", "writeback:", "slab_reclaimable:",
+                                           "slab_unreclaimable:", "mapped:", "shmem:", "pagetables:",
+                                           "sec_pagetables:", "bounce:", "kernel_misc_reclaimable:", "free:")):
+                report["mem_info"].update({key: int(value) for key,value in re.findall(r"(\w+):(\d+)(?!\d|kB)",line)})
+        task = TASK.search(line)
+        if task:
+            prefix = ("uid","tgid","total_vm_pages","rss_pages")
+            rss_split = ("rss_anon_pages","rss_file_pages","rss_shmem_pages")
+            suffix = ("page_table_B","swap_pages","adj")
+            values = list(map(int,task[2].split()))
+            if len(values) in (7, 10):
+                keys = prefix + (rss_split if len(values) == 10 else ()) + suffix
+                report["tasks"].append(dict(zip(keys, values), pid=int(task[1]), name=task[3], line=number))
+                in_memory = False
+        if not report["victim"] or group_kill:
+            report["last_line"] = number
+    if report:
+        yield finish(report)
+
+
+def main():
+    p = argparse.ArgumentParser()
+    p.add_argument("log",type=Path)
+    p.add_argument("--page-size",type=int,required=True)
+    p.add_argument("--total-pages",type=int)
+    p.add_argument("--run")
+    a = p.parse_args()
+    if a.page_size <= 0 or (a.total_pages is not None and a.total_pages <= 0):
+        p.error("page size and budget must be positive")
+    records = list(parse(a.log.read_text(errors="replace"), a.page_size, a.total_pages))
+    for row in records:
+        print(json.dumps(dict(run=a.run, source=str(a.log), **row)))
+    if not records:
+        p.exit(1,"No recognizable kernel OOM report in input.\n")
+
+
+if __name__ == "__main__":
+    main()

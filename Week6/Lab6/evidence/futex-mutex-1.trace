@@ -1,0 +1,4 @@
+19519 futex(0x7f7515bffce8, FUTEX_WAIT_BITSET, 2, {tv_sec=5131, tv_nsec=904801774}, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+19520 +++ exited with 0 +++
+19519 <... futex resumed>)              = 0
+19519 +++ exited with 0 +++

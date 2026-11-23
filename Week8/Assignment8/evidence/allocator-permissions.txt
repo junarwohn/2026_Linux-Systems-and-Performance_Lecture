@@ -1,0 +1,2 @@
+migrate: unavailable ([Errno 13] Permission denied: '/proc/pagetypeinfo')
+/proc/slabinfo: [Errno 13] Permission denied: '/proc/slabinfo'; sysfs fallback, unreadable fields are null

@@ -1,0 +1,28 @@
+t=5806.903419 event=start id=M1 pid=33634 page_size=4096 bytes=4194304 base=8388608 cycles=10 cap=268435456 seed=42
+t=5806.905730 event=cycle id=M1 cycle=1
+t=5807.350651 event=cycle id=M1 cycle=2
+t=5807.794396 event=cycle id=M1 cycle=3
+alloctrace reason=SIGUSR1 pid=33634 live_bytes=12587008 live_objects=3 dropped=0 ungrouped_objects=0
+site=0x55f1f6fbced0 module=./scenario-fixed offset=0x1ed0 bytes=8388608 objects=1
+site=0x55f1f6fbc7e0 module=./scenario-fixed offset=0x17e0 bytes=4194304 objects=1
+site=0x7f17c8681098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+t=5808.240195 event=cycle id=M1 cycle=4
+t=5808.682758 event=cycle id=M1 cycle=5
+alloctrace reason=SIGUSR1 pid=33634 live_bytes=12587008 live_objects=3 dropped=0 ungrouped_objects=0
+site=0x55f1f6fbced0 module=./scenario-fixed offset=0x1ed0 bytes=8388608 objects=1
+site=0x55f1f6fbc7e0 module=./scenario-fixed offset=0x17e0 bytes=4194304 objects=1
+site=0x7f17c8681098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+t=5809.123132 event=cycle id=M1 cycle=6
+t=5809.565640 event=cycle id=M1 cycle=7
+t=5810.008197 event=cycle id=M1 cycle=8
+alloctrace reason=SIGUSR1 pid=33634 live_bytes=12587008 live_objects=3 dropped=0 ungrouped_objects=0
+site=0x55f1f6fbced0 module=./scenario-fixed offset=0x1ed0 bytes=8388608 objects=1
+site=0x55f1f6fbc7e0 module=./scenario-fixed offset=0x17e0 bytes=4194304 objects=1
+site=0x7f17c8681098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+t=5810.449125 event=cycle id=M1 cycle=9
+t=5810.892407 event=cycle id=M1 cycle=10
+alloctrace reason=SIGUSR1 pid=33634 live_bytes=4096 live_objects=1 dropped=0 ungrouped_objects=0
+site=0x7f17c8681098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+t=5811.334147 event=end id=M1 interrupted=0
+alloctrace reason=exit pid=33634 live_bytes=4096 live_objects=1 dropped=0 ungrouped_objects=0
+site=0x7f17c8681098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1

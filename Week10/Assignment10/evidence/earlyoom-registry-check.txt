@@ -1,0 +1,9 @@
+Running as unit: run-p56766-i75556.service
+candidate=56770 observe=56771 outside=56772
+t=7013.938410 event=start scope=registry upstream=v1.9.0 mlock_rc=0 errno=0 dryrun=1
+t=7014.039094 event=select actor=earlyoom trigger=meminfo floor=900 pid=56770 adj=900 rss_KiB=5160 mem_available_KiB=9973320
+          Finished with result: success
+Main processes terminated with: code=exited, status=0/SUCCESS
+               Service runtime: 845ms
+             CPU time consumed: 70ms
+                   Memory peak: 35.8M (swap: 0B)

@@ -1,0 +1,5 @@
+cvbug: mode=ifwait items=200 consumers=2 slow_ms=5
+pid=19439
+taken=400 duplicate=200 lost=0 empty_takes=399
+producer lock wait (us): p50=0 p99=1 max=2
+elapsed_ms=112

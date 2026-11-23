@@ -1,0 +1,19 @@
+Running as unit: run-p28427-i33744.service
+healthy-1 
+healthy-2 
+healthy-3 
+cpu-1 
+cpu-2 
+cpu-3 
+cache-1 
+cache-2 
+cache-3 
+swap-1 75603968
+swap-2 75603968
+swap-3 75599872
+burst-1 
+          Finished with result: success
+Main processes terminated with: code=exited, status=0/SUCCESS
+               Service runtime: 1min 19.578s
+             CPU time consumed: 17.327s
+                   Memory peak: 194.8M (swap: 72.1M)

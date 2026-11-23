@@ -1,0 +1,26 @@
+t=6140.446353 phase=file_begin file_bytes=100663296 loops=24
+t=6140.821491 pass=1 bytes=100663296 elapsed_s=0.375056 throughput_MiB_s=255.962
+t=6141.196581 pass=2 bytes=100663296 elapsed_s=0.375056 throughput_MiB_s=255.962
+t=6141.571732 pass=3 bytes=100663296 elapsed_s=0.375121 throughput_MiB_s=255.917
+t=6141.946821 pass=4 bytes=100663296 elapsed_s=0.375057 throughput_MiB_s=255.961
+t=6142.321908 pass=5 bytes=100663296 elapsed_s=0.375056 throughput_MiB_s=255.962
+t=6142.696993 pass=6 bytes=100663296 elapsed_s=0.375055 throughput_MiB_s=255.962
+t=6143.072088 pass=7 bytes=100663296 elapsed_s=0.375060 throughput_MiB_s=255.959
+t=6143.447175 pass=8 bytes=100663296 elapsed_s=0.375055 throughput_MiB_s=255.962
+t=6143.822262 pass=9 bytes=100663296 elapsed_s=0.375060 throughput_MiB_s=255.959
+t=6144.197357 pass=10 bytes=100663296 elapsed_s=0.375061 throughput_MiB_s=255.959
+t=6144.572445 pass=11 bytes=100663296 elapsed_s=0.375057 throughput_MiB_s=255.961
+t=6144.947532 pass=12 bytes=100663296 elapsed_s=0.375057 throughput_MiB_s=255.961
+t=6145.322617 pass=13 bytes=100663296 elapsed_s=0.375056 throughput_MiB_s=255.962
+t=6145.697700 pass=14 bytes=100663296 elapsed_s=0.375058 throughput_MiB_s=255.961
+t=6146.072793 pass=15 bytes=100663296 elapsed_s=0.375058 throughput_MiB_s=255.960
+t=6146.447886 pass=16 bytes=100663296 elapsed_s=0.375056 throughput_MiB_s=255.962
+t=6146.823221 pass=17 bytes=100663296 elapsed_s=0.375306 throughput_MiB_s=255.791
+t=6147.199007 pass=18 bytes=100663296 elapsed_s=0.375027 throughput_MiB_s=255.981
+t=6147.574092 pass=19 bytes=100663296 elapsed_s=0.375056 throughput_MiB_s=255.961
+t=6147.949184 pass=20 bytes=100663296 elapsed_s=0.375056 throughput_MiB_s=255.962
+t=6148.324266 pass=21 bytes=100663296 elapsed_s=0.375055 throughput_MiB_s=255.962
+t=6148.699347 pass=22 bytes=100663296 elapsed_s=0.375058 throughput_MiB_s=255.960
+t=6149.074435 pass=23 bytes=100663296 elapsed_s=0.375058 throughput_MiB_s=255.960
+t=6149.449524 pass=24 bytes=100663296 elapsed_s=0.375056 throughput_MiB_s=255.962
+t=6149.449549 phase=file_end bytes=2415919104 elapsed_s=9.003197 throughput_MiB_s=255.909

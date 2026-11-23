@@ -1,0 +1,36 @@
+{
+  "commands": [
+    [
+      "./scenario",
+      "M3",
+      "--bytes",
+      "32MiB",
+      "--base",
+      "8MiB",
+      "--cycles",
+      "5",
+      "--hold",
+      ".65",
+      "--period",
+      ".3",
+      "--seconds",
+      "7",
+      "--seed",
+      "42"
+    ]
+  ],
+  "start_s": 5883.220124598,
+  "limits": {
+    "max_mib": 80,
+    "high_mib": 64
+  },
+  "group": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p34973-i15867.service/lab10-M3-fixed",
+  "scope": "fresh systemd user service",
+  "page_B": 4096,
+  "launch_s": 5883.521608227,
+  "returncodes": [
+    0
+  ],
+  "end_s": 5888.530291384,
+  "termination": "workload completed"
+}

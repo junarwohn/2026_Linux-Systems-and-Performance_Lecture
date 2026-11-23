@@ -1,0 +1,7 @@
+Running as unit: run-p44234-i47388.service
+long-M1-fixed [0]
+          Finished with result: success
+Main processes terminated with: code=exited, status=0/SUCCESS
+               Service runtime: 5min 2.728s
+             CPU time consumed: 3.344s
+                   Memory peak: 32.1M (swap: 0B)

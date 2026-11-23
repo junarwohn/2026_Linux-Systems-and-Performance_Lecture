@@ -19,6 +19,7 @@ def main():
     p.add_argument("--parent", type=Path, required=True)
     p.add_argument("--earlyoom", type=Path, required=True)
     p.add_argument("--memhog", type=Path, required=True)
+    p.add_argument("--memmon", type=Path, default=Path(__file__).resolve().parents[1] / "memmon")
     p.add_argument("--foreground", type=Path, required=True)
     p.add_argument("--uid", type=int, default=1000)
     p.add_argument("--config", type=int, choices=[1, 2, 3, 4], required=True)
@@ -56,7 +57,7 @@ def main():
     procs = []
     handles = []
     daemon = None
-    mon = None
+    support = None
     kernel = None
     regfd, regname = tempfile.mkstemp(
         prefix="lab10-registry-", suffix=".tsv", dir="/tmp"
@@ -104,6 +105,27 @@ def main():
         kernel = subprocess.Popen(
             ["dmesg", "--follow-new", "--time-format", "raw"], stdout=k, stderr=e
         )
+        f = (a.out / "probe.log").open("x")
+        handles.append(f)
+        probe = subprocess.Popen(
+            [str(a.memhog.resolve()), "probe", "--seconds", str(a.seconds)], stdout=f
+        )
+        procs.append(probe)
+        support = subprocess.Popen(
+            [
+                "python3",
+                str(Path(__file__).with_name("observe.py")),
+                str(a.out / "support.csv"),
+                "--cgroup",
+                str(cg),
+                "--seconds",
+                str(a.seconds),
+            ]
+        )
+        monitor_cmd = [str(a.memmon.resolve()), str(a.out / "memmon"), "--cgroup", str(cg),
+                       "--seconds", str(a.seconds)]
+        manifest["memmon_command"] = monitor_cmd
+        procs.append(subprocess.Popen(monitor_cmd))
         # Atomic rewrite for every registry addition precedes daemon startup.
         fg = launch(
             "foreground", [str(a.foreground.resolve()), m(0.30), str(a.seconds)], 0
@@ -121,23 +143,6 @@ def main():
                 900,
             )
 
-        f = (a.out / "probe.log").open("x")
-        handles.append(f)
-        probe = subprocess.Popen(
-            [str(a.memhog.resolve()), "probe", "--seconds", str(a.seconds)], stdout=f
-        )
-        procs.append(probe)
-        mon = subprocess.Popen(
-            [
-                "python3",
-                str(Path(__file__).with_name("observe.py")),
-                str(a.out / "support.csv"),
-                "--cgroup",
-                str(cg),
-                "--seconds",
-                str(a.seconds),
-            ]
-        )
         # Register grower before starting daemon; initial delay is in the child.
         delay = min(30, max(1, a.seconds // 3))
         cmd = [
@@ -197,9 +202,9 @@ def main():
                 child.terminate()
             child.wait(timeout=5)
 
-        if mon:
-            mon.terminate()
-            mon.wait(timeout=5)
+        if support:
+            support.terminate()
+            support.wait(timeout=5)
 
         if kernel:
             kernel.terminate()

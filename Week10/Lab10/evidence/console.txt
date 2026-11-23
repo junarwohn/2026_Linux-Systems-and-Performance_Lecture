@@ -1,0 +1,6 @@
+Running as unit: run-p27776-i33720.service
+          Finished with result: success
+Main processes terminated with: code=exited, status=0/SUCCESS
+               Service runtime: 23.463s
+             CPU time consumed: 8.755s
+                   Memory peak: 202.5M (swap: 0B)

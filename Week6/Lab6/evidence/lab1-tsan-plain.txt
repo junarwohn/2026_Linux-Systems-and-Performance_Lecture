@@ -1,0 +1,52 @@
+==================
+WARNING: ThreadSanitizer: data race (pid=18786)
+  Read of size 8 at 0x55c7f465c578 by thread T2:
+    #0 add_plain src/counter.c:48 (counter_tsan+0x1317) (BuildId: fc77b2214091774d35497e8b3af537173e176ee3)
+    #1 worker src/counter.c:101 (counter_tsan+0x1656) (BuildId: fc77b2214091774d35497e8b3af537173e176ee3)
+    #2 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Previous write of size 8 at 0x55c7f465c578 by thread T1:
+    #0 add_plain src/counter.c:48 (counter_tsan+0x132a) (BuildId: fc77b2214091774d35497e8b3af537173e176ee3)
+    #1 worker src/counter.c:101 (counter_tsan+0x1656) (BuildId: fc77b2214091774d35497e8b3af537173e176ee3)
+    #2 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Location is global 'plain_counter' of size 8 at 0x55c7f465c578 (counter_tsan+0x4578)
+
+  Thread T2 (tid=18790, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/counter.c:132 (counter_tsan+0x18e3) (BuildId: fc77b2214091774d35497e8b3af537173e176ee3)
+
+  Thread T1 (tid=18789, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/counter.c:132 (counter_tsan+0x18e3) (BuildId: fc77b2214091774d35497e8b3af537173e176ee3)
+
+SUMMARY: ThreadSanitizer: data race src/counter.c:48 in add_plain
+==================
+==================
+WARNING: ThreadSanitizer: data race (pid=18786)
+  Write of size 8 at 0x55c7f465c578 by thread T2:
+    #0 add_plain src/counter.c:48 (counter_tsan+0x132a) (BuildId: fc77b2214091774d35497e8b3af537173e176ee3)
+    #1 worker src/counter.c:101 (counter_tsan+0x1656) (BuildId: fc77b2214091774d35497e8b3af537173e176ee3)
+    #2 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Previous write of size 8 at 0x55c7f465c578 by thread T1:
+    #0 add_plain src/counter.c:48 (counter_tsan+0x132a) (BuildId: fc77b2214091774d35497e8b3af537173e176ee3)
+    #1 worker src/counter.c:101 (counter_tsan+0x1656) (BuildId: fc77b2214091774d35497e8b3af537173e176ee3)
+    #2 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Location is global 'plain_counter' of size 8 at 0x55c7f465c578 (counter_tsan+0x4578)
+
+  Thread T2 (tid=18790, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/counter.c:132 (counter_tsan+0x18e3) (BuildId: fc77b2214091774d35497e8b3af537173e176ee3)
+
+  Thread T1 (tid=18789, running) created by main thread at:
+    #0 pthread_create <null> (libtsan.so.2+0x616c9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+    #1 main src/counter.c:132 (counter_tsan+0x18e3) (BuildId: fc77b2214091774d35497e8b3af537173e176ee3)
+
+SUMMARY: ThreadSanitizer: data race src/counter.c:48 in add_plain
+==================
+counter: mode=plain threads=2 increments/thread=100000
+result=200000 expected=200000 lost=0
+elapsed_ms=6.3 ns_per_increment=31.41
+ThreadSanitizer: reported 2 warnings

@@ -1,0 +1,17 @@
+MODE=fixed PAGE_SIZE=4096 batch_payload=8MiB
+
+STAGE 1 BASELINE PID=27782
+NEXT: process four batches and expire entries
+WAITING: inspect in terminal B, then press ENTER here.
+
+STAGE 2 AFTER_4_BATCHES PID=27782
+NEXT: process four more batches
+WAITING: inspect in terminal B, then press ENTER here.
+
+STAGE 3 AFTER_8_BATCHES PID=27782
+NEXT: process final four batches
+WAITING: inspect in terminal B, then press ENTER here.
+
+STAGE 4 AFTER_12_BATCHES PID=27782
+NEXT: exit
+WAITING: inspect in terminal B, then press ENTER here.

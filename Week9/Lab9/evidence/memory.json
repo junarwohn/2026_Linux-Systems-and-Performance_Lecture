@@ -1,0 +1,1196 @@
+{
+  "run": {
+    "scope": "delegated cgroup",
+    "seconds": 4,
+    "scenario": "memory",
+    "commands": [
+      [
+        "file_reader",
+        "/var/tmp/tmpc00ssrtq",
+        "4"
+      ]
+    ],
+    "returncodes": [
+      0,
+      0
+    ],
+    "calculation": {
+      "/proc/pressure/cpu": {
+        "elapsed": 4.811867285000517,
+        "pct": {
+          "some": 2.916580854951508,
+          "full": 0.0
+        }
+      },
+      "/proc/pressure/memory": {
+        "elapsed": 4.811913558999549,
+        "pct": {
+          "some": 1.8941113318533855,
+          "full": 1.8172396267687854
+        }
+      },
+      "/proc/pressure/io": {
+        "elapsed": 4.811940591999701,
+        "pct": {
+          "some": 13.432709478472301,
+          "full": 12.763582348068153
+        }
+      },
+      "/proc/vmstat": {
+        "elapsed": 4.811946763000378,
+        "counters": {
+          "workingset_refault_anon": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "workingset_refault_file": {
+            "start": 0,
+            "end": 2814464,
+            "delta": 2814464,
+            "per_second": 584890.9264002551
+          },
+          "pgsteal_kswapd": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "pgsteal_direct": {
+            "start": 16832,
+            "end": 2831232,
+            "delta": 2814400,
+            "per_second": 584877.626169984
+          },
+          "pgsteal_khugepaged": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "pgsteal_proactive": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "pgsteal_anon": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "pgsteal_file": {
+            "start": 16832,
+            "end": 2831232,
+            "delta": 2814400,
+            "per_second": 584877.626169984
+          },
+          "pgscan_kswapd": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "pgscan_direct": {
+            "start": 16832,
+            "end": 2831232,
+            "delta": 2814400,
+            "per_second": 584877.626169984
+          },
+          "pgscan_khugepaged": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "pgscan_proactive": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "pgscan_anon": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "pgscan_file": {
+            "start": 16832,
+            "end": 2831232,
+            "delta": 2814400,
+            "per_second": 584877.626169984
+          },
+          "pswpin": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "pswpout": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "allocstall_dma": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "allocstall_dma32": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "allocstall_normal": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "allocstall_movable": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "allocstall_device": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "pgscan_direct_throttle": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          }
+        }
+      },
+      "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.pressure": {
+        "elapsed": 4.8119535879995965,
+        "pct": {
+          "some": 3.441824551530024,
+          "full": 3.441824551530024
+        }
+      },
+      "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/cpu.pressure": {
+        "elapsed": 4.811969590000444,
+        "pct": {
+          "some": 3.9512510718086733,
+          "full": 3.9512510718086733
+        }
+      },
+      "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/io.pressure": {
+        "elapsed": 4.811967912,
+        "pct": {
+          "some": 24.302946764953404,
+          "full": 24.302946764953404
+        }
+      },
+      "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.stat": {
+        "elapsed": 4.81197305600017,
+        "counters": {
+          "workingset_refault_anon": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "workingset_refault_file": {
+            "start": 0,
+            "end": 2814464,
+            "delta": 2814464,
+            "per_second": 584887.7305101645
+          },
+          "pgsteal_kswapd": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "pgsteal_direct": {
+            "start": 16832,
+            "end": 2831232,
+            "delta": 2814400,
+            "per_second": 584874.4303525669
+          },
+          "pgsteal_khugepaged": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "pgsteal_proactive": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "pgscan_kswapd": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "pgscan_direct": {
+            "start": 16832,
+            "end": 2831232,
+            "delta": 2814400,
+            "per_second": 584874.4303525669
+          },
+          "pgscan_khugepaged": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "pgscan_proactive": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "pgscan": {
+            "start": 16832,
+            "end": 2831232,
+            "delta": 2814400,
+            "per_second": 584874.4303525669
+          },
+          "pgsteal": {
+            "start": 16832,
+            "end": 2831232,
+            "delta": 2814400,
+            "per_second": 584874.4303525669
+          },
+          "pswpin": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "pswpout": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          }
+        }
+      },
+      "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.events": {
+        "elapsed": 4.811953422999977,
+        "counters": {
+          "low": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "high": {
+            "start": 126,
+            "end": 21684,
+            "delta": 21558,
+            "per_second": 4480.093239672262
+          },
+          "max": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "oom": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "oom_kill": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "oom_group_kill": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          },
+          "sock_throttled": {
+            "start": 0,
+            "end": 0,
+            "delta": 0,
+            "per_second": 0.0
+          }
+        }
+      }
+    },
+    "pswp": {
+      "pswpin": 0,
+      "pswpout": 0
+    }
+  },
+  "raw": [
+    {
+      "t": 5497.506619858,
+      "files": {
+        "/proc/pressure/cpu": {
+          "t": 5497.506621102,
+          "raw": "some avg10=21.18 avg60=4.10 avg300=1.02 total=23370221\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n"
+        },
+        "/proc/pressure/memory": {
+          "t": 5497.506685424,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=2\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=2\n"
+        },
+        "/proc/pressure/io": {
+          "t": 5497.506717906,
+          "raw": "some avg10=0.00 avg60=0.01 avg300=0.00 total=4524912\nfull avg10=0.00 avg60=0.01 avg300=0.00 total=4307249\n"
+        },
+        "/proc/vmstat": {
+          "t": 5497.506744004,
+          "raw": "nr_free_pages 1045093\nnr_free_pages_blocks 963584\nnr_zone_inactive_anon 0\nnr_zone_active_anon 735069\nnr_zone_inactive_file 1547119\nnr_zone_active_file 0\nnr_zone_unevictable 432880\nnr_zone_write_pending 651\nnr_mlock 9913\nnr_zspages 5\nnr_free_cma 0\nnr_unaccepted 0\nnuma_hit 20140074\nnuma_miss 0\nnuma_foreign 0\nnuma_interleave 4136\nnuma_local 20140074\nnuma_other 0\nnr_inactive_anon 0\nnr_active_anon 735069\nnr_inactive_file 1547119\nnr_active_file 0\nnr_unevictable 432880\nnr_slab_reclaimable 51400\nnr_slab_unreclaimable 49890\nnr_isolated_anon 0\nnr_isolated_file 0\nworkingset_nodes 0\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\nnr_anon_pages 661600\nnr_mapped 376140\nnr_file_pages 2017084\nnr_dirty 651\nnr_writeback 0\nnr_shmem 469195\nnr_shmem_hugepages 768\nnr_shmem_pmdmapped 0\nnr_file_hugepages 0\nnr_file_pmdmapped 0\nnr_anon_transparent_hugepages 201\nnr_vmscan_write 0\nnr_vmscan_immediate_reclaim 0\nnr_dirtied 1433277\nnr_written 1368218\nnr_throttled_written 0\nnr_kernel_misc_reclaimable 0\nnr_foll_pin_acquired 247707\nnr_foll_pin_released 245433\nnr_vmalloc 22660\nnr_kernel_stack 28240\nnr_page_table_pages 19190\nnr_sec_page_table_pages 576\nnr_iommu_pages 576\nnr_swapcached 0\npgpromote_success 0\npgpromote_candidate 0\npgpromote_candidate_nrl 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgsteal_proactive 0\npgsteal_anon 0\npgsteal_file 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgscan_proactive 0\npgscan_anon 0\npgscan_file 0\npgrotate_anon 0\npgrotate_file 0\npgrefill 0\nnr_hugetlb 0\nnr_balloon_pages 0\nnr_kernel_file_pages 291816\nnr_gpu_active 0\nnr_gpu_reclaim 0\nnr_dirty_threshold 509676\nnr_dirty_background_threshold 254527\nnr_memmap_pages 0\nnr_memmap_boot_pages 64512\npgpgin 3664675\npgpgout 6688977\npswpin 0\npswpout 0\npgalloc_dma 512\npgalloc_dma32 514\npgalloc_normal 44577010\npgalloc_movable 0\npgalloc_device 0\nallocstall_dma 0\nallocstall_dma32 0\nallocstall_normal 0\nallocstall_movable 0\nallocstall_device 0\npgskip_dma 0\npgskip_dma32 0\npgskip_normal 0\npgskip_movable 0\npgskip_device 0\npgfree 45639627\npgactivate 0\npgdeactivate 0\npglazyfree 0\npgfault 18496507\npgmajfault 57581\npglazyfreed 0\npgreuse 453068\npgscan_direct_throttle 0\nzone_reclaim_success 0\nzone_reclaim_failed 0\npginodesteal 0\nslabs_scanned 0\nkswapd_inodesteal 0\nkswapd_low_wmark_hit_quickly 1\nkswapd_high_wmark_hit_quickly 0\npageoutrun 0\npgrotated 0\ndrop_pagecache 0\ndrop_slab 0\noom_kill 0\nnuma_pte_updates 0\nnuma_huge_pte_updates 69\nnuma_hint_faults 0\nnuma_hint_faults_local 0\nnuma_pages_migrated 0\npgmigrate_success 0\npgmigrate_fail 0\nthp_migration_success 0\nthp_migration_fail 0\nthp_migration_split 0\ncompact_migrate_scanned 0\ncompact_free_scanned 0\ncompact_isolated 0\ncompact_stall 0\ncompact_fail 0\ncompact_success 0\ncompact_daemon_wake 0\ncompact_daemon_migrate_scanned 0\ncompact_daemon_free_scanned 0\nhtlb_buddy_alloc_success 0\nhtlb_buddy_alloc_fail 0\ncma_alloc_success 0\ncma_alloc_fail 0\nunevictable_pgs_culled 20917921\nunevictable_pgs_scanned 20440652\nunevictable_pgs_rescued 20472710\nunevictable_pgs_mlocked 42771\nunevictable_pgs_munlocked 32858\nunevictable_pgs_cleared 0\nunevictable_pgs_stranded 0\nthp_fault_alloc 4393\nthp_fault_fallback 0\nthp_fault_fallback_charge 0\nthp_collapse_alloc 231\nthp_collapse_alloc_failed 0\nthp_file_alloc 39606\nthp_file_fallback 0\nthp_file_fallback_charge 0\nthp_file_mapped 0\nthp_split_page 0\nthp_split_page_failed 0\nthp_deferred_split_page 567\nthp_underused_split_page 0\nthp_split_pmd 750\nthp_scan_exceed_none_pte 75\nthp_scan_exceed_swap_pte 0\nthp_scan_exceed_share_pte 34\nthp_split_pud 0\nthp_zero_page_alloc 1\nthp_zero_page_alloc_failed 0\nthp_swpout 0\nthp_swpout_fallback 0\nballoon_inflate 0\nballoon_deflate 0\nballoon_migrate 0\nswap_ra 0\nswap_ra_hit 0\nswpin_zero 0\nswpout_zero 0\nksm_swpin_copy 0\ncow_ksm 0\nzswpin 0\nzswpout 0\nzswpwb 0\ndirect_map_level2_splits 131\ndirect_map_level3_splits 3\ndirect_map_level2_collapses 0\ndirect_map_level3_collapses 0\nnrswpin 0\nnrswpout 0\nnr_unstable 0\n"
+        },
+        "/proc/meminfo": {
+          "t": 5497.506806242,
+          "raw": "MemTotal:       15902860 kB\nMemFree:         4180372 kB\nMemAvailable:   10232432 kB\nBuffers:            2628 kB\nCached:          8065708 kB\nSwapCached:            0 kB\nActive:          2940276 kB\nInactive:        6188476 kB\nActive(anon):    2940276 kB\nInactive(anon):        0 kB\nActive(file):          0 kB\nInactive(file):  6188476 kB\nUnevictable:     1731520 kB\nMlocked:           39652 kB\nSwapTotal:       4194300 kB\nSwapFree:        4194300 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              2604 kB\nWriteback:             0 kB\nAnonPages:       2646400 kB\nMapped:          1504560 kB\nShmem:           1876780 kB\nKReclaimable:     205600 kB\nSlab:             405160 kB\nSReclaimable:     205600 kB\nSUnreclaim:       199560 kB\nKernelStack:       28240 kB\nPageTables:        76760 kB\nSecPageTables:      2304 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    12145728 kB\nCommitted_AS:   34655804 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       90640 kB\nVmallocChunk:          0 kB\nPercpu:            19392 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:    411648 kB\nShmemHugePages:  1572864 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      292680 kB\nDirectMap2M:     6584320 kB\nDirectMap1G:    11534336 kB\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.pressure": {
+          "t": 5497.506843143,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=0\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/cpu.pressure": {
+          "t": 5497.506886492,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=0\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/io.pressure": {
+          "t": 5497.506917327,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=0\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.stat": {
+          "t": 5497.506946439,
+          "raw": "anon 0\nfile 0\nkernel 0\nkernel_stack 0\npagetables 0\nsec_pagetables 0\npercpu 0\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 0\ninactive_file 0\nactive_file 0\nunevictable 0\nslab_reclaimable 0\nslab_unreclaimable 0\nslab 0\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 0\npgsteal 0\npswpin 0\npswpout 0\npgfault 0\npgmajfault 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.events": {
+          "t": 5497.506985586,
+          "raw": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.current": {
+          "t": 5497.507022183,
+          "raw": "0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.high": {
+          "t": 5497.507051133,
+          "raw": "67108864\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.max": {
+          "t": 5497.507076897,
+          "raw": "268435456\n"
+        }
+      }
+    },
+    {
+      "t": 5497.574616826,
+      "files": {
+        "/proc/pressure/cpu": {
+          "t": 5497.574619915,
+          "raw": "some avg10=21.18 avg60=4.10 avg300=1.02 total=23371187\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n"
+        },
+        "/proc/pressure/memory": {
+          "t": 5497.574767123,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=563\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=563\n"
+        },
+        "/proc/pressure/io": {
+          "t": 5497.574811845,
+          "raw": "some avg10=0.00 avg60=0.01 avg300=0.00 total=4536600\nfull avg10=0.00 avg60=0.01 avg300=0.00 total=4318433\n"
+        },
+        "/proc/vmstat": {
+          "t": 5497.574841199,
+          "raw": "nr_free_pages 1029712\nnr_free_pages_blocks 963584\nnr_zone_inactive_anon 0\nnr_zone_active_anon 736103\nnr_zone_inactive_file 1563055\nnr_zone_active_file 0\nnr_zone_unevictable 432880\nnr_zone_write_pending 702\nnr_mlock 9913\nnr_zspages 5\nnr_free_cma 0\nnr_unaccepted 0\nnuma_hit 20143278\nnuma_miss 0\nnuma_foreign 0\nnuma_interleave 4136\nnuma_local 20143278\nnuma_other 0\nnr_inactive_anon 0\nnr_active_anon 736103\nnr_inactive_file 1563055\nnr_active_file 0\nnr_unevictable 432880\nnr_slab_reclaimable 51400\nnr_slab_unreclaimable 49890\nnr_isolated_anon 0\nnr_isolated_file 0\nworkingset_nodes 0\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\nnr_anon_pages 662853\nnr_mapped 376237\nnr_file_pages 2033020\nnr_dirty 732\nnr_writeback 0\nnr_shmem 469195\nnr_shmem_hugepages 768\nnr_shmem_pmdmapped 0\nnr_file_hugepages 0\nnr_file_pmdmapped 0\nnr_anon_transparent_hugepages 201\nnr_vmscan_write 0\nnr_vmscan_immediate_reclaim 0\nnr_dirtied 1433358\nnr_written 1368248\nnr_throttled_written 0\nnr_kernel_misc_reclaimable 0\nnr_foll_pin_acquired 247707\nnr_foll_pin_released 245433\nnr_vmalloc 22660\nnr_kernel_stack 28224\nnr_page_table_pages 19205\nnr_sec_page_table_pages 576\nnr_iommu_pages 576\nnr_swapcached 0\npgpromote_success 0\npgpromote_candidate 0\npgpromote_candidate_nrl 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 16832\npgsteal_khugepaged 0\npgsteal_proactive 0\npgsteal_anon 0\npgsteal_file 16832\npgscan_kswapd 0\npgscan_direct 16832\npgscan_khugepaged 0\npgscan_proactive 0\npgscan_anon 0\npgscan_file 16832\npgrotate_anon 0\npgrotate_file 0\npgrefill 0\nnr_hugetlb 0\nnr_balloon_pages 0\nnr_kernel_file_pages 291816\nnr_gpu_active 0\nnr_gpu_reclaim 0\nnr_dirty_threshold 509787\nnr_dirty_background_threshold 254582\nnr_memmap_pages 0\nnr_memmap_boot_pages 64512\npgpgin 3795747\npgpgout 6689369\npswpin 0\npswpout 0\npgalloc_dma 512\npgalloc_dma32 514\npgalloc_normal 44611713\npgalloc_movable 0\npgalloc_device 0\nallocstall_dma 0\nallocstall_dma32 0\nallocstall_normal 0\nallocstall_movable 0\nallocstall_device 0\npgskip_dma 0\npgskip_dma32 0\npgskip_normal 0\npgskip_movable 0\npgskip_device 0\npgfree 45656969\npgactivate 0\npgdeactivate 0\npglazyfree 0\npgfault 18499231\npgmajfault 57581\npglazyfreed 0\npgreuse 453261\npgscan_direct_throttle 0\nzone_reclaim_success 0\nzone_reclaim_failed 0\npginodesteal 0\nslabs_scanned 0\nkswapd_inodesteal 0\nkswapd_low_wmark_hit_quickly 1\nkswapd_high_wmark_hit_quickly 0\npageoutrun 0\npgrotated 0\ndrop_pagecache 0\ndrop_slab 0\noom_kill 0\nnuma_pte_updates 0\nnuma_huge_pte_updates 69\nnuma_hint_faults 0\nnuma_hint_faults_local 0\nnuma_pages_migrated 0\npgmigrate_success 0\npgmigrate_fail 0\nthp_migration_success 0\nthp_migration_fail 0\nthp_migration_split 0\ncompact_migrate_scanned 0\ncompact_free_scanned 0\ncompact_isolated 0\ncompact_stall 0\ncompact_fail 0\ncompact_success 0\ncompact_daemon_wake 0\ncompact_daemon_migrate_scanned 0\ncompact_daemon_free_scanned 0\nhtlb_buddy_alloc_success 0\nhtlb_buddy_alloc_fail 0\ncma_alloc_success 0\ncma_alloc_fail 0\nunevictable_pgs_culled 20917921\nunevictable_pgs_scanned 20440652\nunevictable_pgs_rescued 20472710\nunevictable_pgs_mlocked 42771\nunevictable_pgs_munlocked 32858\nunevictable_pgs_cleared 0\nunevictable_pgs_stranded 0\nthp_fault_alloc 4393\nthp_fault_fallback 0\nthp_fault_fallback_charge 0\nthp_collapse_alloc 231\nthp_collapse_alloc_failed 0\nthp_file_alloc 39606\nthp_file_fallback 0\nthp_file_fallback_charge 0\nthp_file_mapped 0\nthp_split_page 0\nthp_split_page_failed 0\nthp_deferred_split_page 567\nthp_underused_split_page 0\nthp_split_pmd 750\nthp_scan_exceed_none_pte 75\nthp_scan_exceed_swap_pte 0\nthp_scan_exceed_share_pte 34\nthp_split_pud 0\nthp_zero_page_alloc 1\nthp_zero_page_alloc_failed 0\nthp_swpout 0\nthp_swpout_fallback 0\nballoon_inflate 0\nballoon_deflate 0\nballoon_migrate 0\nswap_ra 0\nswap_ra_hit 0\nswpin_zero 0\nswpout_zero 0\nksm_swpin_copy 0\ncow_ksm 0\nzswpin 0\nzswpout 0\nzswpwb 0\ndirect_map_level2_splits 131\ndirect_map_level3_splits 3\ndirect_map_level2_collapses 0\ndirect_map_level3_collapses 0\nnrswpin 0\nnrswpout 0\nnr_unstable 0\n"
+        },
+        "/proc/meminfo": {
+          "t": 5497.574908013,
+          "raw": "MemTotal:       15902860 kB\nMemFree:         4118848 kB\nMemAvailable:   10234652 kB\nBuffers:            2628 kB\nCached:          8129452 kB\nSwapCached:            0 kB\nActive:          2944412 kB\nInactive:        6252220 kB\nActive(anon):    2944412 kB\nInactive(anon):        0 kB\nActive(file):          0 kB\nInactive(file):  6252220 kB\nUnevictable:     1731520 kB\nMlocked:           39652 kB\nSwapTotal:       4194300 kB\nSwapFree:        4194300 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              2928 kB\nWriteback:             0 kB\nAnonPages:       2651412 kB\nMapped:          1504948 kB\nShmem:           1876780 kB\nKReclaimable:     205600 kB\nSlab:             405160 kB\nSReclaimable:     205600 kB\nSUnreclaim:       199560 kB\nKernelStack:       28224 kB\nPageTables:        76820 kB\nSecPageTables:      2304 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    12145728 kB\nCommitted_AS:   34673448 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       90640 kB\nVmallocChunk:          0 kB\nPercpu:            19392 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:    411648 kB\nShmemHugePages:  1572864 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      292680 kB\nDirectMap2M:     6584320 kB\nDirectMap1G:    11534336 kB\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.pressure": {
+          "t": 5497.57495127,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=1398\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=1398\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/cpu.pressure": {
+          "t": 5497.574999355,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=101\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=101\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/io.pressure": {
+          "t": 5497.5750522,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=24582\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=24582\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.stat": {
+          "t": 5497.575080019,
+          "raw": "anon 1163264\nfile 65273856\nkernel 94208\nkernel_stack 0\npagetables 49152\nsec_pagetables 0\npercpu 320\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 1150976\ninactive_file 65273856\nactive_file 0\nunevictable 0\nslab_reclaimable 29008\nslab_unreclaimable 9488\nslab 38496\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 16832\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 16832\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 16832\npgsteal 16832\npswpin 0\npswpout 0\npgfault 325\npgmajfault 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.events": {
+          "t": 5497.575143993,
+          "raw": "low 0\nhigh 126\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.current": {
+          "t": 5497.575208437,
+          "raw": "67014656\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.high": {
+          "t": 5497.575268814,
+          "raw": "67108864\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.max": {
+          "t": 5497.57532621,
+          "raw": "268435456\n"
+        }
+      }
+    },
+    {
+      "t": 5497.576193826,
+      "files": {
+        "/proc/pressure/cpu": {
+          "t": 5497.576194578,
+          "raw": "some avg10=21.18 avg60=4.10 avg300=1.02 total=23371319\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n"
+        },
+        "/proc/pressure/memory": {
+          "t": 5497.576254847,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=563\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=563\n"
+        },
+        "/proc/pressure/io": {
+          "t": 5497.576282769,
+          "raw": "some avg10=0.00 avg60=0.01 avg300=0.00 total=4536600\nfull avg10=0.00 avg60=0.01 avg300=0.00 total=4318433\n"
+        },
+        "/proc/vmstat": {
+          "t": 5497.576308712,
+          "raw": "nr_free_pages 1029469\nnr_free_pages_blocks 963584\nnr_zone_inactive_anon 0\nnr_zone_active_anon 736184\nnr_zone_inactive_file 1563055\nnr_zone_active_file 0\nnr_zone_unevictable 432880\nnr_zone_write_pending 702\nnr_mlock 9913\nnr_zspages 5\nnr_free_cma 0\nnr_unaccepted 0\nnuma_hit 20143466\nnuma_miss 0\nnuma_foreign 0\nnuma_interleave 4136\nnuma_local 20143466\nnuma_other 0\nnr_inactive_anon 0\nnr_active_anon 736184\nnr_inactive_file 1563055\nnr_active_file 0\nnr_unevictable 432880\nnr_slab_reclaimable 51400\nnr_slab_unreclaimable 49890\nnr_isolated_anon 0\nnr_isolated_file 0\nworkingset_nodes 0\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\nnr_anon_pages 663015\nnr_mapped 376237\nnr_file_pages 2033020\nnr_dirty 732\nnr_writeback 0\nnr_shmem 469195\nnr_shmem_hugepages 768\nnr_shmem_pmdmapped 0\nnr_file_hugepages 0\nnr_file_pmdmapped 0\nnr_anon_transparent_hugepages 201\nnr_vmscan_write 0\nnr_vmscan_immediate_reclaim 0\nnr_dirtied 1433358\nnr_written 1368248\nnr_throttled_written 0\nnr_kernel_misc_reclaimable 0\nnr_foll_pin_acquired 247707\nnr_foll_pin_released 245433\nnr_vmalloc 22660\nnr_kernel_stack 28224\nnr_page_table_pages 19205\nnr_sec_page_table_pages 576\nnr_iommu_pages 576\nnr_swapcached 0\npgpromote_success 0\npgpromote_candidate 0\npgpromote_candidate_nrl 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 16832\npgsteal_khugepaged 0\npgsteal_proactive 0\npgsteal_anon 0\npgsteal_file 16832\npgscan_kswapd 0\npgscan_direct 16832\npgscan_khugepaged 0\npgscan_proactive 0\npgscan_anon 0\npgscan_file 16832\npgrotate_anon 0\npgrotate_file 0\npgrefill 0\nnr_hugetlb 0\nnr_balloon_pages 0\nnr_kernel_file_pages 291816\nnr_gpu_active 0\nnr_gpu_reclaim 0\nnr_dirty_threshold 509739\nnr_dirty_background_threshold 254558\nnr_memmap_pages 0\nnr_memmap_boot_pages 64512\npgpgin 3795747\npgpgout 6689369\npswpin 0\npswpout 0\npgalloc_dma 512\npgalloc_dma32 514\npgalloc_normal 44611902\npgalloc_movable 0\npgalloc_device 0\nallocstall_dma 0\nallocstall_dma32 0\nallocstall_normal 0\nallocstall_movable 0\nallocstall_device 0\npgskip_dma 0\npgskip_dma32 0\npgskip_normal 0\npgskip_movable 0\npgskip_device 0\npgfree 45656969\npgactivate 0\npgdeactivate 0\npglazyfree 0\npgfault 18499522\npgmajfault 57581\npglazyfreed 0\npgreuse 453348\npgscan_direct_throttle 0\nzone_reclaim_success 0\nzone_reclaim_failed 0\npginodesteal 0\nslabs_scanned 0\nkswapd_inodesteal 0\nkswapd_low_wmark_hit_quickly 1\nkswapd_high_wmark_hit_quickly 0\npageoutrun 0\npgrotated 0\ndrop_pagecache 0\ndrop_slab 0\noom_kill 0\nnuma_pte_updates 0\nnuma_huge_pte_updates 69\nnuma_hint_faults 0\nnuma_hint_faults_local 0\nnuma_pages_migrated 0\npgmigrate_success 0\npgmigrate_fail 0\nthp_migration_success 0\nthp_migration_fail 0\nthp_migration_split 0\ncompact_migrate_scanned 0\ncompact_free_scanned 0\ncompact_isolated 0\ncompact_stall 0\ncompact_fail 0\ncompact_success 0\ncompact_daemon_wake 0\ncompact_daemon_migrate_scanned 0\ncompact_daemon_free_scanned 0\nhtlb_buddy_alloc_success 0\nhtlb_buddy_alloc_fail 0\ncma_alloc_success 0\ncma_alloc_fail 0\nunevictable_pgs_culled 20917921\nunevictable_pgs_scanned 20440652\nunevictable_pgs_rescued 20472710\nunevictable_pgs_mlocked 42771\nunevictable_pgs_munlocked 32858\nunevictable_pgs_cleared 0\nunevictable_pgs_stranded 0\nthp_fault_alloc 4393\nthp_fault_fallback 0\nthp_fault_fallback_charge 0\nthp_collapse_alloc 231\nthp_collapse_alloc_failed 0\nthp_file_alloc 39606\nthp_file_fallback 0\nthp_file_fallback_charge 0\nthp_file_mapped 0\nthp_split_page 0\nthp_split_page_failed 0\nthp_deferred_split_page 567\nthp_underused_split_page 0\nthp_split_pmd 750\nthp_scan_exceed_none_pte 75\nthp_scan_exceed_swap_pte 0\nthp_scan_exceed_share_pte 34\nthp_split_pud 0\nthp_zero_page_alloc 1\nthp_zero_page_alloc_failed 0\nthp_swpout 0\nthp_swpout_fallback 0\nballoon_inflate 0\nballoon_deflate 0\nballoon_migrate 0\nswap_ra 0\nswap_ra_hit 0\nswpin_zero 0\nswpout_zero 0\nksm_swpin_copy 0\ncow_ksm 0\nzswpin 0\nzswpout 0\nzswpwb 0\ndirect_map_level2_splits 131\ndirect_map_level3_splits 3\ndirect_map_level2_collapses 0\ndirect_map_level3_collapses 0\nnrswpin 0\nnrswpout 0\nnr_unstable 0\n"
+        },
+        "/proc/meminfo": {
+          "t": 5497.576371576,
+          "raw": "MemTotal:       15902860 kB\nMemFree:         4117876 kB\nMemAvailable:   10233680 kB\nBuffers:            2628 kB\nCached:          8129452 kB\nSwapCached:            0 kB\nActive:          2944736 kB\nInactive:        6252220 kB\nActive(anon):    2944736 kB\nInactive(anon):        0 kB\nActive(file):          0 kB\nInactive(file):  6252220 kB\nUnevictable:     1731520 kB\nMlocked:           39652 kB\nSwapTotal:       4194300 kB\nSwapFree:        4194300 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              2928 kB\nWriteback:             0 kB\nAnonPages:       2652060 kB\nMapped:          1504948 kB\nShmem:           1876780 kB\nKReclaimable:     205600 kB\nSlab:             405160 kB\nSReclaimable:     205600 kB\nSUnreclaim:       199560 kB\nKernelStack:       28224 kB\nPageTables:        76820 kB\nSecPageTables:      2304 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    12145728 kB\nCommitted_AS:   34674476 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       90640 kB\nVmallocChunk:          0 kB\nPercpu:            19392 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:    411648 kB\nShmemHugePages:  1572864 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      292680 kB\nDirectMap2M:     6584320 kB\nDirectMap1G:    11534336 kB\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.pressure": {
+          "t": 5497.576405803,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=1398\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=1398\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/cpu.pressure": {
+          "t": 5497.576443525,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=101\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=101\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/io.pressure": {
+          "t": 5497.576472403,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=24582\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=24582\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.stat": {
+          "t": 5497.576499689,
+          "raw": "anon 1163264\nfile 65273856\nkernel 94208\nkernel_stack 0\npagetables 49152\nsec_pagetables 0\npercpu 320\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 1150976\ninactive_file 65273856\nactive_file 0\nunevictable 0\nslab_reclaimable 29008\nslab_unreclaimable 9488\nslab 38496\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 16832\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 16832\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 16832\npgsteal 16832\npswpin 0\npswpout 0\npgfault 325\npgmajfault 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.events": {
+          "t": 5497.576540037,
+          "raw": "low 0\nhigh 126\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.current": {
+          "t": 5497.576565857,
+          "raw": "67014656\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.high": {
+          "t": 5497.576593172,
+          "raw": "67108864\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.max": {
+          "t": 5497.576616173,
+          "raw": "268435456\n"
+        }
+      }
+    },
+    {
+      "t": 5497.976878643,
+      "files": {
+        "/proc/pressure/cpu": {
+          "t": 5497.976880123,
+          "raw": "some avg10=21.18 avg60=4.10 avg300=1.02 total=23375285\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n"
+        },
+        "/proc/pressure/memory": {
+          "t": 5497.97701125,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=10770\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=10760\n"
+        },
+        "/proc/pressure/io": {
+          "t": 5497.977048721,
+          "raw": "some avg10=0.00 avg60=0.01 avg300=0.00 total=4608096\nfull avg10=0.00 avg60=0.01 avg300=0.00 total=4388780\n"
+        },
+        "/proc/vmstat": {
+          "t": 5497.977081873,
+          "raw": "nr_free_pages 1033001\nnr_free_pages_blocks 963584\nnr_zone_inactive_anon 0\nnr_zone_active_anon 735210\nnr_zone_inactive_file 1562991\nnr_zone_active_file 0\nnr_zone_unevictable 432892\nnr_zone_write_pending 695\nnr_mlock 9913\nnr_zspages 5\nnr_free_cma 0\nnr_unaccepted 0\nnuma_hit 20155558\nnuma_miss 0\nnuma_foreign 0\nnuma_interleave 4136\nnuma_local 20155558\nnuma_other 0\nnr_inactive_anon 0\nnr_active_anon 735210\nnr_inactive_file 1562991\nnr_active_file 0\nnr_unevictable 432892\nnr_slab_reclaimable 51400\nnr_slab_unreclaimable 49892\nnr_isolated_anon 0\nnr_isolated_file 0\nworkingset_nodes 3\nworkingset_refault_anon 0\nworkingset_refault_file 294400\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\nnr_anon_pages 661834\nnr_mapped 376085\nnr_file_pages 2032969\nnr_dirty 695\nnr_writeback 0\nnr_shmem 469208\nnr_shmem_hugepages 768\nnr_shmem_pmdmapped 0\nnr_file_hugepages 0\nnr_file_pmdmapped 0\nnr_anon_transparent_hugepages 201\nnr_vmscan_write 0\nnr_vmscan_immediate_reclaim 0\nnr_dirtied 1433669\nnr_written 1368566\nnr_throttled_written 0\nnr_kernel_misc_reclaimable 0\nnr_foll_pin_acquired 247707\nnr_foll_pin_released 245433\nnr_vmalloc 22648\nnr_kernel_stack 28208\nnr_page_table_pages 19086\nnr_sec_page_table_pages 576\nnr_iommu_pages 576\nnr_swapcached 0\npgpromote_success 0\npgpromote_candidate 0\npgpromote_candidate_nrl 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 311168\npgsteal_khugepaged 0\npgsteal_proactive 0\npgsteal_anon 0\npgsteal_file 311168\npgscan_kswapd 0\npgscan_direct 311168\npgscan_khugepaged 0\npgscan_proactive 0\npgscan_anon 0\npgscan_file 311168\npgrotate_anon 0\npgrotate_file 0\npgrefill 0\nnr_hugetlb 0\nnr_balloon_pages 0\nnr_kernel_file_pages 291816\nnr_gpu_active 0\nnr_gpu_reclaim 0\nnr_dirty_threshold 510432\nnr_dirty_background_threshold 254904\nnr_memmap_pages 0\nnr_memmap_boot_pages 64512\npgpgin 4973347\npgpgout 6690461\npswpin 0\npswpout 0\npgalloc_dma 512\npgalloc_dma32 514\npgalloc_normal 44906687\npgalloc_movable 0\npgalloc_device 0\nallocstall_dma 0\nallocstall_dma32 0\nallocstall_normal 0\nallocstall_movable 0\nallocstall_device 0\npgskip_dma 0\npgskip_dma32 0\npgskip_normal 0\npgskip_movable 0\npgskip_device 0\npgfree 45953152\npgactivate 0\npgdeactivate 0\npglazyfree 0\npgfault 18500035\npgmajfault 57581\npglazyfreed 0\npgreuse 453355\npgscan_direct_throttle 0\nzone_reclaim_success 0\nzone_reclaim_failed 0\npginodesteal 0\nslabs_scanned 0\nkswapd_inodesteal 0\nkswapd_low_wmark_hit_quickly 1\nkswapd_high_wmark_hit_quickly 0\npageoutrun 0\npgrotated 0\ndrop_pagecache 0\ndrop_slab 0\noom_kill 0\nnuma_pte_updates 0\nnuma_huge_pte_updates 69\nnuma_hint_faults 0\nnuma_hint_faults_local 0\nnuma_pages_migrated 0\npgmigrate_success 0\npgmigrate_fail 0\nthp_migration_success 0\nthp_migration_fail 0\nthp_migration_split 0\ncompact_migrate_scanned 0\ncompact_free_scanned 0\ncompact_isolated 0\ncompact_stall 0\ncompact_fail 0\ncompact_success 0\ncompact_daemon_wake 0\ncompact_daemon_migrate_scanned 0\ncompact_daemon_free_scanned 0\nhtlb_buddy_alloc_success 0\nhtlb_buddy_alloc_fail 0\ncma_alloc_success 0\ncma_alloc_fail 0\nunevictable_pgs_culled 20917933\nunevictable_pgs_scanned 20440652\nunevictable_pgs_rescued 20472710\nunevictable_pgs_mlocked 42771\nunevictable_pgs_munlocked 32858\nunevictable_pgs_cleared 0\nunevictable_pgs_stranded 0\nthp_fault_alloc 4393\nthp_fault_fallback 0\nthp_fault_fallback_charge 0\nthp_collapse_alloc 231\nthp_collapse_alloc_failed 0\nthp_file_alloc 39606\nthp_file_fallback 0\nthp_file_fallback_charge 0\nthp_file_mapped 0\nthp_split_page 0\nthp_split_page_failed 0\nthp_deferred_split_page 567\nthp_underused_split_page 0\nthp_split_pmd 750\nthp_scan_exceed_none_pte 75\nthp_scan_exceed_swap_pte 0\nthp_scan_exceed_share_pte 34\nthp_split_pud 0\nthp_zero_page_alloc 1\nthp_zero_page_alloc_failed 0\nthp_swpout 0\nthp_swpout_fallback 0\nballoon_inflate 0\nballoon_deflate 0\nballoon_migrate 0\nswap_ra 0\nswap_ra_hit 0\nswpin_zero 0\nswpout_zero 0\nksm_swpin_copy 0\ncow_ksm 0\nzswpin 0\nzswpout 0\nzswpwb 0\ndirect_map_level2_splits 131\ndirect_map_level3_splits 3\ndirect_map_level2_collapses 0\ndirect_map_level3_collapses 0\nnrswpin 0\nnrswpout 0\nnr_unstable 0\n"
+        },
+        "/proc/meminfo": {
+          "t": 5497.97714481,
+          "raw": "MemTotal:       15902860 kB\nMemFree:         4132004 kB\nMemAvailable:   10247552 kB\nBuffers:            2628 kB\nCached:          8129248 kB\nSwapCached:            0 kB\nActive:          2940840 kB\nInactive:        6251964 kB\nActive(anon):    2940840 kB\nInactive(anon):        0 kB\nActive(file):          0 kB\nInactive(file):  6251964 kB\nUnevictable:     1731568 kB\nMlocked:           39652 kB\nSwapTotal:       4194300 kB\nSwapFree:        4194300 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              2780 kB\nWriteback:             0 kB\nAnonPages:       2647336 kB\nMapped:          1504340 kB\nShmem:           1876832 kB\nKReclaimable:     205600 kB\nSlab:             405168 kB\nSReclaimable:     205600 kB\nSUnreclaim:       199568 kB\nKernelStack:       28208 kB\nPageTables:        76344 kB\nSecPageTables:      2304 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    12145728 kB\nCommitted_AS:   34658388 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       90592 kB\nVmallocChunk:          0 kB\nPercpu:            19392 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:    411648 kB\nShmemHugePages:  1572864 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      292680 kB\nDirectMap2M:     6584320 kB\nDirectMap1G:    11534336 kB\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.pressure": {
+          "t": 5497.977185838,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=18519\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=18519\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/cpu.pressure": {
+          "t": 5497.977235981,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=1568\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=1568\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/io.pressure": {
+          "t": 5497.977266769,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=143467\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=143467\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.stat": {
+          "t": 5497.977293509,
+          "raw": "anon 1163264\nfile 65273856\nkernel 94208\nkernel_stack 0\npagetables 49152\nsec_pagetables 0\npercpu 320\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 1163264\ninactive_file 65273856\nactive_file 0\nunevictable 0\nslab_reclaimable 29008\nslab_unreclaimable 9488\nslab 38496\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 294656\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 311488\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 311488\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 311488\npgsteal 311488\npswpin 0\npswpout 0\npgfault 327\npgmajfault 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.events": {
+          "t": 5497.977368234,
+          "raw": "low 0\nhigh 2384\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.current": {
+          "t": 5497.977394315,
+          "raw": "67276800\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.high": {
+          "t": 5497.977418899,
+          "raw": "67108864\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.max": {
+          "t": 5497.977441834,
+          "raw": "268435456\n"
+        }
+      }
+    },
+    {
+      "t": 5498.377731585,
+      "files": {
+        "/proc/pressure/cpu": {
+          "t": 5498.377733328,
+          "raw": "some avg10=21.18 avg60=4.10 avg300=1.02 total=23393270\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n"
+        },
+        "/proc/pressure/memory": {
+          "t": 5498.37783363,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=18635\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=18496\n"
+        },
+        "/proc/pressure/io": {
+          "t": 5498.377897513,
+          "raw": "some avg10=0.00 avg60=0.01 avg300=0.00 total=4671440\nfull avg10=0.00 avg60=0.01 avg300=0.00 total=4449713\n"
+        },
+        "/proc/vmstat": {
+          "t": 5498.377933446,
+          "raw": "nr_free_pages 1032498\nnr_free_pages_blocks 963584\nnr_zone_inactive_anon 0\nnr_zone_active_anon 735192\nnr_zone_inactive_file 1562975\nnr_zone_active_file 0\nnr_zone_unevictable 432880\nnr_zone_write_pending 707\nnr_mlock 9913\nnr_zspages 5\nnr_free_cma 0\nnr_unaccepted 0\nnuma_hit 20167008\nnuma_miss 0\nnuma_foreign 0\nnuma_interleave 4136\nnuma_local 20167008\nnuma_other 0\nnr_inactive_anon 0\nnr_active_anon 735192\nnr_inactive_file 1562975\nnr_active_file 0\nnr_unevictable 432880\nnr_slab_reclaimable 51400\nnr_slab_unreclaimable 49900\nnr_isolated_anon 0\nnr_isolated_file 0\nworkingset_nodes 42\nworkingset_refault_anon 0\nworkingset_refault_file 568320\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\nnr_anon_pages 661822\nnr_mapped 376085\nnr_file_pages 2032942\nnr_dirty 707\nnr_writeback 0\nnr_shmem 469195\nnr_shmem_hugepages 768\nnr_shmem_pmdmapped 0\nnr_file_hugepages 0\nnr_file_pmdmapped 0\nnr_anon_transparent_hugepages 201\nnr_vmscan_write 0\nnr_vmscan_immediate_reclaim 0\nnr_dirtied 1433681\nnr_written 1368566\nnr_throttled_written 0\nnr_kernel_misc_reclaimable 0\nnr_foll_pin_acquired 247707\nnr_foll_pin_released 245433\nnr_vmalloc 22648\nnr_kernel_stack 28208\nnr_page_table_pages 19086\nnr_sec_page_table_pages 576\nnr_iommu_pages 576\nnr_swapcached 0\npgpromote_success 0\npgpromote_candidate 0\npgpromote_candidate_nrl 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 585088\npgsteal_khugepaged 0\npgsteal_proactive 0\npgsteal_anon 0\npgsteal_file 585088\npgscan_kswapd 0\npgscan_direct 585088\npgscan_khugepaged 0\npgscan_proactive 0\npgscan_anon 0\npgscan_file 585088\npgrotate_anon 0\npgrotate_file 0\npgrefill 0\nnr_hugetlb 0\nnr_balloon_pages 0\nnr_kernel_file_pages 291816\nnr_gpu_active 0\nnr_gpu_reclaim 0\nnr_dirty_threshold 510328\nnr_dirty_background_threshold 254852\nnr_memmap_pages 0\nnr_memmap_boot_pages 64512\npgpgin 6066979\npgpgout 6690461\npswpin 0\npswpout 0\npgalloc_dma 512\npgalloc_dma32 514\npgalloc_normal 45180811\npgalloc_movable 0\npgalloc_device 0\nallocstall_dma 0\nallocstall_dma32 0\nallocstall_normal 0\nallocstall_movable 0\nallocstall_device 0\npgskip_dma 0\npgskip_dma32 0\npgskip_normal 0\npgskip_movable 0\npgskip_device 0\npgfree 46227182\npgactivate 0\npgdeactivate 0\npglazyfree 0\npgfault 18500101\npgmajfault 57581\npglazyfreed 0\npgreuse 453365\npgscan_direct_throttle 0\nzone_reclaim_success 0\nzone_reclaim_failed 0\npginodesteal 0\nslabs_scanned 0\nkswapd_inodesteal 0\nkswapd_low_wmark_hit_quickly 1\nkswapd_high_wmark_hit_quickly 0\npageoutrun 0\npgrotated 0\ndrop_pagecache 0\ndrop_slab 0\noom_kill 0\nnuma_pte_updates 0\nnuma_huge_pte_updates 69\nnuma_hint_faults 0\nnuma_hint_faults_local 0\nnuma_pages_migrated 0\npgmigrate_success 0\npgmigrate_fail 0\nthp_migration_success 0\nthp_migration_fail 0\nthp_migration_split 0\ncompact_migrate_scanned 0\ncompact_free_scanned 0\ncompact_isolated 0\ncompact_stall 0\ncompact_fail 0\ncompact_success 0\ncompact_daemon_wake 0\ncompact_daemon_migrate_scanned 0\ncompact_daemon_free_scanned 0\nhtlb_buddy_alloc_success 0\nhtlb_buddy_alloc_fail 0\ncma_alloc_success 0\ncma_alloc_fail 0\nunevictable_pgs_culled 20917933\nunevictable_pgs_scanned 20440665\nunevictable_pgs_rescued 20472722\nunevictable_pgs_mlocked 42771\nunevictable_pgs_munlocked 32858\nunevictable_pgs_cleared 0\nunevictable_pgs_stranded 0\nthp_fault_alloc 4393\nthp_fault_fallback 0\nthp_fault_fallback_charge 0\nthp_collapse_alloc 231\nthp_collapse_alloc_failed 0\nthp_file_alloc 39606\nthp_file_fallback 0\nthp_file_fallback_charge 0\nthp_file_mapped 0\nthp_split_page 0\nthp_split_page_failed 0\nthp_deferred_split_page 567\nthp_underused_split_page 0\nthp_split_pmd 750\nthp_scan_exceed_none_pte 75\nthp_scan_exceed_swap_pte 0\nthp_scan_exceed_share_pte 34\nthp_split_pud 0\nthp_zero_page_alloc 1\nthp_zero_page_alloc_failed 0\nthp_swpout 0\nthp_swpout_fallback 0\nballoon_inflate 0\nballoon_deflate 0\nballoon_migrate 0\nswap_ra 0\nswap_ra_hit 0\nswpin_zero 0\nswpout_zero 0\nksm_swpin_copy 0\ncow_ksm 0\nzswpin 0\nzswpout 0\nzswpwb 0\ndirect_map_level2_splits 131\ndirect_map_level3_splits 3\ndirect_map_level2_collapses 0\ndirect_map_level3_collapses 0\nnrswpin 0\nnrswpout 0\nnr_unstable 0\n"
+        },
+        "/proc/meminfo": {
+          "t": 5498.377999661,
+          "raw": "MemTotal:       15902860 kB\nMemFree:         4129992 kB\nMemAvailable:   10245476 kB\nBuffers:            2628 kB\nCached:          8129140 kB\nSwapCached:            0 kB\nActive:          2940768 kB\nInactive:        6251900 kB\nActive(anon):    2940768 kB\nInactive(anon):        0 kB\nActive(file):          0 kB\nInactive(file):  6251900 kB\nUnevictable:     1731520 kB\nMlocked:           39652 kB\nSwapTotal:       4194300 kB\nSwapFree:        4194300 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              2828 kB\nWriteback:             0 kB\nAnonPages:       2647288 kB\nMapped:          1504340 kB\nShmem:           1876780 kB\nKReclaimable:     205600 kB\nSlab:             405200 kB\nSReclaimable:     205600 kB\nSUnreclaim:       199600 kB\nKernelStack:       28208 kB\nPageTables:        76344 kB\nSecPageTables:      2304 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    12145728 kB\nCommitted_AS:   34658336 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       90592 kB\nVmallocChunk:          0 kB\nPercpu:            19392 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:    411648 kB\nShmemHugePages:  1572864 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      292680 kB\nDirectMap2M:     6584320 kB\nDirectMap1G:    11534336 kB\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.pressure": {
+          "t": 5498.378048714,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=33420\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=33420\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/cpu.pressure": {
+          "t": 5498.378092353,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=27464\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=27464\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/io.pressure": {
+          "t": 5498.378119996,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=263346\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=263346\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.stat": {
+          "t": 5498.37814864,
+          "raw": "anon 1163264\nfile 65273856\nkernel 94208\nkernel_stack 0\npagetables 49152\nsec_pagetables 0\npercpu 320\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 1163264\ninactive_file 65273856\nactive_file 0\nunevictable 0\nslab_reclaimable 29008\nslab_unreclaimable 9488\nslab 38496\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 568832\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 585664\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 585664\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 585664\npgsteal 585664\npswpin 0\npswpout 0\npgfault 327\npgmajfault 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.events": {
+          "t": 5498.378208677,
+          "raw": "low 0\nhigh 4485\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.current": {
+          "t": 5498.378235109,
+          "raw": "67014656\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.high": {
+          "t": 5498.378262011,
+          "raw": "67108864\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.max": {
+          "t": 5498.378293183,
+          "raw": "268435456\n"
+        }
+      }
+    },
+    {
+      "t": 5498.778554258,
+      "files": {
+        "/proc/pressure/cpu": {
+          "t": 5498.778555749,
+          "raw": "some avg10=21.18 avg60=4.10 avg300=1.02 total=23414713\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n"
+        },
+        "/proc/pressure/memory": {
+          "t": 5498.778680652,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=27506\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=25689\n"
+        },
+        "/proc/pressure/io": {
+          "t": 5498.778715072,
+          "raw": "some avg10=0.00 avg60=0.01 avg300=0.00 total=4731880\nfull avg10=0.00 avg60=0.01 avg300=0.00 total=4504363\n"
+        },
+        "/proc/vmstat": {
+          "t": 5498.778741252,
+          "raw": "nr_free_pages 1032695\nnr_free_pages_blocks 963584\nnr_zone_inactive_anon 0\nnr_zone_active_anon 735019\nnr_zone_inactive_file 1562944\nnr_zone_active_file 0\nnr_zone_unevictable 432896\nnr_zone_write_pending 738\nnr_mlock 9913\nnr_zspages 5\nnr_free_cma 0\nnr_unaccepted 0\nnuma_hit 20177635\nnuma_miss 0\nnuma_foreign 0\nnuma_interleave 4136\nnuma_local 20177635\nnuma_other 0\nnr_inactive_anon 0\nnr_active_anon 735019\nnr_inactive_file 1562944\nnr_active_file 0\nnr_unevictable 432896\nnr_slab_reclaimable 51400\nnr_slab_unreclaimable 49901\nnr_isolated_anon 0\nnr_isolated_file 0\nworkingset_nodes 42\nworkingset_refault_anon 0\nworkingset_refault_file 829952\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\nnr_anon_pages 661640\nnr_mapped 376085\nnr_file_pages 2032926\nnr_dirty 738\nnr_writeback 0\nnr_shmem 469211\nnr_shmem_hugepages 768\nnr_shmem_pmdmapped 0\nnr_file_hugepages 0\nnr_file_pmdmapped 0\nnr_anon_transparent_hugepages 201\nnr_vmscan_write 0\nnr_vmscan_immediate_reclaim 0\nnr_dirtied 1433744\nnr_written 1368566\nnr_throttled_written 0\nnr_kernel_misc_reclaimable 0\nnr_foll_pin_acquired 247707\nnr_foll_pin_released 245433\nnr_vmalloc 22648\nnr_kernel_stack 28208\nnr_page_table_pages 19086\nnr_sec_page_table_pages 576\nnr_iommu_pages 576\nnr_swapcached 0\npgpromote_success 0\npgpromote_candidate 0\npgpromote_candidate_nrl 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 846720\npgsteal_khugepaged 0\npgsteal_proactive 0\npgsteal_anon 0\npgsteal_file 846720\npgscan_kswapd 0\npgscan_direct 846720\npgscan_khugepaged 0\npgscan_proactive 0\npgscan_anon 0\npgscan_file 846720\npgrotate_anon 0\npgrotate_file 0\npgrefill 0\nnr_hugetlb 0\nnr_balloon_pages 0\nnr_kernel_file_pages 291816\nnr_gpu_active 0\nnr_gpu_reclaim 0\nnr_dirty_threshold 510362\nnr_dirty_background_threshold 254869\nnr_memmap_pages 0\nnr_memmap_boot_pages 64512\npgpgin 7115555\npgpgout 6690461\npswpin 0\npswpout 0\npgalloc_dma 512\npgalloc_dma32 514\npgalloc_normal 45442568\npgalloc_movable 0\npgalloc_device 0\nallocstall_dma 0\nallocstall_dma32 0\nallocstall_normal 0\nallocstall_movable 0\nallocstall_device 0\npgskip_dma 0\npgskip_dma32 0\npgskip_normal 0\npgskip_movable 0\npgskip_device 0\npgfree 46489173\npgactivate 0\npgdeactivate 0\npglazyfree 0\npgfault 18500210\npgmajfault 57581\npglazyfreed 0\npgreuse 453373\npgscan_direct_throttle 0\nzone_reclaim_success 0\nzone_reclaim_failed 0\npginodesteal 0\nslabs_scanned 0\nkswapd_inodesteal 0\nkswapd_low_wmark_hit_quickly 1\nkswapd_high_wmark_hit_quickly 0\npageoutrun 0\npgrotated 0\ndrop_pagecache 0\ndrop_slab 0\noom_kill 0\nnuma_pte_updates 0\nnuma_huge_pte_updates 69\nnuma_hint_faults 0\nnuma_hint_faults_local 0\nnuma_pages_migrated 0\npgmigrate_success 0\npgmigrate_fail 0\nthp_migration_success 0\nthp_migration_fail 0\nthp_migration_split 0\ncompact_migrate_scanned 0\ncompact_free_scanned 0\ncompact_isolated 0\ncompact_stall 0\ncompact_fail 0\ncompact_success 0\ncompact_daemon_wake 0\ncompact_daemon_migrate_scanned 0\ncompact_daemon_free_scanned 0\nhtlb_buddy_alloc_success 0\nhtlb_buddy_alloc_fail 0\ncma_alloc_success 0\ncma_alloc_fail 0\nunevictable_pgs_culled 20917961\nunevictable_pgs_scanned 20440678\nunevictable_pgs_rescued 20472734\nunevictable_pgs_mlocked 42771\nunevictable_pgs_munlocked 32858\nunevictable_pgs_cleared 0\nunevictable_pgs_stranded 0\nthp_fault_alloc 4393\nthp_fault_fallback 0\nthp_fault_fallback_charge 0\nthp_collapse_alloc 231\nthp_collapse_alloc_failed 0\nthp_file_alloc 39606\nthp_file_fallback 0\nthp_file_fallback_charge 0\nthp_file_mapped 0\nthp_split_page 0\nthp_split_page_failed 0\nthp_deferred_split_page 567\nthp_underused_split_page 0\nthp_split_pmd 750\nthp_scan_exceed_none_pte 75\nthp_scan_exceed_swap_pte 0\nthp_scan_exceed_share_pte 34\nthp_split_pud 0\nthp_zero_page_alloc 1\nthp_zero_page_alloc_failed 0\nthp_swpout 0\nthp_swpout_fallback 0\nballoon_inflate 0\nballoon_deflate 0\nballoon_migrate 0\nswap_ra 0\nswap_ra_hit 0\nswpin_zero 0\nswpout_zero 0\nksm_swpin_copy 0\ncow_ksm 0\nzswpin 0\nzswpout 0\nzswpwb 0\ndirect_map_level2_splits 131\ndirect_map_level3_splits 3\ndirect_map_level2_collapses 0\ndirect_map_level3_collapses 0\nnrswpin 0\nnrswpout 0\nnr_unstable 0\n"
+        },
+        "/proc/meminfo": {
+          "t": 5498.77880288,
+          "raw": "MemTotal:       15902860 kB\nMemFree:         4130780 kB\nMemAvailable:   10246140 kB\nBuffers:            2628 kB\nCached:          8129076 kB\nSwapCached:            0 kB\nActive:          2940076 kB\nInactive:        6251776 kB\nActive(anon):    2940076 kB\nInactive(anon):        0 kB\nActive(file):          0 kB\nInactive(file):  6251776 kB\nUnevictable:     1731584 kB\nMlocked:           39652 kB\nSwapTotal:       4194300 kB\nSwapFree:        4194300 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              2952 kB\nWriteback:             0 kB\nAnonPages:       2646560 kB\nMapped:          1504340 kB\nShmem:           1876844 kB\nKReclaimable:     205600 kB\nSlab:             405204 kB\nSReclaimable:     205600 kB\nSUnreclaim:       199604 kB\nKernelStack:       28208 kB\nPageTables:        76344 kB\nSecPageTables:      2304 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    12145728 kB\nCommitted_AS:   34658528 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       90592 kB\nVmallocChunk:          0 kB\nPercpu:            19392 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:    411648 kB\nShmemHugePages:  1572864 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      292680 kB\nDirectMap2M:     6584320 kB\nDirectMap1G:    11534336 kB\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.pressure": {
+          "t": 5498.778850132,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=51392\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=51392\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/cpu.pressure": {
+          "t": 5498.778902067,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=61255\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=61255\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/io.pressure": {
+          "t": 5498.778932393,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=386128\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=386128\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.stat": {
+          "t": 5498.778957353,
+          "raw": "anon 1163264\nfile 65273856\nkernel 94208\nkernel_stack 0\npagetables 49152\nsec_pagetables 0\npercpu 320\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 1163264\ninactive_file 65273856\nactive_file 0\nunevictable 0\nslab_reclaimable 29008\nslab_unreclaimable 9488\nslab 38496\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 829952\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 846784\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 846784\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 846784\npgsteal 846784\npswpin 0\npswpout 0\npgfault 327\npgmajfault 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.events": {
+          "t": 5498.779035265,
+          "raw": "low 0\nhigh 6485\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.current": {
+          "t": 5498.779067575,
+          "raw": "67014656\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.high": {
+          "t": 5498.779091917,
+          "raw": "67108864\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.max": {
+          "t": 5498.779114091,
+          "raw": "268435456\n"
+        }
+      }
+    },
+    {
+      "t": 5499.179366485,
+      "files": {
+        "/proc/pressure/cpu": {
+          "t": 5499.179368024,
+          "raw": "some avg10=20.96 avg60=4.62 avg300=1.15 total=23421801\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n"
+        },
+        "/proc/pressure/memory": {
+          "t": 5499.179488299,
+          "raw": "some avg10=0.18 avg60=0.03 avg300=0.00 total=36665\nfull avg10=0.18 avg60=0.03 avg300=0.00 total=34848\n"
+        },
+        "/proc/pressure/io": {
+          "t": 5499.179523065,
+          "raw": "some avg10=1.99 avg60=0.37 avg300=0.07 total=4799689\nfull avg10=1.99 avg60=0.37 avg300=0.07 total=4570896\n"
+        },
+        "/proc/vmstat": {
+          "t": 5499.179552498,
+          "raw": "nr_free_pages 1032167\nnr_free_pages_blocks 963584\nnr_zone_inactive_anon 0\nnr_zone_active_anon 734859\nnr_zone_inactive_file 1563055\nnr_zone_active_file 0\nnr_zone_unevictable 432896\nnr_zone_write_pending 770\nnr_mlock 9913\nnr_zspages 5\nnr_free_cma 0\nnr_unaccepted 0\nnuma_hit 20192056\nnuma_miss 0\nnuma_foreign 0\nnuma_interleave 4136\nnuma_local 20192056\nnuma_other 0\nnr_inactive_anon 0\nnr_active_anon 734859\nnr_inactive_file 1563055\nnr_active_file 0\nnr_unevictable 432896\nnr_slab_reclaimable 51400\nnr_slab_unreclaimable 49901\nnr_isolated_anon 0\nnr_isolated_file 0\nworkingset_nodes 3\nworkingset_refault_anon 0\nworkingset_refault_file 1123840\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\nnr_anon_pages 661467\nnr_mapped 376217\nnr_file_pages 2033038\nnr_dirty 770\nnr_writeback 0\nnr_shmem 469211\nnr_shmem_hugepages 768\nnr_shmem_pmdmapped 0\nnr_file_hugepages 0\nnr_file_pmdmapped 0\nnr_anon_transparent_hugepages 201\nnr_vmscan_write 0\nnr_vmscan_immediate_reclaim 0\nnr_dirtied 1433776\nnr_written 1368566\nnr_throttled_written 0\nnr_kernel_misc_reclaimable 0\nnr_foll_pin_acquired 247707\nnr_foll_pin_released 245433\nnr_vmalloc 22644\nnr_kernel_stack 28244\nnr_page_table_pages 19164\nnr_sec_page_table_pages 576\nnr_iommu_pages 576\nnr_swapcached 0\npgpromote_success 0\npgpromote_candidate 0\npgpromote_candidate_nrl 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1140544\npgsteal_khugepaged 0\npgsteal_proactive 0\npgsteal_anon 0\npgsteal_file 1140544\npgscan_kswapd 0\npgscan_direct 1140544\npgscan_khugepaged 0\npgscan_proactive 0\npgscan_anon 0\npgscan_file 1140544\npgrotate_anon 0\npgrotate_file 0\npgrefill 0\nnr_hugetlb 0\nnr_balloon_pages 0\nnr_kernel_file_pages 291816\nnr_gpu_active 0\nnr_gpu_reclaim 0\nnr_dirty_threshold 510278\nnr_dirty_background_threshold 254827\nnr_memmap_pages 0\nnr_memmap_boot_pages 64512\npgpgin 8291107\npgpgout 6690461\npswpin 0\npswpout 0\npgalloc_dma 512\npgalloc_dma32 514\npgalloc_normal 45739199\npgalloc_movable 0\npgalloc_device 0\nallocstall_dma 0\nallocstall_dma32 0\nallocstall_normal 0\nallocstall_movable 0\nallocstall_device 0\npgskip_dma 0\npgskip_dma32 0\npgskip_normal 0\npgskip_movable 0\npgskip_device 0\npgfree 46785847\npgactivate 0\npgdeactivate 0\npglazyfree 0\npgfault 18504278\npgmajfault 57581\npglazyfreed 0\npgreuse 453713\npgscan_direct_throttle 0\nzone_reclaim_success 0\nzone_reclaim_failed 0\npginodesteal 0\nslabs_scanned 0\nkswapd_inodesteal 0\nkswapd_low_wmark_hit_quickly 1\nkswapd_high_wmark_hit_quickly 0\npageoutrun 0\npgrotated 0\ndrop_pagecache 0\ndrop_slab 0\noom_kill 0\nnuma_pte_updates 0\nnuma_huge_pte_updates 69\nnuma_hint_faults 0\nnuma_hint_faults_local 0\nnuma_pages_migrated 0\npgmigrate_success 0\npgmigrate_fail 0\nthp_migration_success 0\nthp_migration_fail 0\nthp_migration_split 0\ncompact_migrate_scanned 0\ncompact_free_scanned 0\ncompact_isolated 0\ncompact_stall 0\ncompact_fail 0\ncompact_success 0\ncompact_daemon_wake 0\ncompact_daemon_migrate_scanned 0\ncompact_daemon_free_scanned 0\nhtlb_buddy_alloc_success 0\nhtlb_buddy_alloc_fail 0\ncma_alloc_success 0\ncma_alloc_fail 0\nunevictable_pgs_culled 20917961\nunevictable_pgs_scanned 20440678\nunevictable_pgs_rescued 20472734\nunevictable_pgs_mlocked 42771\nunevictable_pgs_munlocked 32858\nunevictable_pgs_cleared 0\nunevictable_pgs_stranded 0\nthp_fault_alloc 4393\nthp_fault_fallback 0\nthp_fault_fallback_charge 0\nthp_collapse_alloc 231\nthp_collapse_alloc_failed 0\nthp_file_alloc 39606\nthp_file_fallback 0\nthp_file_fallback_charge 0\nthp_file_mapped 0\nthp_split_page 0\nthp_split_page_failed 0\nthp_deferred_split_page 567\nthp_underused_split_page 0\nthp_split_pmd 750\nthp_scan_exceed_none_pte 75\nthp_scan_exceed_swap_pte 0\nthp_scan_exceed_share_pte 34\nthp_split_pud 0\nthp_zero_page_alloc 1\nthp_zero_page_alloc_failed 0\nthp_swpout 0\nthp_swpout_fallback 0\nballoon_inflate 0\nballoon_deflate 0\nballoon_migrate 0\nswap_ra 0\nswap_ra_hit 0\nswpin_zero 0\nswpout_zero 0\nksm_swpin_copy 0\ncow_ksm 0\nzswpin 0\nzswpout 0\nzswpwb 0\ndirect_map_level2_splits 131\ndirect_map_level3_splits 3\ndirect_map_level2_collapses 0\ndirect_map_level3_collapses 0\nnrswpin 0\nnrswpout 0\nnr_unstable 0\n"
+        },
+        "/proc/meminfo": {
+          "t": 5499.179622017,
+          "raw": "MemTotal:       15902860 kB\nMemFree:         4128668 kB\nMemAvailable:   10244472 kB\nBuffers:            2628 kB\nCached:          8129524 kB\nSwapCached:            0 kB\nActive:          2939436 kB\nInactive:        6252220 kB\nActive(anon):    2939436 kB\nInactive(anon):        0 kB\nActive(file):          0 kB\nInactive(file):  6252220 kB\nUnevictable:     1731584 kB\nMlocked:           39652 kB\nSwapTotal:       4194300 kB\nSwapFree:        4194300 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              3080 kB\nWriteback:             0 kB\nAnonPages:       2645868 kB\nMapped:          1504868 kB\nShmem:           1876844 kB\nKReclaimable:     205600 kB\nSlab:             405204 kB\nSReclaimable:     205600 kB\nSUnreclaim:       199604 kB\nKernelStack:       28244 kB\nPageTables:        76656 kB\nSecPageTables:      2304 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    12145728 kB\nCommitted_AS:   34658528 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       90576 kB\nVmallocChunk:          0 kB\nPercpu:            19392 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:    411648 kB\nShmemHugePages:  1572864 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      292680 kB\nDirectMap2M:     6584320 kB\nDirectMap1G:    11534336 kB\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.pressure": {
+          "t": 5499.179661079,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=67949\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=67949\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/cpu.pressure": {
+          "t": 5499.17970148,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=65553\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=65553\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/io.pressure": {
+          "t": 5499.179728389,
+          "raw": "some avg10=0.00 avg60=0.00 avg300=0.00 total=509724\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=509724\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.stat": {
+          "t": 5499.179752229,
+          "raw": "anon 1163264\nfile 65536000\nkernel 94208\nkernel_stack 0\npagetables 49152\nsec_pagetables 0\npercpu 320\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 1163264\ninactive_file 65536000\nactive_file 0\nunevictable 0\nslab_reclaimable 29008\nslab_unreclaimable 9488\nslab 38496\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 1123840\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1140608\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 1140608\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 1140608\npgsteal 1140608\npswpin 0\npswpout 0\npgfault 327\npgmajfault 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.events": {
+          "t": 5499.179822402,
+          "raw": "low 0\nhigh 8736\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.current": {
+          "t": 5499.179849426,
+          "raw": "67043328\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.high": {
+          "t": 5499.179875514,
+          "raw": "67108864\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.max": {
+          "t": 5499.179898612,
+          "raw": "268435456\n"
+        }
+      }
+    },
+    {
+      "t": 5499.580151908,
+      "files": {
+        "/proc/pressure/cpu": {
+          "t": 5499.580153514,
+          "raw": "some avg10=20.96 avg60=4.62 avg300=1.15 total=23429001\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n"
+        },
+        "/proc/pressure/memory": {
+          "t": 5499.580274776,
+          "raw": "some avg10=0.18 avg60=0.03 avg300=0.00 total=47377\nfull avg10=0.18 avg60=0.03 avg300=0.00 total=45519\n"
+        },
+        "/proc/pressure/io": {
+          "t": 5499.580307931,
+          "raw": "some avg10=1.99 avg60=0.37 avg300=0.07 total=4882079\nfull avg10=1.99 avg60=0.37 avg300=0.07 total=4645098\n"
+        },
+        "/proc/vmstat": {
+          "t": 5499.580333237,
+          "raw": "nr_free_pages 1032407\nnr_free_pages_blocks 963584\nnr_zone_inactive_anon 0\nnr_zone_active_anon 734829\nnr_zone_inactive_file 1563055\nnr_zone_active_file 0\nnr_zone_unevictable 432896\nnr_zone_write_pending 770\nnr_mlock 9913\nnr_zspages 5\nnr_free_cma 0\nnr_unaccepted 0\nnuma_hit 20203868\nnuma_miss 0\nnuma_foreign 0\nnuma_interleave 4136\nnuma_local 20203868\nnuma_other 0\nnr_inactive_anon 0\nnr_active_anon 734829\nnr_inactive_file 1563055\nnr_active_file 0\nnr_unevictable 432896\nnr_slab_reclaimable 51400\nnr_slab_unreclaimable 49901\nnr_isolated_anon 0\nnr_isolated_file 0\nworkingset_nodes 42\nworkingset_refault_anon 0\nworkingset_refault_file 1422848\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\nnr_anon_pages 661508\nnr_mapped 376148\nnr_file_pages 2033038\nnr_dirty 770\nnr_writeback 0\nnr_shmem 469211\nnr_shmem_hugepages 768\nnr_shmem_pmdmapped 0\nnr_file_hugepages 0\nnr_file_pmdmapped 0\nnr_anon_transparent_hugepages 201\nnr_vmscan_write 0\nnr_vmscan_immediate_reclaim 0\nnr_dirtied 1433776\nnr_written 1368566\nnr_throttled_written 0\nnr_kernel_misc_reclaimable 0\nnr_foll_pin_acquired 247707\nnr_foll_pin_released 245433\nnr_vmalloc 22648\nnr_kernel_stack 28308\nnr_page_table_pages 19133\nnr_sec_page_table_pages 576\nnr_iommu_pages 576\nnr_swapcached 0\npgpromote_success 0\npgpromote_candidate 0\npgpromote_candidate_nrl 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1439616\npgsteal_khugepaged 0\npgsteal_proactive 0\npgsteal_anon 0\npgsteal_file 1439616\npgscan_kswapd 0\npgscan_direct 1439616\npgscan_khugepaged 0\npgscan_proactive 0\npgscan_anon 0\npgscan_file 1439616\npgrotate_anon 0\npgrotate_file 0\npgrefill 0\nnr_hugetlb 0\nnr_balloon_pages 0\nnr_kernel_file_pages 291816\nnr_gpu_active 0\nnr_gpu_reclaim 0\nnr_dirty_threshold 510326\nnr_dirty_background_threshold 254851\nnr_memmap_pages 0\nnr_memmap_boot_pages 64512\npgpgin 9487139\npgpgout 6690461\npswpin 0\npswpout 0\npgalloc_dma 512\npgalloc_dma32 514\npgalloc_normal 46038231\npgalloc_movable 0\npgalloc_device 0\nallocstall_dma 0\nallocstall_dma32 0\nallocstall_normal 0\nallocstall_movable 0\nallocstall_device 0\npgskip_dma 0\npgskip_dma32 0\npgskip_normal 0\npgskip_movable 0\npgskip_device 0\npgfree 47084881\npgactivate 0\npgdeactivate 0\npglazyfree 0\npgfault 18504288\npgmajfault 57581\npglazyfreed 0\npgreuse 453723\npgscan_direct_throttle 0\nzone_reclaim_success 0\nzone_reclaim_failed 0\npginodesteal 0\nslabs_scanned 0\nkswapd_inodesteal 0\nkswapd_low_wmark_hit_quickly 1\nkswapd_high_wmark_hit_quickly 0\npageoutrun 0\npgrotated 0\ndrop_pagecache 0\ndrop_slab 0\noom_kill 0\nnuma_pte_updates 0\nnuma_huge_pte_updates 69\nnuma_hint_faults 0\nnuma_hint_faults_local 0\nnuma_pages_migrated 0\npgmigrate_success 0\npgmigrate_fail 0\nthp_migration_success 0\nthp_migration_fail 0\nthp_migration_split 0\ncompact_migrate_scanned 0\ncompact_free_scanned 0\ncompact_isolated 0\ncompact_stall 0\ncompact_fail 0\ncompact_success 0\ncompact_daemon_wake 0\ncompact_daemon_migrate_scanned 0\ncompact_daemon_free_scanned 0\nhtlb_buddy_alloc_success 0\nhtlb_buddy_alloc_fail 0\ncma_alloc_success 0\ncma_alloc_fail 0\nunevictable_pgs_culled 20917961\nunevictable_pgs_scanned 20440678\nunevictable_pgs_rescued 20472734\nunevictable_pgs_mlocked 42771\nunevictable_pgs_munlocked 32858\nunevictable_pgs_cleared 0\nunevictable_pgs_stranded 0\nthp_fault_alloc 4393\nthp_fault_fallback 0\nthp_fault_fallback_charge 0\nthp_collapse_alloc 231\nthp_collapse_alloc_failed 0\nthp_file_alloc 39606\nthp_file_fallback 0\nthp_file_fallback_charge 0\nthp_file_mapped 0\nthp_split_page 0\nthp_split_page_failed 0\nthp_deferred_split_page 567\nthp_underused_split_page 0\nthp_split_pmd 750\nthp_scan_exceed_none_pte 75\nthp_scan_exceed_swap_pte 0\nthp_scan_exceed_share_pte 34\nthp_split_pud 0\nthp_zero_page_alloc 1\nthp_zero_page_alloc_failed 0\nthp_swpout 0\nthp_swpout_fallback 0\nballoon_inflate 0\nballoon_deflate 0\nballoon_migrate 0\nswap_ra 0\nswap_ra_hit 0\nswpin_zero 0\nswpout_zero 0\nksm_swpin_copy 0\ncow_ksm 0\nzswpin 0\nzswpout 0\nzswpwb 0\ndirect_map_level2_splits 131\ndirect_map_level3_splits 3\ndirect_map_level2_collapses 0\ndirect_map_level3_collapses 0\nnrswpin 0\nnrswpout 0\nnr_unstable 0\n"
+        },
+        "/proc/meminfo": {
+          "t": 5499.580404171,
+          "raw": "MemTotal:       15902860 kB\nMemFree:         4129628 kB\nMemAvailable:   10245432 kB\nBuffers:            2628 kB\nCached:          8129524 kB\nSwapCached:            0 kB\nActive:          2939316 kB\nInactive:        6252220 kB\nActive(anon):    2939316 kB\nInactive(anon):        0 kB\nActive(file):          0 kB\nInactive(file):  6252220 kB\nUnevictable:     1731584 kB\nMlocked:           39652 kB\nSwapTotal:       4194300 kB\nSwapFree:        4194300 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              3080 kB\nWriteback:             0 kB\nAnonPages:       2646032 kB\nMapped:          1504592 kB\nShmem:           1876844 kB\nKReclaimable:     205600 kB\nSlab:             405204 kB\nSReclaimable:     205600 kB\nSUnreclaim:       199604 kB\nKernelStack:       28308 kB\nPageTables:        76532 kB\nSecPageTables:      2304 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    12145728 kB\nCommitted_AS:   34658528 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       90592 kB\nVmallocChunk:          0 kB\nPercpu:            19392 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:    411648 kB\nShmemHugePages:  1572864 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      292680 kB\nDirectMap2M:     6584320 kB\nDirectMap1G:    11534336 kB\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.pressure": {
+          "t": 5499.580438537,
+          "raw": "some avg10=0.72 avg60=0.13 avg300=0.02 total=84504\nfull avg10=0.72 avg60=0.13 avg300=0.02 total=84504\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/cpu.pressure": {
+          "t": 5499.580483304,
+          "raw": "some avg10=0.54 avg60=0.09 avg300=0.02 total=66851\nfull avg10=0.54 avg60=0.09 avg300=0.02 total=66851\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/io.pressure": {
+          "t": 5499.58050922,
+          "raw": "some avg10=5.43 avg60=0.98 avg300=0.20 total=636899\nfull avg10=5.43 avg60=0.98 avg300=0.20 total=636899\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.stat": {
+          "t": 5499.580533036,
+          "raw": "anon 1163264\nfile 65536000\nkernel 94208\nkernel_stack 0\npagetables 49152\nsec_pagetables 0\npercpu 320\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 1163264\ninactive_file 65536000\nactive_file 0\nunevictable 0\nslab_reclaimable 29008\nslab_unreclaimable 9488\nslab 38496\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 1422848\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1439616\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 1439616\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 1439616\npgsteal 1439616\npswpin 0\npswpout 0\npgfault 327\npgmajfault 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.events": {
+          "t": 5499.580589184,
+          "raw": "low 0\nhigh 11027\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.current": {
+          "t": 5499.580615899,
+          "raw": "67043328\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.high": {
+          "t": 5499.580640756,
+          "raw": "67108864\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.max": {
+          "t": 5499.580661728,
+          "raw": "268435456\n"
+        }
+      }
+    },
+    {
+      "t": 5499.980928722,
+      "files": {
+        "/proc/pressure/cpu": {
+          "t": 5499.980930434,
+          "raw": "some avg10=20.96 avg60=4.62 avg300=1.15 total=23454517\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n"
+        },
+        "/proc/pressure/memory": {
+          "t": 5499.98106087,
+          "raw": "some avg10=0.18 avg60=0.03 avg300=0.00 total=54355\nfull avg10=0.18 avg60=0.03 avg300=0.00 total=52076\n"
+        },
+        "/proc/pressure/io": {
+          "t": 5499.981094452,
+          "raw": "some avg10=1.99 avg60=0.37 avg300=0.07 total=4928608\nfull avg10=1.99 avg60=0.37 avg300=0.07 total=4688929\n"
+        },
+        "/proc/vmstat": {
+          "t": 5499.981117689,
+          "raw": "nr_free_pages 1032378\nnr_free_pages_blocks 963584\nnr_zone_inactive_anon 0\nnr_zone_active_anon 734884\nnr_zone_inactive_file 1563057\nnr_zone_active_file 0\nnr_zone_unevictable 432896\nnr_zone_write_pending 776\nnr_mlock 9913\nnr_zspages 5\nnr_free_cma 0\nnr_unaccepted 0\nnuma_hit 20214328\nnuma_miss 0\nnuma_foreign 0\nnuma_interleave 4136\nnuma_local 20214328\nnuma_other 0\nnr_inactive_anon 0\nnr_active_anon 734884\nnr_inactive_file 1563057\nnr_active_file 0\nnr_unevictable 432896\nnr_slab_reclaimable 51400\nnr_slab_unreclaimable 49909\nnr_isolated_anon 0\nnr_isolated_file 0\nworkingset_nodes 3\nworkingset_refault_anon 0\nworkingset_refault_file 1686016\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\nnr_anon_pages 661527\nnr_mapped 376085\nnr_file_pages 2033038\nnr_dirty 776\nnr_writeback 0\nnr_shmem 469211\nnr_shmem_hugepages 768\nnr_shmem_pmdmapped 0\nnr_file_hugepages 0\nnr_file_pmdmapped 0\nnr_anon_transparent_hugepages 201\nnr_vmscan_write 0\nnr_vmscan_immediate_reclaim 0\nnr_dirtied 1433782\nnr_written 1368566\nnr_throttled_written 0\nnr_kernel_misc_reclaimable 0\nnr_foll_pin_acquired 247707\nnr_foll_pin_released 245433\nnr_vmalloc 22648\nnr_kernel_stack 28208\nnr_page_table_pages 19086\nnr_sec_page_table_pages 576\nnr_iommu_pages 576\nnr_swapcached 0\npgpromote_success 0\npgpromote_candidate 0\npgpromote_candidate_nrl 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1702784\npgsteal_khugepaged 0\npgsteal_proactive 0\npgsteal_anon 0\npgsteal_file 1702784\npgscan_kswapd 0\npgscan_direct 1702784\npgscan_khugepaged 0\npgscan_proactive 0\npgscan_anon 0\npgscan_file 1702784\npgrotate_anon 0\npgrotate_file 0\npgrefill 0\nnr_hugetlb 0\nnr_balloon_pages 0\nnr_kernel_file_pages 291816\nnr_gpu_active 0\nnr_gpu_reclaim 0\nnr_dirty_threshold 510321\nnr_dirty_background_threshold 254849\nnr_memmap_pages 0\nnr_memmap_boot_pages 64512\npgpgin 10539811\npgpgout 6690461\npswpin 0\npswpout 0\npgalloc_dma 512\npgalloc_dma32 514\npgalloc_normal 46301422\npgalloc_movable 0\npgalloc_device 0\nallocstall_dma 0\nallocstall_dma32 0\nallocstall_normal 0\nallocstall_movable 0\nallocstall_device 0\npgskip_dma 0\npgskip_dma32 0\npgskip_normal 0\npgskip_movable 0\npgskip_device 0\npgfree 47348116\npgactivate 0\npgdeactivate 0\npglazyfree 0\npgfault 18504323\npgmajfault 57581\npglazyfreed 0\npgreuse 453729\npgscan_direct_throttle 0\nzone_reclaim_success 0\nzone_reclaim_failed 0\npginodesteal 0\nslabs_scanned 0\nkswapd_inodesteal 0\nkswapd_low_wmark_hit_quickly 1\nkswapd_high_wmark_hit_quickly 0\npageoutrun 0\npgrotated 0\ndrop_pagecache 0\ndrop_slab 0\noom_kill 0\nnuma_pte_updates 0\nnuma_huge_pte_updates 69\nnuma_hint_faults 0\nnuma_hint_faults_local 0\nnuma_pages_migrated 0\npgmigrate_success 0\npgmigrate_fail 0\nthp_migration_success 0\nthp_migration_fail 0\nthp_migration_split 0\ncompact_migrate_scanned 0\ncompact_free_scanned 0\ncompact_isolated 0\ncompact_stall 0\ncompact_fail 0\ncompact_success 0\ncompact_daemon_wake 0\ncompact_daemon_migrate_scanned 0\ncompact_daemon_free_scanned 0\nhtlb_buddy_alloc_success 0\nhtlb_buddy_alloc_fail 0\ncma_alloc_success 0\ncma_alloc_fail 0\nunevictable_pgs_culled 20917961\nunevictable_pgs_scanned 20440678\nunevictable_pgs_rescued 20472734\nunevictable_pgs_mlocked 42771\nunevictable_pgs_munlocked 32858\nunevictable_pgs_cleared 0\nunevictable_pgs_stranded 0\nthp_fault_alloc 4393\nthp_fault_fallback 0\nthp_fault_fallback_charge 0\nthp_collapse_alloc 231\nthp_collapse_alloc_failed 0\nthp_file_alloc 39606\nthp_file_fallback 0\nthp_file_fallback_charge 0\nthp_file_mapped 0\nthp_split_page 0\nthp_split_page_failed 0\nthp_deferred_split_page 567\nthp_underused_split_page 0\nthp_split_pmd 750\nthp_scan_exceed_none_pte 75\nthp_scan_exceed_swap_pte 0\nthp_scan_exceed_share_pte 34\nthp_split_pud 0\nthp_zero_page_alloc 1\nthp_zero_page_alloc_failed 0\nthp_swpout 0\nthp_swpout_fallback 0\nballoon_inflate 0\nballoon_deflate 0\nballoon_migrate 0\nswap_ra 0\nswap_ra_hit 0\nswpin_zero 0\nswpout_zero 0\nksm_swpin_copy 0\ncow_ksm 0\nzswpin 0\nzswpout 0\nzswpwb 0\ndirect_map_level2_splits 131\ndirect_map_level3_splits 3\ndirect_map_level2_collapses 0\ndirect_map_level3_collapses 0\nnrswpin 0\nnrswpout 0\nnr_unstable 0\n"
+        },
+        "/proc/meminfo": {
+          "t": 5499.981177184,
+          "raw": "MemTotal:       15902860 kB\nMemFree:         4129512 kB\nMemAvailable:   10245324 kB\nBuffers:            2628 kB\nCached:          8129524 kB\nSwapCached:            0 kB\nActive:          2939536 kB\nInactive:        6252228 kB\nActive(anon):    2939536 kB\nInactive(anon):        0 kB\nActive(file):          0 kB\nInactive(file):  6252228 kB\nUnevictable:     1731584 kB\nMlocked:           39652 kB\nSwapTotal:       4194300 kB\nSwapFree:        4194300 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              3104 kB\nWriteback:             0 kB\nAnonPages:       2646108 kB\nMapped:          1504340 kB\nShmem:           1876844 kB\nKReclaimable:     205600 kB\nSlab:             405236 kB\nSReclaimable:     205600 kB\nSUnreclaim:       199636 kB\nKernelStack:       28208 kB\nPageTables:        76344 kB\nSecPageTables:      2304 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    12145728 kB\nCommitted_AS:   34658528 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       90592 kB\nVmallocChunk:          0 kB\nPercpu:            19392 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:    411648 kB\nShmemHugePages:  1572864 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      292680 kB\nDirectMap2M:     6584320 kB\nDirectMap1G:    11534336 kB\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.pressure": {
+          "t": 5499.981217635,
+          "raw": "some avg10=0.72 avg60=0.13 avg300=0.02 total=99890\nfull avg10=0.72 avg60=0.13 avg300=0.02 total=99890\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/cpu.pressure": {
+          "t": 5499.981264303,
+          "raw": "some avg10=0.54 avg60=0.09 avg300=0.02 total=115453\nfull avg10=0.54 avg60=0.09 avg300=0.02 total=115453\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/io.pressure": {
+          "t": 5499.981291784,
+          "raw": "some avg10=5.43 avg60=0.98 avg300=0.20 total=739359\nfull avg10=5.43 avg60=0.98 avg300=0.20 total=739359\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.stat": {
+          "t": 5499.981317815,
+          "raw": "anon 1163264\nfile 65798144\nkernel 94208\nkernel_stack 0\npagetables 49152\nsec_pagetables 0\npercpu 320\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 1163264\ninactive_file 65798144\nactive_file 0\nunevictable 0\nslab_reclaimable 29008\nslab_unreclaimable 9488\nslab 38496\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 1686208\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1702912\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 1702912\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 1702912\npgsteal 1702912\npswpin 0\npswpout 0\npgfault 327\npgmajfault 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.events": {
+          "t": 5499.981375224,
+          "raw": "low 0\nhigh 13045\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.current": {
+          "t": 5499.981398178,
+          "raw": "67567616\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.high": {
+          "t": 5499.981421607,
+          "raw": "67108864\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.max": {
+          "t": 5499.981446537,
+          "raw": "268435456\n"
+        }
+      }
+    },
+    {
+      "t": 5500.381783191,
+      "files": {
+        "/proc/pressure/cpu": {
+          "t": 5500.38178503,
+          "raw": "some avg10=20.96 avg60=4.62 avg300=1.15 total=23468147\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n"
+        },
+        "/proc/pressure/memory": {
+          "t": 5500.381917037,
+          "raw": "some avg10=0.18 avg60=0.03 avg300=0.00 total=65482\nfull avg10=0.18 avg60=0.03 avg300=0.00 total=62232\n"
+        },
+        "/proc/pressure/io": {
+          "t": 5500.381951107,
+          "raw": "some avg10=1.99 avg60=0.37 avg300=0.07 total=4999912\nfull avg10=1.99 avg60=0.37 avg300=0.07 total=4756051\n"
+        },
+        "/proc/vmstat": {
+          "t": 5500.381974906,
+          "raw": "nr_free_pages 1032717\nnr_free_pages_blocks 963584\nnr_zone_inactive_anon 0\nnr_zone_active_anon 734598\nnr_zone_inactive_file 1563057\nnr_zone_active_file 0\nnr_zone_unevictable 432880\nnr_zone_write_pending 776\nnr_mlock 9913\nnr_zspages 5\nnr_free_cma 0\nnr_unaccepted 0\nnuma_hit 20226021\nnuma_miss 0\nnuma_foreign 0\nnuma_interleave 4136\nnuma_local 20226021\nnuma_other 0\nnr_inactive_anon 0\nnr_active_anon 734598\nnr_inactive_file 1563057\nnr_active_file 0\nnr_unevictable 432880\nnr_slab_reclaimable 51400\nnr_slab_unreclaimable 49909\nnr_isolated_anon 0\nnr_isolated_file 0\nworkingset_nodes 3\nworkingset_refault_anon 0\nworkingset_refault_file 1973760\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\nnr_anon_pages 661241\nnr_mapped 376085\nnr_file_pages 2033022\nnr_dirty 776\nnr_writeback 0\nnr_shmem 469195\nnr_shmem_hugepages 768\nnr_shmem_pmdmapped 0\nnr_file_hugepages 0\nnr_file_pmdmapped 0\nnr_anon_transparent_hugepages 201\nnr_vmscan_write 0\nnr_vmscan_immediate_reclaim 0\nnr_dirtied 1433782\nnr_written 1368566\nnr_throttled_written 0\nnr_kernel_misc_reclaimable 0\nnr_foll_pin_acquired 247707\nnr_foll_pin_released 245433\nnr_vmalloc 22648\nnr_kernel_stack 28208\nnr_page_table_pages 19086\nnr_sec_page_table_pages 576\nnr_iommu_pages 576\nnr_swapcached 0\npgpromote_success 0\npgpromote_candidate 0\npgpromote_candidate_nrl 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1990464\npgsteal_khugepaged 0\npgsteal_proactive 0\npgsteal_anon 0\npgsteal_file 1990464\npgscan_kswapd 0\npgscan_direct 1990464\npgscan_khugepaged 0\npgscan_proactive 0\npgscan_anon 0\npgscan_file 1990464\npgrotate_anon 0\npgrotate_file 0\npgrefill 0\nnr_hugetlb 0\nnr_balloon_pages 0\nnr_kernel_file_pages 291816\nnr_gpu_active 0\nnr_gpu_reclaim 0\nnr_dirty_threshold 510389\nnr_dirty_background_threshold 254882\nnr_memmap_pages 0\nnr_memmap_boot_pages 64512\npgpgin 11690787\npgpgout 6690461\npswpin 0\npswpout 0\npgalloc_dma 512\npgalloc_dma32 514\npgalloc_normal 46589257\npgalloc_movable 0\npgalloc_device 0\nallocstall_dma 0\nallocstall_dma32 0\nallocstall_normal 0\nallocstall_movable 0\nallocstall_device 0\npgskip_dma 0\npgskip_dma32 0\npgskip_normal 0\npgskip_movable 0\npgskip_device 0\npgfree 47636270\npgactivate 0\npgdeactivate 0\npglazyfree 0\npgfault 18504367\npgmajfault 57581\npglazyfreed 0\npgreuse 453733\npgscan_direct_throttle 0\nzone_reclaim_success 0\nzone_reclaim_failed 0\npginodesteal 0\nslabs_scanned 0\nkswapd_inodesteal 0\nkswapd_low_wmark_hit_quickly 1\nkswapd_high_wmark_hit_quickly 0\npageoutrun 0\npgrotated 0\ndrop_pagecache 0\ndrop_slab 0\noom_kill 0\nnuma_pte_updates 0\nnuma_huge_pte_updates 69\nnuma_hint_faults 0\nnuma_hint_faults_local 0\nnuma_pages_migrated 0\npgmigrate_success 0\npgmigrate_fail 0\nthp_migration_success 0\nthp_migration_fail 0\nthp_migration_split 0\ncompact_migrate_scanned 0\ncompact_free_scanned 0\ncompact_isolated 0\ncompact_stall 0\ncompact_fail 0\ncompact_success 0\ncompact_daemon_wake 0\ncompact_daemon_migrate_scanned 0\ncompact_daemon_free_scanned 0\nhtlb_buddy_alloc_success 0\nhtlb_buddy_alloc_fail 0\ncma_alloc_success 0\ncma_alloc_fail 0\nunevictable_pgs_culled 20917973\nunevictable_pgs_scanned 20440707\nunevictable_pgs_rescued 20472762\nunevictable_pgs_mlocked 42771\nunevictable_pgs_munlocked 32858\nunevictable_pgs_cleared 0\nunevictable_pgs_stranded 0\nthp_fault_alloc 4393\nthp_fault_fallback 0\nthp_fault_fallback_charge 0\nthp_collapse_alloc 231\nthp_collapse_alloc_failed 0\nthp_file_alloc 39606\nthp_file_fallback 0\nthp_file_fallback_charge 0\nthp_file_mapped 0\nthp_split_page 0\nthp_split_page_failed 0\nthp_deferred_split_page 567\nthp_underused_split_page 0\nthp_split_pmd 750\nthp_scan_exceed_none_pte 75\nthp_scan_exceed_swap_pte 0\nthp_scan_exceed_share_pte 34\nthp_split_pud 0\nthp_zero_page_alloc 1\nthp_zero_page_alloc_failed 0\nthp_swpout 0\nthp_swpout_fallback 0\nballoon_inflate 0\nballoon_deflate 0\nballoon_migrate 0\nswap_ra 0\nswap_ra_hit 0\nswpin_zero 0\nswpout_zero 0\nksm_swpin_copy 0\ncow_ksm 0\nzswpin 0\nzswpout 0\nzswpwb 0\ndirect_map_level2_splits 131\ndirect_map_level3_splits 3\ndirect_map_level2_collapses 0\ndirect_map_level3_collapses 0\nnrswpin 0\nnrswpout 0\nnr_unstable 0\n"
+        },
+        "/proc/meminfo": {
+          "t": 5500.382056175,
+          "raw": "MemTotal:       15902860 kB\nMemFree:         4130868 kB\nMemAvailable:   10246680 kB\nBuffers:            2628 kB\nCached:          8129460 kB\nSwapCached:            0 kB\nActive:          2938392 kB\nInactive:        6252228 kB\nActive(anon):    2938392 kB\nInactive(anon):        0 kB\nActive(file):          0 kB\nInactive(file):  6252228 kB\nUnevictable:     1731520 kB\nMlocked:           39652 kB\nSwapTotal:       4194300 kB\nSwapFree:        4194300 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              3104 kB\nWriteback:             0 kB\nAnonPages:       2644964 kB\nMapped:          1504340 kB\nShmem:           1876780 kB\nKReclaimable:     205600 kB\nSlab:             405236 kB\nSReclaimable:     205600 kB\nSUnreclaim:       199636 kB\nKernelStack:       28208 kB\nPageTables:        76344 kB\nSecPageTables:      2304 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    12145728 kB\nCommitted_AS:   34658464 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       90592 kB\nVmallocChunk:          0 kB\nPercpu:            19392 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:    411648 kB\nShmemHugePages:  1572864 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      292680 kB\nDirectMap2M:     6584320 kB\nDirectMap1G:    11534336 kB\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.pressure": {
+          "t": 5500.382092138,
+          "raw": "some avg10=0.72 avg60=0.13 avg300=0.02 total=118206\nfull avg10=0.72 avg60=0.13 avg300=0.02 total=118206\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/cpu.pressure": {
+          "t": 5500.382138708,
+          "raw": "some avg10=0.54 avg60=0.09 avg300=0.02 total=127957\nfull avg10=0.54 avg60=0.09 avg300=0.02 total=127957\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/io.pressure": {
+          "t": 5500.382166254,
+          "raw": "some avg10=5.43 avg60=0.98 avg300=0.20 total=857044\nfull avg10=5.43 avg60=0.98 avg300=0.20 total=857044\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.stat": {
+          "t": 5500.382191212,
+          "raw": "anon 1163264\nfile 65536000\nkernel 94208\nkernel_stack 0\npagetables 49152\nsec_pagetables 0\npercpu 320\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 1163264\ninactive_file 65536000\nactive_file 0\nunevictable 0\nslab_reclaimable 29008\nslab_unreclaimable 9488\nslab 38496\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 1973760\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1990528\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 1990528\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 1990528\npgsteal 1990528\npswpin 0\npswpout 0\npgfault 327\npgmajfault 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.events": {
+          "t": 5500.382253038,
+          "raw": "low 0\nhigh 15246\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.current": {
+          "t": 5500.382277696,
+          "raw": "67043328\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.high": {
+          "t": 5500.382300869,
+          "raw": "67108864\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.max": {
+          "t": 5500.38232696,
+          "raw": "268435456\n"
+        }
+      }
+    },
+    {
+      "t": 5500.78262268,
+      "files": {
+        "/proc/pressure/cpu": {
+          "t": 5500.782624211,
+          "raw": "some avg10=20.96 avg60=4.62 avg300=1.15 total=23473029\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n"
+        },
+        "/proc/pressure/memory": {
+          "t": 5500.782757815,
+          "raw": "some avg10=0.18 avg60=0.03 avg300=0.00 total=75593\nfull avg10=0.18 avg60=0.03 avg300=0.00 total=72344\n"
+        },
+        "/proc/pressure/io": {
+          "t": 5500.782802077,
+          "raw": "some avg10=1.99 avg60=0.37 avg300=0.07 total=5078501\nfull avg10=1.99 avg60=0.37 avg300=0.07 total=4833026\n"
+        },
+        "/proc/vmstat": {
+          "t": 5500.782831968,
+          "raw": "nr_free_pages 1032717\nnr_free_pages_blocks 963584\nnr_zone_inactive_anon 0\nnr_zone_active_anon 734598\nnr_zone_inactive_file 1563057\nnr_zone_active_file 0\nnr_zone_unevictable 432880\nnr_zone_write_pending 776\nnr_mlock 9913\nnr_zspages 5\nnr_free_cma 0\nnr_unaccepted 0\nnuma_hit 20237806\nnuma_miss 0\nnuma_foreign 0\nnuma_interleave 4136\nnuma_local 20237806\nnuma_other 0\nnr_inactive_anon 0\nnr_active_anon 734598\nnr_inactive_file 1563057\nnr_active_file 0\nnr_unevictable 432880\nnr_slab_reclaimable 51400\nnr_slab_unreclaimable 49909\nnr_isolated_anon 0\nnr_isolated_file 0\nworkingset_nodes 3\nworkingset_refault_anon 0\nworkingset_refault_file 2270720\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\nnr_anon_pages 661241\nnr_mapped 376085\nnr_file_pages 2033022\nnr_dirty 776\nnr_writeback 0\nnr_shmem 469195\nnr_shmem_hugepages 768\nnr_shmem_pmdmapped 0\nnr_file_hugepages 0\nnr_file_pmdmapped 0\nnr_anon_transparent_hugepages 201\nnr_vmscan_write 0\nnr_vmscan_immediate_reclaim 0\nnr_dirtied 1433782\nnr_written 1368566\nnr_throttled_written 0\nnr_kernel_misc_reclaimable 0\nnr_foll_pin_acquired 247707\nnr_foll_pin_released 245433\nnr_vmalloc 22648\nnr_kernel_stack 28208\nnr_page_table_pages 19086\nnr_sec_page_table_pages 576\nnr_iommu_pages 576\nnr_swapcached 0\npgpromote_success 0\npgpromote_candidate 0\npgpromote_candidate_nrl 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 2287488\npgsteal_khugepaged 0\npgsteal_proactive 0\npgsteal_anon 0\npgsteal_file 2287488\npgscan_kswapd 0\npgscan_direct 2287488\npgscan_khugepaged 0\npgscan_proactive 0\npgscan_anon 0\npgscan_file 2287488\npgrotate_anon 0\npgrotate_file 0\npgrefill 0\nnr_hugetlb 0\nnr_balloon_pages 0\nnr_kernel_file_pages 291816\nnr_gpu_active 0\nnr_gpu_reclaim 0\nnr_dirty_threshold 510389\nnr_dirty_background_threshold 254882\nnr_memmap_pages 0\nnr_memmap_boot_pages 64512\npgpgin 12878627\npgpgout 6690461\npswpin 0\npswpout 0\npgalloc_dma 512\npgalloc_dma32 514\npgalloc_normal 46886246\npgalloc_movable 0\npgalloc_device 0\nallocstall_dma 0\nallocstall_dma32 0\nallocstall_normal 0\nallocstall_movable 0\nallocstall_device 0\npgskip_dma 0\npgskip_dma32 0\npgskip_normal 0\npgskip_movable 0\npgskip_device 0\npgfree 47933254\npgactivate 0\npgdeactivate 0\npglazyfree 0\npgfault 18504377\npgmajfault 57581\npglazyfreed 0\npgreuse 453738\npgscan_direct_throttle 0\nzone_reclaim_success 0\nzone_reclaim_failed 0\npginodesteal 0\nslabs_scanned 0\nkswapd_inodesteal 0\nkswapd_low_wmark_hit_quickly 1\nkswapd_high_wmark_hit_quickly 0\npageoutrun 0\npgrotated 0\ndrop_pagecache 0\ndrop_slab 0\noom_kill 0\nnuma_pte_updates 0\nnuma_huge_pte_updates 69\nnuma_hint_faults 0\nnuma_hint_faults_local 0\nnuma_pages_migrated 0\npgmigrate_success 0\npgmigrate_fail 0\nthp_migration_success 0\nthp_migration_fail 0\nthp_migration_split 0\ncompact_migrate_scanned 0\ncompact_free_scanned 0\ncompact_isolated 0\ncompact_stall 0\ncompact_fail 0\ncompact_success 0\ncompact_daemon_wake 0\ncompact_daemon_migrate_scanned 0\ncompact_daemon_free_scanned 0\nhtlb_buddy_alloc_success 0\nhtlb_buddy_alloc_fail 0\ncma_alloc_success 0\ncma_alloc_fail 0\nunevictable_pgs_culled 20917973\nunevictable_pgs_scanned 20440707\nunevictable_pgs_rescued 20472762\nunevictable_pgs_mlocked 42771\nunevictable_pgs_munlocked 32858\nunevictable_pgs_cleared 0\nunevictable_pgs_stranded 0\nthp_fault_alloc 4393\nthp_fault_fallback 0\nthp_fault_fallback_charge 0\nthp_collapse_alloc 231\nthp_collapse_alloc_failed 0\nthp_file_alloc 39606\nthp_file_fallback 0\nthp_file_fallback_charge 0\nthp_file_mapped 0\nthp_split_page 0\nthp_split_page_failed 0\nthp_deferred_split_page 567\nthp_underused_split_page 0\nthp_split_pmd 750\nthp_scan_exceed_none_pte 75\nthp_scan_exceed_swap_pte 0\nthp_scan_exceed_share_pte 34\nthp_split_pud 0\nthp_zero_page_alloc 1\nthp_zero_page_alloc_failed 0\nthp_swpout 0\nthp_swpout_fallback 0\nballoon_inflate 0\nballoon_deflate 0\nballoon_migrate 0\nswap_ra 0\nswap_ra_hit 0\nswpin_zero 0\nswpout_zero 0\nksm_swpin_copy 0\ncow_ksm 0\nzswpin 0\nzswpout 0\nzswpwb 0\ndirect_map_level2_splits 131\ndirect_map_level3_splits 3\ndirect_map_level2_collapses 0\ndirect_map_level3_collapses 0\nnrswpin 0\nnrswpout 0\nnr_unstable 0\n"
+        },
+        "/proc/meminfo": {
+          "t": 5500.782903969,
+          "raw": "MemTotal:       15902860 kB\nMemFree:         4130868 kB\nMemAvailable:   10246680 kB\nBuffers:            2628 kB\nCached:          8129460 kB\nSwapCached:            0 kB\nActive:          2938392 kB\nInactive:        6252228 kB\nActive(anon):    2938392 kB\nInactive(anon):        0 kB\nActive(file):          0 kB\nInactive(file):  6252228 kB\nUnevictable:     1731520 kB\nMlocked:           39652 kB\nSwapTotal:       4194300 kB\nSwapFree:        4194300 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              3104 kB\nWriteback:             0 kB\nAnonPages:       2644964 kB\nMapped:          1504340 kB\nShmem:           1876780 kB\nKReclaimable:     205600 kB\nSlab:             405236 kB\nSReclaimable:     205600 kB\nSUnreclaim:       199636 kB\nKernelStack:       28208 kB\nPageTables:        76344 kB\nSecPageTables:      2304 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    12145728 kB\nCommitted_AS:   34658464 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       90592 kB\nVmallocChunk:          0 kB\nPercpu:            19392 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:    411648 kB\nShmemHugePages:  1572864 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      292680 kB\nDirectMap2M:     6584320 kB\nDirectMap1G:    11534336 kB\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.pressure": {
+          "t": 5500.78294216,
+          "raw": "some avg10=0.72 avg60=0.13 avg300=0.02 total=134333\nfull avg10=0.72 avg60=0.13 avg300=0.02 total=134333\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/cpu.pressure": {
+          "t": 5500.782994567,
+          "raw": "some avg10=0.54 avg60=0.09 avg300=0.02 total=128822\nfull avg10=0.54 avg60=0.09 avg300=0.02 total=128822\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/io.pressure": {
+          "t": 5500.783184343,
+          "raw": "some avg10=5.43 avg60=0.98 avg300=0.20 total=982524\nfull avg10=5.43 avg60=0.98 avg300=0.20 total=982524\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.stat": {
+          "t": 5500.783222307,
+          "raw": "anon 1163264\nfile 65536000\nkernel 94208\nkernel_stack 0\npagetables 49152\nsec_pagetables 0\npercpu 320\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 1163264\ninactive_file 65536000\nactive_file 0\nunevictable 0\nslab_reclaimable 29008\nslab_unreclaimable 9488\nslab 38496\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 2270720\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 2287488\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 2287488\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 2287488\npgsteal 2287488\npswpin 0\npswpout 0\npgfault 327\npgmajfault 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.events": {
+          "t": 5500.783289695,
+          "raw": "low 0\nhigh 17521\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.current": {
+          "t": 5500.783319541,
+          "raw": "67043328\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.high": {
+          "t": 5500.783347113,
+          "raw": "67108864\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.max": {
+          "t": 5500.783374636,
+          "raw": "268435456\n"
+        }
+      }
+    },
+    {
+      "t": 5501.183643765,
+      "files": {
+        "/proc/pressure/cpu": {
+          "t": 5501.183645167,
+          "raw": "some avg10=17.71 avg60=4.57 avg300=1.16 total=23488393\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n"
+        },
+        "/proc/pressure/memory": {
+          "t": 5501.183773224,
+          "raw": "some avg10=0.51 avg60=0.09 avg300=0.02 total=83700\nfull avg10=0.51 avg60=0.09 avg300=0.02 total=80241\n"
+        },
+        "/proc/pressure/io": {
+          "t": 5501.183806296,
+          "raw": "some avg10=4.71 avg60=0.91 avg300=0.19 total=5130762\nfull avg10=4.53 avg60=0.88 avg300=0.18 total=4881908\n"
+        },
+        "/proc/vmstat": {
+          "t": 5501.183830709,
+          "raw": "nr_free_pages 1032974\nnr_free_pages_blocks 963584\nnr_zone_inactive_anon 0\nnr_zone_active_anon 734639\nnr_zone_inactive_file 1563057\nnr_zone_active_file 0\nnr_zone_unevictable 432880\nnr_zone_write_pending 776\nnr_mlock 9913\nnr_zspages 5\nnr_free_cma 0\nnr_unaccepted 0\nnuma_hit 20251378\nnuma_miss 0\nnuma_foreign 0\nnuma_interleave 4136\nnuma_local 20251378\nnuma_other 0\nnr_inactive_anon 0\nnr_active_anon 734639\nnr_inactive_file 1563057\nnr_active_file 0\nnr_unevictable 432880\nnr_slab_reclaimable 51400\nnr_slab_unreclaimable 49909\nnr_isolated_anon 0\nnr_isolated_file 0\nworkingset_nodes 3\nworkingset_refault_anon 0\nworkingset_refault_file 2549248\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\nnr_anon_pages 661268\nnr_mapped 376254\nnr_file_pages 2033022\nnr_dirty 776\nnr_writeback 0\nnr_shmem 469195\nnr_shmem_hugepages 768\nnr_shmem_pmdmapped 0\nnr_file_hugepages 0\nnr_file_pmdmapped 0\nnr_anon_transparent_hugepages 201\nnr_vmscan_write 0\nnr_vmscan_immediate_reclaim 0\nnr_dirtied 1433782\nnr_written 1368566\nnr_throttled_written 0\nnr_kernel_misc_reclaimable 0\nnr_foll_pin_acquired 247707\nnr_foll_pin_released 245433\nnr_vmalloc 22648\nnr_kernel_stack 28308\nnr_page_table_pages 19103\nnr_sec_page_table_pages 576\nnr_iommu_pages 576\nnr_swapcached 0\npgpromote_success 0\npgpromote_candidate 0\npgpromote_candidate_nrl 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 2565952\npgsteal_khugepaged 0\npgsteal_proactive 0\npgsteal_anon 0\npgsteal_file 2565952\npgscan_kswapd 0\npgscan_direct 2565952\npgscan_khugepaged 0\npgscan_proactive 0\npgscan_anon 0\npgscan_file 2565952\npgrotate_anon 0\npgrotate_file 0\npgrefill 0\nnr_hugetlb 0\nnr_balloon_pages 0\nnr_kernel_file_pages 291816\nnr_gpu_active 0\nnr_gpu_reclaim 0\nnr_dirty_threshold 510440\nnr_dirty_background_threshold 254908\nnr_memmap_pages 0\nnr_memmap_boot_pages 64512\npgpgin 13992739\npgpgout 6690461\npswpin 0\npswpout 0\npgalloc_dma 512\npgalloc_dma32 514\npgalloc_normal 47167720\npgalloc_movable 0\npgalloc_device 0\nallocstall_dma 0\nallocstall_dma32 0\nallocstall_normal 0\nallocstall_movable 0\nallocstall_device 0\npgskip_dma 0\npgskip_dma32 0\npgskip_normal 0\npgskip_movable 0\npgskip_device 0\npgfree 48214632\npgactivate 0\npgdeactivate 0\npglazyfree 0\npgfault 18508634\npgmajfault 57581\npglazyfreed 0\npgreuse 454075\npgscan_direct_throttle 0\nzone_reclaim_success 0\nzone_reclaim_failed 0\npginodesteal 0\nslabs_scanned 0\nkswapd_inodesteal 0\nkswapd_low_wmark_hit_quickly 1\nkswapd_high_wmark_hit_quickly 0\npageoutrun 0\npgrotated 0\ndrop_pagecache 0\ndrop_slab 0\noom_kill 0\nnuma_pte_updates 0\nnuma_huge_pte_updates 69\nnuma_hint_faults 0\nnuma_hint_faults_local 0\nnuma_pages_migrated 0\npgmigrate_success 0\npgmigrate_fail 0\nthp_migration_success 0\nthp_migration_fail 0\nthp_migration_split 0\ncompact_migrate_scanned 0\ncompact_free_scanned 0\ncompact_isolated 0\ncompact_stall 0\ncompact_fail 0\ncompact_success 0\ncompact_daemon_wake 0\ncompact_daemon_migrate_scanned 0\ncompact_daemon_free_scanned 0\nhtlb_buddy_alloc_success 0\nhtlb_buddy_alloc_fail 0\ncma_alloc_success 0\ncma_alloc_fail 0\nunevictable_pgs_culled 20917973\nunevictable_pgs_scanned 20440707\nunevictable_pgs_rescued 20472762\nunevictable_pgs_mlocked 42771\nunevictable_pgs_munlocked 32858\nunevictable_pgs_cleared 0\nunevictable_pgs_stranded 0\nthp_fault_alloc 4393\nthp_fault_fallback 0\nthp_fault_fallback_charge 0\nthp_collapse_alloc 231\nthp_collapse_alloc_failed 0\nthp_file_alloc 39606\nthp_file_fallback 0\nthp_file_fallback_charge 0\nthp_file_mapped 0\nthp_split_page 0\nthp_split_page_failed 0\nthp_deferred_split_page 567\nthp_underused_split_page 0\nthp_split_pmd 750\nthp_scan_exceed_none_pte 75\nthp_scan_exceed_swap_pte 0\nthp_scan_exceed_share_pte 34\nthp_split_pud 0\nthp_zero_page_alloc 1\nthp_zero_page_alloc_failed 0\nthp_swpout 0\nthp_swpout_fallback 0\nballoon_inflate 0\nballoon_deflate 0\nballoon_migrate 0\nswap_ra 0\nswap_ra_hit 0\nswpin_zero 0\nswpout_zero 0\nksm_swpin_copy 0\ncow_ksm 0\nzswpin 0\nzswpout 0\nzswpwb 0\ndirect_map_level2_splits 131\ndirect_map_level3_splits 3\ndirect_map_level2_collapses 0\ndirect_map_level3_collapses 0\nnrswpin 0\nnrswpout 0\nnr_unstable 0\n"
+        },
+        "/proc/meminfo": {
+          "t": 5501.183890488,
+          "raw": "MemTotal:       15902860 kB\nMemFree:         4131896 kB\nMemAvailable:   10247708 kB\nBuffers:            2628 kB\nCached:          8129460 kB\nSwapCached:            0 kB\nActive:          2938556 kB\nInactive:        6252228 kB\nActive(anon):    2938556 kB\nInactive(anon):        0 kB\nActive(file):          0 kB\nInactive(file):  6252228 kB\nUnevictable:     1731520 kB\nMlocked:           39652 kB\nSwapTotal:       4194300 kB\nSwapFree:        4194300 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              3104 kB\nWriteback:             0 kB\nAnonPages:       2645072 kB\nMapped:          1505016 kB\nShmem:           1876780 kB\nKReclaimable:     205600 kB\nSlab:             405236 kB\nSReclaimable:     205600 kB\nSUnreclaim:       199636 kB\nKernelStack:       28308 kB\nPageTables:        76412 kB\nSecPageTables:      2304 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    12145728 kB\nCommitted_AS:   34658464 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       90592 kB\nVmallocChunk:          0 kB\nPercpu:            19392 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:    411648 kB\nShmemHugePages:  1572864 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      292680 kB\nDirectMap2M:     6584320 kB\nDirectMap1G:    11534336 kB\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.pressure": {
+          "t": 5501.183926359,
+          "raw": "some avg10=0.72 avg60=0.13 avg300=0.02 total=151362\nfull avg10=0.72 avg60=0.13 avg300=0.02 total=151362\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/cpu.pressure": {
+          "t": 5501.183968759,
+          "raw": "some avg10=0.54 avg60=0.09 avg300=0.02 total=152155\nfull avg10=0.54 avg60=0.09 avg300=0.02 total=152155\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/io.pressure": {
+          "t": 5501.183996379,
+          "raw": "some avg10=5.43 avg60=0.98 avg300=0.20 total=1091864\nfull avg10=5.43 avg60=0.98 avg300=0.20 total=1091864\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.stat": {
+          "t": 5501.184039682,
+          "raw": "anon 1163264\nfile 65536000\nkernel 94208\nkernel_stack 0\npagetables 49152\nsec_pagetables 0\npercpu 320\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 1163264\ninactive_file 65536000\nactive_file 0\nunevictable 0\nslab_reclaimable 29008\nslab_unreclaimable 9488\nslab 38496\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 2549248\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 2566016\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 2566016\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 2566016\npgsteal 2566016\npswpin 0\npswpout 0\npgfault 327\npgmajfault 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.events": {
+          "t": 5501.184114657,
+          "raw": "low 0\nhigh 19653\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.current": {
+          "t": 5501.184138673,
+          "raw": "67305472\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.high": {
+          "t": 5501.184162476,
+          "raw": "67108864\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.max": {
+          "t": 5501.184183959,
+          "raw": "268435456\n"
+        }
+      }
+    },
+    {
+      "t": 5501.58450292,
+      "files": {
+        "/proc/pressure/cpu": {
+          "t": 5501.584504816,
+          "raw": "some avg10=17.71 avg60=4.57 avg300=1.16 total=23510350\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n"
+        },
+        "/proc/pressure/memory": {
+          "t": 5501.584621783,
+          "raw": "some avg10=0.51 avg60=0.09 avg300=0.02 total=91706\nfull avg10=0.51 avg60=0.09 avg300=0.02 total=88007\n"
+        },
+        "/proc/pressure/io": {
+          "t": 5501.58466313,
+          "raw": "some avg10=4.71 avg60=0.91 avg300=0.19 total=5182974\nfull avg10=4.53 avg60=0.88 avg300=0.18 total=4932609\n"
+        },
+        "/proc/vmstat": {
+          "t": 5501.584692531,
+          "raw": "nr_free_pages 1032889\nnr_free_pages_blocks 963584\nnr_zone_inactive_anon 0\nnr_zone_active_anon 734394\nnr_zone_inactive_file 1563057\nnr_zone_active_file 0\nnr_zone_unevictable 432880\nnr_zone_write_pending 778\nnr_mlock 9913\nnr_zspages 5\nnr_free_cma 0\nnr_unaccepted 0\nnuma_hit 20261884\nnuma_miss 0\nnuma_foreign 0\nnuma_interleave 4136\nnuma_local 20261884\nnuma_other 0\nnr_inactive_anon 0\nnr_active_anon 734394\nnr_inactive_file 1563057\nnr_active_file 0\nnr_unevictable 432880\nnr_slab_reclaimable 51400\nnr_slab_unreclaimable 49909\nnr_isolated_anon 0\nnr_isolated_file 0\nworkingset_nodes 3\nworkingset_refault_anon 0\nworkingset_refault_file 2814464\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\nnr_anon_pages 660964\nnr_mapped 376194\nnr_file_pages 2033022\nnr_dirty 778\nnr_writeback 0\nnr_shmem 469195\nnr_shmem_hugepages 768\nnr_shmem_pmdmapped 0\nnr_file_hugepages 0\nnr_file_pmdmapped 0\nnr_anon_transparent_hugepages 201\nnr_vmscan_write 0\nnr_vmscan_immediate_reclaim 0\nnr_dirtied 1433784\nnr_written 1368566\nnr_throttled_written 0\nnr_kernel_misc_reclaimable 0\nnr_foll_pin_acquired 247707\nnr_foll_pin_released 245433\nnr_vmalloc 22684\nnr_kernel_stack 28368\nnr_page_table_pages 19160\nnr_sec_page_table_pages 576\nnr_iommu_pages 576\nnr_swapcached 0\npgpromote_success 0\npgpromote_candidate 0\npgpromote_candidate_nrl 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 2831168\npgsteal_khugepaged 0\npgsteal_proactive 0\npgsteal_anon 0\npgsteal_file 2831168\npgscan_kswapd 0\npgscan_direct 2831168\npgscan_khugepaged 0\npgscan_proactive 0\npgscan_anon 0\npgscan_file 2831168\npgrotate_anon 0\npgrotate_file 0\npgrefill 0\nnr_hugetlb 0\nnr_balloon_pages 0\nnr_kernel_file_pages 291816\nnr_gpu_active 0\nnr_gpu_reclaim 0\nnr_dirty_threshold 510423\nnr_dirty_background_threshold 254900\nnr_memmap_pages 0\nnr_memmap_boot_pages 64512\npgpgin 15053603\npgpgout 6690461\npswpin 0\npswpout 0\npgalloc_dma 512\npgalloc_dma32 514\npgalloc_normal 47432974\npgalloc_movable 0\npgalloc_device 0\nallocstall_dma 0\nallocstall_dma32 0\nallocstall_normal 0\nallocstall_movable 0\nallocstall_device 0\npgskip_dma 0\npgskip_dma32 0\npgskip_normal 0\npgskip_movable 0\npgskip_device 0\npgfree 48480225\npgactivate 0\npgdeactivate 0\npglazyfree 0\npgfault 18508647\npgmajfault 57581\npglazyfreed 0\npgreuse 454078\npgscan_direct_throttle 0\nzone_reclaim_success 0\nzone_reclaim_failed 0\npginodesteal 0\nslabs_scanned 0\nkswapd_inodesteal 0\nkswapd_low_wmark_hit_quickly 1\nkswapd_high_wmark_hit_quickly 0\npageoutrun 0\npgrotated 0\ndrop_pagecache 0\ndrop_slab 0\noom_kill 0\nnuma_pte_updates 0\nnuma_huge_pte_updates 69\nnuma_hint_faults 0\nnuma_hint_faults_local 0\nnuma_pages_migrated 0\npgmigrate_success 0\npgmigrate_fail 0\nthp_migration_success 0\nthp_migration_fail 0\nthp_migration_split 0\ncompact_migrate_scanned 0\ncompact_free_scanned 0\ncompact_isolated 0\ncompact_stall 0\ncompact_fail 0\ncompact_success 0\ncompact_daemon_wake 0\ncompact_daemon_migrate_scanned 0\ncompact_daemon_free_scanned 0\nhtlb_buddy_alloc_success 0\nhtlb_buddy_alloc_fail 0\ncma_alloc_success 0\ncma_alloc_fail 0\nunevictable_pgs_culled 20917973\nunevictable_pgs_scanned 20440707\nunevictable_pgs_rescued 20472762\nunevictable_pgs_mlocked 42771\nunevictable_pgs_munlocked 32858\nunevictable_pgs_cleared 0\nunevictable_pgs_stranded 0\nthp_fault_alloc 4393\nthp_fault_fallback 0\nthp_fault_fallback_charge 0\nthp_collapse_alloc 231\nthp_collapse_alloc_failed 0\nthp_file_alloc 39606\nthp_file_fallback 0\nthp_file_fallback_charge 0\nthp_file_mapped 0\nthp_split_page 0\nthp_split_page_failed 0\nthp_deferred_split_page 567\nthp_underused_split_page 0\nthp_split_pmd 750\nthp_scan_exceed_none_pte 75\nthp_scan_exceed_swap_pte 0\nthp_scan_exceed_share_pte 34\nthp_split_pud 0\nthp_zero_page_alloc 1\nthp_zero_page_alloc_failed 0\nthp_swpout 0\nthp_swpout_fallback 0\nballoon_inflate 0\nballoon_deflate 0\nballoon_migrate 0\nswap_ra 0\nswap_ra_hit 0\nswpin_zero 0\nswpout_zero 0\nksm_swpin_copy 0\ncow_ksm 0\nzswpin 0\nzswpout 0\nzswpwb 0\ndirect_map_level2_splits 131\ndirect_map_level3_splits 3\ndirect_map_level2_collapses 0\ndirect_map_level3_collapses 0\nnrswpin 0\nnrswpout 0\nnr_unstable 0\n"
+        },
+        "/proc/meminfo": {
+          "t": 5501.584769673,
+          "raw": "MemTotal:       15902860 kB\nMemFree:         4131556 kB\nMemAvailable:   10247368 kB\nBuffers:            2628 kB\nCached:          8129460 kB\nSwapCached:            0 kB\nActive:          2937576 kB\nInactive:        6252228 kB\nActive(anon):    2937576 kB\nInactive(anon):        0 kB\nActive(file):          0 kB\nInactive(file):  6252228 kB\nUnevictable:     1731520 kB\nMlocked:           39652 kB\nSwapTotal:       4194300 kB\nSwapFree:        4194300 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              3112 kB\nWriteback:             0 kB\nAnonPages:       2643856 kB\nMapped:          1504776 kB\nShmem:           1876780 kB\nKReclaimable:     205600 kB\nSlab:             405236 kB\nSReclaimable:     205600 kB\nSUnreclaim:       199636 kB\nKernelStack:       28368 kB\nPageTables:        76640 kB\nSecPageTables:      2304 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    12145728 kB\nCommitted_AS:   34657068 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       90736 kB\nVmallocChunk:          0 kB\nPercpu:            19392 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:    411648 kB\nShmemHugePages:  1572864 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      292680 kB\nDirectMap2M:     6584320 kB\nDirectMap1G:    11534336 kB\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.pressure": {
+          "t": 5501.584813438,
+          "raw": "some avg10=1.31 avg60=0.25 avg300=0.05 total=167017\nfull avg10=1.31 avg60=0.25 avg300=0.05 total=167017\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/cpu.pressure": {
+          "t": 5501.584861524,
+          "raw": "some avg10=1.53 avg60=0.29 avg300=0.06 total=190234\nfull avg10=1.53 avg60=0.29 avg300=0.06 total=190234\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/io.pressure": {
+          "t": 5501.584897397,
+          "raw": "some avg10=9.34 avg60=1.83 avg300=0.38 total=1194032\nfull avg10=9.34 avg60=1.83 avg300=0.38 total=1194032\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.stat": {
+          "t": 5501.584929825,
+          "raw": "anon 0\nfile 65536000\nkernel 86016\nkernel_stack 0\npagetables 49152\nsec_pagetables 0\npercpu 320\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 0\ninactive_file 65536000\nactive_file 0\nunevictable 0\nslab_reclaimable 29008\nslab_unreclaimable 2864\nslab 31872\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 2814464\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 2831232\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 2831232\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 2831232\npgsteal 2831232\npswpin 0\npswpout 0\npgfault 329\npgmajfault 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.events": {
+          "t": 5501.584997323,
+          "raw": "low 0\nhigh 21684\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.current": {
+          "t": 5501.585047537,
+          "raw": "65875968\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.high": {
+          "t": 5501.585080041,
+          "raw": "67108864\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.max": {
+          "t": 5501.58510843,
+          "raw": "268435456\n"
+        }
+      }
+    },
+    {
+      "t": 5501.98560957,
+      "files": {
+        "/proc/pressure/cpu": {
+          "t": 5501.985611289,
+          "raw": "some avg10=17.71 avg60=4.57 avg300=1.16 total=23511293\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n"
+        },
+        "/proc/pressure/memory": {
+          "t": 5501.98574158,
+          "raw": "some avg10=0.51 avg60=0.09 avg300=0.02 total=91706\nfull avg10=0.51 avg60=0.09 avg300=0.02 total=88007\n"
+        },
+        "/proc/pressure/io": {
+          "t": 5501.985781885,
+          "raw": "some avg10=4.71 avg60=0.91 avg300=0.19 total=5182974\nfull avg10=4.53 avg60=0.88 avg300=0.18 total=4932609\n"
+        },
+        "/proc/vmstat": {
+          "t": 5501.985804992,
+          "raw": "nr_free_pages 1032875\nnr_free_pages_blocks 963584\nnr_zone_inactive_anon 0\nnr_zone_active_anon 734369\nnr_zone_inactive_file 1563057\nnr_zone_active_file 0\nnr_zone_unevictable 432880\nnr_zone_write_pending 778\nnr_mlock 9913\nnr_zspages 5\nnr_free_cma 0\nnr_unaccepted 0\nnuma_hit 20261895\nnuma_miss 0\nnuma_foreign 0\nnuma_interleave 4136\nnuma_local 20261895\nnuma_other 0\nnr_inactive_anon 0\nnr_active_anon 734369\nnr_inactive_file 1563057\nnr_active_file 0\nnr_unevictable 432880\nnr_slab_reclaimable 51400\nnr_slab_unreclaimable 49909\nnr_isolated_anon 0\nnr_isolated_file 0\nworkingset_nodes 42\nworkingset_refault_anon 0\nworkingset_refault_file 2814464\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\nnr_anon_pages 661020\nnr_mapped 376082\nnr_file_pages 2033022\nnr_dirty 778\nnr_writeback 0\nnr_shmem 469195\nnr_shmem_hugepages 768\nnr_shmem_pmdmapped 0\nnr_file_hugepages 0\nnr_file_pmdmapped 0\nnr_anon_transparent_hugepages 201\nnr_vmscan_write 0\nnr_vmscan_immediate_reclaim 0\nnr_dirtied 1433784\nnr_written 1368566\nnr_throttled_written 0\nnr_kernel_misc_reclaimable 0\nnr_foll_pin_acquired 247707\nnr_foll_pin_released 245433\nnr_vmalloc 22648\nnr_kernel_stack 28192\nnr_page_table_pages 19072\nnr_sec_page_table_pages 576\nnr_iommu_pages 576\nnr_swapcached 0\npgpromote_success 0\npgpromote_candidate 0\npgpromote_candidate_nrl 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 2831232\npgsteal_khugepaged 0\npgsteal_proactive 0\npgsteal_anon 0\npgsteal_file 2831232\npgscan_kswapd 0\npgscan_direct 2831232\npgscan_khugepaged 0\npgscan_proactive 0\npgscan_anon 0\npgscan_file 2831232\npgrotate_anon 0\npgrotate_file 0\npgrefill 0\nnr_hugetlb 0\nnr_balloon_pages 0\nnr_kernel_file_pages 291816\nnr_gpu_active 0\nnr_gpu_reclaim 0\nnr_dirty_threshold 510420\nnr_dirty_background_threshold 254898\nnr_memmap_pages 0\nnr_memmap_boot_pages 64512\npgpgin 15053603\npgpgout 6690461\npswpin 0\npswpout 0\npgalloc_dma 512\npgalloc_dma32 514\npgalloc_normal 47432996\npgalloc_movable 0\npgalloc_device 0\nallocstall_dma 0\nallocstall_dma32 0\nallocstall_normal 0\nallocstall_movable 0\nallocstall_device 0\npgskip_dma 0\npgskip_dma32 0\npgskip_normal 0\npgskip_movable 0\npgskip_device 0\npgfree 48480262\npgactivate 0\npgdeactivate 0\npglazyfree 0\npgfault 18508652\npgmajfault 57581\npglazyfreed 0\npgreuse 454083\npgscan_direct_throttle 0\nzone_reclaim_success 0\nzone_reclaim_failed 0\npginodesteal 0\nslabs_scanned 0\nkswapd_inodesteal 0\nkswapd_low_wmark_hit_quickly 1\nkswapd_high_wmark_hit_quickly 0\npageoutrun 0\npgrotated 0\ndrop_pagecache 0\ndrop_slab 0\noom_kill 0\nnuma_pte_updates 0\nnuma_huge_pte_updates 69\nnuma_hint_faults 0\nnuma_hint_faults_local 0\nnuma_pages_migrated 0\npgmigrate_success 0\npgmigrate_fail 0\nthp_migration_success 0\nthp_migration_fail 0\nthp_migration_split 0\ncompact_migrate_scanned 0\ncompact_free_scanned 0\ncompact_isolated 0\ncompact_stall 0\ncompact_fail 0\ncompact_success 0\ncompact_daemon_wake 0\ncompact_daemon_migrate_scanned 0\ncompact_daemon_free_scanned 0\nhtlb_buddy_alloc_success 0\nhtlb_buddy_alloc_fail 0\ncma_alloc_success 0\ncma_alloc_fail 0\nunevictable_pgs_culled 20917973\nunevictable_pgs_scanned 20440707\nunevictable_pgs_rescued 20472762\nunevictable_pgs_mlocked 42771\nunevictable_pgs_munlocked 32858\nunevictable_pgs_cleared 0\nunevictable_pgs_stranded 0\nthp_fault_alloc 4393\nthp_fault_fallback 0\nthp_fault_fallback_charge 0\nthp_collapse_alloc 231\nthp_collapse_alloc_failed 0\nthp_file_alloc 39606\nthp_file_fallback 0\nthp_file_fallback_charge 0\nthp_file_mapped 0\nthp_split_page 0\nthp_split_page_failed 0\nthp_deferred_split_page 567\nthp_underused_split_page 0\nthp_split_pmd 750\nthp_scan_exceed_none_pte 75\nthp_scan_exceed_swap_pte 0\nthp_scan_exceed_share_pte 34\nthp_split_pud 0\nthp_zero_page_alloc 1\nthp_zero_page_alloc_failed 0\nthp_swpout 0\nthp_swpout_fallback 0\nballoon_inflate 0\nballoon_deflate 0\nballoon_migrate 0\nswap_ra 0\nswap_ra_hit 0\nswpin_zero 0\nswpout_zero 0\nksm_swpin_copy 0\ncow_ksm 0\nzswpin 0\nzswpout 0\nzswpwb 0\ndirect_map_level2_splits 131\ndirect_map_level3_splits 3\ndirect_map_level2_collapses 0\ndirect_map_level3_collapses 0\nnrswpin 0\nnrswpout 0\nnr_unstable 0\n"
+        },
+        "/proc/meminfo": {
+          "t": 5501.985862654,
+          "raw": "MemTotal:       15902860 kB\nMemFree:         4131500 kB\nMemAvailable:   10247312 kB\nBuffers:            2628 kB\nCached:          8129460 kB\nSwapCached:            0 kB\nActive:          2937476 kB\nInactive:        6252228 kB\nActive(anon):    2937476 kB\nInactive(anon):        0 kB\nActive(file):          0 kB\nInactive(file):  6252228 kB\nUnevictable:     1731520 kB\nMlocked:           39652 kB\nSwapTotal:       4194300 kB\nSwapFree:        4194300 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              3112 kB\nWriteback:             0 kB\nAnonPages:       2644080 kB\nMapped:          1504328 kB\nShmem:           1876780 kB\nKReclaimable:     205600 kB\nSlab:             405236 kB\nSReclaimable:     205600 kB\nSUnreclaim:       199636 kB\nKernelStack:       28192 kB\nPageTables:        76288 kB\nSecPageTables:      2304 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    12145728 kB\nCommitted_AS:   34657068 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       90592 kB\nVmallocChunk:          0 kB\nPercpu:            19392 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:    411648 kB\nShmemHugePages:  1572864 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      292680 kB\nDirectMap2M:     6584320 kB\nDirectMap1G:    11534336 kB\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.pressure": {
+          "t": 5501.985898159,
+          "raw": "some avg10=1.31 avg60=0.25 avg300=0.05 total=167017\nfull avg10=1.31 avg60=0.25 avg300=0.05 total=167017\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/cpu.pressure": {
+          "t": 5501.985945694,
+          "raw": "some avg10=1.53 avg60=0.29 avg300=0.06 total=190234\nfull avg10=1.53 avg60=0.29 avg300=0.06 total=190234\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/io.pressure": {
+          "t": 5501.985971741,
+          "raw": "some avg10=9.34 avg60=1.83 avg300=0.38 total=1194032\nfull avg10=9.34 avg60=1.83 avg300=0.38 total=1194032\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.stat": {
+          "t": 5501.985996262,
+          "raw": "anon 0\nfile 65536000\nkernel 86016\nkernel_stack 0\npagetables 49152\nsec_pagetables 0\npercpu 320\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 0\ninactive_file 65536000\nactive_file 0\nunevictable 0\nslab_reclaimable 29008\nslab_unreclaimable 2864\nslab 31872\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 2814464\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 2831232\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 2831232\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 2831232\npgsteal 2831232\npswpin 0\npswpout 0\npgfault 329\npgmajfault 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.events": {
+          "t": 5501.986063098,
+          "raw": "low 0\nhigh 21684\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.current": {
+          "t": 5501.986086935,
+          "raw": "65875968\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.high": {
+          "t": 5501.986109748,
+          "raw": "67108864\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.max": {
+          "t": 5501.986130504,
+          "raw": "268435456\n"
+        }
+      }
+    },
+    {
+      "t": 5502.386484502,
+      "files": {
+        "/proc/pressure/cpu": {
+          "t": 5502.3864872,
+          "raw": "some avg10=17.71 avg60=4.57 avg300=1.16 total=23511529\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n"
+        },
+        "/proc/pressure/memory": {
+          "t": 5502.386680682,
+          "raw": "some avg10=0.51 avg60=0.09 avg300=0.02 total=91706\nfull avg10=0.51 avg60=0.09 avg300=0.02 total=88007\n"
+        },
+        "/proc/pressure/io": {
+          "t": 5502.386752437,
+          "raw": "some avg10=4.71 avg60=0.91 avg300=0.19 total=5182974\nfull avg10=4.53 avg60=0.88 avg300=0.18 total=4932609\n"
+        },
+        "/proc/vmstat": {
+          "t": 5502.386787962,
+          "raw": "nr_free_pages 1032875\nnr_free_pages_blocks 963584\nnr_zone_inactive_anon 0\nnr_zone_active_anon 734343\nnr_zone_inactive_file 1563057\nnr_zone_active_file 0\nnr_zone_unevictable 432880\nnr_zone_write_pending 778\nnr_mlock 9913\nnr_zspages 5\nnr_free_cma 0\nnr_unaccepted 0\nnuma_hit 20261937\nnuma_miss 0\nnuma_foreign 0\nnuma_interleave 4136\nnuma_local 20261937\nnuma_other 0\nnr_inactive_anon 0\nnr_active_anon 734343\nnr_inactive_file 1563057\nnr_active_file 0\nnr_unevictable 432880\nnr_slab_reclaimable 51400\nnr_slab_unreclaimable 49909\nnr_isolated_anon 0\nnr_isolated_file 0\nworkingset_nodes 42\nworkingset_refault_anon 0\nworkingset_refault_file 2814464\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\nnr_anon_pages 660994\nnr_mapped 376079\nnr_file_pages 2033022\nnr_dirty 778\nnr_writeback 0\nnr_shmem 469195\nnr_shmem_hugepages 768\nnr_shmem_pmdmapped 0\nnr_file_hugepages 0\nnr_file_pmdmapped 0\nnr_anon_transparent_hugepages 201\nnr_vmscan_write 0\nnr_vmscan_immediate_reclaim 0\nnr_dirtied 1433784\nnr_written 1368566\nnr_throttled_written 0\nnr_kernel_misc_reclaimable 0\nnr_foll_pin_acquired 247707\nnr_foll_pin_released 245433\nnr_vmalloc 22644\nnr_kernel_stack 28176\nnr_page_table_pages 19059\nnr_sec_page_table_pages 576\nnr_iommu_pages 576\nnr_swapcached 0\npgpromote_success 0\npgpromote_candidate 0\npgpromote_candidate_nrl 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 2831232\npgsteal_khugepaged 0\npgsteal_proactive 0\npgsteal_anon 0\npgsteal_file 2831232\npgscan_kswapd 0\npgscan_direct 2831232\npgscan_khugepaged 0\npgscan_proactive 0\npgscan_anon 0\npgscan_file 2831232\npgrotate_anon 0\npgrotate_file 0\npgrefill 0\nnr_hugetlb 0\nnr_balloon_pages 0\nnr_kernel_file_pages 291816\nnr_gpu_active 0\nnr_gpu_reclaim 0\nnr_dirty_threshold 510420\nnr_dirty_background_threshold 254898\nnr_memmap_pages 0\nnr_memmap_boot_pages 64512\npgpgin 15053603\npgpgout 6690461\npswpin 0\npswpout 0\npgalloc_dma 512\npgalloc_dma32 514\npgalloc_normal 47433050\npgalloc_movable 0\npgalloc_device 0\nallocstall_dma 0\nallocstall_dma32 0\nallocstall_normal 0\nallocstall_movable 0\nallocstall_device 0\npgskip_dma 0\npgskip_dma32 0\npgskip_normal 0\npgskip_movable 0\npgskip_device 0\npgfree 48480432\npgactivate 0\npgdeactivate 0\npglazyfree 0\npgfault 18508718\npgmajfault 57581\npglazyfreed 0\npgreuse 454084\npgscan_direct_throttle 0\nzone_reclaim_success 0\nzone_reclaim_failed 0\npginodesteal 0\nslabs_scanned 0\nkswapd_inodesteal 0\nkswapd_low_wmark_hit_quickly 1\nkswapd_high_wmark_hit_quickly 0\npageoutrun 0\npgrotated 0\ndrop_pagecache 0\ndrop_slab 0\noom_kill 0\nnuma_pte_updates 0\nnuma_huge_pte_updates 69\nnuma_hint_faults 0\nnuma_hint_faults_local 0\nnuma_pages_migrated 0\npgmigrate_success 0\npgmigrate_fail 0\nthp_migration_success 0\nthp_migration_fail 0\nthp_migration_split 0\ncompact_migrate_scanned 0\ncompact_free_scanned 0\ncompact_isolated 0\ncompact_stall 0\ncompact_fail 0\ncompact_success 0\ncompact_daemon_wake 0\ncompact_daemon_migrate_scanned 0\ncompact_daemon_free_scanned 0\nhtlb_buddy_alloc_success 0\nhtlb_buddy_alloc_fail 0\ncma_alloc_success 0\ncma_alloc_fail 0\nunevictable_pgs_culled 20917973\nunevictable_pgs_scanned 20440707\nunevictable_pgs_rescued 20472762\nunevictable_pgs_mlocked 42771\nunevictable_pgs_munlocked 32858\nunevictable_pgs_cleared 0\nunevictable_pgs_stranded 0\nthp_fault_alloc 4393\nthp_fault_fallback 0\nthp_fault_fallback_charge 0\nthp_collapse_alloc 231\nthp_collapse_alloc_failed 0\nthp_file_alloc 39606\nthp_file_fallback 0\nthp_file_fallback_charge 0\nthp_file_mapped 0\nthp_split_page 0\nthp_split_page_failed 0\nthp_deferred_split_page 567\nthp_underused_split_page 0\nthp_split_pmd 750\nthp_scan_exceed_none_pte 75\nthp_scan_exceed_swap_pte 0\nthp_scan_exceed_share_pte 34\nthp_split_pud 0\nthp_zero_page_alloc 1\nthp_zero_page_alloc_failed 0\nthp_swpout 0\nthp_swpout_fallback 0\nballoon_inflate 0\nballoon_deflate 0\nballoon_migrate 0\nswap_ra 0\nswap_ra_hit 0\nswpin_zero 0\nswpout_zero 0\nksm_swpin_copy 0\ncow_ksm 0\nzswpin 0\nzswpout 0\nzswpwb 0\ndirect_map_level2_splits 131\ndirect_map_level3_splits 3\ndirect_map_level2_collapses 0\ndirect_map_level3_collapses 0\nnrswpin 0\nnrswpout 0\nnr_unstable 0\n"
+        },
+        "/proc/meminfo": {
+          "t": 5502.38686644,
+          "raw": "MemTotal:       15902860 kB\nMemFree:         4131500 kB\nMemAvailable:   10247312 kB\nBuffers:            2628 kB\nCached:          8129460 kB\nSwapCached:            0 kB\nActive:          2937372 kB\nInactive:        6252228 kB\nActive(anon):    2937372 kB\nInactive(anon):        0 kB\nActive(file):          0 kB\nInactive(file):  6252228 kB\nUnevictable:     1731520 kB\nMlocked:           39652 kB\nSwapTotal:       4194300 kB\nSwapFree:        4194300 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              3112 kB\nWriteback:             0 kB\nAnonPages:       2643976 kB\nMapped:          1504316 kB\nShmem:           1876780 kB\nKReclaimable:     205600 kB\nSlab:             405236 kB\nSReclaimable:     205600 kB\nSUnreclaim:       199636 kB\nKernelStack:       28176 kB\nPageTables:        76236 kB\nSecPageTables:      2304 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    12145728 kB\nCommitted_AS:   34656700 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       90576 kB\nVmallocChunk:          0 kB\nPercpu:            19392 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:    411648 kB\nShmemHugePages:  1572864 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      292680 kB\nDirectMap2M:     6584320 kB\nDirectMap1G:    11534336 kB\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.pressure": {
+          "t": 5502.386904858,
+          "raw": "some avg10=1.31 avg60=0.25 avg300=0.05 total=167017\nfull avg10=1.31 avg60=0.25 avg300=0.05 total=167017\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/cpu.pressure": {
+          "t": 5502.386968945,
+          "raw": "some avg10=1.53 avg60=0.29 avg300=0.06 total=190234\nfull avg10=1.53 avg60=0.29 avg300=0.06 total=190234\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/io.pressure": {
+          "t": 5502.387020112,
+          "raw": "some avg10=9.34 avg60=1.83 avg300=0.38 total=1194032\nfull avg10=9.34 avg60=1.83 avg300=0.38 total=1194032\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.stat": {
+          "t": 5502.387053075,
+          "raw": "anon 0\nfile 65536000\nkernel 86016\nkernel_stack 0\npagetables 49152\nsec_pagetables 0\npercpu 320\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 0\ninactive_file 65536000\nactive_file 0\nunevictable 0\nslab_reclaimable 29008\nslab_unreclaimable 2864\nslab 31872\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 2814464\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 2831232\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 2831232\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 2831232\npgsteal 2831232\npswpin 0\npswpout 0\npgfault 329\npgmajfault 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.events": {
+          "t": 5502.387097416,
+          "raw": "low 0\nhigh 21684\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.current": {
+          "t": 5502.387125268,
+          "raw": "65875968\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.high": {
+          "t": 5502.387152238,
+          "raw": "67108864\n"
+        },
+        "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/memory/memory.max": {
+          "t": 5502.387178093,
+          "raw": "268435456\n"
+        }
+      }
+    }
+  ]
+}

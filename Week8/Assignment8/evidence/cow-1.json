@@ -1,0 +1,250 @@
+[
+  {
+    "checkpoint": {
+      "stage": "mapped",
+      "pid": "24278",
+      "range": "7f1452000000-7f1456000000",
+      "bytes": "67108864",
+      "child": "0"
+    },
+    "observer": {
+      "pid": {
+        "pid": 24278,
+        "t_monotonic_s": 5364.095352537,
+        "minflt": 65,
+        "majflt": 0,
+        "start_ticks": 8882323,
+        "VmRSS_KiB": 1884,
+        "RssAnon_KiB": 100,
+        "RssFile_KiB": 1784,
+        "RssShmem_KiB": 0,
+        "VmPTE_KiB": 44,
+        "Pss_KiB": 130,
+        "Shared_Clean_KiB": 1772,
+        "Private_Dirty_KiB": 100,
+        "AnonHugePages_KiB": 0,
+        "range": {
+          "start": "0x7f1452000000",
+          "end": "0x7f1456000000",
+          "present": 0,
+          "swapped": 0,
+          "neither": 16384,
+          "exclusive_present": 0,
+          "PFNs": "N/A (PFN access unavailable)",
+          "distinct_frames": "N/A"
+        },
+        "elapsed_s": 1.3e-05,
+        "minflt_delta": "N/A",
+        "majflt_delta": "N/A"
+      }
+    }
+  },
+  {
+    "checkpoint": {
+      "stage": "written",
+      "pid": "24278",
+      "range": "7f1452000000-7f1456000000",
+      "bytes": "67108864",
+      "child": "0"
+    },
+    "observer": {
+      "pid": {
+        "pid": 24278,
+        "t_monotonic_s": 5364.201422896,
+        "minflt": 16449,
+        "majflt": 0,
+        "start_ticks": 8882323,
+        "VmRSS_KiB": 67420,
+        "RssAnon_KiB": 65636,
+        "RssFile_KiB": 1784,
+        "RssShmem_KiB": 0,
+        "VmPTE_KiB": 172,
+        "Pss_KiB": 65666,
+        "Shared_Clean_KiB": 1772,
+        "Private_Dirty_KiB": 65636,
+        "AnonHugePages_KiB": 0,
+        "range": {
+          "start": "0x7f1452000000",
+          "end": "0x7f1456000000",
+          "present": 16384,
+          "swapped": 0,
+          "neither": 0,
+          "exclusive_present": 16384,
+          "PFNs": "N/A (PFN access unavailable)",
+          "distinct_frames": "N/A"
+        },
+        "elapsed_s": 1.5e-05,
+        "minflt_delta": "N/A",
+        "majflt_delta": "N/A"
+      }
+    }
+  },
+  {
+    "checkpoint": {
+      "stage": "forked",
+      "pid": "24278",
+      "range": "7f1452000000-7f1456000000",
+      "bytes": "67108864",
+      "child": "24283"
+    },
+    "observer": {
+      "pid": {
+        "pid": 24278,
+        "t_monotonic_s": 5364.283903821,
+        "minflt": 16455,
+        "majflt": 0,
+        "start_ticks": 8882323,
+        "VmRSS_KiB": 67420,
+        "RssAnon_KiB": 65636,
+        "RssFile_KiB": 1784,
+        "RssShmem_KiB": 0,
+        "VmPTE_KiB": 172,
+        "Pss_KiB": 32860,
+        "Shared_Clean_KiB": 1780,
+        "Private_Dirty_KiB": 32,
+        "AnonHugePages_KiB": 0,
+        "range": {
+          "start": "0x7f1452000000",
+          "end": "0x7f1456000000",
+          "present": 16384,
+          "swapped": 0,
+          "neither": 0,
+          "exclusive_present": 0,
+          "PFNs": "N/A (PFN access unavailable)",
+          "distinct_frames": "N/A"
+        },
+        "elapsed_s": 1.2e-05,
+        "minflt_delta": "N/A",
+        "majflt_delta": "N/A"
+      },
+      "child": {
+        "pid": 24283,
+        "t_monotonic_s": 5364.368556655,
+        "minflt": 21,
+        "majflt": 0,
+        "start_ticks": 8882342,
+        "VmRSS_KiB": 66340,
+        "RssAnon_KiB": 65636,
+        "RssFile_KiB": 704,
+        "RssShmem_KiB": 0,
+        "VmPTE_KiB": 172,
+        "Pss_KiB": 32842,
+        "Shared_Clean_KiB": 704,
+        "Private_Dirty_KiB": 32,
+        "AnonHugePages_KiB": 0,
+        "range": {
+          "start": "0x7f1452000000",
+          "end": "0x7f1456000000",
+          "present": 16384,
+          "swapped": 0,
+          "neither": 0,
+          "exclusive_present": 0,
+          "PFNs": "N/A (PFN access unavailable)",
+          "distinct_frames": "N/A"
+        },
+        "elapsed_s": 1.1e-05,
+        "minflt_delta": "N/A",
+        "majflt_delta": "N/A"
+      }
+    }
+  },
+  {
+    "checkpoint": {
+      "stage": "child-written",
+      "pid": "24278",
+      "range": "7f1452000000-7f1456000000",
+      "bytes": "67108864",
+      "child": "24283"
+    },
+    "observer": {
+      "pid": {
+        "pid": 24278,
+        "t_monotonic_s": 5364.45290715,
+        "minflt": 16456,
+        "majflt": 0,
+        "start_ticks": 8882323,
+        "VmRSS_KiB": 67420,
+        "RssAnon_KiB": 65636,
+        "RssFile_KiB": 1784,
+        "RssShmem_KiB": 0,
+        "VmPTE_KiB": 172,
+        "Pss_KiB": 41054,
+        "Shared_Clean_KiB": 1780,
+        "Private_Dirty_KiB": 16420,
+        "AnonHugePages_KiB": 0,
+        "range": {
+          "start": "0x7f1452000000",
+          "end": "0x7f1456000000",
+          "present": 16384,
+          "swapped": 0,
+          "neither": 0,
+          "exclusive_present": 4096,
+          "PFNs": "N/A (PFN access unavailable)",
+          "distinct_frames": "N/A"
+        },
+        "elapsed_s": 1.4e-05,
+        "minflt_delta": "N/A",
+        "majflt_delta": "N/A"
+      },
+      "child": {
+        "pid": 24283,
+        "t_monotonic_s": 5364.527709774,
+        "minflt": 4117,
+        "majflt": 0,
+        "start_ticks": 8882342,
+        "VmRSS_KiB": 66340,
+        "RssAnon_KiB": 65636,
+        "RssFile_KiB": 704,
+        "RssShmem_KiB": 0,
+        "VmPTE_KiB": 172,
+        "Pss_KiB": 41036,
+        "Shared_Clean_KiB": 704,
+        "Private_Dirty_KiB": 16420,
+        "AnonHugePages_KiB": 0,
+        "range": {
+          "start": "0x7f1452000000",
+          "end": "0x7f1456000000",
+          "present": 16384,
+          "swapped": 0,
+          "neither": 0,
+          "exclusive_present": 4096,
+          "PFNs": "N/A (PFN access unavailable)",
+          "distinct_frames": "N/A"
+        },
+        "elapsed_s": 1.2e-05,
+        "minflt_delta": "N/A",
+        "majflt_delta": "N/A"
+      }
+    }
+  },
+  {
+    "checkpoint": {
+      "stage": "unmapped",
+      "pid": "24278",
+      "range": "7f1452000000-7f1456000000",
+      "bytes": "67108864",
+      "child": "0"
+    },
+    "observer": {
+      "pid": {
+        "pid": 24278,
+        "t_monotonic_s": 5364.604192381,
+        "minflt": 16456,
+        "majflt": 0,
+        "start_ticks": 8882323,
+        "VmRSS_KiB": 1884,
+        "RssAnon_KiB": 100,
+        "RssFile_KiB": 1784,
+        "RssShmem_KiB": 0,
+        "VmPTE_KiB": 44,
+        "Pss_KiB": 130,
+        "Shared_Clean_KiB": 1772,
+        "Private_Dirty_KiB": 100,
+        "AnonHugePages_KiB": 0,
+        "elapsed_s": 1.3e-05,
+        "minflt_delta": "N/A",
+        "majflt_delta": "N/A"
+      }
+    }
+  }
+]

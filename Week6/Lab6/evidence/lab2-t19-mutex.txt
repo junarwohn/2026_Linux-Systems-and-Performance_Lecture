@@ -1,0 +1,3 @@
+lockbench: mode=mutex threads=19 cpus=18 ops/thread=200000 cs_loops=200 work_loops=200
+elapsed_ms=3198 cpu_ms=47877 ns_per_op=841
+sleeps=1384096 preempted=36684 handoff=87.2%

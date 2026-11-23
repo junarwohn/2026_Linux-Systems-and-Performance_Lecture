@@ -1,0 +1,50 @@
+warning: refs/tags/v1.9.0 66d78843fd675859a09a52d3f17b1c408a827a34 is not a commit!
+Note: switching to '202d4db0d308ca6478f68de68b46cae34896ddaf'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+cc -lm  -Wall -Wextra -Wformat-security -Wconversion -DVERSION=\"v1.9.0-lab10\" -g -fstack-protector-all -std=gnu99 -o earlyoom globals.c kill.c lab_earlyoom.c lmk_policy.c main.c meminfo.c msg.c proc_pid.c
+lab_earlyoom.c: In function ‘now’:
+lab_earlyoom.c:31:33: warning: conversion from ‘__syscall_slong_t’ {aka ‘long int’} to ‘double’ may change value [-Wconversion]
+   31 |     return t.tv_sec + t.tv_nsec / 1e9;
+      |                                 ^
+lab_earlyoom.c:31:21: warning: conversion from ‘__time_t’ {aka ‘long int’} to ‘double’ may change value [-Wconversion]
+   31 |     return t.tv_sec + t.tv_nsec / 1e9;
+      |                     ^
+lab_earlyoom.c: In function ‘fresh’:
+lab_earlyoom.c:222:87: warning: conversion from ‘long long unsigned int’ to ‘double’ may change value [-Wconversion]
+  222 |         else if (active >= 0 && v - previous[i] >= (double)t[i].stall * elapsed * 1e6 / t[i].window)
+      |                                                                                       ^
+lab_earlyoom.c: In function ‘main’:
+lab_earlyoom.c:361:30: warning: conversion from ‘long long unsigned int’ to ‘double’ may change value [-Wconversion]
+  361 |         if (active[i].window / 1e6 > window)
+      |                              ^
+lab_earlyoom.c:362:39: warning: conversion from ‘long long unsigned int’ to ‘double’ may change value [-Wconversion]
+  362 |             window = active[i].window / 1e6;
+      |                                       ^
+earlyoom v1.9.0-lab10
+upstream 202d4db0d308ca6478f68de68b46cae34896ddaf
+support 5eae4481feb79f89afe0f47436afacc356ad9beb
+0001-Import-supplied-course-policy-and-launcher-scaffold.patch
+0002-Wire-the-lab-entry-point-alongside-upstream-earlyoom.patch
+0003-A-Act-on-a-PSI-event-or-the-release-memory-threshold.patch
+0004-B-Rank-registered-candidates-by-importance-floor.patch
+0005-C-Observe-pidfd-exit-and-recheck-fresh-pressure-afte.patch
+119ca88 C: Observe pidfd exit and recheck fresh pressure after cooldown
+edadd2d B: Rank registered candidates by importance floor
+890be90 A: Act on a PSI event or the release memory threshold
+8825df2 Wire the lab entry point alongside upstream earlyoom
+5eae448 Import supplied course policy and launcher scaffold

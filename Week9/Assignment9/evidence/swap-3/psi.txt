@@ -1,0 +1,9 @@
+t=5627.833334 elapsed_s=0.000000 some_avg10=0.00 some_total_us=1033342 some_pct=NA full_avg10=0.00 full_total_us=1009068 full_pct=NA
+t=5628.133742 elapsed_s=0.300408 some_avg10=0.00 some_total_us=1033342 some_pct=0.0000 full_avg10=0.00 full_total_us=1009068 full_pct=0.0000
+t=5628.434033 elapsed_s=0.300291 some_avg10=0.00 some_total_us=1033342 some_pct=0.0000 full_avg10=0.00 full_total_us=1009068 full_pct=0.0000
+t=5628.734419 elapsed_s=0.300386 some_avg10=0.00 some_total_us=1033342 some_pct=0.0000 full_avg10=0.00 full_total_us=1009068 full_pct=0.0000
+t=5629.034796 elapsed_s=0.300377 some_avg10=0.00 some_total_us=1033342 some_pct=0.0000 full_avg10=0.00 full_total_us=1009068 full_pct=0.0000
+t=5629.335193 elapsed_s=0.300397 some_avg10=0.00 some_total_us=1033342 some_pct=0.0000 full_avg10=0.00 full_total_us=1009068 full_pct=0.0000
+t=5629.635595 elapsed_s=0.300402 some_avg10=0.00 some_total_us=1033342 some_pct=0.0000 full_avg10=0.00 full_total_us=1009068 full_pct=0.0000
+t=5629.935991 elapsed_s=0.300397 some_avg10=0.00 some_total_us=1033342 some_pct=0.0000 full_avg10=0.00 full_total_us=1009068 full_pct=0.0000
+t=5630.236404 elapsed_s=0.300413 some_avg10=0.00 some_total_us=1035080 some_pct=0.5785 full_avg10=0.00 full_total_us=1010806 full_pct=0.5785

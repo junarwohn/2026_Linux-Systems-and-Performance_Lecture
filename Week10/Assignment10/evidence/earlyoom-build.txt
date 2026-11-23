@@ -1,0 +1,22 @@
+cc -lm  -Wall -Wextra -Wformat-security -Wconversion -DVERSION=\"v1.9.0-lab10\" -g -fstack-protector-all -std=gnu99 -o earlyoom globals.c kill.c lab_earlyoom.c lmk_policy.c main.c meminfo.c msg.c proc_pid.c
+lab_earlyoom.c: In function ‘now’:
+lab_earlyoom.c:31:33: warning: conversion from ‘__syscall_slong_t’ {aka ‘long int’} to ‘double’ may change value [-Wconversion]
+   31 |     return t.tv_sec + t.tv_nsec / 1e9;
+      |                                 ^
+lab_earlyoom.c:31:21: warning: conversion from ‘__time_t’ {aka ‘long int’} to ‘double’ may change value [-Wconversion]
+   31 |     return t.tv_sec + t.tv_nsec / 1e9;
+      |                     ^
+lab_earlyoom.c: In function ‘fresh’:
+lab_earlyoom.c:222:87: warning: conversion from ‘long long unsigned int’ to ‘double’ may change value [-Wconversion]
+  222 |         else if (active >= 0 && v - previous[i] >= (double)t[i].stall * elapsed * 1e6 / t[i].window)
+      |                                                                                       ^
+lab_earlyoom.c: In function ‘main’:
+lab_earlyoom.c:361:30: warning: conversion from ‘long long unsigned int’ to ‘double’ may change value [-Wconversion]
+  361 |         if (active[i].window / 1e6 > window)
+      |                              ^
+lab_earlyoom.c:362:39: warning: conversion from ‘long long unsigned int’ to ‘double’ may change value [-Wconversion]
+  362 |             window = active[i].window / 1e6;
+      |                                       ^
+/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week10/Assignment10/build/earlyoom/earlyoom
+earlyoom v1.9.0-lab10
+build/earlyoom/earlyoom: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=d5fcab5a672c1acc986019bec81e7a7153250793, for GNU/Linux 4.4.0, with debug_info, not stripped

@@ -1,0 +1,118 @@
+#!/usr/bin/env python3
+import argparse
+import json
+import math
+from pathlib import Path
+import sys
+import time
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "common"))
+from allocator import PAGE, buddy, watermarks, migrate, slabs, meminfo
+
+
+def output(section, key, value):
+    print(json.dumps({"section": section, "key": key, "value": value}))
+
+
+def collect(args):
+    data = {"meminfo": {"system": meminfo()}}
+    for key, enabled, read in (("buddy", args.buddy, buddy), ("watermarks", args.watermarks, watermarks),
+                               ("migrate", args.migrate, migrate), ("slab", args.slab or args.top, slabs)):
+        if enabled:
+            try:
+                data[key] = read()
+            except OSError as exc:
+                print(f"{key}: unavailable ({exc})", file=sys.stderr)
+    return data
+
+
+def compare(args, current, previous=None):
+    for section, rows in current.items():
+        old = (previous or {}).get(section, {})
+        if section == "slab":
+            rows, aliases = rows
+            old = old[0] if old else {}
+            names = set(rows) | set(old)
+            selected = {aliases.get(name, name) for name in args.slab}
+            def size(name):
+                return rows.get(name, {}).get("cache_KiB", 0)
+            def change(name):
+                a, b = size(name), old.get(name, {}).get("cache_KiB", 0)
+                return abs(a - b) if a is not None and b is not None else -1
+            rank = change if previous is not None else lambda name: size(name) if size(name) is not None else -1
+            ranked = sorted(names, key=lambda name: (-rank(name), name))
+            if previous is not None:
+                ranked = [name for name in ranked if rows.get(name) != old.get(name)]
+            selected.update(ranked[:args.top or 0])
+            for name in sorted(selected, key=lambda name: (-rank(name), name)):
+                row = rows.get(name)
+                if previous is None:
+                    output(section, name, row)
+                elif name in names:
+                    a, b = size(name), old.get(name, {}).get("cache_KiB", 0)
+                    output(section, name, dict(current=row, previous=old.get(name),
+                                              delta_KiB=a-b if a is not None and b is not None else None,
+                                              status="added" if name not in old else "removed" if name not in rows else "present"))
+            continue
+        keys = sorted(rows.keys() | old.keys())
+        if section == "buddy":
+            def delta(key):
+                def total(counts):
+                    return sum(count << order for order, count in enumerate(counts))
+                return (total(rows.get(key, [])) - total(old.get(key, []))) * PAGE // 1024
+            if previous is not None:
+                keys = sorted((k for k in keys if rows.get(k) != old.get(k)), key=lambda k: (-abs(delta(k)), k))
+            for key in keys:
+                counts = rows.get(key, [])
+                kib = [(count << order) * PAGE // 1024 for order, count in enumerate(counts)]
+                value = dict(blocks=counts, KiB=kib, cumulative_KiB=[sum(kib[i:]) for i in range(len(kib))],
+                             largest_order=max((i for i, n in enumerate(counts) if n), default=None))
+                if previous is not None:
+                    prior = old.get(key, [])
+                    order_deltas = [((counts[i] if i < len(counts) else 0)
+                                     - (prior[i] if i < len(prior) else 0)) * (PAGE << i) // 1024
+                                    for i in range(max(len(counts),len(prior)))]
+                    value.update(previous_blocks=old.get(key), delta_KiB=delta(key),
+                                 order_delta_KiB=order_deltas,
+                                 status="added" if key not in old else "removed" if key not in rows else "present")
+                output(section, key, value)
+        else:
+            for key in keys:
+                now = rows.get(key)
+                if previous is None:
+                    value = now
+                else:
+                    before = old.get(key)
+                    value = dict(current=now, previous=before, status="added" if key not in old else "removed" if key not in rows else "present")
+                    if isinstance(now, dict) and isinstance(before, dict):
+                        value["delta"] = {k: now[k] - before[k] if now[k] is not None and before[k] is not None else None for k in now.keys() & before.keys()}
+                    elif isinstance(now, list) and isinstance(before, list):
+                        value["delta"] = [b-a if isinstance(a, int) and isinstance(b, int) else None for a, b in zip(before, now)]
+                output(section, key, value)
+
+
+def main():
+    p = argparse.ArgumentParser()
+    for flag in ("buddy", "watermarks", "migrate"):
+        p.add_argument("--" + flag, action="store_true")
+    p.add_argument("--slab", action="append", default=[])
+    p.add_argument("--top", type=int)
+    p.add_argument("--diff", type=float)
+    a = p.parse_args()
+    if a.top is not None and a.top < 1:
+        p.error("--top must be positive")
+    if a.diff is not None and (not math.isfinite(a.diff) or a.diff <= 0):
+        p.error("--diff must be positive")
+    if not any((a.buddy, a.watermarks, a.migrate, a.slab, a.top)):
+        a.buddy = a.watermarks = True
+        a.top = 10
+    first = collect(a)
+    if a.diff:
+        time.sleep(a.diff)
+        compare(a, collect(a), first)
+    else:
+        compare(a, first)
+
+
+if __name__ == "__main__":
+    main()

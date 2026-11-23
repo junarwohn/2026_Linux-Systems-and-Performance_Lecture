@@ -1,0 +1,5 @@
+cvbug: mode=fixed items=200 consumers=2 slow_ms=5
+pid=19499
+taken=200 duplicate=0 lost=0 empty_takes=0
+producer lock wait (us): p50=0 p99=0 max=0
+elapsed_ms=508

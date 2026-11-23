@@ -1,0 +1,345 @@
+t=5881.508423 event=start id=M1 pid=35063 page_size=4096 bytes=131072 base=8388608 cycles=300 cap=268435456 seed=42
+t=5881.509683 event=cycle id=M1 cycle=1
+t=5882.516652 event=cycle id=M1 cycle=2
+t=5883.523866 event=cycle id=M1 cycle=3
+t=5884.531650 event=cycle id=M1 cycle=4
+t=5885.538663 event=cycle id=M1 cycle=5
+t=5886.544767 event=cycle id=M1 cycle=6
+t=5887.551084 event=cycle id=M1 cycle=7
+t=5888.557537 event=cycle id=M1 cycle=8
+t=5889.563838 event=cycle id=M1 cycle=9
+t=5890.569853 event=cycle id=M1 cycle=10
+t=5891.575947 event=cycle id=M1 cycle=11
+t=5892.585750 event=cycle id=M1 cycle=12
+t=5893.594714 event=cycle id=M1 cycle=13
+t=5894.604075 event=cycle id=M1 cycle=14
+t=5895.612123 event=cycle id=M1 cycle=15
+t=5896.621366 event=cycle id=M1 cycle=16
+t=5897.631159 event=cycle id=M1 cycle=17
+t=5898.638457 event=cycle id=M1 cycle=18
+t=5899.644376 event=cycle id=M1 cycle=19
+t=5900.651198 event=cycle id=M1 cycle=20
+t=5901.657905 event=cycle id=M1 cycle=21
+t=5902.666160 event=cycle id=M1 cycle=22
+t=5903.673142 event=cycle id=M1 cycle=23
+t=5904.679140 event=cycle id=M1 cycle=24
+t=5905.686330 event=cycle id=M1 cycle=25
+t=5906.693355 event=cycle id=M1 cycle=26
+t=5907.699907 event=cycle id=M1 cycle=27
+t=5908.706465 event=cycle id=M1 cycle=28
+t=5909.712944 event=cycle id=M1 cycle=29
+t=5910.719457 event=cycle id=M1 cycle=30
+alloctrace reason=SIGUSR1 pid=35063 live_bytes=12455936 live_objects=33 dropped=0 ungrouped_objects=0
+site=0x555669d29ead module=./scenario offset=0x1ead bytes=8388608 objects=1
+site=0x555669d297e0 module=./scenario offset=0x17e0 bytes=4063232 objects=31
+site=0x7f75f2481098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+t=5911.724396 event=cycle id=M1 cycle=31
+t=5912.726818 event=cycle id=M1 cycle=32
+t=5913.736363 event=cycle id=M1 cycle=33
+t=5914.745038 event=cycle id=M1 cycle=34
+t=5915.754081 event=cycle id=M1 cycle=35
+t=5916.762581 event=cycle id=M1 cycle=36
+t=5917.762755 event=cycle id=M1 cycle=37
+t=5918.772726 event=cycle id=M1 cycle=38
+t=5919.781274 event=cycle id=M1 cycle=39
+t=5920.789256 event=cycle id=M1 cycle=40
+t=5921.795985 event=cycle id=M1 cycle=41
+t=5922.802636 event=cycle id=M1 cycle=42
+t=5923.810788 event=cycle id=M1 cycle=43
+t=5924.811346 event=cycle id=M1 cycle=44
+t=5925.819827 event=cycle id=M1 cycle=45
+t=5926.829412 event=cycle id=M1 cycle=46
+t=5927.838245 event=cycle id=M1 cycle=47
+t=5928.846225 event=cycle id=M1 cycle=48
+t=5929.854303 event=cycle id=M1 cycle=49
+t=5930.862615 event=cycle id=M1 cycle=50
+t=5931.868649 event=cycle id=M1 cycle=51
+t=5932.875183 event=cycle id=M1 cycle=52
+t=5933.881970 event=cycle id=M1 cycle=53
+t=5934.890404 event=cycle id=M1 cycle=54
+t=5935.899497 event=cycle id=M1 cycle=55
+t=5936.900488 event=cycle id=M1 cycle=56
+t=5937.901812 event=cycle id=M1 cycle=57
+t=5938.903514 event=cycle id=M1 cycle=58
+t=5939.911759 event=cycle id=M1 cycle=59
+t=5940.920991 event=cycle id=M1 cycle=60
+alloctrace reason=SIGUSR1 pid=35063 live_bytes=16388096 live_objects=63 dropped=0 ungrouped_objects=0
+site=0x555669d29ead module=./scenario offset=0x1ead bytes=8388608 objects=1
+site=0x555669d297e0 module=./scenario offset=0x17e0 bytes=7995392 objects=61
+site=0x7f75f2481098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+t=5941.928558 event=cycle id=M1 cycle=61
+t=5942.929229 event=cycle id=M1 cycle=62
+t=5943.937434 event=cycle id=M1 cycle=63
+t=5944.945237 event=cycle id=M1 cycle=64
+t=5945.952837 event=cycle id=M1 cycle=65
+t=5946.960092 event=cycle id=M1 cycle=66
+t=5947.966363 event=cycle id=M1 cycle=67
+t=5948.973516 event=cycle id=M1 cycle=68
+t=5949.980569 event=cycle id=M1 cycle=69
+t=5950.986798 event=cycle id=M1 cycle=70
+t=5951.993496 event=cycle id=M1 cycle=71
+t=5953.000149 event=cycle id=M1 cycle=72
+t=5954.007551 event=cycle id=M1 cycle=73
+t=5955.014652 event=cycle id=M1 cycle=74
+t=5956.021435 event=cycle id=M1 cycle=75
+t=5957.029334 event=cycle id=M1 cycle=76
+t=5958.035562 event=cycle id=M1 cycle=77
+t=5959.041833 event=cycle id=M1 cycle=78
+t=5960.049868 event=cycle id=M1 cycle=79
+t=5961.050438 event=cycle id=M1 cycle=80
+t=5962.059699 event=cycle id=M1 cycle=81
+t=5963.068513 event=cycle id=M1 cycle=82
+t=5964.074690 event=cycle id=M1 cycle=83
+t=5965.081215 event=cycle id=M1 cycle=84
+t=5966.087820 event=cycle id=M1 cycle=85
+t=5967.094488 event=cycle id=M1 cycle=86
+t=5968.100586 event=cycle id=M1 cycle=87
+t=5969.109121 event=cycle id=M1 cycle=88
+t=5970.115549 event=cycle id=M1 cycle=89
+t=5971.122860 event=cycle id=M1 cycle=90
+alloctrace reason=SIGUSR1 pid=35063 live_bytes=20320256 live_objects=93 dropped=0 ungrouped_objects=0
+site=0x555669d297e0 module=./scenario offset=0x17e0 bytes=11927552 objects=91
+site=0x555669d29ead module=./scenario offset=0x1ead bytes=8388608 objects=1
+site=0x7f75f2481098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+t=5972.125754 event=cycle id=M1 cycle=91
+t=5973.132556 event=cycle id=M1 cycle=92
+t=5974.140179 event=cycle id=M1 cycle=93
+t=5975.147070 event=cycle id=M1 cycle=94
+t=5976.153518 event=cycle id=M1 cycle=95
+t=5977.153950 event=cycle id=M1 cycle=96
+t=5978.161578 event=cycle id=M1 cycle=97
+t=5979.168622 event=cycle id=M1 cycle=98
+t=5980.176210 event=cycle id=M1 cycle=99
+t=5981.183047 event=cycle id=M1 cycle=100
+t=5982.189000 event=cycle id=M1 cycle=101
+t=5983.195726 event=cycle id=M1 cycle=102
+t=5984.202978 event=cycle id=M1 cycle=103
+t=5985.211691 event=cycle id=M1 cycle=104
+t=5986.213369 event=cycle id=M1 cycle=105
+t=5987.214407 event=cycle id=M1 cycle=106
+t=5988.216096 event=cycle id=M1 cycle=107
+t=5989.225518 event=cycle id=M1 cycle=108
+t=5990.232333 event=cycle id=M1 cycle=109
+t=5991.240377 event=cycle id=M1 cycle=110
+t=5992.241255 event=cycle id=M1 cycle=111
+t=5993.248212 event=cycle id=M1 cycle=112
+t=5994.256113 event=cycle id=M1 cycle=113
+t=5995.266098 event=cycle id=M1 cycle=114
+t=5996.275767 event=cycle id=M1 cycle=115
+t=5997.284205 event=cycle id=M1 cycle=116
+t=5998.291189 event=cycle id=M1 cycle=117
+t=5999.299830 event=cycle id=M1 cycle=118
+t=6000.307467 event=cycle id=M1 cycle=119
+t=6001.315763 event=cycle id=M1 cycle=120
+alloctrace reason=SIGUSR1 pid=35063 live_bytes=24252416 live_objects=123 dropped=0 ungrouped_objects=0
+site=0x555669d297e0 module=./scenario offset=0x17e0 bytes=15859712 objects=121
+site=0x555669d29ead module=./scenario offset=0x1ead bytes=8388608 objects=1
+site=0x7f75f2481098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+t=6002.321836 event=cycle id=M1 cycle=121
+t=6003.330524 event=cycle id=M1 cycle=122
+t=6004.338370 event=cycle id=M1 cycle=123
+t=6005.344680 event=cycle id=M1 cycle=124
+t=6006.350570 event=cycle id=M1 cycle=125
+t=6007.357420 event=cycle id=M1 cycle=126
+t=6008.363572 event=cycle id=M1 cycle=127
+t=6009.370796 event=cycle id=M1 cycle=128
+t=6010.376852 event=cycle id=M1 cycle=129
+t=6011.383203 event=cycle id=M1 cycle=130
+t=6012.391392 event=cycle id=M1 cycle=131
+t=6013.400527 event=cycle id=M1 cycle=132
+t=6014.409064 event=cycle id=M1 cycle=133
+t=6015.418725 event=cycle id=M1 cycle=134
+t=6016.426785 event=cycle id=M1 cycle=135
+t=6017.428772 event=cycle id=M1 cycle=136
+t=6018.436236 event=cycle id=M1 cycle=137
+t=6019.442364 event=cycle id=M1 cycle=138
+t=6020.449244 event=cycle id=M1 cycle=139
+t=6021.457442 event=cycle id=M1 cycle=140
+t=6022.466209 event=cycle id=M1 cycle=141
+t=6023.474472 event=cycle id=M1 cycle=142
+t=6024.482079 event=cycle id=M1 cycle=143
+t=6025.489924 event=cycle id=M1 cycle=144
+t=6026.499839 event=cycle id=M1 cycle=145
+t=6027.508087 event=cycle id=M1 cycle=146
+t=6028.515707 event=cycle id=M1 cycle=147
+t=6029.523603 event=cycle id=M1 cycle=148
+t=6030.530984 event=cycle id=M1 cycle=149
+t=6031.539956 event=cycle id=M1 cycle=150
+alloctrace reason=SIGUSR1 pid=35063 live_bytes=28184576 live_objects=153 dropped=0 ungrouped_objects=0
+site=0x555669d297e0 module=./scenario offset=0x17e0 bytes=19791872 objects=151
+site=0x555669d29ead module=./scenario offset=0x1ead bytes=8388608 objects=1
+site=0x7f75f2481098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+t=6032.544287 event=cycle id=M1 cycle=151
+t=6033.553749 event=cycle id=M1 cycle=152
+t=6034.561216 event=cycle id=M1 cycle=153
+t=6035.567623 event=cycle id=M1 cycle=154
+t=6036.574091 event=cycle id=M1 cycle=155
+t=6037.581573 event=cycle id=M1 cycle=156
+t=6038.589866 event=cycle id=M1 cycle=157
+t=6039.596809 event=cycle id=M1 cycle=158
+t=6040.603054 event=cycle id=M1 cycle=159
+t=6041.612674 event=cycle id=M1 cycle=160
+t=6042.619603 event=cycle id=M1 cycle=161
+t=6043.625930 event=cycle id=M1 cycle=162
+t=6044.632304 event=cycle id=M1 cycle=163
+t=6045.638400 event=cycle id=M1 cycle=164
+t=6046.648660 event=cycle id=M1 cycle=165
+t=6047.655865 event=cycle id=M1 cycle=166
+t=6048.664987 event=cycle id=M1 cycle=167
+t=6049.675041 event=cycle id=M1 cycle=168
+t=6050.683411 event=cycle id=M1 cycle=169
+t=6051.691331 event=cycle id=M1 cycle=170
+t=6052.691891 event=cycle id=M1 cycle=171
+t=6053.697981 event=cycle id=M1 cycle=172
+t=6054.704335 event=cycle id=M1 cycle=173
+t=6055.710504 event=cycle id=M1 cycle=174
+t=6056.717736 event=cycle id=M1 cycle=175
+t=6057.724170 event=cycle id=M1 cycle=176
+t=6058.730864 event=cycle id=M1 cycle=177
+t=6059.738018 event=cycle id=M1 cycle=178
+t=6060.744836 event=cycle id=M1 cycle=179
+alloctrace reason=SIGUSR1 pid=35063 live_bytes=31985664 live_objects=182 dropped=0 ungrouped_objects=0
+site=0x555669d297e0 module=./scenario offset=0x17e0 bytes=23592960 objects=180
+site=0x555669d29ead module=./scenario offset=0x1ead bytes=8388608 objects=1
+site=0x7f75f2481098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+t=6061.747695 event=cycle id=M1 cycle=180
+t=6062.756804 event=cycle id=M1 cycle=181
+t=6063.762687 event=cycle id=M1 cycle=182
+t=6064.769613 event=cycle id=M1 cycle=183
+t=6065.777763 event=cycle id=M1 cycle=184
+t=6066.784505 event=cycle id=M1 cycle=185
+t=6067.791325 event=cycle id=M1 cycle=186
+t=6068.798761 event=cycle id=M1 cycle=187
+t=6069.805018 event=cycle id=M1 cycle=188
+t=6070.811831 event=cycle id=M1 cycle=189
+t=6071.818730 event=cycle id=M1 cycle=190
+t=6072.827428 event=cycle id=M1 cycle=191
+t=6073.834784 event=cycle id=M1 cycle=192
+t=6074.841654 event=cycle id=M1 cycle=193
+t=6075.848086 event=cycle id=M1 cycle=194
+t=6076.854374 event=cycle id=M1 cycle=195
+t=6077.861555 event=cycle id=M1 cycle=196
+t=6078.867577 event=cycle id=M1 cycle=197
+t=6079.875968 event=cycle id=M1 cycle=198
+t=6080.885039 event=cycle id=M1 cycle=199
+t=6081.891363 event=cycle id=M1 cycle=200
+t=6082.899327 event=cycle id=M1 cycle=201
+t=6083.905289 event=cycle id=M1 cycle=202
+t=6084.912655 event=cycle id=M1 cycle=203
+t=6085.918833 event=cycle id=M1 cycle=204
+t=6086.926905 event=cycle id=M1 cycle=205
+t=6087.934638 event=cycle id=M1 cycle=206
+t=6088.943739 event=cycle id=M1 cycle=207
+t=6089.951836 event=cycle id=M1 cycle=208
+t=6090.958802 event=cycle id=M1 cycle=209
+alloctrace reason=SIGUSR1 pid=35063 live_bytes=35917824 live_objects=212 dropped=0 ungrouped_objects=0
+site=0x555669d297e0 module=./scenario offset=0x17e0 bytes=27525120 objects=210
+site=0x555669d29ead module=./scenario offset=0x1ead bytes=8388608 objects=1
+site=0x7f75f2481098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+t=6091.961418 event=cycle id=M1 cycle=210
+t=6092.967359 event=cycle id=M1 cycle=211
+t=6093.973356 event=cycle id=M1 cycle=212
+t=6094.980136 event=cycle id=M1 cycle=213
+t=6095.987218 event=cycle id=M1 cycle=214
+t=6096.995020 event=cycle id=M1 cycle=215
+t=6098.003115 event=cycle id=M1 cycle=216
+t=6099.012414 event=cycle id=M1 cycle=217
+t=6100.020113 event=cycle id=M1 cycle=218
+t=6101.028897 event=cycle id=M1 cycle=219
+t=6102.035342 event=cycle id=M1 cycle=220
+t=6103.043434 event=cycle id=M1 cycle=221
+t=6104.049670 event=cycle id=M1 cycle=222
+t=6105.055903 event=cycle id=M1 cycle=223
+t=6106.063485 event=cycle id=M1 cycle=224
+t=6107.069707 event=cycle id=M1 cycle=225
+t=6108.076363 event=cycle id=M1 cycle=226
+t=6109.082810 event=cycle id=M1 cycle=227
+t=6110.089207 event=cycle id=M1 cycle=228
+t=6111.095756 event=cycle id=M1 cycle=229
+t=6112.102850 event=cycle id=M1 cycle=230
+t=6113.110953 event=cycle id=M1 cycle=231
+t=6114.120346 event=cycle id=M1 cycle=232
+t=6115.129283 event=cycle id=M1 cycle=233
+t=6116.138016 event=cycle id=M1 cycle=234
+t=6117.145991 event=cycle id=M1 cycle=235
+t=6118.152826 event=cycle id=M1 cycle=236
+t=6119.159090 event=cycle id=M1 cycle=237
+t=6120.165496 event=cycle id=M1 cycle=238
+t=6121.174692 event=cycle id=M1 cycle=239
+alloctrace reason=SIGUSR1 pid=35063 live_bytes=39849984 live_objects=242 dropped=0 ungrouped_objects=0
+site=0x555669d297e0 module=./scenario offset=0x17e0 bytes=31457280 objects=240
+site=0x555669d29ead module=./scenario offset=0x1ead bytes=8388608 objects=1
+site=0x7f75f2481098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+t=6122.178474 event=cycle id=M1 cycle=240
+t=6123.186744 event=cycle id=M1 cycle=241
+t=6124.194589 event=cycle id=M1 cycle=242
+t=6125.203619 event=cycle id=M1 cycle=243
+t=6126.212342 event=cycle id=M1 cycle=244
+t=6127.220441 event=cycle id=M1 cycle=245
+t=6128.228224 event=cycle id=M1 cycle=246
+t=6129.234770 event=cycle id=M1 cycle=247
+t=6130.241176 event=cycle id=M1 cycle=248
+t=6131.249374 event=cycle id=M1 cycle=249
+t=6132.256922 event=cycle id=M1 cycle=250
+t=6133.265305 event=cycle id=M1 cycle=251
+t=6134.273195 event=cycle id=M1 cycle=252
+t=6135.281452 event=cycle id=M1 cycle=253
+t=6136.289511 event=cycle id=M1 cycle=254
+t=6137.298651 event=cycle id=M1 cycle=255
+t=6138.308025 event=cycle id=M1 cycle=256
+t=6139.316036 event=cycle id=M1 cycle=257
+t=6140.322908 event=cycle id=M1 cycle=258
+t=6141.330803 event=cycle id=M1 cycle=259
+t=6142.338494 event=cycle id=M1 cycle=260
+t=6143.346426 event=cycle id=M1 cycle=261
+t=6144.354077 event=cycle id=M1 cycle=262
+t=6145.360368 event=cycle id=M1 cycle=263
+t=6146.366429 event=cycle id=M1 cycle=264
+t=6147.372782 event=cycle id=M1 cycle=265
+t=6148.378950 event=cycle id=M1 cycle=266
+t=6149.385408 event=cycle id=M1 cycle=267
+t=6150.392808 event=cycle id=M1 cycle=268
+t=6151.401412 event=cycle id=M1 cycle=269
+alloctrace reason=SIGUSR1 pid=35063 live_bytes=43782144 live_objects=272 dropped=0 ungrouped_objects=0
+site=0x555669d297e0 module=./scenario offset=0x17e0 bytes=35389440 objects=270
+site=0x555669d29ead module=./scenario offset=0x1ead bytes=8388608 objects=1
+site=0x7f75f2481098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+t=6152.405247 event=cycle id=M1 cycle=270
+t=6153.411498 event=cycle id=M1 cycle=271
+t=6154.417899 event=cycle id=M1 cycle=272
+t=6155.424178 event=cycle id=M1 cycle=273
+t=6156.430698 event=cycle id=M1 cycle=274
+t=6157.438780 event=cycle id=M1 cycle=275
+t=6158.445117 event=cycle id=M1 cycle=276
+t=6159.451494 event=cycle id=M1 cycle=277
+t=6160.457995 event=cycle id=M1 cycle=278
+t=6161.465184 event=cycle id=M1 cycle=279
+t=6162.471490 event=cycle id=M1 cycle=280
+t=6163.478521 event=cycle id=M1 cycle=281
+t=6164.485604 event=cycle id=M1 cycle=282
+t=6165.492744 event=cycle id=M1 cycle=283
+t=6166.499512 event=cycle id=M1 cycle=284
+t=6167.506045 event=cycle id=M1 cycle=285
+t=6168.512370 event=cycle id=M1 cycle=286
+t=6169.518493 event=cycle id=M1 cycle=287
+t=6170.524873 event=cycle id=M1 cycle=288
+t=6171.531612 event=cycle id=M1 cycle=289
+t=6172.538882 event=cycle id=M1 cycle=290
+t=6173.545632 event=cycle id=M1 cycle=291
+t=6174.552102 event=cycle id=M1 cycle=292
+t=6175.558266 event=cycle id=M1 cycle=293
+t=6176.564181 event=cycle id=M1 cycle=294
+t=6177.570635 event=cycle id=M1 cycle=295
+t=6178.576970 event=cycle id=M1 cycle=296
+t=6179.583769 event=cycle id=M1 cycle=297
+t=6180.590214 event=cycle id=M1 cycle=298
+t=6181.596808 event=cycle id=M1 cycle=299
+alloctrace reason=SIGUSR1 pid=35063 live_bytes=47714304 live_objects=302 dropped=0 ungrouped_objects=0
+site=0x555669d297e0 module=./scenario offset=0x17e0 bytes=39321600 objects=300
+site=0x555669d29ead module=./scenario offset=0x1ead bytes=8388608 objects=1
+site=0x7f75f2481098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+t=6182.602130 event=cycle id=M1 cycle=300
+t=6183.608080 event=end id=M1 interrupted=0
+alloctrace reason=exit pid=35063 live_bytes=39325696 live_objects=301 dropped=0 ungrouped_objects=0
+site=0x555669d297e0 module=./scenario offset=0x17e0 bytes=39321600 objects=300
+site=0x7f75f2481098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1

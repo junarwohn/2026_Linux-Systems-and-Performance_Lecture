@@ -1,0 +1,5 @@
+t=6018.150312 event=start id=M3 pid=37690 page_size=4096 bytes=33554432 base=8388608 cycles=3 cap=268435456 seed=42
+t=6021.163564 event=cycle id=M3 cycle=1
+t=6023.201891 event=cycle id=M3 cycle=2
+t=6025.754868 event=cycle id=M3 cycle=3
+t=6026.058278 event=end id=M3 interrupted=0

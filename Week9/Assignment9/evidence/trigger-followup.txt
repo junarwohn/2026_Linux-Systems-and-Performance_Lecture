@@ -1,0 +1,8 @@
+Running as unit: run-p37679-i16118.service
+cache-trigger-1000 
+swap-trigger-1000 75599872
+          Finished with result: success
+Main processes terminated with: code=exited, status=0/SUCCESS
+               Service runtime: 12.549s
+             CPU time consumed: 932ms
+                   Memory peak: 196.2M (swap: 72M)

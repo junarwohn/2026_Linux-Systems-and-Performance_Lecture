@@ -1,0 +1,5 @@
+target called normally
+TEXT address=0x5648fc020820
+5648fc020000-5648fc021000 r-xp 00001000 00:1f 690469                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week8/Lab8/lab1
+Inspect maps above; Enter to continue.
+child signal=11 expected=11 (SIGSEGV)

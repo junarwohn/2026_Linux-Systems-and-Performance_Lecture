@@ -1,0 +1,1 @@
+trigger OR, score/importance ordering, tie, floor and -1000 checks passed

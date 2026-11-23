@@ -1,0 +1,4 @@
+
+STAGE 1 IDLE PID=27785
+NEXT: allocate and touch an extra 80MiB
+WAITING: inspect in terminal B, then press ENTER here.

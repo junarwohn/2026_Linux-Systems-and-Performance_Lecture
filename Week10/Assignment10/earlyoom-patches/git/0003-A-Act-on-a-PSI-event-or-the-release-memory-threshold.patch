@@ -1,0 +1,34 @@
+From 890be903a1dcce7430448e4439411e5a7a8dad87 Mon Sep 17 00:00:00 2001
+From: Course work <course-work@example.invalid>
+Date: Tue, 24 Nov 2026 00:00:00 +0900
+Subject: [PATCH 3/5] A: Act on a PSI event or the release memory threshold
+
+---
+ lmk_policy.c | 11 +++--------
+ 1 file changed, 3 insertions(+), 8 deletions(-)
+
+diff --git a/lmk_policy.c b/lmk_policy.c
+index 8bd4e03..070f185 100644
+--- a/lmk_policy.c
++++ b/lmk_policy.c
+@@ -1,14 +1,9 @@
+ #include "lmk_policy.h"
+ #include <errno.h>
+ 
+-/* Assignment tasks A/B. Fail explicitly instead of pretending to implement PSI. */
+-int lab_should_act(int amount_low, int psi_event) {
+-    if (psi_event) {
+-        errno = ENOSYS;
+-        return -1;
+-    }
+-
+-    return amount_low;
++int lab_should_act(int amount_low, int psi_event)
++{
++    return amount_low || psi_event;
+ }
+ 
+ int lab_choose(const lab_candidate *p, int n, int importance, int floor) {
+-- 
+2.56.1
+

@@ -1,0 +1,23 @@
+PID=19304 PAGE_SIZE=4096 BLOCK_SIZE=4096 BLOCK_COUNT=16384 MMAP_BYTES=67108864
+OBJECT initialized=0x5608a72eb010 bss_first=0x5608a72eb060 bss_last=0x5608a73eb05f
+OBJECT readonly=0x5608a72e9010 local=0x7fffddffd884 function=0x5608a72e81f9 pointer_table=0x5608a73eb060
+
+STAGE 1 BASELINE pid=19304 live_blocks=0 live_bytes=0
+WAITING: inspect in terminal B; press ENTER here to continue.
+MALLOC first=0x5608cb018010 last=0x5608cf057000 addresses_increasing=1
+MMAP start=0x7f6ae5800000 end=0x7f6ae9800000 bytes=67108864
+
+STAGE 2 ALLOCATED_UNTOUCHED pid=19304 live_blocks=16384 live_bytes=67108864
+WAITING: inspect in terminal B; press ENTER here to continue.
+
+STAGE 3 TOUCHED pid=19304 live_blocks=16384 live_bytes=67108864
+WAITING: inspect in terminal B; press ENTER here to continue.
+RETAINED last=0x5608cf057000 bytes=4096
+
+STAGE 4 FREED_KEEP_LAST pid=19304 live_blocks=1 live_bytes=4096
+WAITING: inspect in terminal B; press ENTER here to continue.
+UNMAPPED former_start=0x7f6ae5800000 former_end=0x7f6ae9800000
+
+STAGE 5 UNMAPPED_KEEP_LAST pid=19304 live_blocks=1 live_bytes=4096
+WAITING: inspect in terminal B; press ENTER here to continue.
+CLEANUP complete

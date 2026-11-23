@@ -1,0 +1,3 @@
+alloctrace reason=SIGUSR1 pid=37221 live_bytes=1024 live_objects=16 dropped=48 ungrouped_objects=0
+site=0x55fbf239a2d8 module=build/tracer_checks offset=0x12d8 bytes=1024 objects=16
+alloctrace reason=exit pid=37221 live_bytes=0 live_objects=0 dropped=48 ungrouped_objects=0

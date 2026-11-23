@@ -1,0 +1,30 @@
+t=5802.031243 event=start id=M1 pid=33546 page_size=4096 bytes=4194304 base=8388608 cycles=10 cap=268435456 seed=42
+t=5802.033432 event=cycle id=M1 cycle=1
+t=5802.477708 event=cycle id=M1 cycle=2
+t=5802.922313 event=cycle id=M1 cycle=3
+alloctrace reason=SIGUSR1 pid=33546 live_bytes=25169920 live_objects=6 dropped=0 ungrouped_objects=0
+site=0x561e927427e0 module=./scenario offset=0x17e0 bytes=16777216 objects=4
+site=0x561e92742ead module=./scenario offset=0x1ead bytes=8388608 objects=1
+site=0x7f2a72081098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+t=5803.369863 event=cycle id=M1 cycle=4
+t=5803.813563 event=cycle id=M1 cycle=5
+alloctrace reason=SIGUSR1 pid=33546 live_bytes=33558528 live_objects=8 dropped=0 ungrouped_objects=0
+site=0x561e927427e0 module=./scenario offset=0x17e0 bytes=25165824 objects=6
+site=0x561e92742ead module=./scenario offset=0x1ead bytes=8388608 objects=1
+site=0x7f2a72081098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+t=5804.263091 event=cycle id=M1 cycle=6
+t=5804.707201 event=cycle id=M1 cycle=7
+t=5805.150970 event=cycle id=M1 cycle=8
+alloctrace reason=SIGUSR1 pid=33546 live_bytes=46141440 live_objects=11 dropped=0 ungrouped_objects=0
+site=0x561e927427e0 module=./scenario offset=0x17e0 bytes=37748736 objects=9
+site=0x561e92742ead module=./scenario offset=0x1ead bytes=8388608 objects=1
+site=0x7f2a72081098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+t=5805.600326 event=cycle id=M1 cycle=9
+t=5806.044258 event=cycle id=M1 cycle=10
+alloctrace reason=SIGUSR1 pid=33546 live_bytes=41947136 live_objects=11 dropped=0 ungrouped_objects=0
+site=0x561e927427e0 module=./scenario offset=0x17e0 bytes=41943040 objects=10
+site=0x7f2a72081098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1
+t=5806.493981 event=end id=M1 interrupted=0
+alloctrace reason=exit pid=33546 live_bytes=41947136 live_objects=11 dropped=0 ungrouped_objects=0
+site=0x561e927427e0 module=./scenario offset=0x17e0 bytes=41943040 objects=10
+site=0x7f2a72081098 module=/usr/lib/libc.so.6 offset=0x81098 bytes=4096 objects=1

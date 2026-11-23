@@ -1,0 +1,168 @@
+[
+  {
+    "checkpoint": {
+      "stage": "cold-request-map",
+      "pid": "24494",
+      "range": "7f3672e00000-7f3676e00000",
+      "bytes": "67108864",
+      "child": "0"
+    },
+    "observer": {
+      "pid": {
+        "pid": 24494,
+        "t_monotonic_s": 5369.401149506,
+        "minflt": 66,
+        "majflt": 0,
+        "start_ticks": 8882854,
+        "VmRSS_KiB": 1888,
+        "RssAnon_KiB": 104,
+        "RssFile_KiB": 1784,
+        "RssShmem_KiB": 0,
+        "VmPTE_KiB": 44,
+        "Pss_KiB": 134,
+        "Shared_Clean_KiB": 1772,
+        "Private_Dirty_KiB": 104,
+        "AnonHugePages_KiB": 0,
+        "range": {
+          "start": "0x7f3672e00000",
+          "end": "0x7f3676e00000",
+          "present": 0,
+          "swapped": 0,
+          "neither": 16384,
+          "exclusive_present": 0,
+          "PFNs": "N/A (PFN access unavailable)",
+          "distinct_frames": "N/A"
+        },
+        "elapsed_s": 1.5e-05,
+        "minflt_delta": "N/A",
+        "majflt_delta": "N/A"
+      }
+    }
+  },
+  {
+    "workload": "checksum=2096328"
+  },
+  {
+    "checkpoint": {
+      "stage": "cold-request-read",
+      "pid": "24494",
+      "range": "7f3672e00000-7f3676e00000",
+      "bytes": "67108864",
+      "child": "0"
+    },
+    "observer": {
+      "pid": {
+        "pid": 24494,
+        "t_monotonic_s": 5369.496539963,
+        "minflt": 468,
+        "majflt": 1,
+        "start_ticks": 8882854,
+        "VmRSS_KiB": 67424,
+        "RssAnon_KiB": 104,
+        "RssFile_KiB": 67320,
+        "RssShmem_KiB": 0,
+        "VmPTE_KiB": 172,
+        "Pss_KiB": 65670,
+        "Shared_Clean_KiB": 1772,
+        "Private_Dirty_KiB": 104,
+        "AnonHugePages_KiB": 0,
+        "range": {
+          "start": "0x7f3672e00000",
+          "end": "0x7f3676e00000",
+          "present": 16384,
+          "swapped": 0,
+          "neither": 0,
+          "exclusive_present": 16384,
+          "PFNs": "N/A (PFN access unavailable)",
+          "distinct_frames": "N/A"
+        },
+        "elapsed_s": 1.1e-05,
+        "minflt_delta": "N/A",
+        "majflt_delta": "N/A"
+      }
+    }
+  },
+  {
+    "checkpoint": {
+      "stage": "warm-map",
+      "pid": "24494",
+      "range": "7f3672e00000-7f3676e00000",
+      "bytes": "67108864",
+      "child": "0"
+    },
+    "observer": {
+      "pid": {
+        "pid": 24494,
+        "t_monotonic_s": 5369.5687744,
+        "minflt": 468,
+        "majflt": 1,
+        "start_ticks": 8882854,
+        "VmRSS_KiB": 1888,
+        "RssAnon_KiB": 104,
+        "RssFile_KiB": 1784,
+        "RssShmem_KiB": 0,
+        "VmPTE_KiB": 44,
+        "Pss_KiB": 134,
+        "Shared_Clean_KiB": 1772,
+        "Private_Dirty_KiB": 104,
+        "AnonHugePages_KiB": 0,
+        "range": {
+          "start": "0x7f3672e00000",
+          "end": "0x7f3676e00000",
+          "present": 0,
+          "swapped": 0,
+          "neither": 16384,
+          "exclusive_present": 0,
+          "PFNs": "N/A (PFN access unavailable)",
+          "distinct_frames": "N/A"
+        },
+        "elapsed_s": 1.2e-05,
+        "minflt_delta": "N/A",
+        "majflt_delta": "N/A"
+      }
+    }
+  },
+  {
+    "workload": "checksum=2096328"
+  },
+  {
+    "checkpoint": {
+      "stage": "warm-read",
+      "pid": "24494",
+      "range": "7f3672e00000-7f3676e00000",
+      "bytes": "67108864",
+      "child": "0"
+    },
+    "observer": {
+      "pid": {
+        "pid": 24494,
+        "t_monotonic_s": 5369.647863804,
+        "minflt": 871,
+        "majflt": 1,
+        "start_ticks": 8882854,
+        "VmRSS_KiB": 67424,
+        "RssAnon_KiB": 104,
+        "RssFile_KiB": 67320,
+        "RssShmem_KiB": 0,
+        "VmPTE_KiB": 172,
+        "Pss_KiB": 65670,
+        "Shared_Clean_KiB": 1772,
+        "Private_Dirty_KiB": 104,
+        "AnonHugePages_KiB": 0,
+        "range": {
+          "start": "0x7f3672e00000",
+          "end": "0x7f3676e00000",
+          "present": 16384,
+          "swapped": 0,
+          "neither": 0,
+          "exclusive_present": 16384,
+          "PFNs": "N/A (PFN access unavailable)",
+          "distinct_frames": "N/A"
+        },
+        "elapsed_s": 1.3e-05,
+        "minflt_delta": "N/A",
+        "majflt_delta": "N/A"
+      }
+    }
+  }
+]

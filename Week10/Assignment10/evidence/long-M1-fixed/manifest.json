@@ -1,0 +1,33 @@
+{
+  "commands": [
+    [
+      "./scenario-fixed",
+      "M1",
+      "--bytes",
+      "128KiB",
+      "--base",
+      "8MiB",
+      "--cycles",
+      "300",
+      "--period",
+      "1",
+      "--seconds",
+      "310",
+      "--seed",
+      "42"
+    ]
+  ],
+  "start_s": 6345.936423981,
+  "limits": {
+    "max_mib": 128
+  },
+  "group": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p44234-i47388.service/lab10-long-M1-fixed",
+  "scope": "fresh systemd user service",
+  "page_B": 4096,
+  "launch_s": 6346.237816471,
+  "returncodes": [
+    0
+  ],
+  "end_s": 6648.551408817,
+  "termination": "workload completed"
+}

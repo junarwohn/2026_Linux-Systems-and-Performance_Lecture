@@ -1,0 +1,16 @@
+before 4 40323 ['800', '200']
+before 12 40325 ['800', '200']
+before 24 40327 ['800', '200']
+adj-request 40323 500 ok readback ['1000', '500']
+adj-request 40323 200 ok readback ['800', '200']
+adj-request 40323 0 [Errno 13] Permission denied readback ['800', '200']
+adj-request 40323 -1 [Errno 13] Permission denied readback ['800', '200']
+adj-request 40323 -1000 [Errno 13] Permission denied readback ['800', '200']
+exit 40323 0
+exit 40325 0
+exit 40327 0
+parent 40317 ['800', '200']
+raise-parent ok ['1000', '500']
+after-fork 40329 ['1000', '500']
+500
+child waited (40329, 0)

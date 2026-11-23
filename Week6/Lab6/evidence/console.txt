@@ -1,0 +1,220 @@
++ bash check_env.sh
+OK    gcc found
+OK    make found
+OK    gdb found
+WARN  bpftrace missing (sudo apt install bpftrace)
+OK    nproc=18
+OK    ThreadSanitizer builds and runs
+WARN  bpftrace : 0.20 이상이 필요하다 (Week 5의 tools/install_bpftrace.sh)
+WARN  tracepoint syscalls:sys_enter_futex not found
+WARN  libc uprobe not found (/lib/x86_64-linux-gnu/libc.so.6)
+WARN  perf trace failed: 실습 2는 strace로 대신 센다 (lab.sh가 자동으로 바꾼다)
+OK    ptrace_scope=1 (1 이상이면 gdb -p는 sudo로 실행한다. lab.sh 3hang은 root로 실행된다)
++ make
+mkdir -p bin logs
+gcc -O2 -g -Wall -Wextra -std=gnu11 -fno-omit-frame-pointer -pthread -o bin/counter src/counter.c
+gcc -O1 -g -std=gnu11 -fsanitize=thread -pthread -o bin/counter_tsan src/counter.c
+gcc -O2 -g -Wall -Wextra -std=gnu11 -fno-omit-frame-pointer -pthread -o bin/lockbench src/lockbench.c
+gcc -O2 -g -Wall -Wextra -std=gnu11 -fno-omit-frame-pointer -pthread -o bin/cfgread src/cfgread.c
+gcc -O2 -g -Wall -Wextra -std=gnu11 -fno-omit-frame-pointer -pthread -o bin/cvbug src/cvbug.c
++ for step in 1 1tsan 2c 2d 3ifwait 3iolock
++ timeout 30 bash tools/lab.sh 1
+
+[1m== Counter: plain (thread 2개, 각 5,000,000회)[0m
+$ ./bin/counter -m plain -t 2 -n 5000000
+result=5444908 expected=10000000 lost=4555092
+elapsed_ms=20.9 ns_per_increment=2.09
+
+[1m== Counter: atomic (thread 2개, 각 5,000,000회)[0m
+$ ./bin/counter -m atomic -t 2 -n 5000000
+result=10000000 expected=10000000 lost=0
+elapsed_ms=262.9 ns_per_increment=26.29
+
+[1m== Counter: mutex (thread 2개, 각 5,000,000회)[0m
+$ ./bin/counter -m mutex -t 2 -n 5000000
+result=10000000 expected=10000000 lost=0
+elapsed_ms=468.5 ns_per_increment=46.85
+
+[1m== Counter: local (thread 2개, 각 5,000,000회)[0m
+$ ./bin/counter -m local -t 2 -n 5000000
+result=10000000 expected=10000000 lost=0
+elapsed_ms=1.7 ns_per_increment=0.17
++ for step in 1 1tsan 2c 2d 3ifwait 3iolock
++ timeout 30 bash tools/lab.sh 1tsan
+
+[1m== TSan: plain (thread 2개, 각 100,000회)[0m
+$ ./bin/counter_tsan -m plain -n 100000
+TSan 경고 발견 (종료 코드 66): logs/lab1-tsan-plain.txt
+WARNING: ThreadSanitizer: data race (pid=18786)
+  Read of size 8 at 0x55c7f465c578 by thread T2:
+    #0 add_plain src/counter.c:48 (counter_tsan+0x1317) (BuildId: fc77b2214091774d35497e8b3af537173e176ee3)
+    #1 worker src/counter.c:101 (counter_tsan+0x1656) (BuildId: fc77b2214091774d35497e8b3af537173e176ee3)
+    #2 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+
+  Previous write of size 8 at 0x55c7f465c578 by thread T1:
+    #0 add_plain src/counter.c:48 (counter_tsan+0x132a) (BuildId: fc77b2214091774d35497e8b3af537173e176ee3)
+    #1 worker src/counter.c:101 (counter_tsan+0x1656) (BuildId: fc77b2214091774d35497e8b3af537173e176ee3)
+    #2 <null> <null> (libtsan.so.2+0x557e9) (BuildId: fad1b3f53c846e11570baa72e153cca909e3f7d2)
+SUMMARY: ThreadSanitizer: data race src/counter.c:48 in add_plain
+elapsed_ms=6.3 ns_per_increment=31.41
+
+[1m== TSan: atomic (thread 2개, 각 100,000회)[0m
+$ ./bin/counter_tsan -m atomic -n 100000
+TSan 정상 실행: warning 없음
+elapsed_ms=43.2 ns_per_increment=215.82
++ for step in 1 1tsan 2c 2d 3ifwait 3iolock
++ timeout 30 bash tools/lab.sh 2c
+
+[1m== Lockbench: spin (thread 19개)[0m
+$ ./bin/lockbench -m spin -t 19
+elapsed_ms=2446 cpu_ms=37265 ns_per_op=644
+sleeps=0 preempted=4134 handoff=98.1%
+
+[1m== Lockbench: mcs (thread 19개)[0m
+$ ./bin/lockbench -m mcs -t 19
+stopped after 5 s: done=26020 of 3800000 ops
+elapsed_ms=5002 cpu_ms=86291 ns_per_op=192237
+sleeps=0 preempted=12858 handoff=100.0%
+
+[1m== Lockbench: mutex (thread 19개)[0m
+$ ./bin/lockbench -m mutex -t 19
+elapsed_ms=3198 cpu_ms=47877 ns_per_op=841
+sleeps=1384096 preempted=36684 handoff=87.2%
++ for step in 1 1tsan 2c 2d 3ifwait 3iolock
++ timeout 30 bash tools/lab.sh 2d
+
+[1m== cfgread: rwlock (reader 1개, 2초)[0m
+$ ./bin/cfgread -m rwlock -r 1
+reads=133072600 ns_per_read=15.0 bad_reads=0
+updates=1886 update_us: p50=1 max=215
+
+[1m== cfgread: rcu (reader 1개, 2초)[0m
+$ ./bin/cfgread -m rcu -r 1
+reads=765387500 ns_per_read=2.6 bad_reads=0
+updates=1717 update_us: p50=104 max=450
+grace_period_us: p50=104 max=450
+
+[1m== cfgread: rwlock (reader 2개, 2초)[0m
+$ ./bin/cfgread -m rwlock -r 2
+reads=37916700 ns_per_read=105.5 bad_reads=0
+updates=1866 update_us: p50=3 max=4421
+
+[1m== cfgread: rcu (reader 2개, 2초)[0m
+$ ./bin/cfgread -m rcu -r 2
+reads=1471632500 ns_per_read=2.7 bad_reads=0
+updates=1709 update_us: p50=104 max=831
+grace_period_us: p50=104 max=831
+
+[1m== cfgread: nogp (reader 2개, grace period 없이 free)[0m
+$ ./bin/cfgread -m nogp -r 2
+reads=1445962000 ns_per_read=2.8 bad_reads=73
+updates=1890 update_us: p50=0 max=30
++ for step in 1 1tsan 2c 2d 3ifwait 3iolock
++ timeout 30 bash tools/lab.sh 3ifwait
+
+[1m== Condition Variable: ifwait (item 200개)[0m
+$ ./bin/cvbug -m ifwait
+cvbug: mode=ifwait items=200 consumers=2 slow_ms=5
+taken=400 duplicate=200 lost=0 empty_takes=399
+producer lock wait (us): p50=0 p99=1 max=2
+elapsed_ms=112
++ for step in 1 1tsan 2c 2d 3ifwait 3iolock
++ timeout 30 bash tools/lab.sh 3iolock
+
+[1m== Condition Variable: iolock (item 200개, log당 5ms)[0m
+$ ./bin/cvbug -m iolock
+cvbug: mode=iolock items=200 consumers=2 slow_ms=5
+taken=200 duplicate=0 lost=0 empty_takes=0
+producer lock wait (us): p50=4601 p99=4729 max=4737
+elapsed_ms=1035
+
+[1m== Condition Variable: fixed (item 200개, log당 5ms)[0m
+$ ./bin/cvbug -m fixed
+cvbug: mode=fixed items=200 consumers=2 slow_ms=5
+taken=200 duplicate=0 lost=0 empty_takes=0
+producer lock wait (us): p50=0 p99=0 max=0
+elapsed_ms=508
++ for t in 1 2
++ for m in spin mcs mutex adaptive
++ ./bin/lockbench -m spin -t 1
+lockbench: mode=spin threads=1 cpus=18 ops/thread=200000 cs_loops=200 work_loops=200
+elapsed_ms=57 cpu_ms=58 ns_per_op=287
+sleeps=0 preempted=1 handoff=0.0%
++ for m in spin mcs mutex adaptive
++ ./bin/lockbench -m mcs -t 1
+lockbench: mode=mcs threads=1 cpus=18 ops/thread=200000 cs_loops=200 work_loops=200
+elapsed_ms=53 cpu_ms=52 ns_per_op=263
+sleeps=0 preempted=7 handoff=0.0%
++ for m in spin mcs mutex adaptive
++ ./bin/lockbench -m mutex -t 1
+lockbench: mode=mutex threads=1 cpus=18 ops/thread=200000 cs_loops=200 work_loops=200
+elapsed_ms=81 cpu_ms=67 ns_per_op=407
+sleeps=0 preempted=65 handoff=0.0%
++ for m in spin mcs mutex adaptive
++ ./bin/lockbench -m adaptive -t 1
+lockbench: mode=adaptive threads=1 cpus=18 ops/thread=200000 cs_loops=200 work_loops=200
+elapsed_ms=76 cpu_ms=64 ns_per_op=382
+sleeps=0 preempted=60 handoff=0.0%
++ for m in mutex adaptive
++ strace -f -e futex -o evidence/futex-mutex-1.trace ./bin/lockbench -m mutex -t 1
+lockbench: mode=mutex threads=1 cpus=18 ops/thread=200000 cs_loops=200 work_loops=200
+elapsed_ms=75 cpu_ms=58 ns_per_op=377
+sleeps=12 preempted=85 handoff=0.0%
++ for m in mutex adaptive
++ strace -f -e futex -o evidence/futex-adaptive-1.trace ./bin/lockbench -m adaptive -t 1
+lockbench: mode=adaptive threads=1 cpus=18 ops/thread=200000 cs_loops=200 work_loops=200
+elapsed_ms=69 cpu_ms=54 ns_per_op=344
+sleeps=12 preempted=73 handoff=0.0%
++ for t in 1 2
++ for m in spin mcs mutex adaptive
++ ./bin/lockbench -m spin -t 2
+lockbench: mode=spin threads=2 cpus=18 ops/thread=200000 cs_loops=200 work_loops=200
+elapsed_ms=104 cpu_ms=174 ns_per_op=261
+sleeps=0 preempted=43 handoff=61.6%
++ for m in spin mcs mutex adaptive
++ ./bin/lockbench -m mcs -t 2
+lockbench: mode=mcs threads=2 cpus=18 ops/thread=200000 cs_loops=200 work_loops=200
+elapsed_ms=162 cpu_ms=307 ns_per_op=405
+sleeps=0 preempted=59 handoff=93.6%
++ for m in spin mcs mutex adaptive
++ ./bin/lockbench -m mutex -t 2
+lockbench: mode=mutex threads=2 cpus=18 ops/thread=200000 cs_loops=200 work_loops=200
+elapsed_ms=265 cpu_ms=366 ns_per_op=663
+sleeps=62920 preempted=46 handoff=22.1%
++ for m in spin mcs mutex adaptive
++ ./bin/lockbench -m adaptive -t 2
+lockbench: mode=adaptive threads=2 cpus=18 ops/thread=200000 cs_loops=200 work_loops=200
+elapsed_ms=148 cpu_ms=276 ns_per_op=370
+sleeps=2183 preempted=50 handoff=44.0%
++ for m in mutex adaptive
++ strace -f -e futex -o evidence/futex-mutex-2.trace ./bin/lockbench -m mutex -t 2
+lockbench: mode=mutex threads=2 cpus=18 ops/thread=200000 cs_loops=200 work_loops=200
+elapsed_ms=296 cpu_ms=210 ns_per_op=739
+sleeps=37916 preempted=30 handoff=2.7%
++ for m in mutex adaptive
++ strace -f -e futex -o evidence/futex-adaptive-2.trace ./bin/lockbench -m adaptive -t 2
+lockbench: mode=adaptive threads=2 cpus=18 ops/thread=200000 cs_loops=200 work_loops=200
+elapsed_ms=172 cpu_ms=156 ns_per_op=431
+sleeps=10024 preempted=57 handoff=6.3%
++ strace -f -e futex -o evidence/cv-fixed.trace ./bin/cvbug -m fixed -n 200 -s 2
+cvbug: mode=fixed items=200 consumers=2 slow_ms=2
+pid=19590
+taken=200 duplicate=0 lost=0 empty_takes=0
+producer lock wait (us): p50=0 p99=0 max=1
+elapsed_ms=220
++ p=19597
++ sleep 1
++ ./bin/cvbug -m nounlock
+cons-0: item 6 rejected
++ ps -L -p 19597 -o pid,tid,stat,wchan,comm
+    PID     TID STAT WCHAN  COMMAND
+  19597   19597 Sl   futex_ cvbug
+  19597   19600 Sl   futex_ cons-1
+  19597   19601 Sl   futex_ producer
++ gdb -nx -p 19597 -batch -ex 'set debuginfod enabled off' -ex 'thread apply all bt' -ex 'p q.lock.__data.__owner'
+warning: the /proc/sys/kernel/yama/ptrace_scope setting of 1 might prevent attaching, see 'man 2 ptrace'
+ptrace: Operation not permitted.
+No symbol table is loaded.  Use the "file" command.
++ kill 19597
++ wait 19597
++ cp logs/lab1-atomic.txt logs/lab1-local.txt logs/lab1-mutex.txt logs/lab1-plain.txt logs/lab1-tsan-atomic.txt logs/lab1-tsan-plain.txt logs/lab2-cfg-nogp-r2.txt logs/lab2-cfg-rcu-r1.txt logs/lab2-cfg-rcu-r2.txt logs/lab2-cfg-rwlock-r1.txt logs/lab2-cfg-rwlock-r2.txt logs/lab2-t19-mcs.txt logs/lab2-t19-mutex.txt logs/lab2-t19-spin.txt logs/lab3-fixed.txt logs/lab3-ifwait.txt logs/lab3-iolock.txt evidence/

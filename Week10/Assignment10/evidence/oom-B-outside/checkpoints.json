@@ -1,0 +1,167 @@
+[
+  {
+    "t": 6161.830474318,
+    "group": {
+      "memory.current": "0",
+      "memory.peak": "0",
+      "memory.stat": "anon 0\nfile 0\nkernel 0\nkernel_stack 0\npagetables 0\nsec_pagetables 0\npercpu 0\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 0\ninactive_file 0\nactive_file 0\nunevictable 0\nslab_reclaimable 0\nslab_unreclaimable 0\nslab 0\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 0\npgsteal 0\npswpin 0\npswpout 0\npgfault 0\npgmajfault 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0",
+      "memory.pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=0\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+      "memory.events.local": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+      "memory.max": "41943040",
+      "memory.high": "max",
+      "memory.swap.max": "0",
+      "cgroup.procs": ""
+    },
+    "processes": {
+      "40758": {
+        "smaps_rollup": "555b090f2000-7fffedbff000 ---p 00000000 00:00 0                          [rollup]\nRss:               67564 kB\nPss:               65666 kB\nPss_Dirty:         65640 kB\nPss_Anon:          65640 kB\nPss_File:             26 kB\nPss_Shmem:             0 kB\nShared_Clean:       1924 kB\nShared_Dirty:          0 kB\nPrivate_Clean:         0 kB\nPrivate_Dirty:     65640 kB\nReferenced:        67564 kB\nAnonymous:         65640 kB\nKSM:                   0 kB\nLazyFree:              0 kB\nAnonHugePages:     65536 kB\nShmemPmdMapped:        0 kB\nFilePmdMapped:         0 kB\nShared_Hugetlb:        0 kB\nPrivate_Hugetlb:       0 kB\nSwap:                  0 kB\nSwapPss:               0 kB\nLocked:                0 kB\n",
+        "oom_score": "802\n",
+        "oom_score_adj": "200\n",
+        "stat": "40758 (memhog) S 40725 40725 40725 0 -1 4194304 101 0 0 0 0 0 0 0 20 0 1 0 8962078 70135808 16859 18446744073709551615 93849482375168 93849482385417 140737182160720 0 0 0 0 0 16386 1 0 0 17 11 0 0 0 0 0 93849482395088 93849482395912 93849655672832 140737182165188 140737182165218 140737182165218 140737182167023 0\n"
+      }
+    }
+  },
+  {
+    "t": 6162.1396192,
+    "group": {
+      "memory.current": "262144",
+      "memory.peak": "262144",
+      "memory.stat": "anon 0\nfile 0\nkernel 0\nkernel_stack 0\npagetables 0\nsec_pagetables 0\npercpu 0\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 0\ninactive_file 0\nactive_file 0\nunevictable 0\nslab_reclaimable 0\nslab_unreclaimable 0\nslab 0\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 0\npgsteal 0\npswpin 0\npswpout 0\npgfault 0\npgmajfault 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 0\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0",
+      "memory.pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=0\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+      "memory.events.local": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+      "memory.max": "41943040",
+      "memory.high": "max",
+      "memory.swap.max": "0",
+      "cgroup.procs": "40781"
+    },
+    "processes": {
+      "40781": {
+        "smaps_rollup": "55b3bb1a7000-7ffd9bc63000 ---p 00000000 00:00 0                          [rollup]\nRss:                4076 kB\nPss:                2174 kB\nPss_Dirty:          2152 kB\nPss_Anon:           2152 kB\nPss_File:             22 kB\nPss_Shmem:             0 kB\nShared_Clean:       1924 kB\nShared_Dirty:          0 kB\nPrivate_Clean:         0 kB\nPrivate_Dirty:      2152 kB\nReferenced:         4076 kB\nAnonymous:          2152 kB\nKSM:                   0 kB\nLazyFree:              0 kB\nAnonHugePages:      2048 kB\nShmemPmdMapped:        0 kB\nFilePmdMapped:         0 kB\nShared_Hugetlb:        0 kB\nPrivate_Hugetlb:       0 kB\nSwap:                  0 kB\nSwapPss:               0 kB\nLocked:                0 kB\n",
+        "oom_score": "800\n",
+        "oom_score_adj": "200\n",
+        "stat": "40781 (memhog) S 40725 40725 40725 0 -1 4194304 310 0 0 0 0 0 0 0 20 0 1 0 8962133 70135808 987 18446744073709551615 94230426583040 94230426593289 140727216901952 0 0 0 0 0 16386 1 0 0 17 3 0 0 0 0 0 94230426602960 94230426603784 94230998405120 140727216908475 140727216908514 140727216908514 140727216910319 0\n"
+      },
+      "40758": {
+        "smaps_rollup": "555b090f2000-7fffedbff000 ---p 00000000 00:00 0                          [rollup]\nRss:               67564 kB\nPss:               65662 kB\nPss_Dirty:         65640 kB\nPss_Anon:          65640 kB\nPss_File:             22 kB\nPss_Shmem:             0 kB\nShared_Clean:       1924 kB\nShared_Dirty:          0 kB\nPrivate_Clean:         0 kB\nPrivate_Dirty:     65640 kB\nReferenced:        67564 kB\nAnonymous:         65640 kB\nKSM:                   0 kB\nLazyFree:              0 kB\nAnonHugePages:     65536 kB\nShmemPmdMapped:        0 kB\nFilePmdMapped:         0 kB\nShared_Hugetlb:        0 kB\nPrivate_Hugetlb:       0 kB\nSwap:                  0 kB\nSwapPss:               0 kB\nLocked:                0 kB\n",
+        "oom_score": "802\n",
+        "oom_score_adj": "200\n",
+        "stat": "40758 (memhog) S 40725 40725 40725 0 -1 4194304 101 0 0 0 0 0 0 0 20 0 1 0 8962078 70135808 16859 18446744073709551615 93849482375168 93849482385417 140737182160720 0 0 0 0 0 16386 1 0 0 17 11 0 0 0 0 0 93849482395088 93849482395912 93849655672832 140737182165188 140737182165218 140737182165218 140737182167023 0\n"
+      }
+    }
+  },
+  {
+    "t": 6162.32052001,
+    "group": {
+      "memory.current": "13549568",
+      "memory.peak": "13631488",
+      "memory.stat": "anon 12689408\nfile 4096\nkernel 90112\nkernel_stack 0\npagetables 77824\nsec_pagetables 0\npercpu 320\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 4096\nfile_writeback 0\nswapcached 0\nanon_thp 12582912\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 12689408\ninactive_file 4096\nactive_file 0\nunevictable 0\nslab_reclaimable 0\nslab_unreclaimable 9664\nslab 9664\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 0\npgsteal 0\npswpin 0\npswpout 0\npgfault 74\npgmajfault 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 6\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0",
+      "memory.pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=0\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+      "memory.events.local": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+      "memory.max": "41943040",
+      "memory.high": "max",
+      "memory.swap.max": "0",
+      "cgroup.procs": "40781"
+    },
+    "processes": {
+      "40781": {
+        "smaps_rollup": "55b3bb1a7000-7ffd9bc63000 ---p 00000000 00:00 0                          [rollup]\nRss:               14316 kB\nPss:               12414 kB\nPss_Dirty:         12392 kB\nPss_Anon:          12392 kB\nPss_File:             22 kB\nPss_Shmem:             0 kB\nShared_Clean:       1924 kB\nShared_Dirty:          0 kB\nPrivate_Clean:         0 kB\nPrivate_Dirty:     12392 kB\nReferenced:        14316 kB\nAnonymous:         12392 kB\nKSM:                   0 kB\nLazyFree:              0 kB\nAnonHugePages:     12288 kB\nShmemPmdMapped:        0 kB\nFilePmdMapped:         0 kB\nShared_Hugetlb:        0 kB\nPrivate_Hugetlb:       0 kB\nSwap:                  0 kB\nSwapPss:               0 kB\nLocked:                0 kB\n",
+        "oom_score": "800\n",
+        "oom_score_adj": "200\n",
+        "stat": "40781 (memhog) S 40725 40725 40725 0 -1 4194304 315 0 0 0 0 0 0 0 20 0 1 0 8962133 70135808 3547 18446744073709551615 94230426583040 94230426593289 140727216901952 0 0 0 0 0 16386 1 0 0 17 4 0 0 0 0 0 94230426602960 94230426603784 94230998405120 140727216908475 140727216908514 140727216908514 140727216910319 0\n"
+      },
+      "40758": {
+        "smaps_rollup": "555b090f2000-7fffedbff000 ---p 00000000 00:00 0                          [rollup]\nRss:               67564 kB\nPss:               65662 kB\nPss_Dirty:         65640 kB\nPss_Anon:          65640 kB\nPss_File:             22 kB\nPss_Shmem:             0 kB\nShared_Clean:       1924 kB\nShared_Dirty:          0 kB\nPrivate_Clean:         0 kB\nPrivate_Dirty:     65640 kB\nReferenced:        67564 kB\nAnonymous:         65640 kB\nKSM:                   0 kB\nLazyFree:              0 kB\nAnonHugePages:     65536 kB\nShmemPmdMapped:        0 kB\nFilePmdMapped:         0 kB\nShared_Hugetlb:        0 kB\nPrivate_Hugetlb:       0 kB\nSwap:                  0 kB\nSwapPss:               0 kB\nLocked:                0 kB\n",
+        "oom_score": "802\n",
+        "oom_score_adj": "200\n",
+        "stat": "40758 (memhog) S 40725 40725 40725 0 -1 4194304 101 0 0 0 0 0 0 0 20 0 1 0 8962078 70135808 16859 18446744073709551615 93849482375168 93849482385417 140737182160720 0 0 0 0 0 16386 1 0 0 17 11 0 0 0 0 0 93849482395088 93849482395912 93849655672832 140737182165188 140737182165218 140737182165218 140737182167023 0\n"
+      }
+    }
+  },
+  {
+    "t": 6162.501300617,
+    "group": {
+      "memory.current": "26132480",
+      "memory.peak": "26132480",
+      "memory.stat": "anon 25272320\nfile 4096\nkernel 114688\nkernel_stack 0\npagetables 102400\nsec_pagetables 0\npercpu 320\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 4096\nfile_writeback 0\nswapcached 0\nanon_thp 25165824\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 25272320\ninactive_file 4096\nactive_file 0\nunevictable 0\nslab_reclaimable 0\nslab_unreclaimable 9664\nslab 9664\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 0\npgsteal 0\npswpin 0\npswpout 0\npgfault 80\npgmajfault 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 12\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0",
+      "memory.pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=0\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+      "memory.events.local": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+      "memory.max": "41943040",
+      "memory.high": "max",
+      "memory.swap.max": "0",
+      "cgroup.procs": "40781"
+    },
+    "processes": {
+      "40781": {
+        "smaps_rollup": "55b3bb1a7000-7ffd9bc63000 ---p 00000000 00:00 0                          [rollup]\nRss:               26604 kB\nPss:               24702 kB\nPss_Dirty:         24680 kB\nPss_Anon:          24680 kB\nPss_File:             22 kB\nPss_Shmem:             0 kB\nShared_Clean:       1924 kB\nShared_Dirty:          0 kB\nPrivate_Clean:         0 kB\nPrivate_Dirty:     24680 kB\nReferenced:        26604 kB\nAnonymous:         24680 kB\nKSM:                   0 kB\nLazyFree:              0 kB\nAnonHugePages:     24576 kB\nShmemPmdMapped:        0 kB\nFilePmdMapped:         0 kB\nShared_Hugetlb:        0 kB\nPrivate_Hugetlb:       0 kB\nSwap:                  0 kB\nSwapPss:               0 kB\nLocked:                0 kB\n",
+        "oom_score": "800\n",
+        "oom_score_adj": "200\n",
+        "stat": "40781 (memhog) S 40725 40725 40725 0 -1 4194304 321 0 0 0 0 0 0 0 20 0 1 0 8962133 70135808 6619 18446744073709551615 94230426583040 94230426593289 140727216901952 0 0 0 0 0 16386 1 0 0 17 6 0 0 0 0 0 94230426602960 94230426603784 94230998405120 140727216908475 140727216908514 140727216908514 140727216910319 0\n"
+      },
+      "40758": {
+        "smaps_rollup": "555b090f2000-7fffedbff000 ---p 00000000 00:00 0                          [rollup]\nRss:               67564 kB\nPss:               65662 kB\nPss_Dirty:         65640 kB\nPss_Anon:          65640 kB\nPss_File:             22 kB\nPss_Shmem:             0 kB\nShared_Clean:       1924 kB\nShared_Dirty:          0 kB\nPrivate_Clean:         0 kB\nPrivate_Dirty:     65640 kB\nReferenced:        67564 kB\nAnonymous:         65640 kB\nKSM:                   0 kB\nLazyFree:              0 kB\nAnonHugePages:     65536 kB\nShmemPmdMapped:        0 kB\nFilePmdMapped:         0 kB\nShared_Hugetlb:        0 kB\nPrivate_Hugetlb:       0 kB\nSwap:                  0 kB\nSwapPss:               0 kB\nLocked:                0 kB\n",
+        "oom_score": "802\n",
+        "oom_score_adj": "200\n",
+        "stat": "40758 (memhog) S 40725 40725 40725 0 -1 4194304 101 0 0 0 0 0 0 0 20 0 1 0 8962078 70135808 16859 18446744073709551615 93849482375168 93849482385417 140737182160720 0 0 0 0 0 16386 1 0 0 17 11 0 0 0 0 0 93849482395088 93849482395912 93849655672832 140737182165188 140737182165218 140737182165218 140737182167023 0\n"
+      }
+    }
+  },
+  {
+    "t": 6162.682161119,
+    "group": {
+      "memory.current": "38715392",
+      "memory.peak": "38715392",
+      "memory.stat": "anon 37855232\nfile 4096\nkernel 139264\nkernel_stack 0\npagetables 126976\nsec_pagetables 0\npercpu 320\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 4096\nfile_writeback 0\nswapcached 0\nanon_thp 37748736\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 37855232\ninactive_file 4096\nactive_file 0\nunevictable 0\nslab_reclaimable 0\nslab_unreclaimable 9664\nslab 9664\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 0\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 0\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 0\npgsteal 0\npswpin 0\npswpout 0\npgfault 86\npgmajfault 0\npgactivate 0\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 18\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0",
+      "memory.pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=0\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+      "memory.events.local": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+      "memory.max": "41943040",
+      "memory.high": "max",
+      "memory.swap.max": "0",
+      "cgroup.procs": "40781"
+    },
+    "processes": {
+      "40781": {
+        "smaps_rollup": "55b3bb1a7000-7ffd9bc63000 ---p 00000000 00:00 0                          [rollup]\nRss:               38892 kB\nPss:               36990 kB\nPss_Dirty:         36968 kB\nPss_Anon:          36968 kB\nPss_File:             22 kB\nPss_Shmem:             0 kB\nShared_Clean:       1924 kB\nShared_Dirty:          0 kB\nPrivate_Clean:         0 kB\nPrivate_Dirty:     36968 kB\nReferenced:        38892 kB\nAnonymous:         36968 kB\nKSM:                   0 kB\nLazyFree:              0 kB\nAnonHugePages:     36864 kB\nShmemPmdMapped:        0 kB\nFilePmdMapped:         0 kB\nShared_Hugetlb:        0 kB\nPrivate_Hugetlb:       0 kB\nSwap:                  0 kB\nSwapPss:               0 kB\nLocked:                0 kB\n",
+        "oom_score": "800\n",
+        "oom_score_adj": "200\n",
+        "stat": "40781 (memhog) S 40725 40725 40725 0 -1 4194304 327 0 0 0 0 0 0 0 20 0 1 0 8962133 70135808 9691 18446744073709551615 94230426583040 94230426593289 140727216901952 0 0 0 0 0 16386 1 0 0 17 4 0 0 0 0 0 94230426602960 94230426603784 94230998405120 140727216908475 140727216908514 140727216908514 140727216910319 0\n"
+      },
+      "40758": {
+        "smaps_rollup": "555b090f2000-7fffedbff000 ---p 00000000 00:00 0                          [rollup]\nRss:               67564 kB\nPss:               65662 kB\nPss_Dirty:         65640 kB\nPss_Anon:          65640 kB\nPss_File:             22 kB\nPss_Shmem:             0 kB\nShared_Clean:       1924 kB\nShared_Dirty:          0 kB\nPrivate_Clean:         0 kB\nPrivate_Dirty:     65640 kB\nReferenced:        67564 kB\nAnonymous:         65640 kB\nKSM:                   0 kB\nLazyFree:              0 kB\nAnonHugePages:     65536 kB\nShmemPmdMapped:        0 kB\nFilePmdMapped:         0 kB\nShared_Hugetlb:        0 kB\nPrivate_Hugetlb:       0 kB\nSwap:                  0 kB\nSwapPss:               0 kB\nLocked:                0 kB\n",
+        "oom_score": "802\n",
+        "oom_score_adj": "200\n",
+        "stat": "40758 (memhog) S 40725 40725 40725 0 -1 4194304 101 0 0 0 0 0 0 0 20 0 1 0 8962078 70135808 16859 18446744073709551615 93849482375168 93849482385417 140737182160720 0 0 0 0 0 16386 1 0 0 17 11 0 0 0 0 0 93849482395088 93849482395912 93849655672832 140737182165188 140737182165218 140737182165218 140737182167023 0\n"
+      }
+    }
+  },
+  {
+    "t": 6162.86298188,
+    "group": {
+      "memory.current": "147456",
+      "memory.peak": "41943040",
+      "memory.stat": "anon 0\nfile 0\nkernel 8192\nkernel_stack 0\npagetables 4096\nsec_pagetables 0\npercpu 320\nsock 0\nvmalloc 0\nshmem 0\nzswap 0\nzswapped 0\nzswap_incomp 0\nfile_mapped 0\nfile_dirty 0\nfile_writeback 0\nswapcached 0\nanon_thp 0\nfile_thp 0\nshmem_thp 0\ninactive_anon 0\nactive_anon 0\ninactive_file 0\nactive_file 0\nunevictable 0\nslab_reclaimable 0\nslab_unreclaimable 2064\nslab 2064\nhugetlb 0\nworkingset_refault_anon 0\nworkingset_refault_file 0\nworkingset_activate_anon 0\nworkingset_activate_file 0\nworkingset_restore_anon 0\nworkingset_restore_file 0\nworkingset_nodereclaim 0\npgdemote_kswapd 0\npgdemote_direct 0\npgdemote_khugepaged 0\npgdemote_proactive 0\npgsteal_kswapd 0\npgsteal_direct 1\npgsteal_khugepaged 0\npgsteal_proactive 0\npgscan_kswapd 0\npgscan_direct 5\npgscan_khugepaged 0\npgscan_proactive 0\npgrefill 0\npgpromote_success 0\npgscan 5\npgsteal 1\npswpin 0\npswpout 0\npgfault 538\npgmajfault 0\npgactivate 4\npgdeactivate 0\npglazyfree 0\npglazyfreed 0\nswpin_zero 0\nswpout_zero 0\nzswpin 0\nzswpout 0\nzswpwb 0\nthp_fault_alloc 19\nthp_collapse_alloc 0\nthp_swpout 0\nthp_swpout_fallback 0\nnuma_pages_migrated 0\nnuma_pte_updates 0\nnuma_hint_faults 0",
+      "memory.pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=275\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=275",
+      "memory.events": "low 0\nhigh 0\nmax 39\noom 1\noom_kill 1\noom_group_kill 0\nsock_throttled 0",
+      "memory.events.local": "low 0\nhigh 0\nmax 39\noom 1\noom_kill 1\noom_group_kill 0\nsock_throttled 0",
+      "memory.max": "41943040",
+      "memory.high": "max",
+      "memory.swap.max": "0",
+      "cgroup.procs": ""
+    },
+    "processes": {
+      "40781": {
+        "status": "[Errno 2] No such file or directory: '/proc/40781/smaps_rollup'"
+      },
+      "40758": {
+        "smaps_rollup": "555b090f2000-7fffedbff000 ---p 00000000 00:00 0                          [rollup]\nRss:               67564 kB\nPss:               65664 kB\nPss_Dirty:         65640 kB\nPss_Anon:          65640 kB\nPss_File:             24 kB\nPss_Shmem:             0 kB\nShared_Clean:       1924 kB\nShared_Dirty:          0 kB\nPrivate_Clean:         0 kB\nPrivate_Dirty:     65640 kB\nReferenced:        67564 kB\nAnonymous:         65640 kB\nKSM:                   0 kB\nLazyFree:              0 kB\nAnonHugePages:     65536 kB\nShmemPmdMapped:        0 kB\nFilePmdMapped:         0 kB\nShared_Hugetlb:        0 kB\nPrivate_Hugetlb:       0 kB\nSwap:                  0 kB\nSwapPss:               0 kB\nLocked:                0 kB\n",
+        "oom_score": "802\n",
+        "oom_score_adj": "200\n",
+        "stat": "40758 (memhog) S 40725 40725 40725 0 -1 4194304 101 0 0 0 0 0 0 0 20 0 1 0 8962078 70135808 16859 18446744073709551615 93849482375168 93849482385417 140737182160720 0 0 0 0 0 16386 1 0 0 17 11 0 0 0 0 0 93849482395088 93849482395912 93849655672832 140737182165188 140737182165218 140737182165218 140737182167023 0\n"
+      }
+    }
+  }
+]

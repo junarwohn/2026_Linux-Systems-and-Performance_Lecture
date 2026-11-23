@@ -1,0 +1,183 @@
+#!/usr/bin/env python3
+import argparse
+import ctypes as c
+import ctypes.util
+import json
+import math
+import os
+from pathlib import Path
+import sys
+import time
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "common"))
+from allocator import slabs, meminfo
+
+NAMES = ("raw_cache_alloc", "raw_cache_free", "raw_kmalloc", "raw_kfree",
+         "filtered_cache_alloc", "filtered_cache_free", "filtered_kmalloc", "filtered_kfree",
+         "requested_B", "allocated_B", "insert_errors", "name_read_errors", "name_truncations")
+
+
+class Activity(c.Structure):
+    _fields_ = [(key, c.c_uint64) for key in ("alloc", "free", "requested", "allocated")]
+
+
+class Collector:
+    def __init__(self, file):
+        self.lib = c.CDLL(ctypes.util.find_library("bpf") or "libbpf.so.1", use_errno=True)
+        p, s, i = c.c_void_p, c.c_char_p, c.c_int
+        for name, result, args in (
+            ("bpf_object__open_file", p, [s, p]), ("libbpf_get_error", c.c_long, [p]),
+            ("bpf_object__load", i, [p]), ("bpf_object__close", None, [p]),
+            ("bpf_object__find_program_by_name", p, [p, s]),
+            ("bpf_program__attach_raw_tracepoint", p, [p, s]), ("bpf_link__destroy", i, [p]),
+            ("bpf_object__find_map_fd_by_name", i, [p, s]),
+            ("bpf_map_get_next_key", i, [i, p, p]), ("bpf_map_lookup_elem", i, [i, p, p]),
+        ):
+            fn = getattr(self.lib, name)
+            fn.argtypes, fn.restype = args, result
+        self.links = []
+        self.obj = None
+        obj = self.lib.bpf_object__open_file(os.fsencode(file), None)
+        self.pointer(obj, "open BPF object")
+        self.obj = obj
+        try:
+            self.check(self.lib.bpf_object__load(obj), "load BPF object")
+            for func, event in ((b"on_cache_alloc", b"kmem_cache_alloc"),
+                                (b"on_cache_free", b"kmem_cache_free"),
+                                (b"on_kmalloc", b"kmalloc"), (b"on_kfree", b"kfree")):
+                prog = self.lib.bpf_object__find_program_by_name(obj, func)
+                self.pointer(prog, f"find {func.decode()}")
+                link = self.lib.bpf_program__attach_raw_tracepoint(prog, event)
+                self.pointer(link, f"attach {event.decode()}")
+                self.links.append(link)
+                print(f"attached={event.decode()}", file=sys.stderr)
+            self.fds = {}
+            for name in ("diagnostics", "cache_events", "size_events"):
+                fd = self.lib.bpf_object__find_map_fd_by_name(obj, name.encode())
+                self.check(fd, f"find map {name}")
+                self.fds[name] = fd
+        except BaseException:
+            self.close()
+            raise
+
+    def pointer(self, ptr, label):
+        rc = self.lib.libbpf_get_error(ptr)
+        if rc or not ptr:
+            raise OSError(-rc or c.get_errno() or 2, label)
+
+    @staticmethod
+    def check(rc, label):
+        if rc < 0:
+            raise OSError(c.get_errno() if rc == -1 and c.get_errno() else -rc, label)
+
+    def close(self):
+        for link in self.links:
+            self.lib.bpf_link__destroy(link)
+        if self.obj:
+            self.lib.bpf_object__close(self.obj)
+
+    def lookup(self, fd, key, value):
+        self.check(self.lib.bpf_map_lookup_elem(fd, c.byref(key), c.byref(value)), "BPF lookup")
+
+    def values(self, name, key_type):
+        fd = self.fds[name]
+        key, following, current = key_type(), key_type(), None
+        result = {}
+        while True:
+            rc = self.lib.bpf_map_get_next_key(fd, current, c.byref(following))
+            if rc < 0 and c.get_errno() == 2:
+                return result
+            self.check(rc, f"iterate {name}")
+            c.memmove(c.byref(key), c.byref(following), c.sizeof(key))
+            current = c.byref(key)
+            value = Activity()
+            self.lookup(fd, key, value)
+            label = key.value.decode(errors="replace") if isinstance(key.value, bytes) else key.value
+            result[label] = tuple(getattr(value, field) for field, _ in Activity._fields_)
+
+    def stats(self):
+        totals = {}
+        for i, name in enumerate(NAMES):
+            value = c.c_uint64()
+            self.lookup(self.fds["diagnostics"], c.c_uint32(i), value)
+            totals[name] = value.value
+        return totals
+
+
+def display(args, collector):
+    stats = collector.stats()
+    now = time.monotonic()
+    print(json.dumps({"diagnostics_start": stats, "t_monotonic_s": now}), flush=True)
+    map_name, key = ("cache_events", c.c_char * 64) if args.view == "cache" else ("size_events", c.c_uint64)
+    old = collector.values(map_name, key)
+    then = time.monotonic()
+    print("Event rates warming up", file=sys.stderr)
+    zeros = (0, 0, 0, 0)
+    try:
+        while True:
+            time.sleep(args.interval)
+            current = collector.values(map_name, key)
+            current_stats = collector.stats()
+            now = time.monotonic()
+            dt = now - then
+            rows = []
+            if args.view == "cache":
+                snapshot, aliases = slabs()
+                for name in sorted(current.keys() | snapshot.keys()):
+                    a, f, _, _ = ((x-y)/dt for x, y in zip(current.get(name, zeros), old.get(name, zeros)))
+                    rows.append({"name": name, **snapshot.get(aliases.get(name,name), {}),
+                                 "CACHE_ALLOC_EVT/s": a, "CACHE_FREE_EVT/s": f})
+                sortkey = {"size":"cache_KiB", "objects":"total_objects", "use":"utilization_pct",
+                           "alloc":"CACHE_ALLOC_EVT/s", "free":"CACHE_FREE_EVT/s"}
+                if args.sort != "name":
+                    field = sortkey[args.sort]
+                    rows.sort(key=lambda row: (-(row[field] if row.get(field) is not None else -1), row["name"]))
+                summary = {}
+                for field in ("active_objects", "total_objects", "active_slabs", "total_slabs"):
+                    values = [item[field] for item in snapshot.values()]
+                    summary[field] = sum(values) if values and None not in values else None
+                for numerator, denominator, field in (("active_objects","total_objects","object_use_pct"),
+                                                       ("active_slabs","total_slabs","slab_ratio_pct")):
+                    a, b = summary[numerator], summary[denominator]
+                    summary[field] = 100*a/b if a is not None and b else None
+            else:
+                for size, values in current.items():
+                    a, _, r, actual = ((x-y)/dt for x, y in zip(values, old.get(size, zeros)))
+                    rows.append({"requested_B": size, "alloc/s":a, "requested_KiB/s":r/1024,
+                                 "allocated_KiB/s":actual/1024,"rounding_KiB/s":(actual-r)/1024})
+                rows.sort(key=lambda row: (-row["alloc/s"], row["requested_B"]))
+                summary = {"global_kfree/s": (current_stats["filtered_kfree"]-stats["filtered_kfree"])/dt}
+            print(json.dumps({"t_monotonic_s": now, "elapsed_s":dt, "summary":summary, "meminfo":meminfo(),
+                              "diagnostics":current_stats, "rows":rows[:args.top]}), flush=True)
+            then, old, stats = now, current, current_stats
+    finally:
+        print(json.dumps({"diagnostics_end":collector.stats(), "t_monotonic_s":time.monotonic()}), flush=True)
+
+
+def main():
+    p = argparse.ArgumentParser(description="Rates cover the four named kmem events only.")
+    p.add_argument("--interval", type=float, default=2)
+    p.add_argument("--top", type=int, default=10)
+    p.add_argument("--sort", choices=("size","objects","use","name","alloc","free"))
+    p.add_argument("--view", choices=("cache","kmalloc"), default="cache")
+    a = p.parse_args()
+    if a.top < 1 or not math.isfinite(a.interval) or a.interval <= 0:
+        p.error("interval and top must be positive")
+    if a.view == "kmalloc" and a.sort not in (None, "alloc"):
+        p.error("kmalloc view supports --sort alloc only")
+    a.sort = a.sort or ("alloc" if a.view == "kmalloc" else "size")
+    try:
+        collector = Collector(ROOT / "slab_events.bpf.o")
+        try:
+            display(a, collector)
+        finally:
+            collector.close()
+    except KeyboardInterrupt:
+        return 0
+    except OSError as exc:
+        p.exit(1, f"BPF rates unavailable: {exc.strerror or exc} (errno {exc.errno})\n")
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

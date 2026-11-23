@@ -1,0 +1,20 @@
+
+STAGE 1 IDLE PID=27787
+NEXT: allocate and touch an extra 80MiB
+WAITING: inspect in terminal B, then press ENTER here.
+
+STAGE 2 PEAK PID=27787
+NEXT: release temporary buffer
+WAITING: inspect in terminal B, then press ENTER here.
+
+STAGE 3 RETURNED PID=27787
+NEXT: repeat the same peak
+WAITING: inspect in terminal B, then press ENTER here.
+
+STAGE 4 SECOND_PEAK PID=27787
+NEXT: release temporary buffer again
+WAITING: inspect in terminal B, then press ENTER here.
+
+STAGE 5 RETURNED_AGAIN PID=27787
+NEXT: exit
+WAITING: inspect in terminal B, then press ENTER here.

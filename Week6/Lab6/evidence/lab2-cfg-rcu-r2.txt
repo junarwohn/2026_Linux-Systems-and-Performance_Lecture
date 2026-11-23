@@ -1,0 +1,4 @@
+cfgread: mode=rcu readers=2 cpus=18 seconds=2 update_us=1000
+reads=1471632500 ns_per_read=2.7 bad_reads=0
+updates=1709 update_us: p50=104 max=831
+grace_period_us: p50=104 max=831

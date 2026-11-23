@@ -1,0 +1,15 @@
+7.3.4-arch1-2
+4096
+clang version 23.1.5
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+1.8.0
+btrfs
+[always] madvise never
+-r-------- 1 root root       0 Nov 23 23:57 /proc/slabinfo
+-r--r--r-- 1 root root 6598963 Nov 22 23:22 /sys/kernel/btf/vmlinux
+ls: cannot access '/sys/kernel/tracing/events/kmem': Permission denied
+libbpf: Failed to bump RLIMIT_MEMLOCK (err = -EPERM), you might need to do it explicitly!
+libbpf: Error in bpf_object__probe_loading(): -EPERM. Couldn't load trivial BPF program. Make sure your kernel supports BPF (CONFIG_BPF_SYSCALL=y) and/or that RLIMIT_MEMLOCK is set to big enough value.
+BPF rates unavailable: load BPF object (errno 1)

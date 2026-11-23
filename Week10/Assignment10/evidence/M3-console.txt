@@ -1,0 +1,8 @@
+Running as unit: run-p37676-i62792.service
+M3-original [0]
+M3-fixed [0]
+          Finished with result: success
+Main processes terminated with: code=exited, status=0/SUCCESS
+               Service runtime: 11.754s
+             CPU time consumed: 520ms
+                   Memory peak: 60.8M (swap: 0B)

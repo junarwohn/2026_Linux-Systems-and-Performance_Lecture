@@ -1,12 +1,14 @@
-# Linux Systems and Performance — Week6·Week7 과제 정리
+# Linux Systems and Performance — Week 6~10
 
-Week6·Week7 과제의 구현 내용, 실행 방법, 검증 결과와 제출 자료를 정리했다.
-아래 상태는 보관된 실험 로그를 기준으로 하며, 이번 README 정리에서 성능 실험을 다시 실행하지 않았다.
+| 주차 | Lab 보고서 | Assignment 보고서 및 제출 자료 | 실측 상태 |
+|---|---|---|---|
+| Week 6 | [동시성 실습](Week6/Lab6/report.md) | [Concurrency](Week6/Assignment6/concurrency/report.md) · [tar.gz](Week6/Assignment6/assignment6_submission.tar.gz) · [futex 후속 측정](Week6/Assignment6/local-evidence/README.md) | Lab 및 제출 기능 검증. bpftrace·perf 계측 미수집 |
+| Week 7 | [메모리 매핑 실습](Week7/Lab7/report.md) | [Process Memory](Week7/Assignment7/virtual_memory/report.md) · [tar.gz](Week7/Assignment7/assignment7_submission.tar.gz) | Lab checkpoint 및 필수 과제 실험 |
+| Week 8 | [Page Fault 실습](Week8/Lab8/report.md) | [보고서](Week8/Assignment8/report.md) · [구현·실행](Week8/Assignment8/README.md) | 페이지·allocator 실험 3회. root slabinfo·BPF attach 필요 |
+| Week 9 | [PSI·회수 실습](Week9/Lab9/report.md) | [보고서](Week9/Assignment9/report.md) · [구현·실행](Week9/Assignment9/README.md) | 반복 cgroup 비교·zram·PSI trigger. 전역 회수·디스크 swap·sysctl 비교 미측정 |
+| Week 10 | [메모리 진단 실습](Week10/Lab10/report.md) | [보고서](Week10/Assignment10/report.md) · [구현·실행](Week10/Assignment10/README.md) | memcg OOM·M1~M3 전후 측정. 전역 A/D 및 지정 보드 실험 미측정 |
 
-| 과제 | 진행 상태 | 구현·실행 안내 | 분석 보고서 | 제출 묶음 |
-|---|---|---|---|---|
-| Week6 — Concurrency | Level 1~3 구현 및 제공 기능 검증 완료. bpftrace·perf 필수 계측 미완료 | [README](Week6/Assignment6/concurrency/README.md) | [보고서](Week6/Assignment6/concurrency/report.md) | [tar.gz](Week6/Assignment6/assignment6_submission.tar.gz) |
-| Week7 — Process Memory | 필수 Level 1~3 구현·실험·검증 완료 | [README](Week7/Assignment7/virtual_memory/README.md) | [보고서](Week7/Assignment7/virtual_memory/report.md) | [tar.gz](Week7/Assignment7/assignment7_submission.tar.gz) |
+Week 6·7의 두 submission tar를 풀어 SHA-256 manifest와 기존 디렉터리를 각각 확인했다. Week 6의 257개, Week 7의 624개 파일이 모두 일치했다. Week 9·10은 위임된 transient cgroup에서 제한과 범위를 증명했고, 나머지 실측 조건은 각 보고서에 남겼다.
 
 ## Week6 — Concurrency
 

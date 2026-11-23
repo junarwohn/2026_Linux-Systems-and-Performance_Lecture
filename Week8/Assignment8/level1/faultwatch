@@ -1,0 +1,205 @@
+#!/usr/bin/env python3
+import argparse
+import os
+from pathlib import Path
+import signal
+import struct
+import subprocess
+import time
+
+PAGE = os.sysconf("SC_PAGE_SIZE")
+MEMORY = ("VmRSS", "RssAnon", "RssFile", "RssShmem", "VmPTE")
+SMAPS = ("Pss", "Private_Dirty", "Shared_Clean", "AnonHugePages")
+
+
+def aligned_range(value):
+    try:
+        start, end = (int(item, 16) for item in value.split("-"))
+        if 0 <= start < end <= 1 << 64 and start % PAGE == end % PAGE == 0:
+            return start, end
+    except ValueError:
+        pass
+    raise argparse.ArgumentTypeError("expected increasing hexadecimal page-aligned START-END")
+
+
+def region(root, bounds, pfn):
+    start, end = bounds
+    cap = next(line.split()[1] for line in Path("/proc/self/status").read_text().splitlines()
+               if line.startswith("CapEff:"))
+    disclose = pfn and bool(int(cap, 16) & (1 << 21)) and Path("/proc/self/uid_map").read_text().split() == ["0", "0", "4294967295"]
+    present = swapped = exclusive = 0
+    frames = set()
+    count = (end - start) // PAGE
+    with (root / "pagemap").open("rb", buffering=0) as f:
+        for index in range(0, count, 4096):
+            entries = min(4096, count - index)
+            data = os.pread(f.fileno(), 8 * entries, 8 * (start // PAGE + index))
+            if len(data) != entries * 8:
+                raise OSError(f"short pagemap read after {index} pages")
+            for entry, in struct.iter_unpack("=Q", data):
+                if entry >> 63:
+                    present += 1
+                    exclusive += (entry >> 56) & 1
+                    if disclose:
+                        frames.add(entry & ((1 << 55) - 1))
+                elif entry & (1 << 62):
+                    swapped += 1
+    result = dict(start=hex(start), end=hex(end), present=present, swapped=swapped,
+                  neither=count-present-swapped, exclusive_present=exclusive)
+    if pfn:
+        if present and frames == {0}:
+            disclose = False
+        result["PFNs"] = sorted(frames) if disclose else "N/A (PFN access unavailable)"
+        result["distinct_frames"] = len(frames) if disclose else "N/A"
+    return result
+
+
+def snapshot(pid, bounds=None, pfn=False):
+    root = Path("/proc", str(pid))
+    sample = {"pid": pid, "t_monotonic_s": time.monotonic()}
+
+    def read(file, parse):
+        try:
+            parse((root / file).read_text())
+        except (OSError, ValueError, IndexError) as exc:
+            sample[file + "_status"] = f"N/A ({exc})"
+
+    def stat(raw):
+        fields = raw[raw.rindex(")") + 1:].split()
+        sample.update(minflt=int(fields[7]), majflt=int(fields[9]), start_ticks=int(fields[19]))
+
+    def memory(raw, keys, sum_values):
+        for line in raw.splitlines():
+            name, _, value = line.partition(":")
+            if name in keys:
+                key = name + "_KiB"
+                sample[key] = (sample.get(key, 0) if sum_values else 0) + int(value.split()[0])
+
+    read("stat", stat)
+    read("status", lambda raw: memory(raw, MEMORY, False))
+    read("smaps", lambda raw: memory(raw, SMAPS, True))
+    for key in MEMORY + SMAPS:
+        sample.setdefault(key + "_KiB", "N/A")
+    if bounds:
+        try:
+            sample["range"] = region(root, bounds, pfn)
+        except OSError as exc:
+            sample["range"] = f"N/A ({exc})"
+    return sample
+
+
+def display(sample, previous, start):
+    import json
+    sample["elapsed_s"] = round(sample["t_monotonic_s"] - start, 6)
+    sample["sample_kind"] = "baseline" if previous is None else "interval"
+    same = previous and previous.get("start_ticks") == sample.get("start_ticks")
+    for key in ("minflt", "majflt"):
+        value = sample.get(key)
+        old = previous.get(key) if same else None
+        sample[key + "_delta"] = value - old if value is not None and old is not None else "N/A"
+    print(json.dumps(sample), flush=True)
+
+
+def wait(pid, flags):
+    result, status, usage = os.wait4(pid, flags)
+    if result:
+        print(f"exit pid={pid} status={os.waitstatus_to_exitcode(status)} "
+              f"minflt_total={usage.ru_minflt} majflt_total={usage.ru_majflt}", flush=True)
+        return os.waitstatus_to_exitcode(status)
+    return None
+
+
+def command_mode(command, delay, interval):
+    proc = subprocess.Popen(command, start_new_session=True)
+    start = time.monotonic()
+    previous = None
+    next_sample = start + delay
+    try:
+        while True:
+            status = wait(proc.pid, os.WNOHANG)
+            if status is not None:
+                proc.returncode = status
+                return status if status >= 0 else 128 - status
+            now = time.monotonic()
+            if now >= next_sample:
+                sample = snapshot(proc.pid)
+                display(sample, previous, start)
+                previous = sample
+                if interval is None:
+                    proc.returncode = wait(proc.pid, 0)
+                    return proc.returncode if proc.returncode >= 0 else 128 - proc.returncode
+                next_sample = now + interval
+            time.sleep(min(.05, max(0, next_sample - time.monotonic())))
+    except KeyboardInterrupt:
+        timeout = 1.0
+        print(f"interrupt: process-group TERM grace_s={timeout}", flush=True)
+        try:
+            os.killpg(proc.pid, signal.SIGTERM)
+        except ProcessLookupError:
+            pass
+        deadline = time.monotonic() + timeout
+        while time.monotonic() < deadline:
+            if proc.returncode is None:
+                proc.returncode = wait(proc.pid, os.WNOHANG)
+            try:
+                os.killpg(proc.pid, 0)
+            except ProcessLookupError:
+                break
+            time.sleep(.02)
+        try:
+            os.killpg(proc.pid, signal.SIGKILL)
+        except ProcessLookupError:
+            pass
+        if proc.returncode is None:
+            proc.returncode = wait(proc.pid, 0)
+        return 130
+
+
+def main():
+    import sys
+    import math
+    argv = sys.argv[1:]
+    command = None
+    if "--" in argv:
+        cut = argv.index("--")
+        command, argv = argv[cut + 1:], argv[:cut]
+    parser = argparse.ArgumentParser(description="Read per-process Linux memory and fault counters")
+    parser.add_argument("pid", nargs="?", type=int)
+    parser.add_argument("--range", type=aligned_range)
+    parser.add_argument("--pfn", action="store_true")
+    parser.add_argument("--interval", type=float)
+    parser.add_argument("--delay", type=float)
+    args = parser.parse_args(argv)
+    for label, value, minimum in (("interval", args.interval, 1e-9), ("delay", args.delay, 0)):
+        if value is not None and (not math.isfinite(value) or value < minimum):
+            parser.error(f"invalid --{label}")
+    if command is not None:
+        if not command or args.pid is not None or args.range or args.pfn:
+            parser.error("command mode needs a command and accepts only --delay and --interval")
+        try:
+            return command_mode(command, 1 if args.delay is None else args.delay, args.interval)
+        except OSError as exc:
+            parser.exit(1, f"{exc}\n")
+    if not args.pid or args.pid < 0 or args.delay is not None or (args.pfn and not args.range):
+        parser.error("PID mode requires a positive PID and --pfn requires --range")
+    previous = None
+    start = time.monotonic()
+    try:
+        while True:
+            sample = snapshot(args.pid, args.range, args.pfn)
+            if previous and sample.get("start_ticks") != previous.get("start_ticks"):
+                print("target exited or PID identity changed", file=sys.stderr)
+                return 0
+            display(sample, previous, start)
+            if "start_ticks" not in sample:
+                return 1
+            if args.interval is None:
+                return 0
+            previous = sample
+            time.sleep(args.interval)
+    except KeyboardInterrupt:
+        return 130
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

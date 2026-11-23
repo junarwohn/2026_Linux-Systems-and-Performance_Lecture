@@ -1,0 +1,26 @@
+{
+  "commands": [
+    [
+      "./memhog",
+      "anon",
+      "64MiB",
+      "--rate",
+      "64",
+      "--hold",
+      "2"
+    ]
+  ],
+  "start_s": 6161.829062245,
+  "limits": {
+    "max_mib": 40
+  },
+  "group": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p40723-i43256.service/lab10-oom-B-outside",
+  "scope": "fresh systemd user service",
+  "page_B": 4096,
+  "launch_s": 6162.130565049,
+  "returncodes": [
+    -9
+  ],
+  "end_s": 6162.926592699,
+  "termination": "memcg OOM"
+}

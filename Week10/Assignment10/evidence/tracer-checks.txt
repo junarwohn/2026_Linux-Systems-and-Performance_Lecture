@@ -1,0 +1,5 @@
+alloctrace reason=SIGUSR1 pid=37216 live_bytes=24576 live_objects=2 dropped=0 ungrouped_objects=0
+site=0x56480f26c562 module=build/tracer_checks offset=0x1562 bytes=16384 objects=1
+site=0x56480f26c3fc module=build/tracer_checks offset=0x13fc bytes=8192 objects=1
+alloctrace reason=exit pid=37216 live_bytes=1152 live_objects=4 dropped=0 ungrouped_objects=0
+site=0x7f137f43a460 module=/lib64/ld-linux-x86-64.so.2 offset=0x14460 bytes=1152 objects=4

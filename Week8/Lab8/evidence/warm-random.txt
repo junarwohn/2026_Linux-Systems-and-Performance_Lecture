@@ -1,0 +1,50 @@
+
+=== Lab 2-B: page cache setup / first read / reread ===
+
+warmup read completed outside measured interval
+STAGE file-mapped PID=19437
+VmSize:	   19328 kB
+Rss:                1936 kB
+
+
+============================================================
+NEXT / Enter 이후: first read: read 1 byte per page from the file mapping
+============================================================
+
+touch(p, n, 0, "file-first-read");
+
+============================================================
+
+Enter to continue (record this stage first)
+file-first-read elapsed_ms=0.393 minor=256 major=0 checksum=522917
+STAGE file-resident PID=19437
+VmSize:	   19328 kB
+Rss:               18392 kB
+
+
+============================================================
+NEXT / Enter 이후: reread: read the same file mapping again
+============================================================
+
+touch(p, n, 0, "file-reread");
+
+============================================================
+
+Enter to continue (record this stage first)
+file-reread elapsed_ms=0.057 minor=0 major=0 checksum=522917
+STAGE file-reread-done PID=19437
+VmSize:	   19328 kB
+Rss:               18392 kB
+
+
+============================================================
+NEXT / Enter 이후: cleanup: munmap, close, and exit
+============================================================
+
+munmap((void *)p, n);
+close(fd);
+return 0;
+
+============================================================
+
+Enter to continue (record this stage first)

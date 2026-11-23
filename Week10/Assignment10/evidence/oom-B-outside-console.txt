@@ -1,0 +1,8 @@
+Running as unit: run-p40723-i43256.service
+oom-B-outside [-9]
+outside PID still alive after OOM 40758
+          Finished with result: success
+Main processes terminated with: code=exited, status=0/SUCCESS
+               Service runtime: 1.443s
+             CPU time consumed: 187ms
+                   Memory peak: 123.6M (swap: 0B)

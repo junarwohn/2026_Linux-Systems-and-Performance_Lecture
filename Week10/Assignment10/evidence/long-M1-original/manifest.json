@@ -1,0 +1,33 @@
+{
+  "commands": [
+    [
+      "./scenario",
+      "M1",
+      "--bytes",
+      "128KiB",
+      "--base",
+      "8MiB",
+      "--cycles",
+      "300",
+      "--period",
+      "1",
+      "--seconds",
+      "310",
+      "--seed",
+      "42"
+    ]
+  ],
+  "start_s": 5881.198323973,
+  "limits": {
+    "max_mib": 128
+  },
+  "group": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p35056-i11678.service/lab10-long-M1-original",
+  "scope": "fresh systemd user service",
+  "page_B": 4096,
+  "launch_s": 5881.499954965,
+  "returncodes": [
+    0
+  ],
+  "end_s": 6183.932720002,
+  "termination": "workload completed"
+}

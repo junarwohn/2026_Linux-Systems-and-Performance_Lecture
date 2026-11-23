@@ -1,0 +1,5 @@
+cvbug: mode=iolock items=200 consumers=2 slow_ms=5
+pid=19487
+taken=200 duplicate=0 lost=0 empty_takes=0
+producer lock wait (us): p50=4601 p99=4729 max=4737
+elapsed_ms=1035

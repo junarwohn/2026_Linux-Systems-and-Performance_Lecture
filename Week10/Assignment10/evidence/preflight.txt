@@ -1,0 +1,26 @@
+{
+  "kernel": "7.3.4-arch1-2",
+  "machine": "x86_64",
+  "page_size": 4096,
+  "cpu_count": 18,
+  "gcc": "/usr/bin/gcc",
+  "make": "/usr/bin/make",
+  "self_cgroup": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/app-org.kde.konsole-2361.scope/tab(2372).scope",
+  "controllers": "cpuset cpu io memory hugetlb pids rdma misc dmem",
+  "delegated": "cpu memory pids",
+  "memory_psi": "some avg10=0.00 avg60=0.01 avg300=0.10 total=1035080\nfull avg10=0.00 avg60=0.01 avg300=0.10 total=1010806",
+  "meminfo": "MemTotal:       15902860 kB\nMemFree:         4121712 kB\nMemAvailable:   10205204 kB\nBuffers:            2628 kB\nCached:          8111732 kB\nSwapCached:            0 kB\nActive:          2946728 kB\nInactive:        6219880 kB\nActive(anon):    2946696 kB\nInactive(anon):        0 kB\nActive(file):         32 kB\nInactive(file):  6219880 kB\nUnevictable:     1746052 kB\nMlocked:           39652 kB\nSwapTotal:       4194300 kB\nSwapFree:        4194300 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:               144 kB\nWriteback:             0 kB\nAnonPages:       2652044 kB\nMapped:          1505356 kB\nShmem:           1891308 kB\nKReclaimable:     205596 kB\nSlab:             403468 kB\nSReclaimable:     205596 kB\nSUnreclaim:       197872 kB\nKernelStack:       28192 kB\nPageTables:        76060 kB\nSecPageTables:      2304 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    12145728 kB\nCommitted_AS:   34667456 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       90512 kB\nVmallocChunk:          0 kB\nPercpu:            19680 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:    411648 kB\nShmemHugePages:  1587200 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nGPUActive:             0 kB\nGPUReclaim:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      292680 kB\nDirectMap2M:     6584320 kB\nDirectMap1G:    11534336 kB",
+  "swaps": "Filename\t\t\t\tType\t\tSize\t\tUsed\t\tPriority\n/dev/zram0                              partition\t4194300\t\t0\t\t100",
+  "config": {
+    "overcommit_memory": "0",
+    "overcommit_ratio": "50",
+    "overcommit_kbytes": "0",
+    "panic_on_oom": "0",
+    "oom_kill_allocating_task": "0",
+    "swappiness": "60",
+    "compaction_proactiveness": "20"
+  }
+}
+vm.overcommit_memory = 0
+vm.overcommit_ratio = 50
+dmesg: read kernel buffer failed: Operation not permitted

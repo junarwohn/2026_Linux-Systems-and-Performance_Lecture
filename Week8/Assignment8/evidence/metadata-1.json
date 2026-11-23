@@ -1,0 +1,507 @@
+{
+  "before": [
+    {
+      "section": "meminfo",
+      "key": "system",
+      "value": {
+        "Slab_KiB": 403528,
+        "SReclaimable_KiB": 203744,
+        "SUnreclaim_KiB": 199784,
+        "PageTables_KiB": 76456,
+        "KernelStack_KiB": 28320
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000008",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000024",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000032",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000040",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000048",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000056",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000064",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000072",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000080",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000088",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    }
+  ],
+  "count": 10000,
+  "during": [
+    {
+      "section": "meminfo",
+      "key": "system",
+      "value": {
+        "Slab_KiB": 415004,
+        "SReclaimable_KiB": 214992,
+        "SUnreclaim_KiB": 200012,
+        "PageTables_KiB": 76404,
+        "KernelStack_KiB": 28340
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000008",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000024",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000032",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000040",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000048",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000056",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000064",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000072",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000080",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000088",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": "dentry",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    }
+  ],
+  "after": [
+    {
+      "section": "meminfo",
+      "key": "system",
+      "value": {
+        "Slab_KiB": 405128,
+        "SReclaimable_KiB": 205400,
+        "SUnreclaim_KiB": 199728,
+        "PageTables_KiB": 76116,
+        "KernelStack_KiB": 28240
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000008",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000024",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000032",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000040",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000048",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000056",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000064",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000072",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000080",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    },
+    {
+      "section": "slab",
+      "key": ":0000088",
+      "value": {
+        "active_objects": null,
+        "total_objects": null,
+        "object_B": null,
+        "objects_per_slab": null,
+        "pages_per_slab": null,
+        "active_slabs": null,
+        "total_slabs": null,
+        "cache_KiB": null,
+        "utilization_pct": null
+      }
+    }
+  ]
+}

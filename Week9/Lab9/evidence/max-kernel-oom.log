@@ -1,0 +1,110 @@
+[ 5516.687025] anon_work invoked oom-killer: gfp_mask=0xcc0(GFP_KERNEL), order=0, oom_score_adj=200
+[ 5516.687199] CPU: 0 UID: 1000 PID: 27556 Comm: anon_work Not tainted 7.3.4-arch1-2 #1 PREEMPT(full)  8a1f06cf41cc2d0d2f5161ee0a30d273c329669b
+[ 5516.687667] Call Trace:
+[ 5516.687693]  <TASK>
+[ 5516.687719]  dump_stack_lvl+0x5d/0x80
+[ 5516.687743]  dump_header+0x43/0x1b3
+[ 5516.687773]  oom_kill_process.cold+0x8/0x91
+[ 5516.687798]  out_of_memory+0x231/0x570
+[ 5516.687822]  mem_cgroup_out_of_memory+0xe1/0xf0
+[ 5516.687846]  try_charge_memcg+0x3e2/0x650
+[ 5516.687880]  charge_memcg+0x58/0xc0
+[ 5516.687911]  __mem_cgroup_charge+0x30/0x90
+[ 5516.687935]  do_anonymous_page+0x36e/0x8e0
+[ 5516.687963]  ? do_huge_pmd_anonymous_page+0xbd/0x680
+[ 5516.687989]  __handle_mm_fault+0xb90/0xf20
+[ 5516.688027]  ? __smp_call_single_queue+0xcf/0x150
+[ 5516.688061]  handle_mm_fault+0xe3/0x2e0
+[ 5516.688097]  do_user_addr_fault+0x235/0x760
+[ 5516.688127]  exc_page_fault+0x90/0x1e0
+[ 5516.688159]  asm_exc_page_fault+0x26/0x30
+[ 5516.688185] RIP: 0033:0x55845de5e280
+[ 5516.688215] Code: b9 22 00 00 00 31 ff ba 03 00 00 00 48 89 de e8 06 fe ff ff 48 89 c5 48 83 f8 ff 0f 84 09 ff ff ff 31 c0 0f 1f 80 00 00 00 00 <c6> 44 05 00 01 4c 01 e0 48 39 d8 72 f3 48 8d 3d 98 0d 00 00 e8 a7
+[ 5516.688241] RSP: 002b:00007ffe5bab35a0 EFLAGS: 00010287
+[ 5516.688267] RAX: 0000000005fa7000 RBX: 0000000008000000 RCX: 00007f18ffd1c71c
+[ 5516.688298] RDX: 0000000000000003 RSI: 0000000008000000 RDI: 0000000000000000
+[ 5516.688324] RBP: 00007f18f7c00000 R08: 00000000ffffffff R09: 0000000000000000
+[ 5516.688347] R10: 0000000000000022 R11: 0000000000000246 R12: 0000000000001000
+[ 5516.688377] R13: 00007ffe5bab3748 R14: 0000000000000004 R15: 000055845de60dd8
+[ 5516.688403]  </TASK>
+[ 5516.688430] memory: usage 98304kB, limit 98304kB, failcnt 20
+[ 5516.688458] swap: usage 0kB, limit 0kB, failcnt 0
+[ 5516.688484] Memory cgroup stats for /user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/max:
+[ 5516.688511] anon 100397056
+[ 5516.688545] file 0
+[ 5516.688570] kernel 253952
+[ 5516.688596] kernel_stack 0
+[ 5516.688619] pagetables 241664
+[ 5516.688645] sec_pagetables 0
+[ 5516.688665] percpu 320
+[ 5516.688695] sock 0
+[ 5516.688714] vmalloc 0
+[ 5516.688740] shmem 0
+[ 5516.688770] zswap 0
+[ 5516.688789] zswapped 0
+[ 5516.688819] zswap_incomp 0
+[ 5516.688841] file_mapped 0
+[ 5516.688864] file_dirty 0
+[ 5516.688883] file_writeback 0
+[ 5516.688909] swapcached 0
+[ 5516.688928] anon_thp 98566144
+[ 5516.688957] file_thp 0
+[ 5516.688987] shmem_thp 0
+[ 5516.689010] inactive_anon 0
+[ 5516.689038] active_anon 100397056
+[ 5516.689058] inactive_file 0
+[ 5516.689098] active_file 0
+[ 5516.689117] unevictable 0
+[ 5516.689142] slab_reclaimable 0
+[ 5516.689162] slab_unreclaimable 9288
+[ 5516.689181] slab 9288
+[ 5516.689204] hugetlb 0
+[ 5516.689223] workingset_refault_anon 0
+[ 5516.689246] workingset_refault_file 0
+[ 5516.689265] workingset_activate_anon 0
+[ 5516.689286] workingset_activate_file 0
+[ 5516.689305] workingset_restore_anon 0
+[ 5516.689339] workingset_restore_file 0
+[ 5516.689358] workingset_nodereclaim 0
+[ 5516.689388] pgdemote_kswapd 0
+[ 5516.689414] pgdemote_direct 0
+[ 5516.689433] pgdemote_khugepaged 0
+[ 5516.689459] pgdemote_proactive 0
+[ 5516.689478] pgsteal_kswapd 0
+[ 5516.689504] pgsteal_direct 0
+[ 5516.689523] pgsteal_khugepaged 0
+[ 5516.689546] pgsteal_proactive 0
+[ 5516.689565] pgscan_kswapd 0
+[ 5516.689598] pgscan_direct 0
+[ 5516.689621] pgscan_khugepaged 0
+[ 5516.689640] pgscan_proactive 0
+[ 5516.689664] pgrefill 0
+[ 5516.689683] pgpromote_success 0
+[ 5516.689702] pgscan 0
+[ 5516.689721] pgsteal 0
+[ 5516.689748] pswpin 0
+[ 5516.689767] pswpout 0
+[ 5516.689790] pgfault 535
+[ 5516.689813] pgmajfault 0
+[ 5516.689840] pgactivate 0
+[ 5516.689854] pgdeactivate 0
+[ 5516.689874] pglazyfree 0
+[ 5516.689896] pglazyfreed 0
+[ 5516.689919] swpin_zero 0
+[ 5516.689937] swpout_zero 0
+[ 5516.689966] zswpin 0
+[ 5516.689984] zswpout 0
+[ 5516.690015] zswpwb 0
+[ 5516.690035] thp_fault_alloc 47
+[ 5516.690061] thp_collapse_alloc 0
+[ 5516.690083] thp_swpout 0
+[ 5516.690105] thp_swpout_fallback 0
+[ 5516.690130] numa_pages_migrated 0
+[ 5516.690148] numa_pte_updates 0
+[ 5516.690173] numa_hint_faults 0
+[ 5516.690191] Memory cgroup min protection 0kB -- low protection 0kB
+[ 5516.690223] Tasks state (memory values in pages):
+[ 5516.690248] [  pid  ]   uid  tgid total_vm      rss rss_anon rss_file rss_shmem pgtables_bytes swapents oom_score_adj name
+[ 5516.690270] [  27556]  1000 27556    33471    24909    24511      398         0   237568        0           200 anon_work
+[ 5516.690295] oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=/,mems_allowed=0,oom_memcg=/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/max,task_memcg=/user.slice/user-1000.slice/user@1000.service/app.slice/run-p27031-i19184.service/max,task=anon_work,pid=27556,uid=1000
+[ 5516.690322] Memory cgroup out of memory: Killed process 27556 (anon_work) total-vm:133884kB, anon-rss:98044kB, file-rss:1592kB, shmem-rss:0kB, UID:1000 pgtables:232kB oom_score_adj:200

@@ -1,0 +1,7 @@
+Command: ['build/earlyoom/earlyoom', '--lab', '--dryrun', '--registry', '/tmp/lab10-registry-uk3rz4sc', '--mem-percent', '99', '--swap-percent', '100', '--seconds', '.4']
+t=5993.786525 event=start scope=registry upstream=v1.9.0 mlock_rc=0 errno=0 dryrun=1
+t=5993.886816 event=no_candidate
+Command: ['build/earlyoom/earlyoom', '--lab', '--dryrun', '--registry', '/tmp/lab10-registry-uk3rz4sc', '--mem-percent', '99', '--swap-percent', '100', '--seconds', '.4', '--levels', '900,700,200,0', '--psi', 'some', '150000', '1000000']
+t=5994.188947 event=start scope=registry upstream=v1.9.0 mlock_rc=0 errno=0 dryrun=1
+t=5994.188987 event=psi_fallback errno=22 trigger=some 150000 1000000
+t=5994.289277 event=level floor=700

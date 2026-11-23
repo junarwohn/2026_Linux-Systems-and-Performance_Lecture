@@ -1,0 +1,35 @@
+{
+  "commands": [
+    [
+      "./scenario",
+      "M2",
+      "--bytes",
+      "48MiB",
+      "--base",
+      "8MiB",
+      "--cycles",
+      "3",
+      "--hold",
+      ".75",
+      "--period",
+      ".3",
+      "--seconds",
+      "6",
+      "--seed",
+      "42"
+    ]
+  ],
+  "start_s": 5812.013867996,
+  "limits": {
+    "max_mib": 80
+  },
+  "group": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p32940-i33900.service/lab10-M2-fixed",
+  "scope": "fresh systemd user service",
+  "page_B": 4096,
+  "launch_s": 5812.315346601,
+  "returncodes": [
+    0
+  ],
+  "end_s": 5815.695421072,
+  "termination": "workload completed"
+}

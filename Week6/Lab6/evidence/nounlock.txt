@@ -1,0 +1,2 @@
+cvbug: mode=nounlock items=200 consumers=2 slow_ms=5
+pid=19597

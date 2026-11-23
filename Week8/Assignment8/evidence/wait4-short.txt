@@ -1,0 +1,1 @@
+exit pid=24202 status=0 minflt_total=59 majflt_total=0

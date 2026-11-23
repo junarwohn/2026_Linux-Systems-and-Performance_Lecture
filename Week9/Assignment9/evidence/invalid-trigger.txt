@@ -1,0 +1,1 @@
+usage: psimon [--interval MS] [--trigger some|full STALL_US WINDOW_US] [--path PRESSURE_FILE]

@@ -1,0 +1,85 @@
+
+=== Lab 2-A: anonymous mmap / first touch / rewrite / munmap ===
+
+STAGE baseline PID=19336
+VmSize:	    2944 kB
+Rss:                1888 kB
+
+
+============================================================
+NEXT / Enter 이후: mmap: reserve 32 MiB of virtual address space (no payload access)
+============================================================
+
+p = mmap(NULL, n, PROT_READ | PROT_WRITE,
+         MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+madvise((void *)p, n, MADV_NOHUGEPAGE);
+
+============================================================
+
+Enter to continue (record this stage first)
+STAGE mapped-not-touched PID=19336
+VmSize:	   35712 kB
+Rss:                1892 kB
+
+
+============================================================
+NEXT / Enter 이후: first touch: write 1 byte per page; allocate physical pages on demand
+============================================================
+
+touch(p, n, 1, "first-write");
+
+// Core loop in touch(): write 1 byte per page
+for (size_t i = 0; i < n; i += (size_t)ps)
+    p[i] = 1;
+
+============================================================
+
+Enter to continue (record this stage first)
+first-write elapsed_ms=11.871 minor=8192 major=0 checksum=0
+STAGE written PID=19336
+VmSize:	   35712 kB
+Rss:               34728 kB
+
+
+============================================================
+NEXT / Enter 이후: rewrite: write to the same pages; compare faults and elapsed time
+============================================================
+
+touch(p, n, 1, "rewrite");
+
+// Repeat the same write loop on the same mapping
+for (size_t i = 0; i < n; i += (size_t)ps)
+    p[i] = 1;
+
+============================================================
+
+Enter to continue (record this stage first)
+rewrite elapsed_ms=0.174 minor=0 major=0 checksum=0
+STAGE rewritten PID=19336
+VmSize:	   35712 kB
+Rss:               34728 kB
+
+
+============================================================
+NEXT / Enter 이후: munmap: release the entire 32 MiB mapping
+============================================================
+
+munmap((void *)p, n);
+
+============================================================
+
+Enter to continue (record this stage first)
+STAGE unmapped PID=19336
+VmSize:	    2944 kB
+Rss:                1960 kB
+
+
+============================================================
+NEXT / Enter 이후: finish: exit after the final observation
+============================================================
+
+return 0;
+
+============================================================
+
+Enter to continue (record this stage first)

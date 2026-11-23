@@ -1,0 +1,101 @@
+cc -O2 -g -Wall -Wextra -std=gnu11 -fno-omit-frame-pointer -pthread -rdynamic -o bin/bqtest src/bqtest.c src/bq.c
+cc -O1 -g -std=gnu11 -fsanitize=thread -pthread -o bin/bqtest_tsan src/bqtest.c src/bq.c
+cc -O2 -g -Wall -Wextra -std=gnu11 -fno-omit-frame-pointer -pthread -rdynamic -o bin/albumsvc src/albumsvc.c src/album.c src/bq.c
+cc -O2 -g -Wall -Wextra -std=gnu11 -fno-omit-frame-pointer -pthread -rdynamic -o bin/devsvc src/devsvc.c src/rcu.c src/sink.c src/bus.c src/catalog.c src/config.c
+cc -O1 -g -std=gnu11 -fsanitize=thread -pthread -o bin/devsvc_tsan src/devsvc.c src/rcu.c src/sink.c src/bus.c src/catalog.c src/config.c
+queue=1 trial=1
+bqtest: producers=2 consumers=2 items/producer=20000 capacity=1 wake=signal work_us=0
+pid=47855
+strace: Process 47856 attached
+strace: Process 47857 attached
+strace: Process 47858 attached
+strace: Process 47859 attached
+received=40000 lost=0 duplicate=0 garbage=0 order_violation=0 early_closed=0
+put_waits=25023 get_waits=19709 elapsed_ms=1681.6 items_per_s=23787
+completion_inversions=12 (information only: processing completion order, not dequeue order)
+PASS
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+100.00    4.642598          17    261397     51538 futex
+------ ----------- ----------- --------- --------- ----------------
+100.00    4.642598          17    261397     51538 total
+queue=1 trial=2
+bqtest: producers=2 consumers=2 items/producer=20000 capacity=1 wake=signal work_us=0
+pid=47897
+strace: Process 47898 attached
+strace: Process 47899 attached
+strace: Process 47900 attached
+strace: Process 47901 attached
+received=40000 lost=0 duplicate=0 garbage=0 order_violation=0 early_closed=0
+put_waits=23036 get_waits=19634 elapsed_ms=1329.3 items_per_s=30091
+completion_inversions=7 (information only: processing completion order, not dequeue order)
+PASS
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+100.00    3.995284          16    248343     52606 futex
+------ ----------- ----------- --------- --------- ----------------
+100.00    3.995284          16    248343     52606 total
+queue=1 trial=3
+bqtest: producers=2 consumers=2 items/producer=20000 capacity=1 wake=signal work_us=0
+pid=47929
+strace: Process 47930 attached
+strace: Process 47931 attached
+strace: Process 47932 attached
+strace: Process 47933 attached
+received=40000 lost=0 duplicate=0 garbage=0 order_violation=0 early_closed=0
+put_waits=21929 get_waits=19866 elapsed_ms=1238.6 items_per_s=32295
+completion_inversions=17 (information only: processing completion order, not dequeue order)
+PASS
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+100.00    4.121683          16    250877     56169 futex
+------ ----------- ----------- --------- --------- ----------------
+100.00    4.121683          16    250877     56169 total
+queue=64 trial=1
+bqtest: producers=2 consumers=2 items/producer=20000 capacity=64 wake=signal work_us=0
+pid=47946
+strace: Process 47947 attached
+strace: Process 47948 attached
+strace: Process 47949 attached
+strace: Process 47950 attached
+received=40000 lost=0 duplicate=0 garbage=0 order_violation=0 early_closed=0
+put_waits=1306 get_waits=1733 elapsed_ms=131.3 items_per_s=304696
+completion_inversions=582 (information only: processing completion order, not dequeue order)
+PASS
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.403197          17     23415      5616 futex
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.403197          17     23415      5616 total
+queue=64 trial=2
+bqtest: producers=2 consumers=2 items/producer=20000 capacity=64 wake=signal work_us=0
+pid=47953
+strace: Process 47954 attached
+strace: Process 47955 attached
+strace: Process 47956 attached
+strace: Process 47957 attached
+received=40000 lost=0 duplicate=0 garbage=0 order_violation=0 early_closed=0
+put_waits=905 get_waits=1044 elapsed_ms=93.0 items_per_s=430142
+completion_inversions=556 (information only: processing completion order, not dequeue order)
+PASS
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.226706          15     14817      3261 futex
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.226706          15     14817      3261 total
+queue=64 trial=3
+bqtest: producers=2 consumers=2 items/producer=20000 capacity=64 wake=signal work_us=0
+pid=47960
+strace: Process 47961 attached
+strace: Process 47962 attached
+strace: Process 47963 attached
+strace: Process 47964 attached
+received=40000 lost=0 duplicate=0 garbage=0 order_violation=0 early_closed=0
+put_waits=1232 get_waits=1014 elapsed_ms=97.2 items_per_s=411702
+completion_inversions=465 (information only: processing completion order, not dequeue order)
+PASS
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.271647          15     17403      4153 futex
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.271647          15     17403      4153 total

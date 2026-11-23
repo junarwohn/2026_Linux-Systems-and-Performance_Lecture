@@ -1,0 +1,25 @@
+55b240d86000-55b240d87000 r--p 00000000 00:1f 690471                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week8/Lab8/lab3
+55b240d87000-55b240d88000 r-xp 00001000 00:1f 690471                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week8/Lab8/lab3
+55b240d88000-55b240d89000 r--p 00002000 00:1f 690471                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week8/Lab8/lab3
+55b240d89000-55b240d8a000 r--p 00002000 00:1f 690471                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week8/Lab8/lab3
+55b240d8a000-55b240d8b000 rw-p 00003000 00:1f 690471                     /home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week8/Lab8/lab3
+55b2636ce000-55b2636ef000 rw-p 00000000 00:00 0                          [heap]
+7fab27400000-7fab27424000 r--p 00000000 00:1f 1087706                    /usr/lib/libc.so.6
+7fab27424000-7fab2759f000 r-xp 00024000 00:1f 1087706                    /usr/lib/libc.so.6
+7fab2759f000-7fab27615000 r--p 0019f000 00:1f 1087706                    /usr/lib/libc.so.6
+7fab27615000-7fab27619000 r--p 00214000 00:1f 1087706                    /usr/lib/libc.so.6
+7fab27619000-7fab2761b000 rw-p 00218000 00:1f 1087706                    /usr/lib/libc.so.6
+7fab2761b000-7fab27623000 rw-p 00000000 00:00 0 
+7fab27811000-7fab27816000 rw-p 00000000 00:00 0 
+7fab27816000-7fab2783e000 r--p 00000000 00:1f 1276266                    /etc/ld.so.cache
+7fab2783e000-7fab27842000 r--p 00000000 00:00 0                          [vvar]
+7fab27842000-7fab27844000 r--p 00000000 00:00 0                          [vvar_vclock]
+7fab27844000-7fab27846000 r-xp 00000000 00:00 0                          [vdso]
+7fab27846000-7fab27847000 r--p 00000000 00:1f 1087697                    /usr/lib/ld-linux-x86-64.so.2
+7fab27847000-7fab27874000 r-xp 00001000 00:1f 1087697                    /usr/lib/ld-linux-x86-64.so.2
+7fab27874000-7fab27883000 r--p 0002e000 00:1f 1087697                    /usr/lib/ld-linux-x86-64.so.2
+7fab27883000-7fab27885000 r--p 0003d000 00:1f 1087697                    /usr/lib/ld-linux-x86-64.so.2
+7fab27885000-7fab27886000 rw-p 0003f000 00:1f 1087697                    /usr/lib/ld-linux-x86-64.so.2
+7fab27886000-7fab27887000 rw-p 00000000 00:00 0 
+7fff274ff000-7fff27520000 rw-p 00000000 00:00 0                          [stack]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]

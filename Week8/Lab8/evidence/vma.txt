@@ -1,0 +1,21 @@
+
+STAGE BASELINE PID=19406 children=0
+SELF_MAPS_LINES=25
+Read slabinfo in terminal B with sudo (workload needs no sudo).
+Observe in terminal B, then press Enter.
+RANGE=0x7fab26c00000..0x7fab27400000 page=4096 bytes; NO payload touch
+
+STAGE ONE_RESERVED_RANGE PID=19406 children=0
+SELF_MAPS_LINES=26
+Read slabinfo in terminal B with sudo (workload needs no sudo).
+Observe in terminal B, then press Enter.
+
+STAGE ALTERNATING_RW_NONE PID=19406 children=0
+SELF_MAPS_LINES=2073
+Read slabinfo in terminal B with sudo (workload needs no sudo).
+Observe in terminal B, then press Enter.
+
+STAGE RANGE_UNMAPPED PID=19406 children=0
+SELF_MAPS_LINES=25
+Read slabinfo in terminal B with sudo (workload needs no sudo).
+Observe in terminal B, then press Enter.

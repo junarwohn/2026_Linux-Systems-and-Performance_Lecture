@@ -1,0 +1,1652 @@
+[
+  {
+    "checkpoint": {
+      "stage": "mapped",
+      "pid": "24423",
+      "range": "7f9861600000-7f9869600000",
+      "bytes": "134217728",
+      "child": "0"
+    },
+    "observer": {
+      "pid": {
+        "pid": 24423,
+        "t_monotonic_s": 5367.35089905,
+        "minflt": 65,
+        "majflt": 0,
+        "start_ticks": 8882649,
+        "VmRSS_KiB": 1876,
+        "RssAnon_KiB": 100,
+        "RssFile_KiB": 1776,
+        "RssShmem_KiB": 0,
+        "VmPTE_KiB": 44,
+        "Pss_KiB": 129,
+        "Shared_Clean_KiB": 1764,
+        "Private_Dirty_KiB": 100,
+        "AnonHugePages_KiB": 0,
+        "range": {
+          "start": "0x7f9861600000",
+          "end": "0x7f9869600000",
+          "present": 0,
+          "swapped": 0,
+          "neither": 32768,
+          "exclusive_present": 0,
+          "PFNs": "N/A (PFN access unavailable)",
+          "distinct_frames": "N/A"
+        },
+        "elapsed_s": 1.5e-05,
+        "minflt_delta": "N/A",
+        "majflt_delta": "N/A"
+      }
+    },
+    "allocator": [
+      {
+        "section": "meminfo",
+        "key": "system",
+        "value": {
+          "Slab_KiB": 402144,
+          "SReclaimable_KiB": 203744,
+          "SUnreclaim_KiB": 198400,
+          "PageTables_KiB": 76192,
+          "KernelStack_KiB": 28288
+        }
+      },
+      {
+        "section": "buddy",
+        "key": [
+          0,
+          "DMA"
+        ],
+        "value": {
+          "blocks": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            2
+          ],
+          "KiB": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1024,
+            4096,
+            8192
+          ],
+          "cumulative_KiB": [
+            13312,
+            13312,
+            13312,
+            13312,
+            13312,
+            13312,
+            13312,
+            13312,
+            13312,
+            12288,
+            8192
+          ],
+          "largest_order": 10
+        }
+      },
+      {
+        "section": "buddy",
+        "key": [
+          0,
+          "DMA32"
+        ],
+        "value": {
+          "blocks": [
+            11,
+            13,
+            15,
+            11,
+            11,
+            10,
+            9,
+            9,
+            10,
+            8,
+            356
+          ],
+          "KiB": [
+            44,
+            104,
+            240,
+            352,
+            704,
+            1280,
+            2304,
+            4608,
+            10240,
+            16384,
+            1458176
+          ],
+          "cumulative_KiB": [
+            1494436,
+            1494392,
+            1494288,
+            1494048,
+            1493696,
+            1492992,
+            1491712,
+            1489408,
+            1484800,
+            1474560,
+            1458176
+          ],
+          "largest_order": 10
+        }
+      },
+      {
+        "section": "buddy",
+        "key": [
+          0,
+          "Normal"
+        ],
+        "value": {
+          "blocks": [
+            7244,
+            3170,
+            905,
+            641,
+            143,
+            50,
+            28,
+            16,
+            6,
+            32,
+            472
+          ],
+          "KiB": [
+            28976,
+            25360,
+            14480,
+            20512,
+            9152,
+            6400,
+            7168,
+            8192,
+            6144,
+            65536,
+            1933312
+          ],
+          "cumulative_KiB": [
+            2125232,
+            2096256,
+            2070896,
+            2056416,
+            2035904,
+            2026752,
+            2020352,
+            2013184,
+            2004992,
+            1998848,
+            1933312
+          ],
+          "largest_order": 10
+        }
+      },
+      {
+        "section": "watermarks",
+        "key": [
+          0,
+          "DMA"
+        ],
+        "value": {
+          "free_pages": 3328,
+          "min_pages": 16,
+          "low_pages": 20,
+          "high_pages": 24
+        }
+      },
+      {
+        "section": "watermarks",
+        "key": [
+          0,
+          "DMA32"
+        ],
+        "value": {
+          "free_pages": 373609,
+          "min_pages": 1562,
+          "low_pages": 1952,
+          "high_pages": 2342
+        }
+      },
+      {
+        "section": "watermarks",
+        "key": [
+          0,
+          "Device"
+        ],
+        "value": {
+          "free_pages": 0,
+          "min_pages": 0,
+          "low_pages": 0,
+          "high_pages": 0
+        }
+      },
+      {
+        "section": "watermarks",
+        "key": [
+          0,
+          "Movable"
+        ],
+        "value": {
+          "free_pages": 0,
+          "min_pages": 32,
+          "low_pages": 32,
+          "high_pages": 32
+        }
+      },
+      {
+        "section": "watermarks",
+        "key": [
+          0,
+          "Normal"
+        ],
+        "value": {
+          "free_pages": 531353,
+          "min_pages": 15316,
+          "low_pages": 19145,
+          "high_pages": 22974
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000008",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000024",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000032",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000040",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000048",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000056",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000064",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000072",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000080",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000088",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      }
+    ]
+  },
+  {
+    "checkpoint": {
+      "stage": "written",
+      "pid": "24423",
+      "range": "7f9861600000-7f9869600000",
+      "bytes": "134217728",
+      "child": "0"
+    },
+    "observer": {
+      "pid": {
+        "pid": 24423,
+        "t_monotonic_s": 5367.555893361,
+        "minflt": 32833,
+        "majflt": 0,
+        "start_ticks": 8882649,
+        "VmRSS_KiB": 132948,
+        "RssAnon_KiB": 131172,
+        "RssFile_KiB": 1776,
+        "RssShmem_KiB": 0,
+        "VmPTE_KiB": 300,
+        "Pss_KiB": 131202,
+        "Shared_Clean_KiB": 1764,
+        "Private_Dirty_KiB": 131172,
+        "AnonHugePages_KiB": 0,
+        "range": {
+          "start": "0x7f9861600000",
+          "end": "0x7f9869600000",
+          "present": 32768,
+          "swapped": 0,
+          "neither": 0,
+          "exclusive_present": 32768,
+          "PFNs": "N/A (PFN access unavailable)",
+          "distinct_frames": "N/A"
+        },
+        "elapsed_s": 1.2e-05,
+        "minflt_delta": "N/A",
+        "majflt_delta": "N/A"
+      }
+    },
+    "allocator": [
+      {
+        "section": "meminfo",
+        "key": "system",
+        "value": {
+          "Slab_KiB": 402144,
+          "SReclaimable_KiB": 203744,
+          "SUnreclaim_KiB": 198400,
+          "PageTables_KiB": 76456,
+          "KernelStack_KiB": 28288
+        }
+      },
+      {
+        "section": "buddy",
+        "key": [
+          0,
+          "DMA"
+        ],
+        "value": {
+          "blocks": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            2
+          ],
+          "KiB": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1024,
+            4096,
+            8192
+          ],
+          "cumulative_KiB": [
+            13312,
+            13312,
+            13312,
+            13312,
+            13312,
+            13312,
+            13312,
+            13312,
+            13312,
+            12288,
+            8192
+          ],
+          "largest_order": 10
+        }
+      },
+      {
+        "section": "buddy",
+        "key": [
+          0,
+          "DMA32"
+        ],
+        "value": {
+          "blocks": [
+            11,
+            13,
+            15,
+            11,
+            11,
+            10,
+            9,
+            9,
+            10,
+            8,
+            356
+          ],
+          "KiB": [
+            44,
+            104,
+            240,
+            352,
+            704,
+            1280,
+            2304,
+            4608,
+            10240,
+            16384,
+            1458176
+          ],
+          "cumulative_KiB": [
+            1494436,
+            1494392,
+            1494288,
+            1494048,
+            1493696,
+            1492992,
+            1491712,
+            1489408,
+            1484800,
+            1474560,
+            1458176
+          ],
+          "largest_order": 10
+        }
+      },
+      {
+        "section": "buddy",
+        "key": [
+          0,
+          "Normal"
+        ],
+        "value": {
+          "blocks": [
+            173,
+            947,
+            330,
+            388,
+            80,
+            32,
+            18,
+            8,
+            6,
+            32,
+            472
+          ],
+          "KiB": [
+            692,
+            7576,
+            5280,
+            12416,
+            5120,
+            4096,
+            4608,
+            4096,
+            6144,
+            65536,
+            1933312
+          ],
+          "cumulative_KiB": [
+            2048876,
+            2048184,
+            2040608,
+            2035328,
+            2022912,
+            2017792,
+            2013696,
+            2009088,
+            2004992,
+            1998848,
+            1933312
+          ],
+          "largest_order": 10
+        }
+      },
+      {
+        "section": "watermarks",
+        "key": [
+          0,
+          "DMA"
+        ],
+        "value": {
+          "free_pages": 3328,
+          "min_pages": 16,
+          "low_pages": 20,
+          "high_pages": 24
+        }
+      },
+      {
+        "section": "watermarks",
+        "key": [
+          0,
+          "DMA32"
+        ],
+        "value": {
+          "free_pages": 373609,
+          "min_pages": 1562,
+          "low_pages": 1952,
+          "high_pages": 2342
+        }
+      },
+      {
+        "section": "watermarks",
+        "key": [
+          0,
+          "Device"
+        ],
+        "value": {
+          "free_pages": 0,
+          "min_pages": 0,
+          "low_pages": 0,
+          "high_pages": 0
+        }
+      },
+      {
+        "section": "watermarks",
+        "key": [
+          0,
+          "Movable"
+        ],
+        "value": {
+          "free_pages": 0,
+          "min_pages": 32,
+          "low_pages": 32,
+          "high_pages": 32
+        }
+      },
+      {
+        "section": "watermarks",
+        "key": [
+          0,
+          "Normal"
+        ],
+        "value": {
+          "free_pages": 512219,
+          "min_pages": 15316,
+          "low_pages": 19145,
+          "high_pages": 22974
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000008",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000024",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000032",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000040",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000048",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000056",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000064",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000072",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000080",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000088",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      }
+    ]
+  },
+  {
+    "checkpoint": {
+      "stage": "alternate-released",
+      "pid": "24423",
+      "range": "7f9861600000-7f9869600000",
+      "bytes": "134217728",
+      "child": "0"
+    },
+    "observer": {
+      "pid": {
+        "pid": 24423,
+        "t_monotonic_s": 5367.73987444,
+        "minflt": 32833,
+        "majflt": 0,
+        "start_ticks": 8882649,
+        "VmRSS_KiB": 67412,
+        "RssAnon_KiB": 65636,
+        "RssFile_KiB": 1776,
+        "RssShmem_KiB": 0,
+        "VmPTE_KiB": 300,
+        "Pss_KiB": 65666,
+        "Shared_Clean_KiB": 1764,
+        "Private_Dirty_KiB": 65636,
+        "AnonHugePages_KiB": 0,
+        "range": {
+          "start": "0x7f9861600000",
+          "end": "0x7f9869600000",
+          "present": 16384,
+          "swapped": 0,
+          "neither": 16384,
+          "exclusive_present": 16384,
+          "PFNs": "N/A (PFN access unavailable)",
+          "distinct_frames": "N/A"
+        },
+        "elapsed_s": 1.5e-05,
+        "minflt_delta": "N/A",
+        "majflt_delta": "N/A"
+      }
+    },
+    "allocator": [
+      {
+        "section": "meminfo",
+        "key": "system",
+        "value": {
+          "Slab_KiB": 402144,
+          "SReclaimable_KiB": 203744,
+          "SUnreclaim_KiB": 198400,
+          "PageTables_KiB": 76452,
+          "KernelStack_KiB": 28288
+        }
+      },
+      {
+        "section": "buddy",
+        "key": [
+          0,
+          "DMA"
+        ],
+        "value": {
+          "blocks": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            2
+          ],
+          "KiB": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1024,
+            4096,
+            8192
+          ],
+          "cumulative_KiB": [
+            13312,
+            13312,
+            13312,
+            13312,
+            13312,
+            13312,
+            13312,
+            13312,
+            13312,
+            12288,
+            8192
+          ],
+          "largest_order": 10
+        }
+      },
+      {
+        "section": "buddy",
+        "key": [
+          0,
+          "DMA32"
+        ],
+        "value": {
+          "blocks": [
+            11,
+            13,
+            15,
+            11,
+            11,
+            10,
+            9,
+            9,
+            10,
+            8,
+            356
+          ],
+          "KiB": [
+            44,
+            104,
+            240,
+            352,
+            704,
+            1280,
+            2304,
+            4608,
+            10240,
+            16384,
+            1458176
+          ],
+          "cumulative_KiB": [
+            1494436,
+            1494392,
+            1494288,
+            1494048,
+            1493696,
+            1492992,
+            1491712,
+            1489408,
+            1484800,
+            1474560,
+            1458176
+          ],
+          "largest_order": 10
+        }
+      },
+      {
+        "section": "buddy",
+        "key": [
+          0,
+          "Normal"
+        ],
+        "value": {
+          "blocks": [
+            1322,
+            1074,
+            329,
+            388,
+            80,
+            32,
+            19,
+            8,
+            3,
+            29,
+            472
+          ],
+          "KiB": [
+            5288,
+            8592,
+            5264,
+            12416,
+            5120,
+            4096,
+            4864,
+            4096,
+            3072,
+            59392,
+            1933312
+          ],
+          "cumulative_KiB": [
+            2045512,
+            2040224,
+            2031632,
+            2026368,
+            2013952,
+            2008832,
+            2004736,
+            1999872,
+            1995776,
+            1992704,
+            1933312
+          ],
+          "largest_order": 10
+        }
+      },
+      {
+        "section": "watermarks",
+        "key": [
+          0,
+          "DMA"
+        ],
+        "value": {
+          "free_pages": 3328,
+          "min_pages": 16,
+          "low_pages": 20,
+          "high_pages": 24
+        }
+      },
+      {
+        "section": "watermarks",
+        "key": [
+          0,
+          "DMA32"
+        ],
+        "value": {
+          "free_pages": 373609,
+          "min_pages": 1562,
+          "low_pages": 1952,
+          "high_pages": 2342
+        }
+      },
+      {
+        "section": "watermarks",
+        "key": [
+          0,
+          "Device"
+        ],
+        "value": {
+          "free_pages": 0,
+          "min_pages": 0,
+          "low_pages": 0,
+          "high_pages": 0
+        }
+      },
+      {
+        "section": "watermarks",
+        "key": [
+          0,
+          "Movable"
+        ],
+        "value": {
+          "free_pages": 0,
+          "min_pages": 32,
+          "low_pages": 32,
+          "high_pages": 32
+        }
+      },
+      {
+        "section": "watermarks",
+        "key": [
+          0,
+          "Normal"
+        ],
+        "value": {
+          "free_pages": 511422,
+          "min_pages": 15316,
+          "low_pages": 19145,
+          "high_pages": 22974
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000008",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000024",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000032",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000040",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000048",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000056",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000064",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000072",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000080",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000088",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      }
+    ]
+  },
+  {
+    "checkpoint": {
+      "stage": "unmapped",
+      "pid": "24423",
+      "range": "7f9861600000-7f9869600000",
+      "bytes": "134217728",
+      "child": "0"
+    },
+    "observer": {
+      "pid": {
+        "pid": 24423,
+        "t_monotonic_s": 5367.903472035,
+        "minflt": 32833,
+        "majflt": 0,
+        "start_ticks": 8882649,
+        "VmRSS_KiB": 1876,
+        "RssAnon_KiB": 100,
+        "RssFile_KiB": 1776,
+        "RssShmem_KiB": 0,
+        "VmPTE_KiB": 44,
+        "Pss_KiB": 130,
+        "Shared_Clean_KiB": 1764,
+        "Private_Dirty_KiB": 100,
+        "AnonHugePages_KiB": 0,
+        "elapsed_s": 1.1e-05,
+        "minflt_delta": "N/A",
+        "majflt_delta": "N/A"
+      }
+    },
+    "allocator": [
+      {
+        "section": "meminfo",
+        "key": "system",
+        "value": {
+          "Slab_KiB": 402144,
+          "SReclaimable_KiB": 203744,
+          "SUnreclaim_KiB": 198400,
+          "PageTables_KiB": 76208,
+          "KernelStack_KiB": 28304
+        }
+      },
+      {
+        "section": "buddy",
+        "key": [
+          0,
+          "DMA"
+        ],
+        "value": {
+          "blocks": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            2
+          ],
+          "KiB": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1024,
+            4096,
+            8192
+          ],
+          "cumulative_KiB": [
+            13312,
+            13312,
+            13312,
+            13312,
+            13312,
+            13312,
+            13312,
+            13312,
+            13312,
+            12288,
+            8192
+          ],
+          "largest_order": 10
+        }
+      },
+      {
+        "section": "buddy",
+        "key": [
+          0,
+          "DMA32"
+        ],
+        "value": {
+          "blocks": [
+            11,
+            13,
+            15,
+            11,
+            11,
+            10,
+            9,
+            9,
+            10,
+            8,
+            356
+          ],
+          "KiB": [
+            44,
+            104,
+            240,
+            352,
+            704,
+            1280,
+            2304,
+            4608,
+            10240,
+            16384,
+            1458176
+          ],
+          "cumulative_KiB": [
+            1494436,
+            1494392,
+            1494288,
+            1494048,
+            1493696,
+            1492992,
+            1491712,
+            1489408,
+            1484800,
+            1474560,
+            1458176
+          ],
+          "largest_order": 10
+        }
+      },
+      {
+        "section": "buddy",
+        "key": [
+          0,
+          "Normal"
+        ],
+        "value": {
+          "blocks": [
+            10060,
+            2390,
+            360,
+            389,
+            81,
+            34,
+            19,
+            10,
+            3,
+            29,
+            472
+          ],
+          "KiB": [
+            40240,
+            19120,
+            5760,
+            12448,
+            5184,
+            4352,
+            4864,
+            5120,
+            3072,
+            59392,
+            1933312
+          ],
+          "cumulative_KiB": [
+            2092864,
+            2052624,
+            2033504,
+            2027744,
+            2015296,
+            2010112,
+            2005760,
+            2000896,
+            1995776,
+            1992704,
+            1933312
+          ],
+          "largest_order": 10
+        }
+      },
+      {
+        "section": "watermarks",
+        "key": [
+          0,
+          "DMA"
+        ],
+        "value": {
+          "free_pages": 3328,
+          "min_pages": 16,
+          "low_pages": 20,
+          "high_pages": 24
+        }
+      },
+      {
+        "section": "watermarks",
+        "key": [
+          0,
+          "DMA32"
+        ],
+        "value": {
+          "free_pages": 373609,
+          "min_pages": 1562,
+          "low_pages": 1952,
+          "high_pages": 2342
+        }
+      },
+      {
+        "section": "watermarks",
+        "key": [
+          0,
+          "Device"
+        ],
+        "value": {
+          "free_pages": 0,
+          "min_pages": 0,
+          "low_pages": 0,
+          "high_pages": 0
+        }
+      },
+      {
+        "section": "watermarks",
+        "key": [
+          0,
+          "Movable"
+        ],
+        "value": {
+          "free_pages": 0,
+          "min_pages": 32,
+          "low_pages": 32,
+          "high_pages": 32
+        }
+      },
+      {
+        "section": "watermarks",
+        "key": [
+          0,
+          "Normal"
+        ],
+        "value": {
+          "free_pages": 523179,
+          "min_pages": 15316,
+          "low_pages": 19145,
+          "high_pages": 22974
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000008",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000024",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000032",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000040",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000048",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000056",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000064",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000072",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000080",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      },
+      {
+        "section": "slab",
+        "key": ":0000088",
+        "value": {
+          "active_objects": null,
+          "total_objects": null,
+          "object_B": null,
+          "objects_per_slab": null,
+          "pages_per_slab": null,
+          "active_slabs": null,
+          "total_slabs": null,
+          "cache_KiB": null,
+          "utilization_pct": null
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+7.3.4-arch1-2
+4096
+18
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       5.4Gi       4.0Gi       1.8Gi       7.9Gi       9.8Gi
+Swap:          4.0Gi          0B       4.0Gi
+Filename				Type		Size		Used		Priority
+/dev/zram0                              partition	4194300		0		100
+btrfs
+vm.min_free_kbytes = 67584
+vm.watermark_scale_factor = 10
+vm.watermark_boost_factor = 15000
+vm.swappiness = 60
+gcc (GCC) 16.2.1 20260810
+Copyright (C) 2026 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+node zone free_pages min_pages low_pages high_pages
+0 DMA 3328 16 20 24
+0 DMA32 373609 1562 1952 2342
+0 Normal 669098 15316 19145 22974
+0 Movable 0 32 32 32
+0 Device 0 0 0 0
+MemFree_KiB 4184140
+MemAvailable_KiB 10240912

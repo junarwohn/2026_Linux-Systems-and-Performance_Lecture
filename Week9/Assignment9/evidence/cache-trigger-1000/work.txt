@@ -1,0 +1,6 @@
+t=6018.392964 phase=file_begin file_bytes=100663296 loops=4
+t=6019.143087 pass=1 bytes=100663296 elapsed_s=0.750056 throughput_MiB_s=127.990
+t=6019.893367 pass=2 bytes=100663296 elapsed_s=0.750230 throughput_MiB_s=127.961
+t=6020.644185 pass=3 bytes=100663296 elapsed_s=0.750057 throughput_MiB_s=127.990
+t=6021.394273 pass=4 bytes=100663296 elapsed_s=0.750063 throughput_MiB_s=127.989
+t=6021.394300 phase=file_end bytes=402653184 elapsed_s=3.001336 throughput_MiB_s=127.943

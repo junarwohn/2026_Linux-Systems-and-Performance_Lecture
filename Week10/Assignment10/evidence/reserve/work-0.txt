@@ -1,0 +1,17 @@
+t=5777.392427 MemAvailable:   10195552 kB
+t=5777.392472 Committed_AS:   34678496 kB
+t=5777.392492 phase=reserve requested_B=67108864 address=0x7fdf55800000 errno=0
+t=5777.392507 MemAvailable:   10195552 kB
+t=5777.392524 Committed_AS:   34744032 kB
+t=5777.393391 phase=touch pages=2048 touched_B=8388608
+t=5777.393423 MemAvailable:   10187360 kB
+t=5777.393427 Committed_AS:   34744032 kB
+t=5777.694388 phase=touch pages=4096 touched_B=16777216
+t=5777.694462 MemAvailable:   10178300 kB
+t=5777.694467 Committed_AS:   34744000 kB
+t=5777.995412 phase=touch pages=6144 touched_B=25165824
+t=5777.995491 MemAvailable:   10170144 kB
+t=5777.995498 Committed_AS:   34744000 kB
+t=5778.296471 phase=touch pages=8192 touched_B=33554432
+t=5778.296558 MemAvailable:   10173664 kB
+t=5778.296565 Committed_AS:   34729344 kB

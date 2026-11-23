@@ -1,0 +1,16 @@
+{
+  "output": "/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week10/Assignment10/evidence/reserve/monitor",
+  "cgroup": [
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/run-p32940-i33900.service/lab10-reserve"
+  ],
+  "pid": [],
+  "seconds": null,
+  "fast": 0.2,
+  "slow": 1,
+  "only_explicit": false,
+  "start": 5777.136021364,
+  "clock": "CLOCK_MONOTONIC",
+  "diagnostic": false,
+  "end": 5779.839809432,
+  "termination": "signal"
+}

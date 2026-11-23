@@ -1,0 +1,38 @@
+t=5634.184081 phase=fill_begin target_bytes=50331648
+t=5634.189530 phase=fill bytes=50331648 pages=12288 elapsed_s=0.005449 MiB_s=8808.720
+t=5634.189580 phase=fill_begin target_bytes=33554432
+t=5634.193298 phase=fill bytes=33554432 pages=8192 elapsed_s=0.003718 MiB_s=8607.016
+t=5634.193323 phase=burst cycle=1 alloc_s=0.003758
+t=5634.439656 phase=fill_begin target_bytes=33554432
+t=5634.443165 phase=fill bytes=33554432 pages=8192 elapsed_s=0.003508 MiB_s=9120.761
+t=5634.443188 phase=burst cycle=2 alloc_s=0.003549
+t=5634.689714 phase=fill_begin target_bytes=33554432
+t=5634.693426 phase=fill bytes=33554432 pages=8192 elapsed_s=0.003711 MiB_s=8622.093
+t=5634.693457 phase=burst cycle=3 alloc_s=0.003752
+t=5634.939777 phase=fill_begin target_bytes=33554432
+t=5634.943317 phase=fill bytes=33554432 pages=8192 elapsed_s=0.003539 MiB_s=9041.556
+t=5634.943341 phase=burst cycle=4 alloc_s=0.003573
+t=5635.189842 phase=fill_begin target_bytes=33554432
+t=5635.193315 phase=fill bytes=33554432 pages=8192 elapsed_s=0.003472 MiB_s=9216.367
+t=5635.193336 phase=burst cycle=5 alloc_s=0.003503
+t=5635.440021 phase=fill_begin target_bytes=33554432
+t=5635.453290 phase=fill bytes=33554432 pages=8192 elapsed_s=0.013269 MiB_s=2411.664
+t=5635.453310 phase=burst cycle=6 alloc_s=0.013299
+t=5635.690085 phase=fill_begin target_bytes=33554432
+t=5635.693334 phase=fill bytes=33554432 pages=8192 elapsed_s=0.003249 MiB_s=9849.103
+t=5635.693358 phase=burst cycle=7 alloc_s=0.003282
+t=5635.940150 phase=fill_begin target_bytes=33554432
+t=5635.943669 phase=fill bytes=33554432 pages=8192 elapsed_s=0.003519 MiB_s=9094.694
+t=5635.943690 phase=burst cycle=8 alloc_s=0.003549
+t=5636.190220 phase=fill_begin target_bytes=33554432
+t=5636.193731 phase=fill bytes=33554432 pages=8192 elapsed_s=0.003512 MiB_s=9112.707
+t=5636.193754 phase=burst cycle=9 alloc_s=0.003544
+t=5636.440299 phase=fill_begin target_bytes=33554432
+t=5636.443790 phase=fill bytes=33554432 pages=8192 elapsed_s=0.003492 MiB_s=9164.787
+t=5636.443806 phase=burst cycle=10 alloc_s=0.003526
+t=5636.690769 phase=fill_begin target_bytes=33554432
+t=5636.694227 phase=fill bytes=33554432 pages=8192 elapsed_s=0.003458 MiB_s=9255.149
+t=5636.694243 phase=burst cycle=11 alloc_s=0.003751
+t=5636.940804 phase=fill_begin target_bytes=33554432
+t=5636.944327 phase=fill bytes=33554432 pages=8192 elapsed_s=0.003524 MiB_s=9081.090
+t=5636.944347 phase=burst cycle=12 alloc_s=0.003552

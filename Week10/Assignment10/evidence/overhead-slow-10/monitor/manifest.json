@@ -1,0 +1,14 @@
+{
+  "output": "/home/j/workspace/2026_Linux-Systems-and-Performance_Lecture/Week10/Assignment10/evidence/overhead-slow-10/monitor",
+  "cgroup": [],
+  "pid": [],
+  "seconds": 12.0,
+  "fast": 1.0,
+  "slow": 10.0,
+  "only_explicit": false,
+  "start": 6421.048332031,
+  "clock": "CLOCK_MONOTONIC",
+  "diagnostic": true,
+  "end": 6433.050597529,
+  "termination": "duration/error"
+}

@@ -1,0 +1,2 @@
+t=6140.182396 registered metric=some stall_us=1000 window_us=2000000
+t=6148.208035 event metric=some
